@@ -1,0 +1,286 @@
+\documentclass[11pt, a4paper, titlepage, oneside]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2.25cm, includeheadfoot]{geometry}
+\usepackage[labelfont=bf, textfont=it]{caption}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage[stable]{footmisc}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{pstricks}
+\usepackage{wallpaper}
+
+\linespread{1.25}
+
+\newcommand{\heading}{SortSimulation}
+\newcommand{\subheading}{Dokumentation}
+\newcommand{\copyrightNotice}{Copyright \textcopyright{} 2008--2013 Peter Folta. Alle Rechte vorbehalten.}
+\newcommand{\URL}{\href{http://www.peterfolta.net/software/sortsimulation}{http://www.peterfolta.net/software/sortsimulation}}
+\newcommand{\version}{2.0.0}
+
+\definecolor{pfColor1}{HTML}{62bd19}
+\definecolor{pfColor2}{HTML}{339530}
+\definecolor{pfColor3}{HTML}{bce18d}
+\definecolor{pfColor4}{HTML}{00625a}
+
+\usepackage[
+	pdftitle = {SortSimulation},
+	pdfsubject = {Dokumentation},
+	pdfauthor = {Peter\ {}Folta},
+	pdfkeywords = {},
+	pdfcreator = {},
+	pdfproducer = {},
+	colorlinks = true,
+	linkcolor = black,
+	anchorcolor = black,
+	citecolor = black,
+	filecolor = black,
+	menucolor = black,
+	urlcolor = pfColor2]{hyperref}
+	
+\renewcommand{\lstlistingname}{Listing}
+\renewcommand{\lstlistlistingname}{Listings}
+\lstset{
+	language			= java,
+	sensitive			= false,
+	basicstyle			= \footnotesize\ttfamily,
+	commentstyle		= \itshape\color{comments},
+	keywordstyle		= \bfseries\color{pfColor2},
+	showstringspaces	= false,
+	tabsize				= 4,
+	numbers				= left,
+	captionpos			= b,
+	xleftmargin			= 3 em
+}
+
+% Header
+\fancypagestyle{plain}{
+\lhead{\heading{} -- \textit{\subheading}}
+\chead{}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{\vspace{0.25cm}\input{logo.tex}}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+}
+\pagestyle{plain}
+
+% Absatzeinrückung
+\parindent 0pt
+
+% Emphasize fett statt kursiv
+\renewcommand{\emph}{\textbf}
+
+\renewcommand\arraystretch{1.5}
+
+\setmainfont[Ligatures=TeX]{Liberation Sans}
+\setmonofont{Liberation Mono}
+
+\begin{document}
+	\ThisCenterWallPaper{1.0}{titlewallpaper.pdf}
+	\pagenumbering{roman}
+	
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{2.5cm}
+			\Huge{\textbf{SortSimulation}}
+			
+			\vspace*{1.5cm}
+			\LARGE{Dokumentation}
+			
+			\Large{-- Deutsch --}
+			
+			\vspace*{3.75cm}
+			\Large{Peter Folta}
+		\end{center}
+		
+		\vspace*{8cm}
+		\noindent{}Version \version\newline{}
+		Internet: \URL\newline{}
+		\copyrightNotice
+	\end{titlepage}
+	
+	\CenterWallPaper{1.0}{wallpaper.pdf}
+	\setcounter{page}{2}
+	
+	\cleardoublepage{}
+	\tableofcontents{}
+	\newpage{}
+	
+	\pagenumbering{arabic}
+	
+	\section{Einführung}
+	
+	SortSimulation ist ein Java-Programm, das diverse Sortierverfahren visuell darstellt. Dies ermöglicht einerseits ein besseres Verständnis der Funktionsweise der verschiedenen Sortieralgorithmen und verdeutlicht andererseits die Laufzeitunterschiede, ohne dabei lediglich trockene Zahlen zu vergleichen.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.6]{images/image0.png}
+		\caption{Das Hauptfenster von SortSimulation}
+	\end{figure}
+	
+	Diese Dokumentation enthält eine kurze Einführung in die Bedienung von SortSimulation und stellt anschließend die unterstützten Sortierverfahren inklusive Implementierung in Java vor.
+	
+	\section{Bedienung}
+	
+	Die Bedienung von SortSimulation ist denkbar einfach: Direkt nach dem Programmstart sind die Sortierfelder bereits zufällig gefüllt. Dabei liegt in jedem der drei Felder die gleiche Ausgangssituation vor. Ebenfalls sind nach dem Programmstart drei verschiedene Sortierverfahren voreingestellt; dies ist an den Auswahlboxen unterhalb der Sortierfelder erkennbar.
+	
+	Um nun drei Sortieralgorithmen miteinander zu vergleichen, wählen Sie aus den Auswahlboxen die entsprechenden Verfahren aus. Die Simulation startet, sobald Sie auf die Schaltfläche \emph{Simulation starten} in der Toolbar klicken, den entsprechenden Eintrag im Menü \emph{Simulation} auswählen oder die Eingabetaste drücken. Möchten Sie eine laufende Simulation abbrechen, genügt ein Druck auf die Escape-Taste oder ein Klick auf die Schaltfläche \emph{Simulation stoppen}. Um nach einer abgeschlossenen oder abgebrochenen Simulation wieder unsortierte Felder zu erhalten, klicken Sie auf die Schaltfläche \emph{Felder zurücksetzen} oder drücken Sie \texttt{Strg+N}.
+	
+	SortSimulation bietet einige Einstellungen, mit denen Sie die Simulation anpassen können. Auf diese Einstellungen wird im folgenden Abschnitt ausführlich eingegangen.
+	
+	\subsection{Einstellungen}
+	
+	Ihnen stehen in SortSimulation diverse Einstellungen zur Verfügung, mit denen Sie die Sortier-Simulationen ihren Wünschen entsprechend anpassen können. Diese Ein\-{}stellungs\-{}mög\-{}lich\-{}kei\-{}ten finden Sie im Menü \emph{Einstellungen}:
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.6]{images/image1.png}
+		\caption{Menü "`Einstellungen"'}
+	\end{figure}
+	
+	Mithilfe der Option \emph{Füllmodus} können Sie festlegen, auf welche Weise die Sortierfelder gefüllt werden sollen, wenn die Aktion \emph{Felder zurücksetzen} ausgeführt wird. Dabei stehen zwei Modi zur Verfügung: Zufällig (voreingestellt; \texttt{Strg+R}) und Invers (\texttt{Strg+I}). Im Modus \emph{Zufällig} werden die Elemente bei jeder Neufüllung der Felder zufällig angeordnet. Damit lassen sich die unterschiedlichen Sortierverfahren auf realistische Weise mit völlig unsortierten Daten ausprobieren.
+	
+	Im Modus \emph{Invers} hingegen werden die Felder bereits sortiert gefüllt~-- allerdings umgekehrt (absteigend statt aufsteigend). Mit dieser Einstellung lässt sich beobachten, wie effizient die Sortierverfahren umgekehrt geordnete Folgen sortieren.
+	
+	Das Untermenü \emph{Simulationsgeschwindigkeit} ermöglicht es Ihnen, die Geschwindigkeit der Simulation anzupassen. Sie haben dabei die Wahl zwischen fünf Stufen. Während Algorithmen wie etwa Bubblesort sehr langsam sind und sich dort eine hohe Simulationsgeschwindigkeit anbietet, lohnt es sich, beispielsweise Quicksort in einer langsamen Stufe zu beobachten, um die Vorgehensweise dieses Verfahrens besser verstehen zu können. Die einzelnen Geschwindigkeitsstufen lassen sich auch über die Tastatur mithilfe der Tastenkombinationen \texttt{Strg+Umschalt+(1-5)} erreichen.
+	
+	SortSimulation schreibt oder verändert keine Dateien auf Ihrem Computer, das Programm startet deshalb jedes Mal mit der englischen Benutzeroberfläche. Sie können die Sprache im Menü \emph{Sprache} (engl. \emph{Settings} > \emph{Language}) verändern.
+	
+	Im letzten Untermenü \emph{Farbe} kann die Farbe der Balken eingestellt werden. Stan\-{}dard\-{}mäßig ist Blau eingestellt, Sie haben jedoch die Wahl zwischen acht verschiedenen Farben.
+	
+	\section{Sortierverfahren}
+	
+	\subsection{Bubblesort}
+	
+	Bubblesort ist ein einfacher Sortieralgorithmus, der Elemente durch \emph{schrittweises Vergleichen} sortiert. Da Bubblesort nicht effizient ist, wird der Algorithmus häufig zur Demonstration eines schlechten Sortierverfahrens verwendet.
+	
+	\subsubsection{Idee von Bubblesort}
+	
+	Bubblesort vergleicht zwei benachbarte Elemente und vertauscht diese, wenn sie nicht in der richtigen Reihenfolge stehen. Dieser Vorgang wird solange wiederholt, bis alle Elemente an der richtigen Stelle stehen und damit sortiert sind.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Bubblesort}, label=lst:bubblesort, captionpos=b]{../Listings/Bubblesort.java}
+	
+	\subsection{Heapsort}
+	
+	Heapsort ist ein schnelles Sortierverfahren, das 1964 von \emph{Robert W. Floyd} und \emph{J.\,W.\,J. Williams} entwickelt wurde. Heapsort ist eine Verbesserung des Sortieralgorithmus \emph{Selectionsort}.
+	
+	\subsubsection{Idee von Heapsort}
+	
+	Heapsort verwendet zur Sortierung eine besondere Datenstruktur: den \emph{Heap}. Diese Datenstruktur basiert auf einem (fast) vollständigen \emph{binären Baum}. Ein binärer Baum ist (fast) vollständig, wenn alle Ebenen, außer möglicherweise der letzten, vollständig sind.
+	
+	Wenn die zu sortierende Folge als Heap vorliegt, kann das größte Element der \emph{Wurzel} des Baumes entnommen und ausgegeben werden. Um an das nächstgrößte Element zu gelangen, muss der Heap zunächst \emph{neu angeordnet} werden.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Heapsort}, label=lst:heapsort, captionpos=b]{../Listings/Heapsort.java}
+	
+	\subsection{Insertionsort}
+	
+	Insertionsort ist ein einfaches Sortierverfahren. Es ist nicht so effizient, wie andere komplexere Algorithmen, dafür aber \emph{einfach zu implementieren} und benötigt nur eine kurze Laufzeit bei sehr kleinen oder bereits vorsortierten Datenmengen.
+	
+	\subsubsection{Idee von Insertionsort}
+	
+	Insertionsort entnimmt der unsortierten Menge ein Element und fügt es an der richtigen Stelle in der Ausgabefolge ein. Ist die Folge noch leer, wird das Element an die erste Position eingefügt.
+	
+	Insertionsort ist ineffizient, da bei diesem Sortierverfahren Elemente oft über weite Strecken verschoben werden müssen.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Insertionsort}, label=lst:insertionsort, captionpos=b]{../Listings/Insertionsort.java}
+	
+	\subsection{Mergesort}
+	
+	Mergesort ist ein rekursiver und stabiler Sortieralgorithmus, welcher wie \emph{Quicksort} auf dem \emph{Divide-and-Conquer-Prinzip} basiert. Mergesort wurde 1945 von John von Neumann vorgestellt.
+	
+	\subsubsection{Idee von Mergesort}
+	
+	Mergesort zerlegt die zu sortierende Folge in mehrere kleine Folgen, die, jede für sich, sortiert werden. Anschließend werden die sortierten, kleinen Folgen im Reißverschlussverfahren wieder zu einer großen Folge zusammengesetzt, bis alle Elemente sortiert sind.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Mergesort}, label=lst:mergesort, captionpos=b]{../Listings/Mergesort.java}
+	
+	\subsection{Quicksort}
+	
+	Quicksort ist eines der \emph{schnellsten Sortierverfahren} und basiert auf dem \emph{Divide-and-Conquer-Prinzip}. Der rekursive Quicksort-Algorithmus wurde in seiner ursprünglichen Fassung im Jahre 1960 von \emph{C. Antony R. Hoare} entwickelt.
+	
+	\subsubsection{Idee von Quicksort}
+	
+	Die zu sortierende Folge wird zunächst so in zwei Teilstücke zerlegt, dass alle Elemente im ersten Teilstück kleiner oder gleich allen Elementen im zweiten Teilstück sind (\emph{divide}). Anschließend werden die beiden Teilstücke unabhängig voneinander rekursiv nach dem gleichen Verfahren sortiert (\emph{conquer}). Im letzten Schritt ergeben die zusammengesetzten Teilstücke die sortierte Folge (\emph{combine}).
+	
+	Die Aufteilung wird mit Hilfe eines \emph{Pivotelementes} realisiert, das im ersten Schritt aus der Folge gewählt wird. Alle Elemente der Folge, die \emph{kleiner} als das Pivotelement sind, kommen in das erste Teilstück. Alle Elemente, die \emph{größer} als das Pivotelement sind, kommen in das zweite Teilstück. Bei Elementen, die genauso groß wie das Pivotelement sind, spielt es keine Rolle, in welches Teilstück sie kommen.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Quicksort}, label=lst:quicksort, captionpos=b]{../Listings/Quicksort.java}
+	
+	\subsection{Selectionsort}
+	
+	Selectionsort ist ein naiver Sortieralgorithmus, der in-place arbeitet. Er ist mit Insertionsort vergleichbar.
+	
+	\subsubsection{Idee von Selectionsort}
+	
+	Selectionsort teilt die zu sortierende Folge in einen \emph{sortierten} und einen \emph{nicht-sor\-{}tier\-{}ten} Bereich. Der sortierte Teil ist zu Beginn leer. Selectionsort sucht das kleinste Element in der unsortierten Teilfolge und vertauscht es mit dem ersten Element. Nach dem Schritt ist die Folge bis zu dieser Position sortiert. Der sortierte Teilbereich ist um ein Element größer geworden, der unsortierte um ein Element kleiner. Das Verfahren wird so oft wiederholt, bis die gesamte Folge sortiert ist.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Selectionsort}, label=lst:selectionsort, captionpos=b]{../Listings/Selectionsort.java}
+	
+	\subsection{Shellsort}
+	
+	Shellsort ist ein Sortierverfahren, das auf \emph{Insertionsort} basiert. Shellsort wurde im Jahre 1959 von \emph{Donald L. Shell} entwickelt.
+	
+	\subsubsection{Idee von Shellsort}
+	
+	Shellsort kompensiert den Nachteil von Insertionsort, Elemente über weite Strecken verschieben zu müssen. Shellsort erzeugt dazu eine \emph{k-spaltige Matrix}, deren Spalten einzeln sortiert werden. Nach diesen Schritten ist die Folge bereits grob sortiert. Dieser Schritt wird wiederholt, wobei bei jeder Durchführung die Anzahl der Spalten verringert wird, bis die Matrix nur noch aus einer einzelnen Spalte besteht.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Shellsort}, label=lst:shellsort, captionpos=b]{../Listings/Shellsort.java}
+	
+	\section{Mitwirkende}
+	
+	Hiermit soll nachfolgenden Personen gedankt werden, die die Entwicklung von SortSimulation tatkräftig unterstützt haben. Neue Mitwirkende (Übersetzer, Designer, Verfasser von Dokumentationen etc.) werden ständig gesucht~-- setzen Sie sich bei Interesse mit Peter Folta in Verbindung.
+	
+	\subsection{Übersetzer}
+	
+	\arrayrulecolor{pfColor2}
+	\setlength{\arrayrulewidth}{0.5pt}
+	\begin{table}[h]
+		\begin{tabularx}{\linewidth}{@{\hspace{0pt}}|p{3cm}|X|@{\hspace{0pt}}}
+			\hline
+			\rowcolor{pfColor3}
+			\centering{\bfseries Sprache} & \centering{\bfseries Übersetzer} \tabularnewline
+			\hline
+			Deutsch & Folta, Peter \tabularnewline
+			\hline
+			Englisch & Allison, Chloë Luise \newline{} Folta, Peter \tabularnewline
+			\hline
+			Französisch & Müllner, Jan Sebastian \tabularnewline
+			\hline
+			Russisch & Folta, Lucia Sonja \tabularnewline
+			\hline
+		\end{tabularx}
+	\end{table}
+	
+	\begin{thebibliography}{99}
+		\bibitem{Lang}
+			\textsc{Lang}, Prof. Dr. Hans Werner: \emph{Algorithmen in Java}. 2. Auflage 2006. München: Oldenbourg Wissenschaftsverlag GmbH 2006. ISBN 978-3-486-57938-3, S.~5--52
+		\end{thebibliography}
+	
+	\listoffigures{}
+	\lstlistoflistings{}
+	\addcontentsline{toc}{section}{Listings}
+\end{document}
+
+\bye
