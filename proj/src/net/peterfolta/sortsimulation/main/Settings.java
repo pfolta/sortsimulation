@@ -47,7 +47,7 @@ public class Settings {
 		background = 0;
 		color = 0;
 		fillMode = Data.FILL_RANDOM;
-		simultaneousSimulations = 3;
+		simultaneousSimulations = 6;
 		
 		String[] tmp = new File("res/lng/").list();
 		Arrays.sort(tmp);
