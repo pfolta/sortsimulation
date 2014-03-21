@@ -54,7 +54,7 @@ public class LicenseDialog {
 	
 	public LicenseDialog(Shell parent) {
 		display = Main.getGUI().getDisplay();
-		licenseShell = new Shell(parent, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL | SWT.RESIZE);
+		licenseShell = new Shell(parent, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL);
 		
 		gridLayout = new GridLayout();
 		gridLayout.marginHeight = 10;
