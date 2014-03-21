@@ -104,7 +104,7 @@ public class Main {
 		
 		switch(status) {
 		case 1:
-			new CustomMessageBox(new Shell(), "The currently installed JVM is incompatible with " + Data.APP_NAME + ".\nPlease verify your JVM version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version") + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
+			new CustomMessageBox(new Shell(), "The currently installed Java Runtime is incompatible with " + Data.APP_NAME + ".\nPlease verify your Java Runtime version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version") + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
 			break;
 		case 2:
 			new CustomMessageBox(new Shell(), "Failed to read or parse resource file(s). The file(s) may be missing or corrupted.\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
