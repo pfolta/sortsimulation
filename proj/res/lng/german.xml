@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Information>
+		<Product>SortSimulation</Product>
+		<Version>1.2.1</Version>
+		<ProductURL>http://www.peterfolta.de/software/sortsimulation</ProductURL>
+		<LanguageName>German</LanguageName>
+		<NativeName>Deutsch</NativeName>
+		<Translators>
+			<Translator>Peter Folta</Translator>
+		</Translators>
+	</Information>
+	<Translations>
+		<About>&amp;Über %1</About>
+		<Algorithm>Algorithmus Nr. %1</Algorithm>
+		<Alt>Alt</Alt>
+		<Authors>Autoren</Authors>
+		<Average>&amp;Mittel</Average>
+
+		<Background>&amp;Hintergrund</Background>
+		<Black>&amp;Schwarz</Black>
+		<Blue>&amp;Blau</Blue>
+		<Brown>Br&amp;aun</Brown>
+		<Bubblesort>Bubblesort</Bubblesort>
+
+		<Close>&amp;Schließen</Close>
+		<Color>&amp;Farbe</Color>
+		<Contributors>Mitwirkende</Contributors>
+		<Copyright>Copyright © %1 %2. Alle Rechte vorbehalten.</Copyright>
+		<Ctrl>Strg</Ctrl>
+		<Cyan>&amp;Cyan</Cyan>
+
+		<Documentation>&amp;Dokumentation</Documentation>
+
+		<Esc>Esc</Esc>
+		<Exit>&amp;Beenden</Exit>
+
+		<Fast>S&amp;chnell</Fast>
+		<FillMode>&amp;Füllmodus</FillMode>
+		<Fuchsia>&amp;Fuchsia</Fuchsia>
+
+		<Green>&amp;Grün</Green>
+		<Grey>&amp;Grau</Grey>
+
+		<Heapsort>Heapsort</Heapsort>
+		<Help>&amp;Hilfe</Help>
+
+		<Insertionsort>Insertionsort</Insertionsort>
+		<Inverse>&amp;Invers</Inverse>
+
+		<Language>S&amp;prache</Language>
+		<License>&amp;Lizenz</License>
+
+		<Mergesort>Mergesort</Mergesort>
+
+		<Quicksort>Quicksort</Quicksort>
+
+		<Randomly>&amp;Zufällig</Randomly>
+		<Red>&amp;Rot</Red>
+		<ResetFields>&amp;Felder zurücksetzen</ResetFields>
+		<Return>Enter</Return>
+
+		<Selectionsort>Selectionsort</Selectionsort>
+		<Settings>&amp;Einstellungen</Settings>
+		<Shellsort>Shellsort</Shellsort>
+		<Shift>Umschalt</Shift>
+		<Simulation>&amp;Simulation</Simulation>
+		<Slow>&amp;Langsam</Slow>
+		<Speed>&amp;Simulationsgeschwindigkeit</Speed>
+		<StartSimulation>Simulation &amp;starten</StartSimulation>
+		<StopSimulation>Simulation s&amp;toppen</StopSimulation>
+
+		<UsageHint>Wählen Sie Sortieralgorithmen aus und klicken Sie auf „Simulation starten“, um zu beginnen.</UsageHint>
+
+		<Version>Version %1</Version>
+		<VeryFast>&amp;Sehr schnell</VeryFast>
+		<VerySlow>S&amp;ehr langsam</VerySlow>
+
+		<Website>&amp;Webseite</Website>
+		<White>&amp;Weiß</White>
+
+		<Yellow>G&amp;elb</Yellow>
+	</Translations>
+</Language>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Information>
+		<Product>SortSimulation</Product>
+		<Version>1.2.1</Version>
+		<ProductURL>http://www.peterfolta.de/software/sortsimulation</ProductURL>
+		<LanguageName>English</LanguageName>
+		<NativeName>English</NativeName>
+		<Translators>
+			<Translator>Chloë Luise Allison</Translator>
+			<Translator>Peter Folta</Translator>
+		</Translators>
+	</Information>
+	<Translations>
+		<About>&amp;About %1</About>
+		<Algorithm>Algorithm #%1</Algorithm>
+		<Alt>Alt</Alt>
+		<Authors>Authors</Authors>
+		<Average>&amp;Average</Average>
+
+		<Background>&amp;Background</Background>
+		<Black>B&amp;lack</Black>
+		<Blue>&amp;Blue</Blue>
+		<Brown>Br&amp;own</Brown>
+		<Bubblesort>Bubble sort</Bubblesort>
+
+		<Color>&amp;Color</Color>
+		<Contributors>Contributors</Contributors>
+		<Copyright>Copyright © %1 %2. All rights reserved.</Copyright>
+		<Ctrl>Ctrl</Ctrl>
+		<Cyan>&amp;Cyan</Cyan>
+
+		<Documentation>&amp;Documentation</Documentation>
+
+		<Esc>Esc</Esc>
+		<Exit>&amp;Exit</Exit>
+
+		<Fast>&amp;Fast</Fast>
+		<FillMode>&amp;Fill mode</FillMode>
+		<Fuchsia>&amp;Fuchsia</Fuchsia>
+
+		<Green>&amp;Green</Green>
+		<Grey>&amp;Grey</Grey>
+
+		<Heapsort>Heapsort</Heapsort>
+		<Help>&amp;Help</Help>
+
+		<Insertionsort>Insertion sort</Insertionsort>
+		<Inverse>&amp;Inverse</Inverse>
+
+		<Language>&amp;Language</Language>
+		<License>&amp;License</License>
+
+		<Mergesort>Merge sort</Mergesort>
+
+		<Quicksort>Quicksort</Quicksort>
+
+		<Randomly>&amp;Randomly</Randomly>
+		<Red>&amp;Red</Red>
+		<ResetFields>&amp;Reset fields</ResetFields>
+		<Return>Return</Return>
+
+		<Selectionsort>Selection sort</Selectionsort>
+		<Settings>S&amp;ettings</Settings>
+		<Shellsort>Shell sort</Shellsort>
+		<Shift>Shift</Shift>
+		<Simulation>&amp;Simulation</Simulation>
+		<Slow>&amp;Slow</Slow>
+		<Speed>&amp;Speed</Speed>
+		<StartSimulation>&amp;Start Simulation</StartSimulation>
+		<StopSimulation>S&amp;top Simulation</StopSimulation>
+
+		<UsageHint>Select sorting algorithms and click “Start Simulation”, to begin.</UsageHint>
+
+		<Version>Version %1</Version>
+		<VeryFast>&amp;Very fast</VeryFast>
+		<VerySlow>V&amp;ery slow</VerySlow>
+
+		<Website>&amp;Website</Website>
+		<White>&amp;White</White>
+
+		<Yellow>&amp;Yellow</Yellow>
+	</Translations>
+</Language>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Information>
+		<Product>SortSimulation</Product>
+		<Version>1.2.1</Version>
+		<ProductURL>http://www.peterfolta.de/software/sortsimulation</ProductURL>
+		<LanguageName>French</LanguageName>
+		<NativeName>Français</NativeName>
+		<Translators>
+			<Translator>Jan Sebastian Müllner</Translator>
+		</Translators>
+	</Information>
+	<Translations>
+		<About>&amp;À propos de %1</About>
+		<Algorithm>Algorithme Nº %1</Algorithm>
+		<Alt>Alt</Alt>
+		<Authors>Auteurs</Authors>
+		<Average>&amp;Moyenne</Average>
+
+		<Background>Couleur d'&amp;arrière-plan</Background>
+		<Black>&amp;Noir</Black>
+		<Blue>&amp;Bleu</Blue>
+		<Brown>Br&amp;un</Brown>
+		<Bubblesort>Tri à bulles</Bubblesort>
+
+		<Close>&amp;Fermer</Close>
+		<Color>&amp;Couleur</Color>
+		<Contributors>Coopérateurs</Contributors>
+		<Copyright>Copyright © %1 %2. Tous droits réservés.</Copyright>
+		<Ctrl>Ctrl</Ctrl>
+		<Cyan>&amp;Cyan</Cyan>
+
+		<Documentation>&amp;Documentation</Documentation>
+
+		<Esc>Esc</Esc>
+		<Exit>&amp;Quitter</Exit>
+
+		<Fast>&amp;Vite</Fast>
+		<FillMode>&amp;Mode de remplissage</FillMode>
+		<Fuchsia>&amp;Fuchsia</Fuchsia>
+
+		<Green>&amp;Vert</Green>
+		<Grey>&amp;Gris</Grey>
+
+		<Heapsort>Tri par tas</Heapsort>
+		<Help>&amp;Aide</Help>
+
+		<Insertionsort>Tri par insertion</Insertionsort>
+		<Inverse>&amp;Inverse</Inverse>
+
+		<Language>&amp;Langue</Language>
+		<License>&amp;Licence</License>
+
+		<Mergesort>Tri fusion</Mergesort>
+
+		<Quicksort>Tri rapide</Quicksort>
+
+		<Randomly>&amp;Par hasard</Randomly>
+		<Red>&amp;Rouge</Red>
+		<ResetFields>&amp;Reculer le panneau</ResetFields>
+		<Return>Return</Return>
+
+		<Selectionsort>Tri par sélection</Selectionsort>
+		<Settings>&amp;Paramètres</Settings>
+		<Shellsort>Tri de Shell</Shellsort>
+		<Shift>Shift</Shift>
+		<Simulation>&amp;Simulation</Simulation>
+		<Slow>&amp;Lentement</Slow>
+		<Speed>&amp;Vitesse</Speed>
+		<StartSimulation>&amp;Lancer la simulation</StartSimulation>
+		<StopSimulation>&amp;Arrêter la simulation</StopSimulation>
+
+		<UsageHint>Sélectionnez les algorithmes de tri et cliquez sur «lancer la simulation» pour commencer.</UsageHint>
+
+		<Version>Version %1</Version>
+		<VeryFast>Trés &amp;rapidement</VeryFast>
+		<VerySlow>&amp;Trés lentement</VerySlow>
+
+		<Website>&amp;Page web</Website>
+		<White>&amp;Blanc</White>
+
+		<Yellow>&amp;Jaune</Yellow>
+	</Translations>
+</Language>

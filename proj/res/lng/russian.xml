@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Information>
+		<Product>SortSimulation</Product>
+		<Version>1.2.1</Version>
+		<ProductURL>http://www.peterfolta.de/software/sortsimulation</ProductURL>
+		<LanguageName>Russian</LanguageName>
+		<NativeName>Русский</NativeName>
+		<Translators>
+			<Translator>Lucia Sonja Folta</Translator>
+		</Translators>
+	</Information>
+	<Translations>
+		<About>&amp;О %1</About>
+		<Algorithm>Алгоритм № %1</Algorithm>
+		<Alt>Alt</Alt>
+		<Authors>Авторы</Authors>
+		<Average>&amp;Среднее значение</Average>
+
+		<Background>&amp;Фон</Background>
+		<Black>&amp;Чёрный</Black>
+		<Blue>&amp;Синий</Blue>
+		<Brown>&amp;Коричневый</Brown>
+		<Bubblesort>Сортировка пузырьком</Bubblesort>
+
+		<Color>&amp;Цвет</Color>
+		<Contributors>Сотрудники</Contributors>
+		<Copyright>Авторские права %1 %2. Все права защищены.</Copyright>
+		<Ctrl>Ctrl</Ctrl>
+		<Cyan>&amp;Циановый</Cyan>
+
+		<Documentation>&amp;Документация</Documentation>
+
+		<Esc>Esc</Esc>
+		<Exit>&amp;Выход</Exit>
+
+		<Fast>&amp;Быстро</Fast>
+		<FillMode>&amp;Полнота модуса</FillMode>
+		<Fuchsia>&amp;Фуксия</Fuchsia>
+
+		<Green>&amp;Зелёный</Green>
+		<Grey>&amp;Серый</Grey>
+
+		<Heapsort>Пирамидальная сортировка</Heapsort>
+		<Help>С&amp;правка</Help>
+
+		<Insertionsort>Сортировка вставками</Insertionsort>
+		<Inverse>&amp;Инверсия</Inverse>
+
+		<Language>&amp;Язык</Language>
+		<License>&amp;Лицензия</License>
+
+		<Mergesort>Сортировка слиянием</Mergesort>
+
+		<Quicksort>Быстрая сортировка</Quicksort>
+
+		<Randomly>&amp;Случайный</Randomly>
+		<Red>&amp;Красный</Red>
+		<ResetFields>&amp;Ставить обратно</ResetFields>
+		<Return>Return</Return>
+
+		<Selectionsort>Сортировка выбором</Selectionsort>
+		<Settings>&amp;Установки</Settings>
+		<Shellsort>Сортировка Шелла</Shellsort>
+		<Shift>Shift</Shift>
+		<Simulation>&amp;Симуляция</Simulation>
+		<Slow>&amp;Медленно</Slow>
+		<Speed>&amp;Скорость симуляции</Speed>
+		<StartSimulation>Старт с&amp;имуляции</StartSimulation>
+		<StopSimulation>&amp;Остановка симуляции</StopSimulation>
+
+		<UsageHint>Выберите сорт алгоритма и нажмите на «Старт симуляции», чтобы начать.</UsageHint>
+
+		<Version>Версия %1</Version>
+		<VeryFast>&amp;Очень быстро</VeryFast>
+		<VerySlow>О&amp;чень медленно</VerySlow>
+
+		<Website>&amp;Веб-страница</Website>
+		<White>&amp;Белый</White>
+
+		<Yellow>&amp;Жёлтый</Yellow>
+	</Translations>
+</Language>
