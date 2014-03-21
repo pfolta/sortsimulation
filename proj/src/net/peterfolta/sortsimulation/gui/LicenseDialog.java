@@ -1,10 +1,10 @@
 /*
- * AboutDialog.java
- * Copyright (C) 2008-2013 Peter Folta. All rights reserved.
+ * LicenseDialog.java
+ * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
  * 
  * Project: SortSimulation
  * Version: 2.0.0
- * Created: 2008-11-29
+ * Created: 2014-03-21
  * Website: http://www.peterfolta.net/software/sortsimulation
  * 
  * MathTools is free software: you can redistribute it and/or modify
