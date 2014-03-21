@@ -74,7 +74,7 @@ public class SplashScreen {
 		gridData.horizontalAlignment = SWT.RIGHT;
 		
 		versionLabel = new Label(splashShell, SWT.NONE);
-		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · Build-ID: " + Data.APP_BUILDID);
+		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · " + Data.APP_PFID);
 		versionLabel.setForeground(new Color(display, 255, 255, 255));
 		versionLabel.setLayoutData(gridData);
 		

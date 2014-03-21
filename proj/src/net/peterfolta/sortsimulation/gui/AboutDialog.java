@@ -87,7 +87,7 @@ public class AboutDialog {
 		gridData.verticalIndent = 75;
 		
 		versionLabel = new Label(aboutShell, SWT.NONE);
-		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · Build-ID: " + Data.APP_BUILDID);
+		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · " + Data.APP_PFID);
 		versionLabel.setForeground(new Color(display, 255, 255, 255));
 		versionLabel.setLayoutData(gridData);
 		versionLabel.addListener(SWT.MouseUp, new Listener() {

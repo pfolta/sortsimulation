@@ -39,11 +39,11 @@ public class Data {
 	
 	public static final String APP_VERSION = "2.0.0";
 	
-	public static final String APP_BUILDID = "20131029";
+	public static final String APP_PFID = "pfID-1395399330";
 	
 	public static final String APP_COPYRIGHT_HOLDER = "Peter Folta";
 	
-	public static final String APP_COPYRIGHT_YEAR = "2008-2013";
+	public static final String APP_COPYRIGHT_YEAR = "2008-2014";
 	
 	public static final String APP_URL = "http://www.peterfolta.net/software/sortsimulation";
 	
