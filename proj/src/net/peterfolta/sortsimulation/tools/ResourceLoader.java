@@ -40,7 +40,7 @@ public class ResourceLoader {
 		try {
 			tmp = new Image(display, "res/img/" + filename);
 		} catch(Exception exception) {
-			Main.exit(3);
+			Main.exit(2);
 		}
 		
 		return tmp;

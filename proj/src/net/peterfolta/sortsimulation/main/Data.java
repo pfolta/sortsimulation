@@ -41,6 +41,8 @@ public class Data {
 	
 	public static final String APP_NAME = "SortSimulation";
 	
+	public static final String APP_DESCRIPTION = "A visual representation of sorting algorithms";
+	
 	public static final String APP_VERSION = "2.0.0";
 	
 	public static final String APP_PFID = "pfID-1395399330";

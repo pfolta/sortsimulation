@@ -43,6 +43,9 @@ public class Main {
 	public static int[][] array;
 	
 	public static void main(String[] args) {
+		printStartUpNotice();
+		checkJVM();
+		
 		settings = new Settings();
 		language = new Language();
 		
@@ -51,6 +54,7 @@ public class Main {
 				int simultaneous = Integer.parseInt(args[0]);
 				settings.setSimultaenousSimulations(simultaneous);
 			} catch(Exception exception) {
+				exit(3);
 			}
 		}
 		
@@ -60,21 +64,53 @@ public class Main {
 		gui.start();
 	}
 	
+	private static void printStartUpNotice() {
+		System.out.println(
+			Data.APP_NAME + " - " + Data.APP_DESCRIPTION + "\n" +
+			"Copyright (C) " + Data.APP_COPYRIGHT_YEAR + " " + Data.APP_COPYRIGHT_HOLDER + ". All rights reserved.\n" +
+			"\n" +
+			"This program is free software: you can redistribute it and/or modify\n" +
+			"it under the terms of the GNU General Public License as published by\n" +
+			"the Free Software Foundation, either version 3 of the License, or\n" +
+			"(at your option) any later version.\n" +
+			"\n" +
+			"This program is distributed in the hope that it will be useful,\n" +
+			"but WITHOUT ANY WARRANTY; without even the implied warranty of\n" +
+			"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n" +
+			"GNU General Public License for more details.\n" +
+			"\n" +
+			"You should have received a copy of the GNU General Public License\n" +
+			"along with this program.  If not, see <http://www.gnu.org/licenses/>.");
+	}
+	
+	private static void checkJVM() {
+		float required = Float.parseFloat(Data.APP_REQUIRED_JVM);
+		float present = Float.parseFloat(System.getProperty("java.runtime.version").substring(0, 3));
+		
+		if(present < required) {
+			exit(1);
+		}
+	}
+	
 	public static void exit(int status) {
 		/*
 		 * Exit status codes:
 		 * 
-		 * 0 Everything ok, normal exit
+		 * 0 Normal shutdown
 		 * 1 Incompatible JVM
-		 * 2 Error reading/parsing language file (may be corrupt or missing)
+		 * 2 Missing or corrupted resource files
+		 * 3 Invalid program arguments
 		 */
 		
 		switch(status) {
 		case 1:
-			new CustomMessageBox(new Shell(), "FATAL ERROR:\n\nThe currently installed JVM is incompatible with " + Data.APP_NAME + ".\nPlease verify your JVM version is greater or equal than the required version.\n\nRequired JVM version: \nCurrent JVM version: \n\nError-Code: 1", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
+			new CustomMessageBox(new Shell(), "The currently installed JVM is incompatible with " + Data.APP_NAME + ".\nPlease verify your JVM version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version") + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
 			break;
 		case 2:
-			new CustomMessageBox(new Shell(), "FATAL ERROR:\n\nFailed to read or parse language file(s). The file(s) may be corrupt or missing.\n\nError-Code: 2", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
+			new CustomMessageBox(new Shell(), "Failed to read or parse resource file(s). The file(s) may be missing or corrupted.\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
+			break;
+		case 3:
+			new CustomMessageBox(new Shell(), "Failed to parse program arguments: Unrecognized options or illegal arguments provided.\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
 			break;
 		}
 		
