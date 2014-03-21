@@ -41,5 +41,9 @@ public class ResourceLoader {
 		
 		return tmp;
 	}
+	
+	public static String getHTMLLicense() {
+		return "file:///" + System.getProperty("user.dir") + "/res/doc/license.html";
+	}
 
 }

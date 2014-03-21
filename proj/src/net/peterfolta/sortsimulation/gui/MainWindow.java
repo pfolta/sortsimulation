@@ -434,7 +434,7 @@ public class MainWindow {
 		licenseItem.setImage(ResourceLoader.loadImage(display, "license_16x16.png"));
 		licenseItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Program.launch("file:///" + System.getProperty("user.dir") + "/res/doc/license.pdf");
+				new LicenseDialog(mainShell);
 			}
 		});
 		

@@ -128,6 +128,6 @@ public class Data {
 	
 	public static final int FILL_RANDOM = 0;
 	
-	public static final int FILL_INVERS = 1;
+	public static final int FILL_INVERS = 1; 
 	
 }
