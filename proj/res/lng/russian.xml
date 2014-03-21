@@ -2,8 +2,8 @@
 <Language>
 	<Information>
 		<Product>SortSimulation</Product>
-		<Version>1.2.1</Version>
-		<ProductURL>http://www.peterfolta.de/software/sortsimulation</ProductURL>
+		<Version>2.0.0</Version>
+		<ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
 		<LanguageName>Russian</LanguageName>
 		<NativeName>Русский</NativeName>
 		<Translators>
@@ -51,6 +51,8 @@
 		<License>&amp;Лицензия</License>
 
 		<Mergesort>Сортировка слиянием</Mergesort>
+		
+		<OK>&amp;ОК</OK>
 
 		<Quicksort>Быстрая сортировка</Quicksort>
 

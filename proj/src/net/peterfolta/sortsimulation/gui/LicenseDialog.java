@@ -117,7 +117,7 @@ public class LicenseDialog {
 		closeButton = new Button(licenseShell, SWT.PUSH);
 		closeButton.setFocus();
 		closeButton.setLayoutData(gridData);
-		closeButton.setText("OK");
+		closeButton.setText(Main.language.getTranslationContent("OK"));
 		closeButton.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				licenseShell.close();
