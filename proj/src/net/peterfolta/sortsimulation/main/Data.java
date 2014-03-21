@@ -52,7 +52,7 @@ public class Data {
 	};
 	
 	public static final String[] APP_CONTRIBUTORS = {
-		"Allison, Chloë Luise",
+		"Allison, Chloë Louise",
 		"Folta, Lucia Sonja",
 		"Folta, Peter",
 		"Müllner, Jan Sebastian"
