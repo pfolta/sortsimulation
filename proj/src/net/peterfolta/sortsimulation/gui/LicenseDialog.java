@@ -23,14 +23,18 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
 import net.peterfolta.sortsimulation.tools.ResourceLoader;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
+import org.eclipse.swt.browser.LocationEvent;
+import org.eclipse.swt.browser.LocationListener;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.program.Program;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -51,6 +55,8 @@ public class LicenseDialog {
 	private Composite browserComposite;
 	private Browser browser;
 	private Button closeButton;
+	
+	private int locationCounter = 0;
 	
 	public LicenseDialog(Shell parent) {
 		display = Main.getGUI().getDisplay();
@@ -85,6 +91,20 @@ public class LicenseDialog {
 		browser.addListener(SWT.MenuDetect, new Listener() {
 			public void handleEvent(Event event) {
 				event.doit = false;
+			}
+		});
+		browser.addLocationListener(new LocationListener() {
+			public void changed(LocationEvent event) {
+			}
+
+			public void changing(LocationEvent event) {
+				// This snippet prevents links from being opened within the browser component and launches the system browser instead
+				if(locationCounter == 0) {
+					locationCounter++;
+				} else {
+					event.doit = false;
+					Program.launch(event.location);
+				}
 			}
 		});
 		
