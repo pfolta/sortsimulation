@@ -37,6 +37,8 @@ import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.program.Program;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
@@ -60,31 +62,23 @@ public class AboutDialog {
 	private Label copyrightLabel;
 	private Link websiteLink;
 	
+	private Composite buttonComposite;
+	private Button licenseButton;
+	private Button closeButton;
+	
 	public AboutDialog(Shell parent) {
 		display = Main.getGUI().getDisplay();
-		aboutShell = new Shell(parent, SWT.NO_TRIM | SWT.APPLICATION_MODAL);
+		aboutShell = new Shell(parent, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL);
 		
 		gridLayout = new GridLayout();
 		gridLayout.marginHeight = 25;
 		gridLayout.marginWidth = 25;
-		gridLayout.verticalSpacing = 0;
+		gridLayout.verticalSpacing = 3;
 		
-		aboutShell.setAlpha(0);
 		aboutShell.setText(Data.APP_NAME);
-		aboutShell.setImages(Data.APP_ICONS);
 		aboutShell.setBackgroundImage(ResourceLoader.loadImage(display, "about_550x300.png"));
 		aboutShell.setLayout(gridLayout);
 		aboutShell.setBackgroundMode(SWT.INHERIT_DEFAULT);
-		aboutShell.addListener(SWT.KeyUp, new Listener() {
-			public void handleEvent(Event event) {
-				fadeOut();
-			}
-		});
-		aboutShell.addListener(SWT.MouseUp, new Listener() {
-			public void handleEvent(Event event) {
-				fadeOut();
-			}
-		});
 		
 		gridData = new GridData();
 		gridData.verticalIndent = 75;
@@ -93,9 +87,22 @@ public class AboutDialog {
 		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · " + Data.APP_PFID);
 		versionLabel.setForeground(new Color(display, 255, 255, 255));
 		versionLabel.setLayoutData(gridData);
-		versionLabel.addListener(SWT.MouseUp, new Listener() {
+		
+		gridData = new GridData();
+		
+		copyrightLabel = new Label(aboutShell, SWT.NONE);
+		copyrightLabel.setText(Main.language.getTranslationContent("Copyright").replaceAll("%1", Data.APP_COPYRIGHT_YEAR).replaceAll("%2", Data.APP_COPYRIGHT_HOLDER));
+		copyrightLabel.setForeground(new Color(display, 255, 255, 255));
+		copyrightLabel.setLayoutData(gridData);
+		
+		gridData = new GridData();
+		
+		websiteLink = new Link(aboutShell, SWT.NONE);
+		websiteLink.setText("<A>" + Data.APP_URL + "</A>");
+		websiteLink.setLayoutData(gridData);
+		websiteLink.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				fadeOut();
+				Program.launch(Data.APP_URL);
 			}
 		});
 		
@@ -107,11 +114,6 @@ public class AboutDialog {
 		authorsInfoLabel.setFont(new Font(display, authorsInfoLabel.getFont().getFontData()[0].getName(), authorsInfoLabel.getFont().getFontData()[0].getHeight(), SWT.BOLD));
 		authorsInfoLabel.setForeground(new Color(display, 255, 255, 255));
 		authorsInfoLabel.setLayoutData(gridData);
-		authorsInfoLabel.addListener(SWT.MouseUp, new Listener() {
-			public void handleEvent(Event event) {
-				fadeOut();
-			}
-		});
 		
 		String authors = "";
 		for(int i = 0; i < Data.APP_AUTHORS.length; i++) {
@@ -125,11 +127,6 @@ public class AboutDialog {
 		authorsLabel.setText(authors);
 		authorsLabel.setForeground(new Color(display, 255, 255, 255));
 		authorsLabel.setLayoutData(gridData);
-		authorsLabel.addListener(SWT.MouseUp, new Listener() {
-			public void handleEvent(Event event) {
-				fadeOut();
-			}
-		});
 		
 		gridData = new GridData();
 		gridData.verticalIndent = 15;
@@ -139,11 +136,6 @@ public class AboutDialog {
 		contributorsInfoLabel.setFont(new Font(display, contributorsInfoLabel.getFont().getFontData()[0].getName(), contributorsInfoLabel.getFont().getFontData()[0].getHeight(), SWT.BOLD));
 		contributorsInfoLabel.setForeground(new Color(display, 255, 255, 255));
 		contributorsInfoLabel.setLayoutData(gridData);
-		contributorsInfoLabel.addListener(SWT.MouseUp, new Listener() {
-			public void handleEvent(Event event) {
-				fadeOut();
-			}
-		});
 		
 		String contributors = "";
 		for(int i = 0; i < Data.APP_CONTRIBUTORS.length; i++) {
@@ -151,83 +143,55 @@ public class AboutDialog {
 		}
 		contributors = contributors.substring(0, contributors.length()-3);
 		
-		gridData = new GridData(GridData.FILL_HORIZONTAL);
+		gridData = new GridData(GridData.FILL_HORIZONTAL | GridData.FILL_VERTICAL);
 		
 		contributorsLabel = new Label(aboutShell, SWT.WRAP);
 		contributorsLabel.setText(contributors);
 		contributorsLabel.setForeground(new Color(display, 255, 255, 255));
 		contributorsLabel.setLayoutData(gridData);
-		contributorsLabel.addListener(SWT.MouseUp, new Listener() {
-			public void handleEvent(Event event) {
-				fadeOut();
-			}
-		});
 		
-		gridData = new GridData(GridData.FILL_VERTICAL);
-		gridData.horizontalAlignment = SWT.CENTER;
-		gridData.verticalAlignment = SWT.BOTTOM;
+		gridData = new GridData();
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.horizontalAlignment = GridData.END;
+		gridData.minimumWidth = 100;
 		
-		copyrightLabel = new Label(aboutShell, SWT.NONE);
-		copyrightLabel.setText(Main.language.getTranslationContent("Copyright").replaceAll("%1", Data.APP_COPYRIGHT_YEAR).replaceAll("%2", Data.APP_COPYRIGHT_HOLDER));
-		copyrightLabel.setForeground(new Color(display, 255, 255, 255));
-		copyrightLabel.setLayoutData(gridData);
-		copyrightLabel.addListener(SWT.MouseUp, new Listener() {
+		gridLayout = new GridLayout();
+		gridLayout.horizontalSpacing = 10;
+		gridLayout.marginHeight = 0;
+		gridLayout.marginWidth = 0;
+		gridLayout.numColumns = 2;
+		
+		buttonComposite = new Composite(aboutShell, SWT.NONE);
+		buttonComposite.setLayout(gridLayout);
+		buttonComposite.setLayoutData(gridData);
+		
+		licenseButton = new Button(buttonComposite, SWT.PUSH);
+		licenseButton.setLayoutData(gridData);
+		licenseButton.setText(Main.language.getTranslationContent("License"));
+		licenseButton.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				fadeOut();
+				new LicenseDialog(aboutShell);
 			}
 		});
 		
 		gridData = new GridData();
-		gridData.horizontalAlignment = SWT.CENTER;
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.minimumWidth = 100;
 		
-		websiteLink = new Link(aboutShell, SWT.NONE);
-		websiteLink.setText("<A>" + Data.APP_URL + "</A>");
-		websiteLink.setLayoutData(gridData);
-		websiteLink.addListener(SWT.Selection, new Listener() {
+		closeButton = new Button(buttonComposite, SWT.PUSH);
+		closeButton.setFocus();
+		closeButton.setLayoutData(gridData);
+		closeButton.setText(Main.language.getTranslationContent("OK"));
+		closeButton.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Program.launch(Data.APP_URL);
-			}
-		});
-		
-		aboutShell.setSize(550, 300);
-		aboutShell.setLocation((display.getPrimaryMonitor().getBounds().width - aboutShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - aboutShell.getSize().y) / 2);
-		aboutShell.open();
-		aboutShell.forceFocus();
-		
-		fadeIn();
-	}
-	
-	private void fadeIn() {
-		display.asyncExec(new Runnable() {
-			public void run() {
-				for(int i = 1; i <= 255; i++) {
-					aboutShell.setAlpha(i);
-					aboutShell.update();
-					
-					try {
-						Thread.sleep(1);
-					} catch(Exception exception) {
-					}
-				}
-			}
-		});
-	}
-	
-	private void fadeOut() {
-		display.asyncExec(new Runnable() {
-			public void run() {
-				for(int i = 254; i >= 0; i--) {
-					aboutShell.setAlpha(i);
-					aboutShell.update();
-					try {
-						Thread.sleep(1);
-					} catch(Exception exception) {
-					}
-				}
-				
 				aboutShell.close();
 			}
 		});
+		
+		aboutShell.setDefaultButton(closeButton);
+		aboutShell.setSize(550, 350);
+		aboutShell.setLocation((display.getPrimaryMonitor().getBounds().width - aboutShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - aboutShell.getSize().y) / 2);
+		aboutShell.open();
 	}
 	
 }
