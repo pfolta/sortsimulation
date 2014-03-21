@@ -53,20 +53,20 @@ public class Settings {
 		fillMode = Data.FILL_RANDOM;
 		simultaneousSimulations = 3;
 		
-		String[] tmp = new File("res/lng/").list();
-		Arrays.sort(tmp);
-		
-		currentlanguage = "English";
-		languageNames = new String[tmp.length];
-		languageNativeNames = new String[tmp.length];
-		
-		for(int i = 0; i < tmp.length; i++) {
-			try {
+		try {
+			String[] tmp = new File("res/lng/").list();
+			Arrays.sort(tmp);
+
+			currentlanguage = "English";
+			languageNames = new String[tmp.length];
+			languageNativeNames = new String[tmp.length];
+			
+			for(int i = 0; i < tmp.length; i++) {
 				languageNames[i] = new SAXBuilder().build("res/lng/" + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
 				languageNativeNames[i] = new SAXBuilder().build("res/lng/" + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
-			} catch (Exception exception) {
-				Main.exit(2);
 			}
+		} catch(Exception exception) {
+			Main.exit(2);
 		}
 	}
 	
