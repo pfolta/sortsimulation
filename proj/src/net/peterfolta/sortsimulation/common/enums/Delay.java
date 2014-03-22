@@ -6,8 +6,8 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Selectionsort.java
- * Created:			2008/11/29
+ * File:			Delay.java
+ * Created:			2014/03/22
  * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
@@ -25,36 +25,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.peterfolta.sortsimulation.algorithms;
+package net.peterfolta.sortsimulation.common.enums;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
-import net.peterfolta.sortsimulation.main.Main;
-
-public class Selectionsort {
+public enum Delay {
+	VERY_LONG_DELAY(250, '1'),
+	LONG_DELAY(100, '2'),
+	MIDDLE_DELAY(25, '3'),
+	SHORT_DELAY(5, '4'),
+	VERY_SHORT_DELAY(1, '5');
 	
-	private boolean interrupted = false;
+	private final int delay;
+	private final char shortcut;
 	
-	public void sort(int[] a, final int index) {
-		for(int i = 0; i < a.length && !interrupted; i++) {
-			for(int j = i+1; j < a.length && !interrupted; j++) {
-				if(a[j] < a[i]) {
-					ArrayTools.swap(a, i, j);
-				}
-				
-				try {
-					Thread.sleep(Main.settings.getDelay().getDelay());
-				} catch (InterruptedException exception) {
-					interrupted = true;
-					break;
-				}
-				
-				Main.getGUI().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						Main.getGUI().getMainWindow().repaintCanvas(index);
-					}
-				});
-			}
-		}
+	Delay(int delay, char shortcut) {
+		this.delay = delay;
+		this.shortcut = shortcut;
 	}
-
+	
+	public int getDelay() {
+		return delay;
+	}
+	
+	public char getShortcut() {
+		return shortcut;
+	}
 }

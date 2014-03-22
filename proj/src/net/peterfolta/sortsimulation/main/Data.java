@@ -124,14 +124,4 @@ public class Data {
 	
 	public static final int LENGTH_OF_ARRAY = 100;
 	
-	public static final int VERY_SHORT_DELAY = 1;
-	
-	public static final int SHORT_DELAY = 5;
-	
-	public static final int MIDDLE_DELAY = 25;
-	
-	public static final int LONG_DELAY = 100;
-	
-	public static final int VERY_LONG_DELAY = 250;
-	
 }

@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.common.ResourceLoader;
+import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.main.CreateArray;
 import net.peterfolta.sortsimulation.main.Data;
@@ -304,7 +305,6 @@ public class MainWindow {
 					resetCanvas();
 				}
 			});
-			
 			fillMode[i].setAccelerator(SWT.CTRL | FillMode.values()[i].getShortcut());
 		}
 		
@@ -316,36 +316,20 @@ public class MainWindow {
 		delayMenu = new Menu(delayItem);
 		delayItem.setMenu(delayMenu);
 		
-		delay = new MenuItem[5];
+		delay = new MenuItem[Delay.values().length];
 		
 		for(int i = 0; i < delay.length; i++) {
 			final int fi = i;
 			delay[i] = new MenuItem(delayMenu, SWT.RADIO);
 			delay[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
-					Main.settings.setSimulationSpeed(fi);
+					Main.settings.setDelay(Delay.values()[fi]);
 				}
 			});
-			
-			switch(i) {
-				case 0:
-					delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | '1');
-					break;
-				case 1:
-					delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | '2');
-					break;
-				case 2:
-					delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | '3');
-					delay[i].setSelection(true);
-					break;
-				case 3:
-					delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | '4');
-					break;
-				case 4:
-					delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | '5');
-					break;
-			}
+			delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | Delay.values()[i].getShortcut());
 		}
+		
+		delay[2].setSelection(true);
 		
 		new MenuItem(settingsMenu, SWT.SEPARATOR);
 		

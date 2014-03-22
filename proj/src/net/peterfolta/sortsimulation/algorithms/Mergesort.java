@@ -78,7 +78,7 @@ public class Mergesort {
 			}
 			
 			try {
-				Thread.sleep(Main.settings.getSimulationSpeed());
+				Thread.sleep(Main.settings.getDelay().getDelay());
 			} catch (InterruptedException exception) {
 				interrupted = true;
 				break;
