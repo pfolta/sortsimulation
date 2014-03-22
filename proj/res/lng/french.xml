@@ -13,6 +13,7 @@
 	<Translations>
 		<About>&amp;À propos de %1</About>
 		<Algorithm>Algorithme Nº %1</Algorithm>
+		<AlmostSorted>Almost Sorted</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Auteurs</Authors>
 		<Average>&amp;Moyenne</Average>
@@ -55,6 +56,8 @@
 		<Mergesort>Tri fusion</Mergesort>
 		
 		<OK>&amp;OK</OK>
+		
+		<Presorted>Presorted</Presorted>
 
 		<Quicksort>Tri rapide</Quicksort>
 

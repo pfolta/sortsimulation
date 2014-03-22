@@ -13,6 +13,7 @@
 	<Translations>
 		<About>&amp;Über %1</About>
 		<Algorithm>Algorithmus Nr. %1</Algorithm>
+		<AlmostSorted>Beinahe sortiert</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Autoren</Authors>
 		<Average>&amp;Mittel</Average>
@@ -47,7 +48,7 @@
 		<Help>&amp;Hilfe</Help>
 
 		<Insertionsort>Insertionsort</Insertionsort>
-		<Inverse>&amp;Invers</Inverse>
+		<Inverse>&amp;Invertiert</Inverse>
 
 		<Language>S&amp;prache</Language>
 		<License>&amp;Lizenz</License>
@@ -55,6 +56,8 @@
 		<Mergesort>Mergesort</Mergesort>
 		
 		<OK>&amp;OK</OK>
+		
+		<Presorted>Vorsortiert</Presorted>
 
 		<Quicksort>Quicksort</Quicksort>
 

@@ -13,6 +13,7 @@
 	<Translations>
 		<About>&amp;О %1</About>
 		<Algorithm>Алгоритм № %1</Algorithm>
+		<AlmostSorted>Almost Sorted</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Авторы</Authors>
 		<Average>&amp;Среднее значение</Average>
@@ -55,6 +56,8 @@
 		<Mergesort>Сортировка слиянием</Mergesort>
 		
 		<OK>&amp;ОК</OK>
+		
+		<Presorted>Presorted</Presorted>
 
 		<Quicksort>Быстрая сортировка</Quicksort>
 
