@@ -27,7 +27,7 @@
 
 package net.peterfolta.sortsimulation.main;
 
-import net.peterfolta.sortsimulation.tools.ResourceLoader;
+import net.peterfolta.sortsimulation.common.ResourceLoader;
 
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;

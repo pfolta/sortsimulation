@@ -27,12 +27,12 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.main.CreateArray;
 import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
 import net.peterfolta.sortsimulation.main.Simulation;
-import net.peterfolta.sortsimulation.tools.ResourceLoader;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;

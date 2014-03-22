@@ -27,8 +27,8 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.main.Main;
-import net.peterfolta.sortsimulation.tools.ResourceLoader;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
