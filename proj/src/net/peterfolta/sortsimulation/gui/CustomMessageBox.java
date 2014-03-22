@@ -25,7 +25,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.peterfolta.sortsimulation.tools;
+package net.peterfolta.sortsimulation.gui;
 
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;

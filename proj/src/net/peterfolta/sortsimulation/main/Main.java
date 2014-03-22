@@ -28,8 +28,8 @@
 package net.peterfolta.sortsimulation.main;
 
 import net.peterfolta.sortsimulation.common.enums.FillMode;
+import net.peterfolta.sortsimulation.gui.CustomMessageBox;
 import net.peterfolta.sortsimulation.gui.GUI;
-import net.peterfolta.sortsimulation.tools.CustomMessageBox;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
