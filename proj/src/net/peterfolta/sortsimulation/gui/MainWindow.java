@@ -308,9 +308,11 @@ public class MainWindow {
 				}
 			});
 			fillMode[i].setAccelerator(SWT.CTRL | FillMode.values()[i].getShortcut());
+			
+			if(Main.settings.getFillMode() == FillMode.values()[i]) {
+				fillMode[i].setSelection(true);
+			}
 		}
-		
-		fillMode[0].setSelection(true);
 		
 		delayItem = new MenuItem(settingsMenu, SWT.CASCADE);
 		delayItem.setImage(ResourceLoader.loadImage(display, "delay_16x16.png"));
@@ -329,9 +331,11 @@ public class MainWindow {
 				}
 			});
 			delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | Delay.values()[i].getShortcut());
+			
+			if(Main.settings.getDelay() == Delay.values()[i]) {
+				delay[i].setSelection(true);
+			}
 		}
-		
-		delay[2].setSelection(true);
 		
 		new MenuItem(settingsMenu, SWT.SEPARATOR);
 		

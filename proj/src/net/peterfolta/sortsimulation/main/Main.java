@@ -27,6 +27,9 @@
 
 package net.peterfolta.sortsimulation.main;
 
+import net.peterfolta.sortsimulation.common.enums.Background;
+import net.peterfolta.sortsimulation.common.enums.Color;
+import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.gui.CustomMessageBox;
 import net.peterfolta.sortsimulation.gui.GUI;
@@ -47,7 +50,7 @@ public class Main {
 		printStartUpNotice();
 		checkJVM();
 		
-		settings = new Settings();
+		settings = new Settings(Delay.MIDDLE_DELAY, Background.WHITE, Color.BLUE, FillMode.RANDOM, 3);
 		language = new Language();
 		
 		if(args.length != 0) {
@@ -59,7 +62,7 @@ public class Main {
 			}
 		}
 		
-		new CreateArray(FillMode.RANDOM);
+		new CreateArray(settings.getFillMode());
 		
 		gui = new GUI();
 		gui.start();

@@ -50,12 +50,12 @@ public class Settings {
 	public String[] languageNames;
 	private String[] languageNativeNames;
 	
-	public Settings() {
-		delay = Delay.MIDDLE_DELAY;
-		background = Background.WHITE;
-		color = Color.BLUE;
-		fillMode = FillMode.RANDOM;
-		simultaneousSimulations = 3;
+	public Settings(Delay delay, Background background, Color color, FillMode fillMode, int simultaneousSimulations) {
+		this.delay = delay;
+		this.background = background;
+		this.color = color;
+		this.fillMode = fillMode;
+		this.simultaneousSimulations = simultaneousSimulations;
 		
 		try {
 			String[] tmp = new File("res/lng/").list();
