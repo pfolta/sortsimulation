@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.main;
 
+import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.tools.CustomMessageBox;
 
@@ -58,7 +59,7 @@ public class Main {
 			}
 		}
 		
-		new CreateArray(Data.FILL_RANDOM);
+		new CreateArray(FillMode.RANDOM);
 		
 		gui = new GUI();
 		gui.start();

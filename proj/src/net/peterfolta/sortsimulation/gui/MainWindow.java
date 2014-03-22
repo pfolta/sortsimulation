@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.main.CreateArray;
 import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
@@ -292,28 +293,22 @@ public class MainWindow {
 		fillModeMenu = new Menu(fillModeItem);
 		fillModeItem.setMenu(fillModeMenu);
 		
-		fillMode = new MenuItem[2];
+		fillMode = new MenuItem[FillMode.values().length];
 		
 		for(int i = 0; i < fillMode.length; i++) {
 			final int fi = i;
 			fillMode[i] = new MenuItem(fillModeMenu, SWT.RADIO);
 			fillMode[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
-					Main.settings.setFillMode(fi);
+					Main.settings.setFillMode(FillMode.values()[fi]);
 					resetCanvas();
 				}
 			});
-
-			switch(i) {
-				case 0:
-					fillMode[i].setAccelerator(SWT.CTRL | 'R');
-					fillMode[i].setSelection(true);
-					break;
-				case 1:
-					fillMode[i].setAccelerator(SWT.CTRL | 'I');
-					break;
-			}
+			
+			fillMode[i].setAccelerator(SWT.CTRL | FillMode.values()[i].getShortcut());
 		}
+		
+		fillMode[0].setSelection(true);
 		
 		delayItem = new MenuItem(settingsMenu, SWT.CASCADE);
 		delayItem.setImage(ResourceLoader.loadImage(display, "delay_16x16.png"));
@@ -559,14 +554,7 @@ public class MainWindow {
 		fillModeItem.setText(Main.language.getTranslationContent("FillMode"));
 		
 		for(int i = 0; i < fillMode.length; i++) {
-			switch(i) {
-				case 0:
-					fillMode[i].setText(Main.language.getTranslationContent("Randomly") + "\t" + Main.language.getTranslationContent("Ctrl") + "+R");
-					break;
-				case 1:
-					fillMode[i].setText(Main.language.getTranslationContent("Inverse") + "\t" + Main.language.getTranslationContent("Ctrl") + "+I");
-					break;
-			}
+			fillMode[i].setText(Main.language.getTranslationContent(FillMode.values()[i].getTranslationKey()) + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + FillMode.values()[i].getShortcut());
 		}
 		
 		delayItem.setText(Main.language.getTranslationContent("Speed"));

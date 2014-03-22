@@ -27,13 +27,15 @@
 
 package net.peterfolta.sortsimulation.main;
 
+import net.peterfolta.sortsimulation.common.enums.FillMode;
+
 public class CreateArray {
 	
-	public CreateArray(int mode) {
+	public CreateArray(FillMode mode) {
 		Main.array = new int[Main.settings.getSimultaneousSimulations()][Data.LENGTH_OF_ARRAY];
 		
 		switch(mode) {
-			case Data.FILL_RANDOM:
+			case RANDOM:
 				for(int i = 0; i < Main.array[0].length; i++) {
 					boolean insert = true;
 					int tmp = (int) (Math.random() * Main.array[0].length + 1);
@@ -52,8 +54,9 @@ public class CreateArray {
 						}
 					}
 				}
+				
 				break;
-			case Data.FILL_INVERS:
+			case INVERSE:
 				for(int i = 0; i < Main.array[0].length; i++) {
 					int tmp = Main.array[0].length - i;
 					
@@ -61,6 +64,45 @@ public class CreateArray {
 						Main.array[j][i] = tmp;
 					}
 				}
+				
+				break;
+			case ALMOST_SORTED:
+				for(int i = 0; i < Main.array[0].length; i++) {
+					Main.array[0][i] = i+1;
+				}
+				
+				for(int i = 0; i < Main.array[0].length; i++) {
+					int a = (int) (Math.random() * Main.array[0].length);
+				//	int b = (int) (Math.random() * Main.array[0].length);
+					int b;
+					
+					if(a > 3) {
+						b = a - 3;
+					} else {
+						b = a + 3;
+					}
+					
+					int tmp = Main.array[0][a];
+					Main.array[0][a] = Main.array[0][b];
+					Main.array[0][b] = tmp;
+				}
+				
+				for(int i = 0; i < Main.array[0].length; i++) {					
+					for(int j = 1; j < Main.array.length; j++) {
+						Main.array[j][i] = Main.array[0][i];
+					}
+				}
+				
+				break;
+			case PRESORTED:
+				for(int i = 0; i < Main.array[0].length; i++) {
+					Main.array[0][i] = i+1;
+					
+					for(int j = 1; j < Main.array.length; j++) {
+						Main.array[j][i] = Main.array[0][i];
+					}
+				}
+				
 				break;
 		}
 	}

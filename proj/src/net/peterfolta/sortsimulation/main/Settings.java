@@ -30,6 +30,7 @@ package net.peterfolta.sortsimulation.main;
 import java.io.File;
 import java.util.Arrays;
 
+import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.main.Main;
 
 import org.jdom.input.SAXBuilder;
@@ -39,7 +40,7 @@ public class Settings {
 	private int delay;
 	private int background;
 	private int color;
-	private int fillMode;
+	private FillMode fillMode;
 	private int simultaneousSimulations;
 	
 	private String currentlanguage;
@@ -50,7 +51,7 @@ public class Settings {
 		delay = Data.MIDDLE_DELAY;
 		background = 0;
 		color = 0;
-		fillMode = Data.FILL_RANDOM;
+		fillMode = FillMode.RANDOM;
 		simultaneousSimulations = 3;
 		
 		try {
@@ -94,14 +95,12 @@ public class Settings {
 		});
 	}
 	
-	public int getFillMode() {
+	public FillMode getFillMode() {
 		return fillMode;
 	}
 	
-	public void setFillMode(int fillMode) {
-		if(fillMode == Data.FILL_INVERS || fillMode == Data.FILL_RANDOM) {
-			this.fillMode = fillMode;
-		}
+	public void setFillMode(FillMode fillMode) {
+		this.fillMode = fillMode;
 	}
 	
 	public void setSimulationSpeed(int speed) {

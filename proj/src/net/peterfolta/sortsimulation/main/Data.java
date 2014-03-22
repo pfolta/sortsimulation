@@ -134,8 +134,4 @@ public class Data {
 	
 	public static final int VERY_LONG_DELAY = 250;
 	
-	public static final int FILL_RANDOM = 0;
-	
-	public static final int FILL_INVERS = 1; 
-	
 }
