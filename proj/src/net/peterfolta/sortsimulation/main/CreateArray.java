@@ -81,7 +81,7 @@ public class CreateArray {
 					Main.array[0][i] = i+1;
 				}
 				
-				for(int i = 0; i < 0.75*Main.array[0].length; i++) {
+				for(int i = 0; i < Main.array[0].length; i++) {
 					int a = MathTools.random(0, Main.array[0].length-1);
 					int b;
 					
