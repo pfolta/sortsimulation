@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.main;
 
 import net.peterfolta.sortsimulation.common.ArrayTools;
+import net.peterfolta.sortsimulation.common.MathTools;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 
 public class CreateArray {
@@ -39,10 +40,10 @@ public class CreateArray {
 			case RANDOM:
 				for(int i = 0; i < Main.array[0].length; i++) {
 					boolean insert = true;
-					int tmp = (int) (Math.random() * Main.array[0].length + 1);
+					int cand = MathTools.random(1, Main.array[0].length);
 					
 					for(int j = 0; j < i; j++) {
-						if(Main.array[0][j] == tmp) {
+						if(Main.array[0][j] == cand) {
 							i--;
 							insert = false;
 							break;
@@ -50,7 +51,7 @@ public class CreateArray {
 					}
 					
 					if(insert) {
-						Main.array[0][i] = tmp;
+						Main.array[0][i] = cand;
 					}
 				}
 				
@@ -80,20 +81,17 @@ public class CreateArray {
 					Main.array[0][i] = i+1;
 				}
 				
-				for(int i = 0; i < Main.array[0].length; i++) {
-					int a = (int) (Math.random() * Main.array[0].length);
-				//	int b = (int) (Math.random() * Main.array[0].length);
+				for(int i = 0; i < 0.75*Main.array[0].length; i++) {
+					int a = MathTools.random(0, Main.array[0].length-1);
 					int b;
 					
 					if(a > 3) {
-						b = a - 3;
+						b = a - MathTools.random(1, 3);
 					} else {
-						b = a + 3;
+						b = a + MathTools.random(1, 3);
 					}
 					
-					int tmp = Main.array[0][a];
-					Main.array[0][a] = Main.array[0][b];
-					Main.array[0][b] = tmp;
+					ArrayTools.swap(Main.array[0], a, b);
 				}
 				
 				for(int i = 0; i < Main.array.length; i++) {
