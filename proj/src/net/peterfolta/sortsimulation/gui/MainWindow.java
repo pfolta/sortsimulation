@@ -506,6 +506,10 @@ public class MainWindow {
 		resetCanvas.setEnabled(false);
 		toolResetCanvas.setEnabled(false);
 		
+		for(int i = 0; i < fillMode.length; i++) {
+			fillMode[i].setEnabled(false);
+		}
+		
 		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			sortCombo[i].setEnabled(false);
 		}
@@ -518,6 +522,10 @@ public class MainWindow {
 		toolStopSimulation.setEnabled(false);
 		resetCanvas.setEnabled(true);
 		toolResetCanvas.setEnabled(true);
+		
+		for(int i = 0; i < fillMode.length; i++) {
+			fillMode[i].setEnabled(true);
+		}
 		
 		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			sortCombo[i].setEnabled(true);
