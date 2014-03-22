@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.common.ResourceLoader;
+import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.main.CreateArray;
@@ -222,7 +223,7 @@ public class MainWindow {
 		gc.setBackground(Data.BACKGROUNDS[Main.settings.getBackground()]);
 		gc.fillRectangle(0, 0, width, height);
 		
-		gc.setBackground(Data.COLORS[Main.settings.getColor()]);
+		gc.setBackground(Main.settings.getColor().getColor());
 		
 		for(int i = 0; i < Data.LENGTH_OF_ARRAY; i++) {
 			gc.fillRectangle((lineWidth * (i)) + i, height - (Main.array[index][i] * lineHeight), 1, height);
@@ -385,19 +386,21 @@ public class MainWindow {
 		colorMenu = new Menu(color);
 		color.setMenu(colorMenu);
 		
-		colors = new MenuItem[Data.COLORS.length];
+		colors = new MenuItem[Color.values().length];
 		
 		for(int i = 0; i < colors.length; i++) {
 			final int fi = i;
 			colors[i] = new MenuItem(colorMenu, SWT.RADIO);
-			colors[i].setImage(ResourceLoader.loadImage(display, "color" + i + "_16x16.png"));
+			colors[i].setImage(ResourceLoader.loadImage(display, Color.values()[i].getIcon()));
 			colors[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
-					Main.settings.changeColor(fi);
+					Main.settings.setColor(Color.values()[fi]);
 				}
 			});
 			
-			if(i == Main.settings.getColor()) colors[i].setSelection(true);
+			if(Main.settings.getColor() == Color.values()[i]) {
+				colors[i].setSelection(true);
+			}
 		}
 		
 		help = new MenuItem(mainMenu, SWT.CASCADE);
@@ -544,23 +547,7 @@ public class MainWindow {
 		delayItem.setText(Main.language.getTranslationContent("Speed"));
 		
 		for(int i = 0; i < delay.length; i++) {
-			switch(i) {
-				case 0:
-					delay[i].setText(Main.language.getTranslationContent("VerySlow") + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+1");
-					break;
-				case 1:
-					delay[i].setText(Main.language.getTranslationContent("Slow") + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+2");
-					break;
-				case 2:
-					delay[i].setText(Main.language.getTranslationContent("Average") + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+3");
-					break;
-				case 3:
-					delay[i].setText(Main.language.getTranslationContent("Fast") + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+4");
-					break;
-				case 4:
-					delay[i].setText(Main.language.getTranslationContent("VeryFast") + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+5");
-					break;
-			}
+			delay[i].setText(Main.language.getTranslationContent(Delay.values()[i].getTranslationKey()) + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+" + Delay.values()[i].getShortcut());
 		}
 		
 		language.setText(Main.language.getTranslationContent("Language"));
@@ -572,7 +559,7 @@ public class MainWindow {
 		}
 		
 		for(int i = 0; i < colors.length; i++) {
-			colors[i].setText(Data.colorNames[i]);
+			colors[i].setText(Main.language.getTranslationContent(Color.values()[i].getTranslationKey()));
 		}
 		
 		help.setText(Main.language.getTranslationContent("Help"));

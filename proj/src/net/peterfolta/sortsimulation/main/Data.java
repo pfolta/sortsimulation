@@ -94,31 +94,9 @@ public class Data {
 		Main.language.getTranslationContent("Black")
 	};
 	
-	public static String[] colorNames = {
-		Main.language.getTranslationContent("Blue"),
-		Main.language.getTranslationContent("Brown"),
-		Main.language.getTranslationContent("Cyan"),
-		Main.language.getTranslationContent("Fuchsia"),
-		Main.language.getTranslationContent("Yellow"),
-		Main.language.getTranslationContent("Green"),
-		Main.language.getTranslationContent("Red"),
-		Main.language.getTranslationContent("Black")
-	};
-	
 	public static final Color[] BACKGROUNDS = {
 		new Color(null, 255, 255, 255),
 		new Color(null, 192, 192, 192),
-		new Color(null, 0, 0, 0)
-	};
-	
-	public static final Color[] COLORS = {
-		new Color(null, 0, 0, 255),
-		new Color(null, 139, 69, 19),
-		new Color(null, 0, 255, 255),
-		new Color(null, 255, 0, 255),
-		new Color(null, 255, 255, 0),
-		new Color(null, 34, 139, 34),
-		new Color(null, 255, 0, 0),
 		new Color(null, 0, 0, 0)
 	};
 	

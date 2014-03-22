@@ -30,6 +30,7 @@ package net.peterfolta.sortsimulation.main;
 import java.io.File;
 import java.util.Arrays;
 
+import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.main.Main;
@@ -40,7 +41,7 @@ public class Settings {
 	
 	private Delay delay;
 	private int background;
-	private int color;
+	private Color color;
 	private FillMode fillMode;
 	private int simultaneousSimulations;
 	
@@ -51,7 +52,7 @@ public class Settings {
 	public Settings() {
 		delay = Delay.MIDDLE_DELAY;
 		background = 0;
-		color = 0;
+		color = Color.BLUE;
 		fillMode = FillMode.RANDOM;
 		simultaneousSimulations = 3;
 		
@@ -74,18 +75,6 @@ public class Settings {
 	
 	public void changeBackground(int index) {
 		background = index;
-		
-		Main.getGUI().getDisplay().asyncExec(new Runnable() {
-			public void run() {
-				for(int i = 0; i < simultaneousSimulations; i++) {
-					Main.getGUI().getMainWindow().repaintCanvas(i);
-				}
-			}
-		});
-	}
-	
-	public void changeColor(int index) {
-		color = index;
 		
 		Main.getGUI().getDisplay().asyncExec(new Runnable() {
 			public void run() {
@@ -120,12 +109,20 @@ public class Settings {
 		this.background = background;
 	}
 	
-	public int getColor() {
+	public Color getColor() {
 		return color;
 	}
 	
-	public void setColor(int color) {
+	public void setColor(Color color) {
 		this.color = color;
+		
+		Main.getGUI().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				for(int i = 0; i < simultaneousSimulations; i++) {
+					Main.getGUI().getMainWindow().repaintCanvas(i);
+				}
+			}
+		});
 	}
 	
 	public String getCurrentLanguage() {

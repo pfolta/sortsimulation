@@ -148,17 +148,6 @@ public class Main {
 			Main.language.getTranslationContent("Black")
 		};
 		
-		Data.colorNames = new String[] {
-			Main.language.getTranslationContent("Blue"),
-			Main.language.getTranslationContent("Brown"),
-			Main.language.getTranslationContent("Cyan"),
-			Main.language.getTranslationContent("Fuchsia"),
-			Main.language.getTranslationContent("Yellow"),
-			Main.language.getTranslationContent("Green"),
-			Main.language.getTranslationContent("Red"),
-			Main.language.getTranslationContent("Black")
-		};
-		
 		gui.getMainWindow().setCaptions();
 	}
 	

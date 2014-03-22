@@ -6,7 +6,7 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Delay.java
+ * File:			Color.java
  * Created:			2014/03/22
  * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
@@ -27,32 +27,35 @@
 
 package net.peterfolta.sortsimulation.common.enums;
 
-public enum Delay {
-	VERY_LONG_DELAY(250, "VerySlow", '1'),
-	LONG_DELAY(100, "Slow", '2'),
-	MIDDLE_DELAY(25, "Average", '3'),
-	SHORT_DELAY(5, "Fast", '4'),
-	VERY_SHORT_DELAY(1, "VeryFast", '5');
+public enum Color {
+	BLUE(0, 0, 255, "Blue", "blue_16.png"),
+	BROWN(139, 69, 19, "Brown", "brown_16.png"),
+	CYAN(0, 255, 255, "Cyan", "cyan_16.png"),
+	FUCHSIA(255, 0, 255, "Fuchsia", "fuchsia_16.png"),
+	YELLOW(255, 255, 0, "Yellow", "yellow_16.png"),
+	GREEN(34, 139, 34, "Green", "green_16.png"),
+	RED(255, 0, 0, "Red", "red_16.png"),
+	BLACK(0, 0, 0, "Black", "black_16.png");
 	
-	private final int delay;
+	private final org.eclipse.swt.graphics.Color color;
 	private final String translationKey;
-	private final char shortcut;
+	private final String icon;
 	
-	Delay(int delay, String translationKey, char shortcut) {
-		this.delay = delay;
+	Color(int red, int green, int blue, String translationKey, String icon) {
+		this.color = new org.eclipse.swt.graphics.Color(null, red, green, blue);
 		this.translationKey = translationKey;
-		this.shortcut = shortcut;
+		this.icon = icon;
 	}
 	
-	public int getDelay() {
-		return delay;
+	public org.eclipse.swt.graphics.Color getColor() {
+		return color;
 	}
 	
 	public String getTranslationKey() {
 		return translationKey;
 	}
 	
-	public char getShortcut() {
-		return shortcut;
+	public String getIcon() {
+		return icon;
 	}
 }
