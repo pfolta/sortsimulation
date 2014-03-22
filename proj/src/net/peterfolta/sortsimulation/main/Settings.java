@@ -175,7 +175,7 @@ public class Settings {
 	}
 	
 	public void setSimultaenousSimulations(int simultaneous) throws Exception {
-		if(simultaneous > 1 && simultaneous < 8) {
+		if(simultaneous > 1 && simultaneous < 9) {
 			simultaneousSimulations = simultaneous;
 		} else {
 			throw new Exception("Illegal amount of simultaneous simulations");

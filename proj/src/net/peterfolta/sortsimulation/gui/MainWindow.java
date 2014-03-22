@@ -300,6 +300,7 @@ public class MainWindow {
 			fillMode[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
 					Main.settings.setFillMode(fi);
+					resetCanvas();
 				}
 			});
 
@@ -492,11 +493,7 @@ public class MainWindow {
 		toolResetCanvas.setImage(ResourceLoader.loadImage(display, "refresh_22x22.png"));
 		toolResetCanvas.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				new CreateArray(Main.settings.getFillMode());
-				
-				for(int i = 0; i < sortCanvas.length; i++) {
-					sortCanvas[i].redraw();
-				}
+				resetCanvas();
 			}
 		});
 	}
@@ -524,6 +521,14 @@ public class MainWindow {
 		
 		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			sortCombo[i].setEnabled(true);
+		}
+	}
+	
+	private void resetCanvas() {
+		new CreateArray(Main.settings.getFillMode());
+		
+		for(int i = 0; i < sortCanvas.length; i++) {
+			sortCanvas[i].redraw();
 		}
 	}
 	

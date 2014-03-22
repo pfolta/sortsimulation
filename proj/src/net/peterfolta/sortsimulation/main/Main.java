@@ -131,6 +131,7 @@ public class Main {
 		
 		Data.sortingAlgorithms = new String[] {
 			Main.language.getTranslationContent("Bubblesort"),
+			Main.language.getTranslationContent("Gnomesort"),
 			Main.language.getTranslationContent("Heapsort"),
 			Main.language.getTranslationContent("Insertionsort"),
 			Main.language.getTranslationContent("Mergesort"),
