@@ -30,6 +30,7 @@ package net.peterfolta.sortsimulation.main;
 import java.io.File;
 import java.util.Arrays;
 
+import net.peterfolta.sortsimulation.common.enums.Background;
 import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
@@ -40,7 +41,7 @@ import org.jdom.input.SAXBuilder;
 public class Settings {
 	
 	private Delay delay;
-	private int background;
+	private Background background;
 	private Color color;
 	private FillMode fillMode;
 	private int simultaneousSimulations;
@@ -51,7 +52,7 @@ public class Settings {
 	
 	public Settings() {
 		delay = Delay.MIDDLE_DELAY;
-		background = 0;
+		background = Background.WHITE;
 		color = Color.BLUE;
 		fillMode = FillMode.RANDOM;
 		simultaneousSimulations = 3;
@@ -73,18 +74,6 @@ public class Settings {
 		}
 	}
 	
-	public void changeBackground(int index) {
-		background = index;
-		
-		Main.getGUI().getDisplay().asyncExec(new Runnable() {
-			public void run() {
-				for(int i = 0; i < simultaneousSimulations; i++) {
-					Main.getGUI().getMainWindow().repaintCanvas(i);
-				}
-			}
-		});
-	}
-	
 	public FillMode getFillMode() {
 		return fillMode;
 	}
@@ -101,12 +90,20 @@ public class Settings {
 		return delay;
 	}
 	
-	public int getBackground() {
+	public Background getBackground() {
 		return background;
 	}
 	
-	public void setBackground(int background) {
+	public void setBackground(Background background) {
 		this.background = background;
+		
+		Main.getGUI().getDisplay().asyncExec(new Runnable() {
+			public void run() {
+				for(int i = 0; i < simultaneousSimulations; i++) {
+					Main.getGUI().getMainWindow().repaintCanvas(i);
+				}
+			}
+		});
 	}
 	
 	public Color getColor() {

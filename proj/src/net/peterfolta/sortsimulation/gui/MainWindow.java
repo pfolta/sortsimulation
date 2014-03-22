@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.common.ResourceLoader;
+import net.peterfolta.sortsimulation.common.enums.Background;
 import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
@@ -220,7 +221,7 @@ public class MainWindow {
 		int lineHeight = height / Main.array[index].length;
 		int lineWidth = (width - Data.LENGTH_OF_ARRAY) / Data.LENGTH_OF_ARRAY;
 		
-		gc.setBackground(Data.BACKGROUNDS[Main.settings.getBackground()]);
+		gc.setBackground(Main.settings.getBackground().getColor());
 		gc.fillRectangle(0, 0, width, height);
 		
 		gc.setBackground(Main.settings.getColor().getColor());
@@ -365,19 +366,21 @@ public class MainWindow {
 		backgroundMenu = new Menu(background);
 		background.setMenu(backgroundMenu);
 		
-		backgrounds = new MenuItem[Data.BACKGROUNDS.length];
+		backgrounds = new MenuItem[Background.values().length];
 		
 		for(int i = 0; i < backgrounds.length; i++) {
 			final int fi = i;
 			backgrounds[i] = new MenuItem(backgroundMenu, SWT.RADIO);
-			backgrounds[i].setImage(ResourceLoader.loadImage(display, "background" + i + "_16x16.png"));
+			backgrounds[i].setImage(ResourceLoader.loadImage(display, Background.values()[i].getIcon()));
 			backgrounds[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
-					Main.settings.changeBackground(fi);
+					Main.settings.setBackground(Background.values()[fi]);
 				}
 			});
 			
-			if(i == Main.settings.getBackground()) backgrounds[i].setSelection(true);
+			if(Main.settings.getBackground() == Background.values()[i]) {
+				backgrounds[i].setSelection(true);
+			}
 		}
 		
 		color = new MenuItem(settingsMenu, SWT.CASCADE);
@@ -555,7 +558,7 @@ public class MainWindow {
 		color.setText(Main.language.getTranslationContent("Color"));
 		
 		for(int i = 0; i < backgrounds.length; i++) {
-			backgrounds[i].setText(Data.backgroundNames[i]);
+			backgrounds[i].setText(Main.language.getTranslationContent(Background.values()[i].getTranslationKey()));
 		}
 		
 		for(int i = 0; i < colors.length; i++) {

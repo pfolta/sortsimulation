@@ -29,7 +29,6 @@ package net.peterfolta.sortsimulation.main;
 
 import net.peterfolta.sortsimulation.common.ResourceLoader;
 
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
@@ -86,18 +85,6 @@ public class Data {
 		Main.language.getTranslationContent("Quicksort"),
 		Main.language.getTranslationContent("Selectionsort"),
 		Main.language.getTranslationContent("Shellsort"),
-	};
-	
-	public static String[] backgroundNames = {
-		Main.language.getTranslationContent("White"),
-		Main.language.getTranslationContent("Grey"),
-		Main.language.getTranslationContent("Black")
-	};
-	
-	public static final Color[] BACKGROUNDS = {
-		new Color(null, 255, 255, 255),
-		new Color(null, 192, 192, 192),
-		new Color(null, 0, 0, 0)
 	};
 	
 	public static final int LENGTH_OF_ARRAY = 100;

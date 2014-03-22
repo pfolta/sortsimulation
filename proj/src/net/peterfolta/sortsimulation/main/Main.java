@@ -142,12 +142,6 @@ public class Main {
 			Main.language.getTranslationContent("Shellsort"),
 		};
 		
-		Data.backgroundNames = new String[] {
-			Main.language.getTranslationContent("White"),
-			Main.language.getTranslationContent("Grey"),
-			Main.language.getTranslationContent("Black")
-		};
-		
 		gui.getMainWindow().setCaptions();
 	}
 	
