@@ -6,8 +6,8 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Selectionsort.java
- * Created:			2008/11/29
+ * File:			Cocktailsort.java
+ * Created:			2014/03/22
  * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
@@ -29,19 +29,27 @@ package net.peterfolta.sortsimulation.algorithms;
 
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Selectionsort {
+public class Cocktailsort {
 	
 	private boolean interrupted = false;
 	
 	public void sort(int[] a, final int index) {
 		int tmp;
+		int start = -1;
+		int end = a.length - 2;
 		
-		for(int i = 0; i < a.length && !interrupted; i++) {
-			for(int j = i+1; j < a.length && !interrupted; j++) {
-				if(a[j] < a[i]) {
+		boolean swapped;
+			
+		do {
+			swapped = false;
+			start++;
+			
+			for(int i = start; i <= end && !interrupted; i++) {
+				if(a[i] > a[i+1]) {
 					tmp = a[i];
-					a[i] = a[j];
-					a[j] = tmp;
+					a[i] = a[i+1];
+					a[i+1] = tmp;
+					swapped = true;
 				}
 				
 				try {
@@ -57,7 +65,36 @@ public class Selectionsort {
 					}
 				});
 			}
-		}
+			
+			if(!swapped) {
+				break;
+			}
+			
+			swapped = false;
+			end--;
+			
+			for(int i = end; i >= start && !interrupted; i--) {
+				if(a[i] > a[i+1]) {
+					tmp = a[i];
+					a[i] = a[i+1];
+					a[i+1] = tmp;
+					swapped = true;
+				}
+				
+				try {
+					Thread.sleep(Main.settings.getSimulationSpeed());
+				} catch (InterruptedException exception) {
+					interrupted = true;
+					break;
+				}
+				
+				Main.getGUI().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						Main.getGUI().getMainWindow().repaintCanvas(index);
+					}
+				});
+			}
+		} while(swapped && !interrupted);
 	}
 
 }

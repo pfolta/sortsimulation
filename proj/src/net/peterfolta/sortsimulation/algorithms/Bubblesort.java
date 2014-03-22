@@ -8,7 +8,7 @@
  * 
  * File:			Bubblesort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/21
+ * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -36,12 +36,8 @@ public class Bubblesort {
 	public void sort(int[] a, final int index) {
 		int tmp;
 		
-		for(int i = a.length-1; i >= 0; i--) {
-			if(interrupted) {
-				break;
-			}
-			
-			for(int j = 0; j <= i-1; j++) {
+		for(int i = a.length-1; i >= 0 && !interrupted; i--) {
+			for(int j = 0; j <= i-1 && !interrupted; j++) {
 				if(a[j] > a[j+1]) {
 					tmp = a[j];
 					a[j] = a[j+1];

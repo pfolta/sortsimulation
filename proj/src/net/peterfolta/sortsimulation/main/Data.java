@@ -78,6 +78,7 @@ public class Data {
 	
 	public static String[] sortingAlgorithms = {
 		Main.language.getTranslationContent("Bubblesort"),
+		Main.language.getTranslationContent("Cocktailsort"),
 		Main.language.getTranslationContent("Gnomesort"),
 		Main.language.getTranslationContent("Heapsort"),
 		Main.language.getTranslationContent("Insertionsort"),

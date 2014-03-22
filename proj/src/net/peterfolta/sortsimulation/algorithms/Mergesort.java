@@ -8,7 +8,7 @@
  * 
  * File:			Mergesort.java
  * Created:			2008/11/30
- * Last modified:	2014/03/21
+ * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -58,11 +58,11 @@ public class Mergesort {
 		int j = hi;
 		int k = lo;
 		
-		while(i <= m) {
+		while(i <= m && !interrupted) {
 			b[k++] = a[i++];
 		}
 		
-		while(j > m) {
+		while(j > m && !interrupted) {
 			b[k++] = a[j--];
 		}
 		

@@ -37,11 +37,7 @@ public class Gnomesort {
 		int tmp;
 		int pos = 1;
 		
-		while(pos < a.length) {
-			if(interrupted) {
-				break;
-			}
-			
+		while(pos < a.length && !interrupted) {
 			if(a[pos] >= a[pos-1]) {
 				pos++;
 			} else {

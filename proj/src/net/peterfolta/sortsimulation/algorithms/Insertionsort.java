@@ -8,7 +8,7 @@
  * 
  * File:			Insertionsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/21
+ * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -37,15 +37,11 @@ public class Insertionsort {
 		int tmp;
 		int j;
 		
-		for(int i = 1; i < a.length; i++) {
-			if(interrupted) {
-				break;
-			}
-			
+		for(int i = 1; i < a.length && !interrupted; i++) {
 			tmp = a[i];
 			j = i;
 			
-			while(j > 0 && a[j-1] > tmp) {
+			while(j > 0 && a[j-1] > tmp && !interrupted) {
 				a[j] = a[j-1];
 				j--;
 				

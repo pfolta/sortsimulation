@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.main;
 
 import net.peterfolta.sortsimulation.algorithms.Bubblesort;
+import net.peterfolta.sortsimulation.algorithms.Cocktailsort;
 import net.peterfolta.sortsimulation.algorithms.Gnomesort;
 import net.peterfolta.sortsimulation.algorithms.Heapsort;
 import net.peterfolta.sortsimulation.algorithms.Insertionsort;
@@ -51,30 +52,34 @@ public class Simulation extends Thread {
 				bubbleSort.sort(a, index);
 				break;
 			case 1:
+				Cocktailsort cocktailSort = new Cocktailsort();
+				cocktailSort.sort(a, index);
+				break;
+			case 2:
 				Gnomesort gnomeSort = new Gnomesort();
 				gnomeSort.sort(a, index);
 				break;
-			case 2:
+			case 3:
 				Heapsort heapSort = new Heapsort();
 				heapSort.sort(a, index);
 				break;
-			case 3:
+			case 4:
 				Insertionsort insertionSort = new Insertionsort();
 				insertionSort.sort(a, index);
 				break;
-			case 4:
+			case 5:
 				Mergesort mergeSort = new Mergesort();
 				mergeSort.sort(a, index);
 				break;
-			case 5:
+			case 6:
 				Quicksort quickSort = new Quicksort();
 				quickSort.sort(a, index);
 				break;
-			case 6:
+			case 7:
 				Selectionsort selectionSort = new Selectionsort();
 				selectionSort.sort(a, index);
 				break;
-			case 7:
+			case 8:
 				Shellsort shellSort = new Shellsort();
 				shellSort.sort(a, index);
 				break;

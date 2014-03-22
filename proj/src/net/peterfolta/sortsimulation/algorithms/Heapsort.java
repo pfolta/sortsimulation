@@ -8,7 +8,7 @@
  * 
  * File:			Heapsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/21
+ * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -46,7 +46,7 @@ public class Heapsort {
 			j++;
 		}
 		
-		while((j <= r) && (a[j] > x)) {
+		while((j <= r) && (a[j] > x) && !interrupted) {
 			a[i] = a[j];
 			i = j;
 			j = j*2+1;
@@ -77,19 +77,11 @@ public class Heapsort {
 		int r;
 		int tmp;
 		
-		for(l = (a.length - 2) / 2; l >= 0; l--) {
-			if(interrupted) {
-				break;
-			}
-			
+		for(l = (a.length - 2) / 2; l >= 0 && !interrupted; l--) {
 			sift(a, l, a.length-1, index);
 		}
 		
-		for(r = a.length - 1; r > 0; r--) {
-			if(interrupted) {
-				break;
-			}
-			
+		for(r = a.length - 1; r > 0 && !interrupted; r--) {
 			tmp = a[0];
 			a[0] = a[r];
 			a[r] = tmp;

@@ -8,7 +8,7 @@
  * 
  * File:			Quicksort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/21
+ * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -41,8 +41,8 @@ public class Quicksort {
 		int x = a[middle];
 		
 		do {
-			while(a[i] < x) i++;
-			while(a[j] > x) j--;
+			while(a[i] < x && !interrupted) i++;
+			while(a[j] > x && !interrupted) j--;
 			
 			if(i <= j) {
 				tmp = a[i];
