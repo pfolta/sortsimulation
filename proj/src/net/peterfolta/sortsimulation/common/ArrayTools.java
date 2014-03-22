@@ -6,8 +6,8 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Selectionsort.java
- * Created:			2008/11/29
+ * File:			ArrayTools.java
+ * Created:			2014/03/22
  * Last modified:	2014/03/22
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
@@ -25,35 +25,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.peterfolta.sortsimulation.algorithms;
+package net.peterfolta.sortsimulation.common;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
-import net.peterfolta.sortsimulation.main.Main;
-
-public class Selectionsort {
+public class ArrayTools {
 	
-	private boolean interrupted = false;
+	public static void swap(int[] array, int a, int b) {
+		int tmp = array[a];
+		array[a] = array[b];
+		array[b] = tmp;
+	}
 	
-	public void sort(int[] a, final int index) {
-		for(int i = 0; i < a.length && !interrupted; i++) {
-			for(int j = i+1; j < a.length && !interrupted; j++) {
-				if(a[j] < a[i]) {
-					ArrayTools.swap(a, i, j);
-				}
-				
-				try {
-					Thread.sleep(Main.settings.getSimulationSpeed());
-				} catch (InterruptedException exception) {
-					interrupted = true;
-					break;
-				}
-				
-				Main.getGUI().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						Main.getGUI().getMainWindow().repaintCanvas(index);
-					}
-				});
-			}
+	/**
+	 * Copies contents of an integer array a into an integer array b,
+	 * given a and b are the same size
+	 * 
+	 * @param a Source array
+	 * @param b Target array
+	 * @throws Exception
+	 */
+	public static void copy(int[] a, int[] b) throws Exception {
+		if(a.length != b.length) {
+			throw new Exception("Array length does not match!");
+		}
+		
+		for(int i = 0; i < a.length; i++) {
+			b[i] = a[i];
 		}
 	}
 

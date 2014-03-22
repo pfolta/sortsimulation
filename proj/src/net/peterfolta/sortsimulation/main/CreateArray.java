@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.main;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 
 public class CreateArray {
@@ -49,19 +50,27 @@ public class CreateArray {
 					}
 					
 					if(insert) {
-						for(int j = 0; j < Main.array.length; j++) {
-							Main.array[j][i] = tmp;
-						}
+						Main.array[0][i] = tmp;
+					}
+				}
+				
+				for(int i = 0; i < Main.array.length; i++) {
+					try {
+						ArrayTools.copy(Main.array[0], Main.array[i]);
+					} catch (Exception exception) {
 					}
 				}
 				
 				break;
 			case INVERSE:
 				for(int i = 0; i < Main.array[0].length; i++) {
-					int tmp = Main.array[0].length - i;
-					
-					for(int j = 0; j < Main.array.length; j++) {
-						Main.array[j][i] = tmp;
+					Main.array[0][i] = Main.array[0].length - i;
+				}
+				
+				for(int i = 0; i < Main.array.length; i++) {
+					try {
+						ArrayTools.copy(Main.array[0], Main.array[i]);
+					} catch (Exception exception) {
 					}
 				}
 				
@@ -87,9 +96,10 @@ public class CreateArray {
 					Main.array[0][b] = tmp;
 				}
 				
-				for(int i = 0; i < Main.array[0].length; i++) {					
-					for(int j = 1; j < Main.array.length; j++) {
-						Main.array[j][i] = Main.array[0][i];
+				for(int i = 0; i < Main.array.length; i++) {
+					try {
+						ArrayTools.copy(Main.array[0], Main.array[i]);
+					} catch (Exception exception) {
 					}
 				}
 				
@@ -97,9 +107,12 @@ public class CreateArray {
 			case PRESORTED:
 				for(int i = 0; i < Main.array[0].length; i++) {
 					Main.array[0][i] = i+1;
-					
-					for(int j = 1; j < Main.array.length; j++) {
-						Main.array[j][i] = Main.array[0][i];
+				}
+				
+				for(int i = 0; i < Main.array.length; i++) {
+					try {
+						ArrayTools.copy(Main.array[0], Main.array[i]);
+					} catch (Exception exception) {
 					}
 				}
 				

@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class Heapsort {
@@ -75,16 +76,13 @@ public class Heapsort {
 	public void sort(int[] a, final int index) {
 		int l;
 		int r;
-		int tmp;
 		
 		for(l = (a.length - 2) / 2; l >= 0 && !interrupted; l--) {
 			sift(a, l, a.length-1, index);
 		}
 		
 		for(r = a.length - 1; r > 0 && !interrupted; r--) {
-			tmp = a[0];
-			a[0] = a[r];
-			a[r] = tmp;
+			ArrayTools.swap(a, 0, r);
 			sift(a, 0, r-1, index);
 		}
 	}

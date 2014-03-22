@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class Quicksort {
@@ -34,7 +35,6 @@ public class Quicksort {
 	private boolean interrupted = false;
 	
 	private void quicksort(int[] a, int bottom, int top, final int index) {
-		int tmp;
 		int i = bottom;
 		int j = top;
 		int middle = (bottom + top) / 2;
@@ -45,9 +45,7 @@ public class Quicksort {
 			while(a[j] > x && !interrupted) j--;
 			
 			if(i <= j) {
-				tmp = a[i];
-				a[i] = a[j];
-				a[j] = tmp;
+				ArrayTools.swap(a, i, j);
 				i++;
 				j--;
 			}

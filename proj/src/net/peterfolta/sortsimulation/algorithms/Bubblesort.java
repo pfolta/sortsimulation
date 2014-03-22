@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class Bubblesort {
@@ -34,14 +35,10 @@ public class Bubblesort {
 	private boolean interrupted = false;
 	
 	public void sort(int[] a, final int index) {
-		int tmp;
-		
 		for(int i = a.length-1; i >= 0 && !interrupted; i--) {
 			for(int j = 0; j <= i-1 && !interrupted; j++) {
 				if(a[j] > a[j+1]) {
-					tmp = a[j];
-					a[j] = a[j+1];
-					a[j+1] = tmp;
+					ArrayTools.swap(a, j, j+1);
 				}
 				
 				try {

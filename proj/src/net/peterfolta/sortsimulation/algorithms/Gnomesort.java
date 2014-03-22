@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class Gnomesort {
@@ -34,16 +35,13 @@ public class Gnomesort {
 	private boolean interrupted = false;
 	
 	public void sort(int[] a, final int index) {
-		int tmp;
 		int pos = 1;
 		
 		while(pos < a.length && !interrupted) {
 			if(a[pos] >= a[pos-1]) {
 				pos++;
 			} else {
-				tmp = a[pos];
-				a[pos] = a[pos-1];
-				a[pos-1] = tmp;
+				ArrayTools.swap(a, pos, pos-1);
 				
 				if(pos > 1) {
 					pos--;

@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class Cocktailsort {
@@ -34,7 +35,6 @@ public class Cocktailsort {
 	private boolean interrupted = false;
 	
 	public void sort(int[] a, final int index) {
-		int tmp;
 		int start = -1;
 		int end = a.length - 2;
 		
@@ -46,9 +46,7 @@ public class Cocktailsort {
 			
 			for(int i = start; i <= end && !interrupted; i++) {
 				if(a[i] > a[i+1]) {
-					tmp = a[i];
-					a[i] = a[i+1];
-					a[i+1] = tmp;
+					ArrayTools.swap(a, i, i+1);
 					swapped = true;
 				}
 				
@@ -75,9 +73,7 @@ public class Cocktailsort {
 			
 			for(int i = end; i >= start && !interrupted; i--) {
 				if(a[i] > a[i+1]) {
-					tmp = a[i];
-					a[i] = a[i+1];
-					a[i+1] = tmp;
+					ArrayTools.swap(a, i, i+1);
 					swapped = true;
 				}
 				
