@@ -13,7 +13,7 @@
 	<Translations>
 		<About>&amp;Über %1</About>
 		<Algorithm>Algorithmus Nr. %1</Algorithm>
-		<AlmostSorted>Beinahe sortiert</AlmostSorted>
+		<AlmostSorted>&amp;Beinahe sortiert</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Autoren</Authors>
 		<Average>&amp;Mittel</Average>
@@ -25,7 +25,7 @@
 		<Bubblesort>Bubblesort</Bubblesort>
 
 		<Cocktailsort>Cocktailsort</Cocktailsort>
-		<Color>&amp;Farbe</Color>
+		<Color>F&amp;arbe</Color>
 		<Contributors>Mitwirkende</Contributors>
 		<Copyright>Copyright © %1 %2. Alle Rechte vorbehalten.</Copyright>
 		<Ctrl>Strg</Ctrl>
@@ -57,7 +57,7 @@
 		
 		<OK>&amp;OK</OK>
 		
-		<Presorted>Vorsortiert</Presorted>
+		<Presorted>&amp;Vorsortiert</Presorted>
 
 		<Quicksort>Quicksort</Quicksort>
 

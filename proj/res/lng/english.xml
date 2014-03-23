@@ -14,7 +14,7 @@
 	<Translations>
 		<About>&amp;About %1</About>
 		<Algorithm>Algorithm #%1</Algorithm>
-		<AlmostSorted>Almost Sorted</AlmostSorted>
+		<AlmostSorted>&amp;Almost Sorted</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Authors</Authors>
 		<Average>&amp;Average</Average>
@@ -58,7 +58,7 @@
 		
 		<OK>&amp;OK</OK>
 		
-		<Presorted>Presorted</Presorted>
+		<Presorted>&amp;Presorted</Presorted>
 
 		<Quicksort>Quicksort</Quicksort>
 
