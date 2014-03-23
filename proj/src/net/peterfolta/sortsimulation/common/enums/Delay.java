@@ -8,7 +8,7 @@
  * 
  * File:			Delay.java
  * Created:			2014/03/22
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -26,6 +26,8 @@
  */
 
 package net.peterfolta.sortsimulation.common.enums;
+
+import net.peterfolta.sortsimulation.main.Main;
 
 public enum Delay {
 	VERY_LONG_DELAY(250, "VerySlow", '1'),
@@ -50,6 +52,10 @@ public enum Delay {
 	
 	public String getTranslationKey() {
 		return translationKey;
+	}
+	
+	public String getTranslation() {
+		return Main.language.getTranslationContent(getTranslationKey());
 	}
 	
 	public char getShortcut() {

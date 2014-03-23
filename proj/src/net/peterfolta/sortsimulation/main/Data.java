@@ -8,7 +8,7 @@
  * 
  * File:			Data.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -74,18 +74,6 @@ public class Data {
 	/*
 	 * PROGRAM SPECIFIC CONSTANTS
 	 */
-	
-	public static String[] sortingAlgorithms = {
-		Main.language.getTranslationContent("Bubblesort"),
-		Main.language.getTranslationContent("Cocktailsort"),
-		Main.language.getTranslationContent("Gnomesort"),
-		Main.language.getTranslationContent("Heapsort"),
-		Main.language.getTranslationContent("Insertionsort"),
-		Main.language.getTranslationContent("Mergesort"),
-		Main.language.getTranslationContent("Quicksort"),
-		Main.language.getTranslationContent("Selectionsort"),
-		Main.language.getTranslationContent("Shellsort"),
-	};
 	
 	public static final int LENGTH_OF_ARRAY = 100;
 	

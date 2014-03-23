@@ -8,7 +8,7 @@
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -32,6 +32,7 @@ import net.peterfolta.sortsimulation.common.enums.Background;
 import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
+import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
 import net.peterfolta.sortsimulation.main.CreateArray;
 import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
@@ -192,12 +193,12 @@ public class MainWindow {
 			gridData = new GridData(GridData.FILL_HORIZONTAL);
 			
 			sortCombo[i] = new Combo(mainShell, SWT.READ_ONLY);
-			sortCombo[i].setItems(Data.sortingAlgorithms);
+			sortCombo[i].setItems(SortingAlgorithms.getTranslations());
 			sortCombo[i].setLayoutData(gridData);
 			sortCombo[i].select(i);
 			sortCombo[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
-					sortLabel[fi].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(fi+1)) + ":\n" + Data.sortingAlgorithms[sortCombo[fi].getSelectionIndex()]);
+					sortLabel[fi].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(fi+1)) + ":\n" + SortingAlgorithms.values()[sortCombo[fi].getSelectionIndex()].getTranslation());
 				}
 			});
 		}
@@ -281,7 +282,7 @@ public class MainWindow {
 		exit.setAccelerator(SWT.ALT | SWT.F4);
 		exit.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				System.exit(0);
+				Main.exit(0);
 			}
 		});
 		
@@ -534,8 +535,8 @@ public class MainWindow {
 		
 		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			int selection = sortCombo[i].getSelectionIndex();
-			sortLabel[i].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(i+1)) + ":\n" + Data.sortingAlgorithms[selection]);
-			sortCombo[i].setItems(Data.sortingAlgorithms);
+			sortLabel[i].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(i+1)) + ":\n" + SortingAlgorithms.values()[selection].getTranslation());
+			sortCombo[i].setItems(SortingAlgorithms.getTranslations());
 			sortCombo[i].select(selection);
 		}
 		
@@ -548,13 +549,13 @@ public class MainWindow {
 		fillModeItem.setText(Main.language.getTranslationContent("FillMode"));
 		
 		for(int i = 0; i < fillMode.length; i++) {
-			fillMode[i].setText(Main.language.getTranslationContent(FillMode.values()[i].getTranslationKey()) + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + FillMode.values()[i].getShortcut());
+			fillMode[i].setText(FillMode.values()[i].getTranslation() + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + FillMode.values()[i].getShortcut());
 		}
 		
 		delayItem.setText(Main.language.getTranslationContent("Speed"));
 		
 		for(int i = 0; i < delay.length; i++) {
-			delay[i].setText(Main.language.getTranslationContent(Delay.values()[i].getTranslationKey()) + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+" + Delay.values()[i].getShortcut());
+			delay[i].setText(Delay.values()[i].getTranslation() + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+" + Delay.values()[i].getShortcut());
 		}
 		
 		language.setText(Main.language.getTranslationContent("Language"));
@@ -562,7 +563,7 @@ public class MainWindow {
 		color.setText(Main.language.getTranslationContent("Color"));
 		
 		for(int i = 0; i < backgrounds.length; i++) {
-			backgrounds[i].setText(Main.language.getTranslationContent(Background.values()[i].getTranslationKey()));
+			backgrounds[i].setText(Background.values()[i].getTranslation());
 		}
 		
 		for(int i = 0; i < colors.length; i++) {

@@ -8,7 +8,7 @@
  * 
  * File:			FillMode.java
  * Created:			2014/03/22
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,6 +27,8 @@
 
 package net.peterfolta.sortsimulation.common.enums;
 
+import net.peterfolta.sortsimulation.main.Main;
+
 public enum FillMode {
 	RANDOM("Randomly", 'R'),
 	INVERSE("Inverse", 'I'),
@@ -43,6 +45,10 @@ public enum FillMode {
 	
 	public String getTranslationKey() {
 		return translationKey;
+	}
+	
+	public String getTranslation() {
+		return Main.language.getTranslationContent(getTranslationKey());
 	}
 	
 	public char getShortcut() {

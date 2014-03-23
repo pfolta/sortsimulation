@@ -8,7 +8,7 @@
  * 
  * File:			ResourceLoader.java
  * Created:			2008/12/14
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -40,7 +40,7 @@ public class ResourceLoader {
 		try {
 			tmp = new Image(display, "res/img/" + filename);
 		} catch(Exception exception) {
-			Main.exit(2);
+			Main.exit(3);
 		}
 		
 		return tmp;

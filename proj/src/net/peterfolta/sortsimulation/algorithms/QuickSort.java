@@ -6,9 +6,9 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Selectionsort.java
+ * File:			Quicksort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -28,33 +28,51 @@
 package net.peterfolta.sortsimulation.algorithms;
 
 import net.peterfolta.sortsimulation.common.ArrayTools;
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Selectionsort {
+public class QuickSort implements Sortable {
 	
 	private boolean interrupted = false;
 	
-	public void sort(int[] a, final int index) {
-		for(int i = 0; i < a.length && !interrupted; i++) {
-			for(int j = i+1; j < a.length && !interrupted; j++) {
-				if(a[j] < a[i]) {
-					ArrayTools.swap(a, i, j);
-				}
-				
-				try {
-					Thread.sleep(Main.settings.getDelay().getDelay());
-				} catch (InterruptedException exception) {
-					interrupted = true;
-					break;
-				}
-				
-				Main.getGUI().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						Main.getGUI().getMainWindow().repaintCanvas(index);
-					}
-				});
+	private void quicksort(int[] a, int bottom, int top, final int index) {
+		int i = bottom;
+		int j = top;
+		int middle = (bottom + top) / 2;
+		int x = a[middle];
+		
+		do {
+			while(a[i] < x && !interrupted) i++;
+			while(a[j] > x && !interrupted) j--;
+			
+			if(i <= j) {
+				ArrayTools.swap(a, i, j);
+				i++;
+				j--;
 			}
+			
+			try {
+				Thread.sleep(Main.settings.getDelay().getDelay());
+			} catch (InterruptedException exception) {
+				interrupted = true;
+				break;
+			}
+			
+			Main.getGUI().getDisplay().asyncExec(new Runnable() {
+				public void run() {
+					Main.getGUI().getMainWindow().repaintCanvas(index);
+				}
+			});
+		} while(i <= j && !interrupted);
+		
+		if(!interrupted) {
+			if(bottom < j) quicksort(a, bottom, j, index);
+			if(i < top) quicksort(a, i, top, index);
 		}
+	}
+	
+	public void sort(int[] a, final int index) {
+		quicksort(a, 0, a.length-1, index);
 	}
 
 }

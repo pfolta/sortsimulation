@@ -8,7 +8,7 @@
  * 
  * File:			Simulation.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,63 +27,21 @@
 
 package net.peterfolta.sortsimulation.main;
 
-import net.peterfolta.sortsimulation.algorithms.Bubblesort;
-import net.peterfolta.sortsimulation.algorithms.Cocktailsort;
-import net.peterfolta.sortsimulation.algorithms.Gnomesort;
-import net.peterfolta.sortsimulation.algorithms.Heapsort;
-import net.peterfolta.sortsimulation.algorithms.Insertionsort;
-import net.peterfolta.sortsimulation.algorithms.Mergesort;
-import net.peterfolta.sortsimulation.algorithms.Quicksort;
-import net.peterfolta.sortsimulation.algorithms.Selectionsort;
-import net.peterfolta.sortsimulation.algorithms.Shellsort;
+import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 
 public class Simulation extends Thread {
 	
-	public int algorithm;
-	public int index;
-	public int[] a;
+	private SortingAlgorithms algorithm;
+	private int index;
+	private int[] a;
 	
 	private Simulation[] simulation;
 	
 	public void run() {
-		switch(algorithm) {
-			case 0:
-				Bubblesort bubbleSort = new Bubblesort();
-				bubbleSort.sort(a, index);
-				break;
-			case 1:
-				Cocktailsort cocktailSort = new Cocktailsort();
-				cocktailSort.sort(a, index);
-				break;
-			case 2:
-				Gnomesort gnomeSort = new Gnomesort();
-				gnomeSort.sort(a, index);
-				break;
-			case 3:
-				Heapsort heapSort = new Heapsort();
-				heapSort.sort(a, index);
-				break;
-			case 4:
-				Insertionsort insertionSort = new Insertionsort();
-				insertionSort.sort(a, index);
-				break;
-			case 5:
-				Mergesort mergeSort = new Mergesort();
-				mergeSort.sort(a, index);
-				break;
-			case 6:
-				Quicksort quickSort = new Quicksort();
-				quickSort.sort(a, index);
-				break;
-			case 7:
-				Selectionsort selectionSort = new Selectionsort();
-				selectionSort.sort(a, index);
-				break;
-			case 8:
-				Shellsort shellSort = new Shellsort();
-				shellSort.sort(a, index);
-				break;
-		}
+		algorithm.createSortable();
+		Sortable sortable = algorithm.getSortable();
+		sortable.sort(a, index);
 		
 		Main.getGUI().getDisplay().asyncExec(new Runnable() {
 			public void run() {
@@ -124,7 +82,7 @@ public class Simulation extends Thread {
 		for(int i = 0; i < simulation.length; i++) {
 			simulation[i] = new Simulation();
 			simulation[i].a = Main.array[i];
-			simulation[i].algorithm = Main.getGUI().getMainWindow().sortCombo[i].getSelectionIndex();
+			simulation[i].algorithm = SortingAlgorithms.values()[Main.getGUI().getMainWindow().sortCombo[i].getSelectionIndex()];
 			simulation[i].index = i;
 			simulation[i].start();
 		}

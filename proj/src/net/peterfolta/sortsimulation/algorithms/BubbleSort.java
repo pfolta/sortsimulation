@@ -6,9 +6,9 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Insertionsort.java
+ * File:			Bubblesort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,23 +27,20 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.ArrayTools;
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Insertionsort {
+public class BubbleSort implements Sortable {
 	
 	private boolean interrupted = false;
 	
 	public void sort(int[] a, final int index) {
-		int tmp;
-		int j;
-		
-		for(int i = 1; i < a.length && !interrupted; i++) {
-			tmp = a[i];
-			j = i;
-			
-			while(j > 0 && a[j-1] > tmp && !interrupted) {
-				a[j] = a[j-1];
-				j--;
+		for(int i = a.length-1; i >= 0 && !interrupted; i--) {
+			for(int j = 0; j <= i-1 && !interrupted; j++) {
+				if(a[j] > a[j+1]) {
+					ArrayTools.swap(a, j, j+1);
+				}
 				
 				try {
 					Thread.sleep(Main.settings.getDelay().getDelay());
@@ -58,8 +55,6 @@ public class Insertionsort {
 					}
 				});
 			}
-			
-			a[j] = tmp;
 		}
 	}
 

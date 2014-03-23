@@ -8,7 +8,7 @@
  * 
  * File:			Main.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -49,6 +49,7 @@ public class Main {
 	public static void main(String[] args) {
 		printStartUpNotice();
 		checkJVM();
+		checkLibraries();
 		
 		settings = new Settings(Delay.MIDDLE_DELAY, Background.WHITE, Color.BLUE, FillMode.RANDOM, 3);
 		language = new Language();
@@ -58,7 +59,7 @@ public class Main {
 				int simultaneous = Integer.parseInt(args[0]);
 				settings.setSimultaenousSimulations(simultaneous);
 			} catch(Exception exception) {
-				exit(3);
+				exit(4);
 			}
 		}
 		
@@ -96,26 +97,45 @@ public class Main {
 		}
 	}
 	
+	private static void checkLibraries() {
+		try {
+			Class.forName("org.jdom.Document");
+			Class.forName("org.jdom.Element");
+			Class.forName("org.jdom.input.SAXBuilder");
+		} catch(ClassNotFoundException exception) {
+			exit(2);
+		}
+	}
+	
+	/*
+	 * Exit status codes:
+	 * 
+	 * 0 Normal shutdown
+	 * 1 Incompatible JVM
+	 * 2 Missing or corrupted libraries
+	 * 3 Missing or corrupted resource files
+	 * 4 Invalid program arguments
+	 */
 	public static void exit(int status) {
-		/*
-		 * Exit status codes:
-		 * 
-		 * 0 Normal shutdown
-		 * 1 Incompatible JVM
-		 * 2 Missing or corrupted resource files
-		 * 3 Invalid program arguments
-		 */
+		String message = null;
 		
 		switch(status) {
-		case 1:
-			new CustomMessageBox(new Shell(), "The currently installed Java Runtime is incompatible with " + Data.APP_NAME + ".\nPlease verify your Java Runtime version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version") + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
-			break;
-		case 2:
-			new CustomMessageBox(new Shell(), "Failed to read or parse resource file(s). The file(s) may be missing or corrupted.\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
-			break;
-		case 3:
-			new CustomMessageBox(new Shell(), "Failed to parse program arguments: Unrecognized options or illegal arguments provided.\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
-			break;
+			case 1:
+				message = "The currently installed Java Runtime is incompatible with " + Data.APP_NAME + ".\nPlease verify your Java Runtime version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version");
+				break;
+			case 2:
+				message = "Failed to read or parse library file(s). The file(s) may be missing or corrupted.";
+				break;
+			case 3:
+				message = "Failed to read or parse resource file(s). The file(s) may be missing or corrupted.";
+				break;
+			case 4:
+				message = "Failed to parse program arguments: Unrecognized options or illegal arguments provided.";
+				break;
+		}
+		
+		if(status != 0) {
+			new CustomMessageBox(new Shell(), message + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
 		}
 		
 		try {
@@ -132,18 +152,6 @@ public class Main {
 	
 	public static void changeLanguage() {
 		language = new Language();
-		
-		Data.sortingAlgorithms = new String[] {
-			Main.language.getTranslationContent("Bubblesort"),
-			Main.language.getTranslationContent("Cocktailsort"),
-			Main.language.getTranslationContent("Gnomesort"),
-			Main.language.getTranslationContent("Heapsort"),
-			Main.language.getTranslationContent("Insertionsort"),
-			Main.language.getTranslationContent("Mergesort"),
-			Main.language.getTranslationContent("Quicksort"),
-			Main.language.getTranslationContent("Selectionsort"),
-			Main.language.getTranslationContent("Shellsort"),
-		};
 		
 		gui.getMainWindow().setCaptions();
 	}

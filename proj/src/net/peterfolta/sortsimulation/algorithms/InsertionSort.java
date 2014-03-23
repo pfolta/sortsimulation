@@ -6,9 +6,9 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Quicksort.java
+ * File:			Insertionsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,51 +27,41 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Quicksort {
+public class InsertionSort implements Sortable {
 	
 	private boolean interrupted = false;
 	
-	private void quicksort(int[] a, int bottom, int top, final int index) {
-		int i = bottom;
-		int j = top;
-		int middle = (bottom + top) / 2;
-		int x = a[middle];
-		
-		do {
-			while(a[i] < x && !interrupted) i++;
-			while(a[j] > x && !interrupted) j--;
-			
-			if(i <= j) {
-				ArrayTools.swap(a, i, j);
-				i++;
-				j--;
-			}
-			
-			try {
-				Thread.sleep(Main.settings.getDelay().getDelay());
-			} catch (InterruptedException exception) {
-				interrupted = true;
-				break;
-			}
-			
-			Main.getGUI().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					Main.getGUI().getMainWindow().repaintCanvas(index);
-				}
-			});
-		} while(i <= j && !interrupted);
-		
-		if(!interrupted) {
-			if(bottom < j) quicksort(a, bottom, j, index);
-			if(i < top) quicksort(a, i, top, index);
-		}
-	}
-	
 	public void sort(int[] a, final int index) {
-		quicksort(a, 0, a.length-1, index);
+		int tmp;
+		int j;
+		
+		for(int i = 1; i < a.length && !interrupted; i++) {
+			tmp = a[i];
+			j = i;
+			
+			while(j > 0 && a[j-1] > tmp && !interrupted) {
+				a[j] = a[j-1];
+				j--;
+				
+				try {
+					Thread.sleep(Main.settings.getDelay().getDelay());
+				} catch (InterruptedException exception) {
+					interrupted = true;
+					break;
+				}
+				
+				Main.getGUI().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						Main.getGUI().getMainWindow().repaintCanvas(index);
+					}
+				});
+			}
+			
+			a[j] = tmp;
+		}
 	}
 
 }

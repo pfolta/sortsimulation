@@ -6,9 +6,9 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Cocktailsort.java
+ * File:			Gnomesort.java
  * Created:			2014/03/22
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -28,69 +28,40 @@
 package net.peterfolta.sortsimulation.algorithms;
 
 import net.peterfolta.sortsimulation.common.ArrayTools;
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Cocktailsort {
+public class GnomeSort implements Sortable {
 	
 	private boolean interrupted = false;
 	
 	public void sort(int[] a, final int index) {
-		int start = -1;
-		int end = a.length - 2;
+		int pos = 1;
 		
-		boolean swapped;
-			
-		do {
-			swapped = false;
-			start++;
-			
-			for(int i = start; i <= end && !interrupted; i++) {
-				if(a[i] > a[i+1]) {
-					ArrayTools.swap(a, i, i+1);
-					swapped = true;
-				}
+		while(pos < a.length && !interrupted) {
+			if(a[pos] >= a[pos-1]) {
+				pos++;
+			} else {
+				ArrayTools.swap(a, pos, pos-1);
 				
-				try {
-					Thread.sleep(Main.settings.getDelay().getDelay());
-				} catch (InterruptedException exception) {
-					interrupted = true;
-					break;
+				if(pos > 1) {
+					pos--;
 				}
-				
-				Main.getGUI().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						Main.getGUI().getMainWindow().repaintCanvas(index);
-					}
-				});
 			}
 			
-			if(!swapped) {
+			try {
+				Thread.sleep(Main.settings.getDelay().getDelay());
+			} catch (InterruptedException exception) {
+				interrupted = true;
 				break;
 			}
 			
-			swapped = false;
-			end--;
-			
-			for(int i = end; i >= start && !interrupted; i--) {
-				if(a[i] > a[i+1]) {
-					ArrayTools.swap(a, i, i+1);
-					swapped = true;
+			Main.getGUI().getDisplay().asyncExec(new Runnable() {
+				public void run() {
+					Main.getGUI().getMainWindow().repaintCanvas(index);
 				}
-				
-				try {
-					Thread.sleep(Main.settings.getDelay().getDelay());
-				} catch (InterruptedException exception) {
-					interrupted = true;
-					break;
-				}
-				
-				Main.getGUI().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						Main.getGUI().getMainWindow().repaintCanvas(index);
-					}
-				});
-			}
-		} while(swapped && !interrupted);
+			});
+		}
 	}
 
 }

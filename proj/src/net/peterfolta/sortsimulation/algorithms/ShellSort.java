@@ -8,7 +8,7 @@
  * 
  * File:			Shellsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,9 +27,10 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Shellsort {
+public class ShellSort implements Sortable {
 	
 	private boolean interrupted = false;
 	

@@ -6,9 +6,9 @@
  * Version:			2.0.0
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			Heapsort.java
+ * File:			Selectionsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/23
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -28,62 +28,33 @@
 package net.peterfolta.sortsimulation.algorithms;
 
 import net.peterfolta.sortsimulation.common.ArrayTools;
+import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
-public class Heapsort {
+public class SelectionSort implements Sortable {
 	
 	private boolean interrupted = false;
 	
-	private void sift(int[] a, int l, int r, final int index) {
-		int i;
-		int j;
-		int x;
-		
-		i = l;
-		x = a[l];
-		j = 2 * i + 1;
-		
-		if((j < r) && (a[j+1] > a[j])) {
-			j++;
-		}
-		
-		while((j <= r) && (a[j] > x) && !interrupted) {
-			a[i] = a[j];
-			i = j;
-			j = j*2+1;
-			
-			if((j < r) && (a[j+1] > a[j])) {
-				j++;
-			}
-			
-			try {
-				Thread.sleep(Main.settings.getDelay().getDelay());
-			} catch (InterruptedException exception) {
-				interrupted = true;
-				break;
-			}
-			
-			Main.getGUI().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					Main.getGUI().getMainWindow().repaintCanvas(index);
-				}
-			});
-		}
-		
-		a[i] = x;
-	}
-	
 	public void sort(int[] a, final int index) {
-		int l;
-		int r;
-		
-		for(l = (a.length - 2) / 2; l >= 0 && !interrupted; l--) {
-			sift(a, l, a.length-1, index);
-		}
-		
-		for(r = a.length - 1; r > 0 && !interrupted; r--) {
-			ArrayTools.swap(a, 0, r);
-			sift(a, 0, r-1, index);
+		for(int i = 0; i < a.length && !interrupted; i++) {
+			for(int j = i+1; j < a.length && !interrupted; j++) {
+				if(a[j] < a[i]) {
+					ArrayTools.swap(a, i, j);
+				}
+				
+				try {
+					Thread.sleep(Main.settings.getDelay().getDelay());
+				} catch (InterruptedException exception) {
+					interrupted = true;
+					break;
+				}
+				
+				Main.getGUI().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						Main.getGUI().getMainWindow().repaintCanvas(index);
+					}
+				});
+			}
 		}
 	}
 
