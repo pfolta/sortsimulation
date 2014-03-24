@@ -517,7 +517,7 @@ public class MainWindow {
 	}
 	
 	public void setCaptions() {
-		hintLabel.setText(Main.language.getTranslationContent("UsageHint"));
+		hintLabel.setText(Main.language.getTranslationContent("UsageHint").replaceAll("%1", String.valueOf(Main.settings.getSimultaneousSimulations())));
 		
 		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			int selection = sortCombo[i].getSelectionIndex();

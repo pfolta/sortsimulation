@@ -71,7 +71,7 @@
 		<StartSimulation>&amp;Start Simulation</StartSimulation>
 		<StopSimulation>S&amp;top Simulation</StopSimulation>
 
-		<UsageHint>Select sorting algorithms and click “Start Simulation”, to begin.</UsageHint>
+		<UsageHint>Select %1 sorting algorithms and click “Start Simulation”, to begin.</UsageHint>
 
 		<Version>Version %1</Version>
 		<VeryFast>&amp;Very fast</VeryFast>

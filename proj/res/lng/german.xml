@@ -70,7 +70,7 @@
 		<StartSimulation>Simulation &amp;starten</StartSimulation>
 		<StopSimulation>Simulation s&amp;toppen</StopSimulation>
 
-		<UsageHint>Wählen Sie Sortieralgorithmen aus und klicken Sie auf „Simulation starten“, um zu beginnen.</UsageHint>
+		<UsageHint>Wählen Sie %1 Sortieralgorithmen aus und klicken Sie auf „Simulation starten“, um zu beginnen.</UsageHint>
 
 		<Version>Version %1</Version>
 		<VeryFast>&amp;Sehr schnell</VeryFast>

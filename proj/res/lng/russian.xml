@@ -70,7 +70,7 @@
 		<StartSimulation>Старт с&amp;имуляции</StartSimulation>
 		<StopSimulation>&amp;Остановка симуляции</StopSimulation>
 
-		<UsageHint>Выберите сорт алгоритма и нажмите на «Старт симуляции», чтобы начать.</UsageHint>
+		<UsageHint>Выберите %1 сорта алгоритма и нажмите на «Старт симуляции», чтобы начать.</UsageHint>
 
 		<Version>Версия %1</Version>
 		<VeryFast>&amp;Очень быстро</VeryFast>
