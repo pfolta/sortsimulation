@@ -27,14 +27,13 @@
 
 package net.peterfolta.sortsimulation.main;
 
+import net.peterfolta.sortsimulation.common.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.gui.CustomMessageBox;
 import net.peterfolta.sortsimulation.gui.GUI;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
 public class Main {
@@ -51,7 +50,7 @@ public class Main {
 		checkJVM();
 		checkLibraries();
 		
-		settings = new Settings(Delay.MIDDLE_DELAY, new Color(Display.getCurrent(), 255, 255, 255), new Color(Display.getCurrent(), 0, 128, 255), FillMode.RANDOM, 3);
+		settings = new Settings(Delay.MIDDLE_DELAY, new Color(255, 255, 255), new Color(0, 128, 255), FillMode.RANDOM, 3);
 		language = new Language();
 		
 		if(args.length != 0) {

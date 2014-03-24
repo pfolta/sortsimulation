@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.common.Color;
 import net.peterfolta.sortsimulation.common.ImageTools;
 import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.common.enums.Delay;
@@ -222,7 +223,7 @@ public class MainWindow {
 		gc.setBackground(Main.settings.getBackground());
 		gc.fillRectangle(0, 0, width, height);
 		
-		gc.setBackground(Main.settings.getColor());
+		gc.setBackground(Main.settings.getColor().getColor());
 		
 		for(int i = 0; i < Data.LENGTH_OF_ARRAY; i++) {
 			gc.fillRectangle((lineWidth * (i)) + i, height - (Main.array[index][i] * lineHeight), 1, height);
@@ -373,25 +374,25 @@ public class MainWindow {
 				RGB rgb = dlg.open();
 				
 				if(rgb != null) {
-					Main.settings.setBackground(new org.eclipse.swt.graphics.Color(display, rgb));
+					Main.settings.setBackground(new Color(rgb.red, rgb.green, rgb.blue));
 					background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
 				}
 			}
 		});
 		
 		color = new MenuItem(settingsMenu, SWT.CASCADE);
-		color.setImage(ImageTools.createColorField(display, Main.settings.getColor()));
+		color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
 		color.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				ColorDialog dlg = new ColorDialog(mainShell);
-				dlg.setRGB(Main.settings.getColor().getRGB());
+				dlg.setRGB(Main.settings.getColor().getColor().getRGB());
 				dlg.setText(Main.language.getTranslationContent("ChooseColor"));
 				
 				RGB rgb = dlg.open();
 				
 				if(rgb != null) {
-					Main.settings.setColor(new org.eclipse.swt.graphics.Color(display, rgb));
-					color.setImage(ImageTools.createColorField(display, Main.settings.getColor()));
+					Main.settings.setColor(new Color(rgb.red, rgb.green, rgb.blue));
+					color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
 				}
 			}
 		});

@@ -30,10 +30,10 @@ package net.peterfolta.sortsimulation.main;
 import java.io.File;
 import java.util.Arrays;
 
+import net.peterfolta.sortsimulation.common.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 
-import org.eclipse.swt.graphics.Color;
 import org.jdom.input.SAXBuilder;
 
 public class Settings {
@@ -89,10 +89,10 @@ public class Settings {
 	}
 	
 	public org.eclipse.swt.graphics.Color getBackground() {
-		return background;
+		return background.getColor();
 	}
 	
-	public void setBackground(org.eclipse.swt.graphics.Color background) {
+	public void setBackground(Color background) {
 		this.background = background;
 		
 		Main.getGUI().getDisplay().asyncExec(new Runnable() {
