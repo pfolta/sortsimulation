@@ -1,119 +1,26 @@
-\documentclass[11pt, a4paper, titlepage, oneside]{article}
+\documentclass[german]{pfBook}
 
-\usepackage[T1]{fontenc}
-\usepackage[ngerman]{babel}
+\renewcommand{\title}{SortSimulation}
+\renewcommand{\subtitle}{Dokumentation}
+\renewcommand{\author}{-- Deutsch --}
+\renewcommand{\copyright}{Copyright \textcopyright{} 2008--2014 Peter Folta. Alle Rechte vorbehalten.}
 
-\usepackage[left=2cm, right=2cm, top=2cm, bottom=2.25cm, includeheadfoot]{geometry}
-\usepackage[labelfont=bf, textfont=it]{caption}
-\usepackage{setspace}
-\usepackage{tabularx}
-\usepackage{colortbl}
-\usepackage{fancyhdr}
-\usepackage[stable]{footmisc}
-\usepackage{listings}
-\usepackage{xcolor}
-\usepackage{fontspec}
-\usepackage{pstricks}
-\usepackage{wallpaper}
-
-\linespread{1.25}
-
-\newcommand{\heading}{SortSimulation}
-\newcommand{\subheading}{Dokumentation}
-\newcommand{\copyrightNotice}{Copyright \textcopyright{} 2008--2013 Peter Folta. Alle Rechte vorbehalten.}
+\newcommand{\version}{2.0.0 Alpha}
 \newcommand{\URL}{\href{http://www.peterfolta.net/software/sortsimulation}{http://www.peterfolta.net/software/sortsimulation}}
-\newcommand{\version}{2.0.0}
 
-\definecolor{pfColor1}{HTML}{62bd19}
-\definecolor{pfColor2}{HTML}{339530}
-\definecolor{pfColor3}{HTML}{bce18d}
-\definecolor{pfColor4}{HTML}{00625a}
-
-\usepackage[
-	pdftitle = {SortSimulation},
-	pdfsubject = {Dokumentation},
-	pdfauthor = {Peter\ {}Folta},
-	pdfkeywords = {},
-	pdfcreator = {},
-	pdfproducer = {},
-	colorlinks = true,
-	linkcolor = black,
-	anchorcolor = black,
-	citecolor = black,
-	filecolor = black,
-	menucolor = black,
-	urlcolor = pfColor2]{hyperref}
-	
-\renewcommand{\lstlistingname}{Listing}
-\renewcommand{\lstlistlistingname}{Listings}
-\lstset{
-	language			= java,
-	sensitive			= false,
-	basicstyle			= \footnotesize\ttfamily,
-	commentstyle		= \itshape\color{comments},
-	keywordstyle		= \bfseries\color{pfColor2},
-	showstringspaces	= false,
-	tabsize				= 4,
-	numbers				= left,
-	captionpos			= b,
-	xleftmargin			= 3 em
+\renewcommand{\belowtitle}{
+	Version \version\newline{}
+	Internet: \URL
 }
 
-% Header
-\fancypagestyle{plain}{
-\lhead{\heading{} -- \textit{\subheading}}
-\chead{}
-\rhead{\thepage}
-\lfoot{}
-\cfoot{\vspace{0.25cm}\input{logo.tex}}
-\rfoot{}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
-}
-\pagestyle{plain}
-
-% Absatzeinrückung
-\parindent 0pt
-
-% Emphasize fett statt kursiv
-\renewcommand{\emph}{\textbf}
-
-\renewcommand\arraystretch{1.5}
-
-\setmainfont[Ligatures=TeX]{Liberation Sans}
-\setmonofont{Liberation Mono}
+\newcommand{\OO}{\mathcal{O}}
 
 \begin{document}
-	\ThisCenterWallPaper{1.0}{titlewallpaper.pdf}
 	\pagenumbering{roman}
-	
-	\begin{titlepage}
-		\begin{center}
-			\vspace*{2.5cm}
-			\Huge{\textbf{SortSimulation}}
-			
-			\vspace*{1.5cm}
-			\LARGE{Dokumentation}
-			
-			\Large{-- Deutsch --}
-			
-			\vspace*{3.75cm}
-			\Large{Peter Folta}
-		\end{center}
-		
-		\vspace*{8cm}
-		\noindent{}Version \version\newline{}
-		Internet: \URL\newline{}
-		\copyrightNotice
-	\end{titlepage}
-	
-	\CenterWallPaper{1.0}{wallpaper.pdf}
-	\setcounter{page}{2}
-	
-	\cleardoublepage{}
-	\tableofcontents{}
-	\newpage{}
-	
+	\maketitlepage
+	\cleardoublepage
+	\maketableofcontents
+	\cleardoublepage
 	\pagenumbering{arabic}
 	
 	\section{Einführung}
@@ -136,9 +43,11 @@
 	
 	SortSimulation bietet einige Einstellungen, mit denen Sie die Simulation anpassen können. Auf diese Einstellungen wird im folgenden Abschnitt ausführlich eingegangen.
 	
+	Für fortgeschrittene Nutzer besteht außerdem die Möglichkeit, SortSimulation beim Programmstart Parameter zu übergeben, mehr dazu in Abschnitt \ref{StartUpArguments} auf Seite \pageref{StartUpArguments}.
+	
 	\subsection{Einstellungen}
 	
-	Ihnen stehen in SortSimulation diverse Einstellungen zur Verfügung, mit denen Sie die Sortier-Simulationen ihren Wünschen entsprechend anpassen können. Diese Ein\-{}stellungs\-{}mög\-{}lich\-{}kei\-{}ten finden Sie im Menü \emph{Einstellungen}:
+	Ihnen stehen in SortSimulation diverse Einstellungen zur Verfügung, mit denen Sie die Sortier-Simula\-{}tionen ihren Wünschen entsprechend anpassen können. Diese Ein\-{}stellungs\-{}mög\-{}lich\-{}kei\-{}ten finden Sie im Menü \emph{Einstellungen}:
 	
 	\begin{figure}[h]
 		\centering
@@ -146,15 +55,50 @@
 		\caption{Menü "`Einstellungen"'}
 	\end{figure}
 	
-	Mithilfe der Option \emph{Füllmodus} können Sie festlegen, auf welche Weise die Sortierfelder gefüllt werden sollen, wenn die Aktion \emph{Felder zurücksetzen} ausgeführt wird. Dabei stehen zwei Modi zur Verfügung: Zufällig (voreingestellt; \texttt{Strg+R}) und Invers (\texttt{Strg+I}). Im Modus \emph{Zufällig} werden die Elemente bei jeder Neufüllung der Felder zufällig angeordnet. Damit lassen sich die unterschiedlichen Sortierverfahren auf realistische Weise mit völlig unsortierten Daten ausprobieren.
+	Mithilfe der Option \emph{Füllmodus} können Sie festlegen, auf welche Weise die Sortierfelder gefüllt werden sollen, wenn die Aktion \emph{Felder zurücksetzen} ausgeführt wird. Dabei stehen insgesamt vier Modi zur Verfügung: Zufällig (voreingestellt; \texttt{Strg+R}), invertiert (\texttt{Strg+I}), beinahe sortiert (\texttt{Strg+A}) und vorsortiert (\texttt{Strg+P}). Im Modus \emph{Zufällig} werden die Elemente bei jeder Neufüllung der Felder zufällig angeordnet. Damit lassen sich die unterschiedlichen Sortierverfahren auf realistische Weise mit völlig unsortierten Daten ausprobieren.
 	
-	Im Modus \emph{Invers} hingegen werden die Felder bereits sortiert gefüllt~-- allerdings umgekehrt (absteigend statt aufsteigend). Mit dieser Einstellung lässt sich beobachten, wie effizient die Sortierverfahren umgekehrt geordnete Folgen sortieren.
+	Im Modus \emph{Invertiert} hingegen werden die Felder bereits sortiert gefüllt~-- allerdings umgekehrt (absteigend anstatt aufsteigend). Mit dieser Einstellung lässt sich beobachten, wie effizient die Sortierverfahren umgekehrt geordnete Folgen sortieren.
+	
+	Der Modus \emph{Beinahe sortiert} erzeugt eine zufällige Sortierung der Felder, deren Abweichung zur tatsächlichen Sortierung nur gering ist. Die grobe Struktur der sortierten Daten ist bereits erkennbar. Diese Einstellung visualisiert eindrücklich, welche Sortieralgorithmen sich besonders zum Sortieren von Datenmengen eignen, die nur marginale Abweichungen zur sortierten Folge besitzen.
+	
+	Die letzte Option \emph{Vorsortiert} befüllt alle Felder mit bereits sortierten Daten, sie dient der Veranschauulichung der Arbeitweise von Sortieralgorithmen auf bereits sortierten Daten.
 	
 	Das Untermenü \emph{Simulationsgeschwindigkeit} ermöglicht es Ihnen, die Geschwindigkeit der Simulation anzupassen. Sie haben dabei die Wahl zwischen fünf Stufen. Während Algorithmen wie etwa Bubblesort sehr langsam sind und sich dort eine hohe Simulationsgeschwindigkeit anbietet, lohnt es sich, beispielsweise Quicksort in einer langsamen Stufe zu beobachten, um die Vorgehensweise dieses Verfahrens besser verstehen zu können. Die einzelnen Geschwindigkeitsstufen lassen sich auch über die Tastatur mithilfe der Tastenkombinationen \texttt{Strg+Umschalt+(1-5)} erreichen.
 	
 	SortSimulation schreibt oder verändert keine Dateien auf Ihrem Computer, das Programm startet deshalb jedes Mal mit der englischen Benutzeroberfläche. Sie können die Sprache im Menü \emph{Sprache} (engl. \emph{Settings} > \emph{Language}) verändern.
 	
-	Im letzten Untermenü \emph{Farbe} kann die Farbe der Balken eingestellt werden. Stan\-{}dard\-{}mäßig ist Blau eingestellt, Sie haben jedoch die Wahl zwischen acht verschiedenen Farben.
+	Die letzten beiden Menüpunkte \emph{Hintergrund} und \emph{Farbe} ermöglichen es, die Farbe der Balken sowie die Hintergrundfarbe der Felder einzustellen.
+	
+	\subsection{Parameter}
+	\label{StartUpArguments}
+	
+	SortSimulation zeigt standardmäßig drei Felder nebeneinander an. Dies ermöglicht es, drei Sortieralgorithmen parallel zu visualisieren. Durch Angabe eines Parameters beim Programmstart lässt sich die Anzahl der angezeigten Felder anpassen. Als Parameter übergeben Sie einfach die gewünschte Anzahl. Gültige Werte liegen hierbei zwischen 2 und 9.
+	
+	Um SortSimulation beispielsweise mit 5 Simulationsfeldern zu starten, führen Sie folgenden Befehl auf einer Kommandozeile aus:
+	
+	\begin{lstlisting}[style=shell]
+SortSimulation 5
+	\end{lstlisting}
+	
+	SortSimulation startet anschließend wie gewohnt, zeigt jedoch die angegebenen 5 Felder anstelle der standardmäßigen 3 an:
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.6]{images/image2.png}
+		\caption{SortSimulation mit 5 Feldern}
+		\label{fig:5fields}
+	\end{figure}
+	
+	Bedenken Sie bei dieser Startvariante bitte, dass das Hauptfenster von SortSimulation sehr breit werden kann, und gegebenenfalls die Anzeigefläche Ihres Bildschirms überschreiten kann.
+	
+	Sollten Sie einen ungültigen Wert angegeben haben, wird dies mit einer entsprechenden Fehlermeldung quittiert:
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.6]{images/image3.png}
+		\caption{Fehlermeldung bei ungültiger Parameterangabe}
+		\label{fig:parameterserror}
+	\end{figure}
 	
 	\section{Sortierverfahren}
 	
@@ -166,9 +110,45 @@
 	
 	Bubblesort vergleicht zwei benachbarte Elemente und vertauscht diese, wenn sie nicht in der richtigen Reihenfolge stehen. Dieser Vorgang wird solange wiederholt, bis alle Elemente an der richtigen Stelle stehen und damit sortiert sind.
 	
+	\subsubsection{Laufzeit}
+	
+	Bubblesort besitzt im Allgemeinen Laufzeit $\OO(n^2)$, erreicht jedoch bei bereits sortierten Folgen lineare Laufzeit $\OO(n)$.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Bubblesort}, label=lst:bubblesort, captionpos=b]{../Listings/Bubblesort.java}
+	\lstinputlisting[caption={Implementierung von Bubblesort}, label=lst:bubblesort, style=java]{../Listings/Bubblesort.java}
+	
+	\subsection{Cocktailsort}
+	
+	Cocktailsort (auch \emph{Shakersort} genannt) ist ein einfacher Sortieralgorithmus, der eine Variation des bekannten Bubblesort darstellt.
+	
+	\subsubsection{Idee von Cocktailsort}
+	
+	Die zu sortierenden Elemente werden abwechselnd nach oben und nach unten durchlaufen. Es werden jeweils zwei benachbarte Elemente verglichen und gegebenenfalls getauscht. Dadurch sammeln sich große Elemente am oberen Ende und kleine Elemente am unteren Ende des Arrays an.
+	
+	\subsubsection{Laufzeit}
+	
+	Cocktailsort besitzt im Allgemeinen Laufzeit $\OO(n^2)$, strebt jedoch gegen $\OO(n)$ für beinahe sortierte Folgen.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Cocktailsort}, label=lst:cocktailsort, style=java]{../Listings/Cocktailsort.java}
+	
+	\subsection{Gnomesort}
+	
+	Gnomesort ist ein sehr einfacher Sortieralgorithmus, der Elemente durch \emph{schrittweises Vergleichen} sortiert. Er wurde erstmalig im Jahr 2000 von \emph{Hamid Sarbazi-Azad} unter dem Namen \emph{Stupid Sort} veröffentlich. Später wurde der Name in Gnomesort geändert. Gnomesort hat den Vorteil, mit nur einer einzigen Schleife (und damit ohne geschachtelte Schleifen) auszukommen.
+	
+	\subsubsection{Idee von Gnomesort}
+	
+	Gnomesort arbeitet, wie man sich vielleicht die Arbeitsweise eines Gartenzwerges (engl. \emph{garden gnome}) vorstellen kann: Man nehme an, der Zwerg möchte Blumentöpfe sortieren. Er steht zunächst am linken Ende der in einer Reihe aufgestellten Töpfe. Der Zwerg vergleicht nun zwei benachbarte Töpfe: Stimmt die Reihenfolge, geht er einen Topf nach rechts. Stimmt sie nicht, werden die Töpfe getauscht, und der Zwerg geht einen Schritt nach links, sofern er nicht am linken Ende der Topfreihe steht. In diesem Falle geht der Gartenzwerg einen Schritt nach rechts. Dies wird solange wiederholt, bis er am rechten Ende (und damit am letzten Blumentopf) angekommen ist.
+	
+	\subsubsection{Laufzeit}
+	
+	Gnomesort besitzt im Allgemeinen Laufzeit $\OO(n^2)$, strebt jedoch gegen $\OO(n)$ für beinahe sortierte Folgen.
+	
+	\subsubsection{Implementierung in Java}
+	
+	\lstinputlisting[caption={Implementierung von Gnomesort}, label=lst:gnomesort, style=java]{../Listings/Gnomesort.java}
 	
 	\subsection{Heapsort}
 	
@@ -180,9 +160,13 @@
 	
 	Wenn die zu sortierende Folge als Heap vorliegt, kann das größte Element der \emph{Wurzel} des Baumes entnommen und ausgegeben werden. Um an das nächstgrößte Element zu gelangen, muss der Heap zunächst \emph{neu angeordnet} werden.
 	
+	\subsubsection{Laufzeit}
+	
+	Heapsort besitzt stets Laufzeit $\OO(n \log n)$ und gehört somit zu den besten vergleichsbasierten Sortieralgorithmen.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Heapsort}, label=lst:heapsort, captionpos=b]{../Listings/Heapsort.java}
+	\lstinputlisting[caption={Implementierung von Heapsort}, label=lst:heapsort, style=java]{../Listings/Heapsort.java}
 	
 	\subsection{Insertionsort}
 	
@@ -194,9 +178,13 @@
 	
 	Insertionsort ist ineffizient, da bei diesem Sortierverfahren Elemente oft über weite Strecken verschoben werden müssen.
 	
+	\subsubsection{Laufzeit}
+	
+	Insertionsort besitzt im Allgemeinen Laufzeit $\OO(n^2)$, strebt jedoch gegen $\OO(n)$ für beinahe sortierte Folgen.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Insertionsort}, label=lst:insertionsort, captionpos=b]{../Listings/Insertionsort.java}
+	\lstinputlisting[caption={Implementierung von Insertionsort}, label=lst:insertionsort, style=java]{../Listings/Insertionsort.java}
 	
 	\subsection{Mergesort}
 	
@@ -206,9 +194,13 @@
 	
 	Mergesort zerlegt die zu sortierende Folge in mehrere kleine Folgen, die, jede für sich, sortiert werden. Anschließend werden die sortierten, kleinen Folgen im Reißverschlussverfahren wieder zu einer großen Folge zusammengesetzt, bis alle Elemente sortiert sind.
 	
+	\subsubsection{Laufzeit}
+	
+	Mergesort besitzt stets Laufzeit $\OO(n \log n)$ und gehört somit zu den besten vergleichsbasierten Sortieralgorithmen.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Mergesort}, label=lst:mergesort, captionpos=b]{../Listings/Mergesort.java}
+	\lstinputlisting[caption={Implementierung von Mergesort}, label=lst:mergesort, style=java]{../Listings/Mergesort.java}
 	
 	\subsection{Quicksort}
 	
@@ -220,9 +212,13 @@
 	
 	Die Aufteilung wird mit Hilfe eines \emph{Pivotelementes} realisiert, das im ersten Schritt aus der Folge gewählt wird. Alle Elemente der Folge, die \emph{kleiner} als das Pivotelement sind, kommen in das erste Teilstück. Alle Elemente, die \emph{größer} als das Pivotelement sind, kommen in das zweite Teilstück. Bei Elementen, die genauso groß wie das Pivotelement sind, spielt es keine Rolle, in welches Teilstück sie kommen.
 	
+	\subsubsection{Laufzeit}
+	
+	Quicksort besitzt im Allgemeinen Laufzeit $\OO(n \log n)$ und gehört somit zu den besten vergleichsbasierten Sortieralgorithmen. Bei einer Worst Case-Eingabe für Quicksort beträgt die Laufzeit $\OO(n^2)$.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Quicksort}, label=lst:quicksort, captionpos=b]{../Listings/Quicksort.java}
+	\lstinputlisting[caption={Implementierung von Quicksort}, label=lst:quicksort, style=java]{../Listings/Quicksort.java}
 	
 	\subsection{Selectionsort}
 	
@@ -232,9 +228,13 @@
 	
 	Selectionsort teilt die zu sortierende Folge in einen \emph{sortierten} und einen \emph{nicht-sor\-{}tier\-{}ten} Bereich. Der sortierte Teil ist zu Beginn leer. Selectionsort sucht das kleinste Element in der unsortierten Teilfolge und vertauscht es mit dem ersten Element. Nach dem Schritt ist die Folge bis zu dieser Position sortiert. Der sortierte Teilbereich ist um ein Element größer geworden, der unsortierte um ein Element kleiner. Das Verfahren wird so oft wiederholt, bis die gesamte Folge sortiert ist.
 	
+	\subsubsection{Laufzeit}
+	
+	Selectionsort besitzt stets Laufzeit $\OO(n^2)$.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Selectionsort}, label=lst:selectionsort, captionpos=b]{../Listings/Selectionsort.java}
+	\lstinputlisting[caption={Implementierung von Selectionsort}, label=lst:selectionsort, style=java]{../Listings/Selectionsort.java}
 	
 	\subsection{Shellsort}
 	
@@ -244,43 +244,30 @@
 	
 	Shellsort kompensiert den Nachteil von Insertionsort, Elemente über weite Strecken verschieben zu müssen. Shellsort erzeugt dazu eine \emph{k-spaltige Matrix}, deren Spalten einzeln sortiert werden. Nach diesen Schritten ist die Folge bereits grob sortiert. Dieser Schritt wird wiederholt, wobei bei jeder Durchführung die Anzahl der Spalten verringert wird, bis die Matrix nur noch aus einer einzelnen Spalte besteht.
 	
+	\subsubsection{Laufzeit}
+	
+	Shellsort besitzt im Best Case Laufzeit $\OO(n \log n)$, im Worst Case $\OO(n^2)$. Der Average Case liegt dazwischen, bei $\OO(n \log^2 n)$.
+	
 	\subsubsection{Implementierung in Java}
 	
-	\lstinputlisting[caption={Implementierung von Shellsort}, label=lst:shellsort, captionpos=b]{../Listings/Shellsort.java}
+	\lstinputlisting[caption={Implementierung von Shellsort}, label=lst:shellsort, style=java]{../Listings/Shellsort.java}
 	
 	\section{Mitwirkende}
 	
-	Hiermit soll nachfolgenden Personen gedankt werden, die die Entwicklung von SortSimulation tatkräftig unterstützt haben. Neue Mitwirkende (Übersetzer, Designer, Verfasser von Dokumentationen etc.) werden ständig gesucht~-- setzen Sie sich bei Interesse mit Peter Folta in Verbindung.
-	
-	\subsection{Übersetzer}
-	
-	\arrayrulecolor{pfColor2}
-	\setlength{\arrayrulewidth}{0.5pt}
-	\begin{table}[h]
-		\begin{tabularx}{\linewidth}{@{\hspace{0pt}}|p{3cm}|X|@{\hspace{0pt}}}
-			\hline
-			\rowcolor{pfColor3}
-			\centering{\bfseries Sprache} & \centering{\bfseries Übersetzer} \tabularnewline
-			\hline
-			Deutsch & Folta, Peter \tabularnewline
-			\hline
-			Englisch & Allison, Chloë Luise \newline{} Folta, Peter \tabularnewline
-			\hline
-			Französisch & Müllner, Jan Sebastian \tabularnewline
-			\hline
-			Russisch & Folta, Lucia Sonja \tabularnewline
-			\hline
-		\end{tabularx}
-	\end{table}
+	Hiermit soll nachfolgenden Personen gedankt werden, die die Entwicklung von SortSimulation tatkräftig unterstützt haben. Neue Mitwirkende (Übersetzer, Designer, Verfasser von Dokumentationen etc.) werden ständig gesucht~-- setzen Sie sich bei Interesse mit Peter Folta in Verbindung.\\
+	[\baselineskip]
+	Allison, Chloë Louise\\
+	Folta, Lucia Sonja\\
+	Folta, Peter\\
+	Müllner, Jan Sebastian
 	
 	\begin{thebibliography}{99}
 		\bibitem{Lang}
 			\textsc{Lang}, Prof. Dr. Hans Werner: \emph{Algorithmen in Java}. 2. Auflage 2006. München: Oldenbourg Wissenschaftsverlag GmbH 2006. ISBN 978-3-486-57938-3, S.~5--52
-		\end{thebibliography}
+		\bibitem{Sarbazi}
+			\textsc{Sarbazi-Azad}, Dr. Hamid: \emph{Stupid Sort: A new sorting algorithm}. In: \emph{Department of Computer Science Newsletter, University of Glasgow}. Nr. 4, 2. Oktober 2000. \href{http://sina.sharif.edu/~azad/stupid-sort.PDF}{http://sina.sharif.edu/\~{}azad/stupid-sort.PDF}
+	\end{thebibliography}
 	
-	\listoffigures{}
-	\lstlistoflistings{}
-	\addcontentsline{toc}{section}{Listings}
+	\makelistoffigures
+	\makelistoflistings
 \end{document}
-
-\bye
