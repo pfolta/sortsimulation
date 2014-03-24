@@ -14,6 +14,8 @@ VERSION 2.0.0 Alpha (March 24, 2014)
 		- Color can be changed freely, not limited to predefined set
 		- New, improved About Dialog
 		- Updated Documentation: contains runtime information
+		- New, updated icon
+		- Icon available in 48x48 pixels
 
 	BUG FIXES
 		- Image buffering for Windows, avoids ugly blinking
