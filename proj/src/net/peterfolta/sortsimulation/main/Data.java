@@ -68,6 +68,7 @@ public class Data {
 	public static final Image[] APP_ICONS = {
 		ResourceLoader.loadImage(Display.getCurrent(), "icon_16x16.png"),
 		ResourceLoader.loadImage(Display.getCurrent(), "icon_32x32.png"),
+		ResourceLoader.loadImage(Display.getCurrent(), "icon_48x48.png"),
 		ResourceLoader.loadImage(Display.getCurrent(), "icon_64x64.png")
 	};
 	
