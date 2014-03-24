@@ -42,9 +42,9 @@ public class Data {
 	
 	public static final String APP_DESCRIPTION = "A visual representation of sorting algorithms";
 	
-	public static final String APP_VERSION = "2.0.0";
+	public static final String APP_VERSION = "2.0.0 Alpha";
 	
-	public static final String APP_PFID = "pfID-1395399330";
+	public static final String APP_PFID = "pfID-1395653642";
 	
 	public static final String APP_COPYRIGHT_HOLDER = "Peter Folta";
 	
