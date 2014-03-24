@@ -16,6 +16,7 @@ VERSION 2.0.0 Alpha (March 24, 2014)
 		- Updated Documentation: contains runtime information
 		- New, updated icon
 		- Icon available in 48x48 pixels
+		- Updated SWT library to version 4.3
 
 	BUG FIXES
 		- Image buffering for Windows, avoids ugly blinking
