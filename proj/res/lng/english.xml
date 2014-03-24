@@ -20,18 +20,16 @@
 		<Average>&amp;Average</Average>
 
 		<Background>&amp;Background</Background>
-		<Black>B&amp;lack</Black>
-		<Blue>&amp;Blue</Blue>
-		<Brown>Br&amp;own</Brown>
 		<Bubblesort>Bubble sort</Bubblesort>
 
+		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+		<ChooseColor>Choose Color</ChooseColor>
 		<Cocktailsort>Cocktail sort</Cocktailsort>
 		<Color>&amp;Color</Color>
 		<Contributors>Contributors</Contributors>
 		<Copyright>Copyright © %1 %2. All rights reserved.</Copyright>
 		<Ctrl>Ctrl</Ctrl>
-		<Cyan>&amp;Cyan</Cyan>
-
+		
 		<Documentation>&amp;Documentation</Documentation>
 
 		<Esc>Esc</Esc>
@@ -39,12 +37,9 @@
 
 		<Fast>&amp;Fast</Fast>
 		<FillMode>&amp;Fill mode</FillMode>
-		<Fuchsia>&amp;Fuchsia</Fuchsia>
-
+		
 		<Gnomesort>Gnome sort</Gnomesort>
-		<Green>&amp;Green</Green>
-		<Grey>&amp;Grey</Grey>
-
+		
 		<Heapsort>Heapsort</Heapsort>
 		<Help>&amp;Help</Help>
 
@@ -63,7 +58,6 @@
 		<Quicksort>Quicksort</Quicksort>
 
 		<Randomly>&amp;Randomly</Randomly>
-		<Red>&amp;Red</Red>
 		<ResetFields>&amp;Reset fields</ResetFields>
 		<Return>Return</Return>
 
@@ -84,8 +78,5 @@
 		<VerySlow>V&amp;ery slow</VerySlow>
 
 		<Website>&amp;Website</Website>
-		<White>&amp;White</White>
-
-		<Yellow>&amp;Yellow</Yellow>
 	</Translations>
 </Language>

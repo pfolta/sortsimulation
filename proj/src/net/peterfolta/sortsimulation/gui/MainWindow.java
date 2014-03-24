@@ -8,7 +8,7 @@
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2014/03/24
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,9 +27,8 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.common.ImageTools;
 import net.peterfolta.sortsimulation.common.ResourceLoader;
-import net.peterfolta.sortsimulation.common.enums.Background;
-import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
@@ -45,10 +44,12 @@ import org.eclipse.swt.events.ShellEvent;
 import org.eclipse.swt.events.ShellListener;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.program.Program;
 import org.eclipse.swt.widgets.Canvas;
+import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
@@ -78,8 +79,6 @@ public class MainWindow {
 	private Menu fillModeMenu;
 	private Menu delayMenu;
 	private Menu languageMenu;
-	private Menu backgroundMenu;
-	private Menu colorMenu;
 	private Menu helpMenu;
 	
 	private MenuItem simulation;
@@ -95,9 +94,7 @@ public class MainWindow {
 	private MenuItem language;
 	private MenuItem[] languages;
 	private MenuItem background;
-	private MenuItem[] backgrounds;
 	private MenuItem color;
-	private MenuItem[] colors;
 	private MenuItem help;
 	private MenuItem helpItem;
 	private MenuItem licenseItem;
@@ -222,10 +219,10 @@ public class MainWindow {
 		int lineHeight = height / Main.array[index].length;
 		int lineWidth = (width - Data.LENGTH_OF_ARRAY) / Data.LENGTH_OF_ARRAY;
 		
-		gc.setBackground(Main.settings.getBackground().getColor());
+		gc.setBackground(Main.settings.getBackground());
 		gc.fillRectangle(0, 0, width, height);
 		
-		gc.setBackground(Main.settings.getColor().getColor());
+		gc.setBackground(Main.settings.getColor());
 		
 		for(int i = 0; i < Data.LENGTH_OF_ARRAY; i++) {
 			gc.fillRectangle((lineWidth * (i)) + i, height - (Main.array[index][i] * lineHeight), 1, height);
@@ -366,50 +363,38 @@ public class MainWindow {
 		new MenuItem(settingsMenu, SWT.SEPARATOR);
 		
 		background = new MenuItem(settingsMenu, SWT.CASCADE);
-		background.setImage(ResourceLoader.loadImage(display, "color_16x16.png"));
-		
-		backgroundMenu = new Menu(background);
-		background.setMenu(backgroundMenu);
-		
-		backgrounds = new MenuItem[Background.values().length];
-		
-		for(int i = 0; i < backgrounds.length; i++) {
-			final int fi = i;
-			backgrounds[i] = new MenuItem(backgroundMenu, SWT.RADIO);
-			backgrounds[i].setImage(ResourceLoader.loadImage(display, Background.values()[i].getIcon()));
-			backgrounds[i].addListener(SWT.Selection, new Listener() {
-				public void handleEvent(Event event) {
-					Main.settings.setBackground(Background.values()[fi]);
+		background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
+		background.addListener(SWT.Selection, new Listener() {
+			public void handleEvent(Event event) {
+				ColorDialog dlg = new ColorDialog(mainShell);
+				dlg.setRGB(Main.settings.getBackground().getRGB());
+				dlg.setText(Main.language.getTranslationContent("ChooseBackgroundColor"));
+				
+				RGB rgb = dlg.open();
+				
+				if(rgb != null) {
+					Main.settings.setBackground(new org.eclipse.swt.graphics.Color(display, rgb));
+					background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
 				}
-			});
-			
-			if(Main.settings.getBackground() == Background.values()[i]) {
-				backgrounds[i].setSelection(true);
 			}
-		}
+		});
 		
 		color = new MenuItem(settingsMenu, SWT.CASCADE);
-		color.setImage(ResourceLoader.loadImage(display, "color_16x16.png"));
-		
-		colorMenu = new Menu(color);
-		color.setMenu(colorMenu);
-		
-		colors = new MenuItem[Color.values().length];
-		
-		for(int i = 0; i < colors.length; i++) {
-			final int fi = i;
-			colors[i] = new MenuItem(colorMenu, SWT.RADIO);
-			colors[i].setImage(ResourceLoader.loadImage(display, Color.values()[i].getIcon()));
-			colors[i].addListener(SWT.Selection, new Listener() {
-				public void handleEvent(Event event) {
-					Main.settings.setColor(Color.values()[fi]);
+		color.setImage(ImageTools.createColorField(display, Main.settings.getColor()));
+		color.addListener(SWT.Selection, new Listener() {
+			public void handleEvent(Event event) {
+				ColorDialog dlg = new ColorDialog(mainShell);
+				dlg.setRGB(Main.settings.getColor().getRGB());
+				dlg.setText(Main.language.getTranslationContent("ChooseColor"));
+				
+				RGB rgb = dlg.open();
+				
+				if(rgb != null) {
+					Main.settings.setColor(new org.eclipse.swt.graphics.Color(display, rgb));
+					color.setImage(ImageTools.createColorField(display, Main.settings.getColor()));
 				}
-			});
-			
-			if(Main.settings.getColor() == Color.values()[i]) {
-				colors[i].setSelection(true);
 			}
-		}
+		});
 		
 		help = new MenuItem(mainMenu, SWT.CASCADE);
 		
@@ -561,14 +546,6 @@ public class MainWindow {
 		language.setText(Main.language.getTranslationContent("Language"));
 		background.setText(Main.language.getTranslationContent("Background"));
 		color.setText(Main.language.getTranslationContent("Color"));
-		
-		for(int i = 0; i < backgrounds.length; i++) {
-			backgrounds[i].setText(Background.values()[i].getTranslation());
-		}
-		
-		for(int i = 0; i < colors.length; i++) {
-			colors[i].setText(Main.language.getTranslationContent(Color.values()[i].getTranslationKey()));
-		}
 		
 		help.setText(Main.language.getTranslationContent("Help"));
 		helpItem.setText(Main.language.getTranslationContent("Documentation") + "...\tF1");

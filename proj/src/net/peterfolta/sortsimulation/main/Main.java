@@ -8,7 +8,7 @@
  * 
  * File:			Main.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2014/03/24
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,14 +27,14 @@
 
 package net.peterfolta.sortsimulation.main;
 
-import net.peterfolta.sortsimulation.common.enums.Background;
-import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.gui.CustomMessageBox;
 import net.peterfolta.sortsimulation.gui.GUI;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
 public class Main {
@@ -51,7 +51,7 @@ public class Main {
 		checkJVM();
 		checkLibraries();
 		
-		settings = new Settings(Delay.MIDDLE_DELAY, Background.WHITE, Color.BLUE, FillMode.RANDOM, 3);
+		settings = new Settings(Delay.MIDDLE_DELAY, new Color(Display.getCurrent(), 255, 255, 255), new Color(Display.getCurrent(), 0, 128, 255), FillMode.RANDOM, 3);
 		language = new Language();
 		
 		if(args.length != 0) {

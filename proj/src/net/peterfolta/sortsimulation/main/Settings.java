@@ -8,7 +8,7 @@
  * 
  * File:			Settings.java
  * Created:			2008/11/29
- * Last modified:	2014/03/22
+ * Last modified:	2014/03/24
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -30,18 +30,16 @@ package net.peterfolta.sortsimulation.main;
 import java.io.File;
 import java.util.Arrays;
 
-import net.peterfolta.sortsimulation.common.enums.Background;
-import net.peterfolta.sortsimulation.common.enums.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
-import net.peterfolta.sortsimulation.main.Main;
 
+import org.eclipse.swt.graphics.Color;
 import org.jdom.input.SAXBuilder;
 
 public class Settings {
 	
 	private Delay delay;
-	private Background background;
+	private Color background;
 	private Color color;
 	private FillMode fillMode;
 	private int simultaneousSimulations;
@@ -50,7 +48,7 @@ public class Settings {
 	public String[] languageNames;
 	private String[] languageNativeNames;
 	
-	public Settings(Delay delay, Background background, Color color, FillMode fillMode, int simultaneousSimulations) {
+	public Settings(Delay delay, Color background, Color color, FillMode fillMode, int simultaneousSimulations) {
 		this.delay = delay;
 		this.background = background;
 		this.color = color;
@@ -90,11 +88,11 @@ public class Settings {
 		return delay;
 	}
 	
-	public Background getBackground() {
+	public org.eclipse.swt.graphics.Color getBackground() {
 		return background;
 	}
 	
-	public void setBackground(Background background) {
+	public void setBackground(org.eclipse.swt.graphics.Color background) {
 		this.background = background;
 		
 		Main.getGUI().getDisplay().asyncExec(new Runnable() {

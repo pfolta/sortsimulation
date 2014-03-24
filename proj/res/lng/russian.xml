@@ -19,18 +19,16 @@
 		<Average>&amp;Среднее значение</Average>
 
 		<Background>&amp;Фон</Background>
-		<Black>&amp;Чёрный</Black>
-		<Blue>&amp;Синий</Blue>
-		<Brown>&amp;Коричневый</Brown>
 		<Bubblesort>Сортировка пузырьком</Bubblesort>
 
+		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+		<ChooseColor>Choose Color</ChooseColor>
 		<Cocktailsort>Сортировка перемешиванием</Cocktailsort>
 		<Color>&amp;Цвет</Color>
 		<Contributors>Сотрудники</Contributors>
 		<Copyright>Авторские права %1 %2. Все права защищены.</Copyright>
 		<Ctrl>Ctrl</Ctrl>
-		<Cyan>&amp;Циановый</Cyan>
-
+		
 		<Documentation>&amp;Документация</Documentation>
 
 		<Esc>Esc</Esc>
@@ -38,12 +36,9 @@
 
 		<Fast>&amp;Быстро</Fast>
 		<FillMode>&amp;Полнота модуса</FillMode>
-		<Fuchsia>&amp;Фуксия</Fuchsia>
-
-		<Green>&amp;Зелёный</Green>
-		<Grey>&amp;Серый</Grey>
-
+		
 		<Gnomesort>Гномья сортировка</Gnomesort>
+		
 		<Heapsort>Пирамидальная сортировка</Heapsort>
 		<Help>С&amp;правка</Help>
 
@@ -62,7 +57,6 @@
 		<Quicksort>Быстрая сортировка</Quicksort>
 
 		<Randomly>&amp;Случайный</Randomly>
-		<Red>&amp;Красный</Red>
 		<ResetFields>&amp;Ставить обратно</ResetFields>
 		<Return>Return</Return>
 
@@ -83,8 +77,5 @@
 		<VerySlow>О&amp;чень медленно</VerySlow>
 
 		<Website>&amp;Веб-страница</Website>
-		<White>&amp;Белый</White>
-
-		<Yellow>&amp;Жёлтый</Yellow>
 	</Translations>
 </Language>

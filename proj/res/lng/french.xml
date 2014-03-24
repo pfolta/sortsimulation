@@ -19,18 +19,16 @@
 		<Average>&amp;Moyenne</Average>
 
 		<Background>Couleur d'&amp;arrière-plan</Background>
-		<Black>&amp;Noir</Black>
-		<Blue>&amp;Bleu</Blue>
-		<Brown>Br&amp;un</Brown>
 		<Bubblesort>Tri à bulles</Bubblesort>
 
+		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+		<ChooseColor>Choose Color</ChooseColor>
 		<Cocktailsort>Tri cocktail</Cocktailsort>
 		<Color>&amp;Couleur</Color>
 		<Contributors>Coopérateurs</Contributors>
 		<Copyright>Copyright © %1 %2. Tous droits réservés.</Copyright>
 		<Ctrl>Ctrl</Ctrl>
-		<Cyan>&amp;Cyan</Cyan>
-
+		
 		<Documentation>&amp;Documentation</Documentation>
 
 		<Esc>Esc</Esc>
@@ -38,12 +36,9 @@
 
 		<Fast>&amp;Vite</Fast>
 		<FillMode>&amp;Mode de remplissage</FillMode>
-		<Fuchsia>&amp;Fuchsia</Fuchsia>
-
+		
 		<Gnomesort>Gnome sort</Gnomesort>
-		<Green>&amp;Vert</Green>
-		<Grey>&amp;Gris</Grey>
-
+		
 		<Heapsort>Tri par tas</Heapsort>
 		<Help>&amp;Aide</Help>
 
@@ -62,7 +57,6 @@
 		<Quicksort>Tri rapide</Quicksort>
 
 		<Randomly>&amp;Par hasard</Randomly>
-		<Red>&amp;Rouge</Red>
 		<ResetFields>&amp;Reculer le panneau</ResetFields>
 		<Return>Return</Return>
 
@@ -83,8 +77,5 @@
 		<VerySlow>&amp;Trés lentement</VerySlow>
 
 		<Website>&amp;Page web</Website>
-		<White>&amp;Blanc</White>
-
-		<Yellow>&amp;Jaune</Yellow>
 	</Translations>
 </Language>
