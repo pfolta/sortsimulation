@@ -8,6 +8,7 @@ VERSION 2.0.0 Alpha (March 24, 2014)
 		- Startup Parameter allows customizing amount of simulations
 		- Two additional fill modes: Almost sorted, Presorted
 		- Background Color can be changed
+		- New, cool splash screen added!
 		- License Dialog instead of opening System PDF Viewer
 
 	UPDATES
