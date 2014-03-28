@@ -1,0 +1,49 @@
+SortSimulation
+CHANGELOG
+
+
+VERSION 2.0.0 Alpha (March 24, 2014)
+	NEW FEATURES
+		- Two new sorting algorithms: Cocktailsort, Gnomesort
+		- Startup Parameter allows customizing amount of simulations
+		- Two additional fill modes: Almost sorted, Presorted
+		- Background Color can be changed
+		- New, cool splash screen added!
+		- License Dialog instead of opening System PDF Viewer
+
+	UPDATES
+		- Color can be changed freely, not limited to predefined set
+		- New, improved About Dialog
+		- Updated Documentation: contains runtime information
+		- New, updated icon
+		- Icon available in 48x48 pixels
+		- Updated SWT library to version 4.3
+
+	BUG FIXES
+		- Image buffering for Windows, avoids ugly blinking
+		- Ceased partial language support for Spanish
+
+VERSION 1.2.1 (May 12, 2009)
+	BUG FIXES
+		- Wrong Unix launcher didn't allow executing SortSimulation on 32-bit architecture
+		- Label text incorrect after changing sorting algorithm
+
+VERSION 1.2 (May 12, 2009)
+	NEW FEATURES
+		- Added Language Support for English, German, French, Spanish and Russian
+		- Documentation available in English, German, French and Russian
+		- Linux/Mac Version: New .run application launcher
+		- 64-bit Versions for Linux and Windows
+	
+	UPDATES
+		- Windows Version: New flat toolbars under classic skin (Windows 2000 Skin)
+
+VERSION 1.1 (December 14, 2008)
+	NEW FEATURES
+		- Windows Version: New .exe application launcher
+	
+	BUG FIXES
+		- Image buffering for repainting the canvas (avoids ugly blinking)
+
+VERSION 1.0 (December 13, 2008)
+	FIRST PUBLIC RELEASE
