@@ -8,7 +8,7 @@
  * 
  * File:			AboutDialog.java
  * Created:			2008/11/29
- * Last modified:	2014/03/21
+ * Last modified:	2014/03/27
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -189,7 +189,8 @@ public class AboutDialog {
 		});
 		
 		aboutShell.setDefaultButton(closeButton);
-		aboutShell.setSize(550, 350);
+		aboutShell.setMinimumSize(550, 350);
+		aboutShell.pack();
 		aboutShell.setLocation((display.getPrimaryMonitor().getBounds().width - aboutShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - aboutShell.getSize().y) / 2);
 		aboutShell.open();
 	}
