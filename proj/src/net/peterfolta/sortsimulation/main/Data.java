@@ -8,7 +8,7 @@
  * 
  * File:			Data.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2014/09/17
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -42,13 +42,13 @@ public class Data {
 	
 	public static final String APP_DESCRIPTION = "A visual representation of sorting algorithms";
 	
-	public static final String APP_VERSION = "2.0.0 Alpha";
+	public static final String APP_VERSION = "2.0.0";
 	
-	public static final String APP_PFID = "pfID-1395653642";
+	public static final String APP_PFID = "pfID-1410949402";
 	
 	public static final String APP_COPYRIGHT_HOLDER = "Peter Folta";
 	
-	public static final String APP_COPYRIGHT_YEAR = "2008-2014";
+	public static final String APP_COPYRIGHT_YEAR = "2008–2014";
 	
 	public static final String APP_URL = "http://www.peterfolta.net/software/sortsimulation";
 	
