@@ -5,12 +5,18 @@
 \renewcommand{\author}{-- Deutsch --}
 \renewcommand{\copyright}{Copyright \textcopyright{} 2008--2014 Peter Folta. Alle Rechte vorbehalten.}
 
-\newcommand{\version}{2.0.0 Alpha}
+\newcommand{\version}{2.0.0}
 \newcommand{\URL}{\href{http://www.peterfolta.net/software/sortsimulation}{http://www.peterfolta.net/software/sortsimulation}}
 
 \renewcommand{\belowtitle}{
+	\vspace*{0.25cm}
 	Version \version\newline{}
-	Internet: \URL
+	\URL
+	\vspace*{0.5cm}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.8]{images/image0.png}
+	\end{figure}
 }
 
 \newcommand{\OO}{\mathcal{O}}
@@ -39,7 +45,7 @@
 	
 	Die Bedienung von SortSimulation ist denkbar einfach: Direkt nach dem Programmstart sind die Sortierfelder bereits zufällig gefüllt. Dabei liegt in jedem der drei Felder die gleiche Ausgangssituation vor. Ebenfalls sind nach dem Programmstart drei verschiedene Sortierverfahren voreingestellt; dies ist an den Auswahlboxen unterhalb der Sortierfelder erkennbar.
 	
-	Um nun drei Sortieralgorithmen miteinander zu vergleichen, wählen Sie aus den Auswahlboxen die entsprechenden Verfahren aus. Die Simulation startet, sobald Sie auf die Schaltfläche \emph{Simulation starten} in der Toolbar klicken, den entsprechenden Eintrag im Menü \emph{Simulation} auswählen oder die Eingabetaste drücken. Möchten Sie eine laufende Simulation abbrechen, genügt ein Druck auf die Escape-Taste oder ein Klick auf die Schaltfläche \emph{Simulation stoppen}. Um nach einer abgeschlossenen oder abgebrochenen Simulation wieder unsortierte Felder zu erhalten, klicken Sie auf die Schaltfläche \emph{Felder zurücksetzen} oder drücken Sie \texttt{Strg+N}.
+	Um nun drei Sortieralgorithmen miteinander zu vergleichen, wählen Sie aus den Auswahlboxen die entsprechenden Verfahren aus. Die Simulation startet, sobald Sie auf die Schaltfläche „\emph{Simulation starten}“ in der Toolbar klicken, den entsprechenden Eintrag im Menü „\emph{Simulation}“ auswählen oder die Eingabetaste drücken. Möchten Sie eine laufende Simulation abbrechen, genügt ein Druck auf die Escape-Taste oder ein Klick auf die Schaltfläche „\emph{Simulation stoppen}“. Um nach einer abgeschlossenen oder abgebrochenen Simulation wieder unsortierte Felder zu erhalten, klicken Sie auf die Schaltfläche „\emph{Felder zurücksetzen}“ oder drücken Sie \texttt{Strg+N}.
 	
 	SortSimulation bietet einige Einstellungen, mit denen Sie die Simulation anpassen können. Auf diese Einstellungen wird im folgenden Abschnitt ausführlich eingegangen.
 	
@@ -47,7 +53,7 @@
 	
 	\subsection{Einstellungen}
 	
-	Ihnen stehen in SortSimulation diverse Einstellungen zur Verfügung, mit denen Sie die Sortier-Simula\-{}tionen ihren Wünschen entsprechend anpassen können. Diese Ein\-{}stellungs\-{}mög\-{}lich\-{}kei\-{}ten finden Sie im Menü \emph{Einstellungen}:
+	Ihnen stehen in SortSimulation diverse Einstellungen zur Verfügung, mit denen Sie die Sortier-Simula\-{}tionen ihren Wünschen entsprechend anpassen können. Diese Ein\-{}stellungs\-{}mög\-{}lich\-{}kei\-{}ten finden Sie im Menü „\emph{Einstellungen}“:
 	
 	\begin{figure}[h]
 		\centering
@@ -55,19 +61,19 @@
 		\caption{Menü "`Einstellungen"'}
 	\end{figure}
 	
-	Mithilfe der Option \emph{Füllmodus} können Sie festlegen, auf welche Weise die Sortierfelder gefüllt werden sollen, wenn die Aktion \emph{Felder zurücksetzen} ausgeführt wird. Dabei stehen insgesamt vier Modi zur Verfügung: Zufällig (voreingestellt; \texttt{Strg+R}), invertiert (\texttt{Strg+I}), beinahe sortiert (\texttt{Strg+A}) und vorsortiert (\texttt{Strg+P}). Im Modus \emph{Zufällig} werden die Elemente bei jeder Neufüllung der Felder zufällig angeordnet. Damit lassen sich die unterschiedlichen Sortierverfahren auf realistische Weise mit völlig unsortierten Daten ausprobieren.
+	Mithilfe der Option „\emph{Füllmodus}“ können Sie festlegen, auf welche Weise die Sortierfelder gefüllt werden sollen, wenn die Aktion „\emph{Felder zurücksetzen}“ ausgeführt wird. Dabei stehen insgesamt vier Modi zur Verfügung: „\emph{Zufällig}“ (voreingestellt; \texttt{Strg+R}), „\emph{Invertiert}“ (\texttt{Strg+I}), „\emph{Beinahe sortiert}“ (\texttt{Strg+A}) und „\emph{Vorsortiert}“ (\texttt{Strg+P}). Im Modus „\emph{Zufällig}“ werden die Elemente bei jeder Neufüllung der Felder zufällig angeordnet. Damit lassen sich die unterschiedlichen Sortierverfahren auf realistische Weise mit völlig unsortierten Daten ausprobieren.
 	
-	Im Modus \emph{Invertiert} hingegen werden die Felder bereits sortiert gefüllt~-- allerdings umgekehrt (absteigend anstatt aufsteigend). Mit dieser Einstellung lässt sich beobachten, wie effizient die Sortierverfahren umgekehrt geordnete Folgen sortieren.
+	Im Modus „\emph{Invertiert}“ hingegen werden die Felder bereits sortiert gefüllt~-- allerdings umgekehrt (absteigend anstatt aufsteigend). Mit dieser Einstellung lässt sich beobachten, wie effizient die Sortierverfahren umgekehrt geordnete Folgen sortieren.
 	
-	Der Modus \emph{Beinahe sortiert} erzeugt eine zufällige Sortierung der Felder, deren Abweichung zur tatsächlichen Sortierung nur gering ist. Die grobe Struktur der sortierten Daten ist bereits erkennbar. Diese Einstellung visualisiert eindrücklich, welche Sortieralgorithmen sich besonders zum Sortieren von Datenmengen eignen, die nur marginale Abweichungen zur sortierten Folge besitzen.
+	Der Modus „\emph{Beinahe sortiert}“ erzeugt eine zufällige Sortierung der Felder, deren Abweichung zur tatsächlichen Sortierung nur gering ist. Die grobe Struktur der sortierten Daten ist bereits erkennbar. Diese Einstellung visualisiert eindrücklich, welche Sortieralgorithmen sich besonders zum Sortieren von Datenmengen eignen, die nur marginale Abweichungen zur sortierten Folge besitzen.
 	
-	Die letzte Option \emph{Vorsortiert} befüllt alle Felder mit bereits sortierten Daten, sie dient der Veranschauulichung der Arbeitweise von Sortieralgorithmen auf bereits sortierten Daten.
+	Die letzte Option „\emph{Vorsortiert}“ befüllt alle Felder mit bereits sortierten Daten, sie dient der Veranschauulichung der Arbeitweise von Sortieralgorithmen auf bereits sortierten Daten.
 	
-	Das Untermenü \emph{Simulationsgeschwindigkeit} ermöglicht es Ihnen, die Geschwindigkeit der Simulation anzupassen. Sie haben dabei die Wahl zwischen fünf Stufen. Während Algorithmen wie etwa Bubblesort sehr langsam sind und sich dort eine hohe Simulationsgeschwindigkeit anbietet, lohnt es sich, beispielsweise Quicksort in einer langsamen Stufe zu beobachten, um die Vorgehensweise dieses Verfahrens besser verstehen zu können. Die einzelnen Geschwindigkeitsstufen lassen sich auch über die Tastatur mithilfe der Tastenkombinationen \texttt{Strg+Umschalt+(1-5)} erreichen.
+	Das Untermenü „\emph{Simulationsgeschwindigkeit}“ ermöglicht es Ihnen, die Geschwindigkeit der Simulation anzupassen. Sie haben dabei die Wahl zwischen fünf Stufen. Während Algorithmen wie etwa Bubblesort sehr langsam sind und sich dort eine hohe Simulationsgeschwindigkeit anbietet, lohnt es sich, beispielsweise Quicksort in einer langsamen Stufe zu beobachten, um die Vorgehensweise dieses Verfahrens besser verstehen zu können. Die einzelnen Geschwindigkeitsstufen lassen sich auch über die Tastatur mithilfe der Tastenkombinationen \texttt{Strg+Umschalt+(1-5)} erreichen.
 	
-	SortSimulation schreibt oder verändert keine Dateien auf Ihrem Computer, das Programm startet deshalb jedes Mal mit der englischen Benutzeroberfläche. Sie können die Sprache im Menü \emph{Sprache} (engl. \emph{Settings} > \emph{Language}) verändern.
+	SortSimulation schreibt oder verändert keine Dateien auf Ihrem Computer, das Programm startet deshalb jedes Mal mit der englischen Benutzeroberfläche. Sie können die Sprache im Menü „\emph{Sprache}“ (engl. \emph{Settings} > \emph{Language}) verändern.
 	
-	Die letzten beiden Menüpunkte \emph{Hintergrund} und \emph{Farbe} ermöglichen es, die Farbe der Balken sowie die Hintergrundfarbe der Felder einzustellen.
+	Die letzten beiden Menüpunkte „\emph{Hintergrund}“ und „\emph{Farbe}“ ermöglichen es, die Farbe der Balken sowie die Hintergrundfarbe der Felder einzustellen.
 	
 	\subsection{Parameter}
 	\label{StartUpArguments}
@@ -254,12 +260,14 @@ SortSimulation 5
 	
 	\section{Mitwirkende}
 	
-	Hiermit soll nachfolgenden Personen gedankt werden, die die Entwicklung von SortSimulation tatkräftig unterstützt haben. Neue Mitwirkende (Übersetzer, Designer, Verfasser von Dokumentationen etc.) werden ständig gesucht~-- setzen Sie sich bei Interesse mit Peter Folta in Verbindung.\\
-	[\baselineskip]
-	Allison, Chloë Louise\\
-	Folta, Lucia Sonja\\
-	Folta, Peter\\
-	Müllner, Jan Sebastian
+	Hiermit soll nachfolgenden Personen gedankt werden, die die Entwicklung von SortSimulation tatkräftig unterstützt haben. Neue Mitwirkende (Übersetzer, Designer, Verfasser von Dokumentationen etc.) werden ständig gesucht~-- setzen Sie sich bei Interesse mit Peter Folta in Verbindung.
+	
+	\begin{itemize}
+		\item[--] Allison, Chlo\"{e} Louise
+		\item[--] Folta, Lucia Sonja
+		\item[--] Folta, Peter
+		\item[--] M\"{u}llner, Jan Sebastian
+	\end{itemize}
 	
 	\begin{thebibliography}{99}
 		\bibitem{Lang}

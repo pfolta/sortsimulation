@@ -1,16 +1,22 @@
-\documentclass[nobranding]{pfBook}
+\documentclass[]{pfBook}
 
 \renewcommand{\title}{SortSimulation}
 \renewcommand{\subtitle}{Documentation}
 \renewcommand{\author}{-- English --}
 \renewcommand{\copyright}{Copyright \textcopyright{} 2008--2014 Peter Folta. All rights reserved.}
 
-\newcommand{\version}{2.0.0 Alpha}
+\newcommand{\version}{2.0.0}
 \newcommand{\URL}{\href{http://www.peterfolta.net/software/sortsimulation}{http://www.peterfolta.net/software/sortsimulation}}
 
 \renewcommand{\belowtitle}{
+	\vspace*{0.25cm}
 	Version \version\newline{}
-	Internet: \URL
+	\URL
+	\vspace*{0.5cm}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.8]{images/image0.png}
+	\end{figure}
 }
 
 \newcommand{\OO}{\mathcal{O}}
@@ -25,7 +31,7 @@
 	
 	\section{Introduction}
 	
-	SortSimulation is a Java application that provides visual representations of different sorting algorithms. This gives users a better understanding of the various operating modes of said algorithms. The application is also useful for demonstrating the runtime differences \review{without simply comparing numbers}.
+	SortSimulation is a Java application that provides the user with a visual representation of various sorting algorithms. This gives users a better understanding of the various operating modes of said algorithms. The application is also useful for demonstrating the runtime differences without simply comparing numbers.
 	
 	\begin{figure}[h]
 		\centering
@@ -37,15 +43,17 @@
 	
 	\section{Usage}
 	
-	Using SortSimulation is really simple: The sorting fields are randomly filled immediately after the launch of the program---every field contains the same initial situation. Three sorting algorithms are preselected also following the program launch.
+	Using SortSimulation is really simple: the sorting fields are filled randomly immediately after the launch of the program---every field containing the same initial situation. Three sorting algorithms are preselected also following the program launch, which the user can then change to suit their needs.
 	
-	To compare the three particular sorting algorithms of your choice, select them from the combo boxes below the fields. Click on \emph{Start simulation} in the toolbar or the menu, or press the enter key on your keyboard alternatively, to begin. Cancelling an active simulation is just as easy: Press the escape key or click on \emph{Stop simulation}. To reset the fields after a finished or cancelled simulation, click on the button \emph{Reset fields} or press \texttt{Ctrl+N}.
+	To compare the three particular sorting algorithms of your choice, select them from the combo boxes below the fields. Click on ``\emph{Start simulation}'' in the toolbar, the menu, or, alternatively, press the enter key on your keyboard to begin. Cancelling an active simulation is just as easy: Press the escape key or click on ``\emph{Stop simulation}''. To reset the fields after a finished or cancelled simulation, click on the button ``\emph{Reset fields}'' or press \texttt{Ctrl+N}.
 	
-	SortSimulation allows you to configure the simulation as you wish. The available settings are discussed in the following paragraph.
+	SortSimulation allows you to configure the simulation as you wish. The available settings are discussed in the following section.
+	
+	In addition, advanced users have the possibility to provide SortSimulation with arguments upon program launch, read more about this in section \ref{StartUpArguments} on page \pageref{StartUpArguments}.
 	
 	\subsection{Settings}
 	
-	SortSimulation offers you miscellaneous options to configure the sorting simulations in the way you want it. The available settings are listed in the menu \emph{Settings}:
+	SortSimulation offers a variety of options to configure the sorting simulations in the way the user wants it. The available settings are listed in the ``\emph{Settings}'' menu:
 	
 	\begin{figure}[h]
 		\centering
@@ -53,26 +61,26 @@
 		\caption{The settings menu}
 	\end{figure}
 	
-	To configure the way the sorting fields are filled, the option \emph{Fill mode} offers you four possibilities: Randomly (preselected; \texttt{Ctrl+R}), Inverse (\texttt{Ctrl+I}), Almost sorted (\texttt{Ctrl+A}) and Presorted (\texttt{Ctrl+P}). If \emph{Randomly} is selected, the elements are ordered randomly in the fields when the user commits the action \emph{Reset fields}. This allows you to try the different sorting algorithms on totally unsorted data in a realistic way.
+	``\emph{Fill mode}'' offers the user four possibilities to configure the way the sorting fields are filled to begin with: ``\emph{Randomly}'' (preselected; \texttt{Ctrl+R}), ``\emph{Inverse}'' (\texttt{Ctrl+I}), ``\emph{Almost sorted}'' (\texttt{Ctrl+A}) and ``\emph{Presorted}'' (\texttt{Ctrl+P}). If ``\emph{Randomly}'' is selected, the elements are ordered completely randomly in the fields when the user commits the action ``\emph{Reset fields}''. This option allows the user to try the different sorting algorithms on data that is not ordered whatsoever, in a very realistic fashion.
 	
-	In contrast, the mode \emph{Inverse} fills the fields already sorted---but backwards (descending instead of ascending). Using this setting gives you the possibility to take a closer look on the efficiency of the algorithms sorting backwards pre-ordered series.
+	In contrast, the ``\emph{Inverse}'' mode begins with the fields already sorted- in a descending, as opposed to ascending, order. This setting gives the user a better insight to look at the efficiency of the algorithms sorting backwards, pre-ordered series.
 	
-	The mode \emph{Almost sorted} generates a randomly sorted sequence that only differs slightly from its real order. The rough structure of the sorted data is already recognizable. This options helps to visualize which sorting algorithms are particularly useful for sorting data sets that only marginally differ from their sorted order.
+	The ``\emph{Almost sorted}'' mode generates a randomly sorted sequence that only differs slightly from its real order. The rough structure of the sorted data is already recognizable. This option helps the user to visualize which sorting algorithms are particularly useful for sorting data sets that only marginally differ from their sorted order.
 	
-	The last option \emph{Presorted} fills all fields with already sorted data. This might be useful for understanding how different sorting algorithms work on an already sorted set of data.
+	The last option, ``\emph{Presorted}'', fills all fields with already sorted data. This might be useful for understanding how different sorting algorithms work on an already sorted set of data. However, this only has an effect on some algorithms. 
 	
-	The submenu \emph{Speed} allows you to configure the speed of the simulation. You can choose the speed between five levels. While algorihms like Bubble sort are quite slow, it is worth to select one of the higher speed levels; while running a sorting algorithm like Quicksort, it's better to choose a slower speed to be able to take a closer look at the functionality. It's also possible to set the different speed levels by keyboard using the sortcuts \texttt{Ctrl+Shift+(1-5)}.
+	The submenu ``\emph{Speed}'' allows the user to configure the speed of the simulation. The user can choose their desired speed from five prechosen levels. As algorithms like Bubble sort are quite slow, it may be worth selecting one of the higher speed levels. However, whilst running a sorting algorithm like Quicksort, it is better to choose a slower speed to be able to take a closer look at the functionality. It's also possible to set the different speed levels by keyboard using the sortcuts \texttt{Ctrl+Shift+(1-5)}.
 	
-	SortSimulation doesn't create or modify any of the files stored on your computer, that's why SortSimulation's user interface language is always set to English after the program launch, even if you changed it before. To switch between the offered languages, go to the submenu \emph{Language}.
+	SortSimulation does not create or modify any of the files stored on the user's computer. That is why SortSimulation's user interface language is always set to English after the program launch, even if the language was previously changed. To switch between the offered languages, go to the submenu ``\emph{Language}''.
 	
-	The last two sub menus \emph{Background} and \emph{Color} allow you to change the color of the bars as well as to adjust the background color of the panes.
+	The last two submenus ``\emph{Background}'' and ``\emph{Color}'' allow the user to change the color of the bars as well as to adjust the background color of the panes, so that the program is aesthetically pleasing to the user as well as being easily readable.
 	
 	\subsection{Parameter}
 	\label{StartUpArguments}
 	
-	By default, SortSimulation displays three fields next to each other. This allows for the visualization of three sorting algorithms parallel to each other. By using a parameter at the program launch, you can adjust the amount of displayed fields. To do that, simply provide the desired amount. Valid values are between 2 and 9.
+	By default, SortSimulation displays three different fields alongside each other. This layout makes it easier for the user to compare the various algorithms by viewing them at the same time. It is possible to adjust the number of displayed fields by using a parameter at the program launch. To do this, simply provide the desired amount, whilst keeping in mind that, valid values are between 2 and 9.
 	
-	To launch SortSimulation with 5 fields for instance, please run the following command from a terminal window:
+	For instance, to launch SortSimulation with 5 fields, please run the following command from a terminal window:
 	
 	\begin{lstlisting}[style=shell]
 SortSimulation 5
@@ -87,9 +95,9 @@ SortSimulation 5
 		\label{fig:5fields}
 	\end{figure}
 	
-	Please note when using this method that SortSimulation's main window may become very wide and might be bigger than your what your screen is able to display.
+	Please note that when using this method, SortSimulation's main window may become much wider than usual which may be larger than what the user's screen is able to display.
 	
-	If you provide an invalid value, you will receive the following error message:
+	If the users provides an invalid value, the following error message will occur:
 	
 	\begin{figure}[h]
 		\centering
@@ -102,15 +110,15 @@ SortSimulation 5
 	
 	\subsection{Bubble sort}
 	
-	Bubble sort is a really simple sorting algorithm, that sorts elements using a \emph{step-by-step comparison}. Because bubble sort is not very efficient, it is often used to demonstrate a weak sorting algorithm.
+	Bubble sort is a very simple sorting algorithm that sorts elements by using a \emph{step-by-step comparison}. As bubble sort is not very efficient, it is often used to demonstrate a weak sorting algorithm.
 	
 	\subsubsection{Idea of Bubble sort}
 	
-	Bubble sort works by comparing two list items and swapping them if they are in the wrong order. This procedure is repeated until all elements are in the correct position.
+	Bubble sort works by comparing two of the listed items and swapping them if they are in the wrong order. This procedure is repeated until all elements are in the correct position.
 	
 	\subsubsection{Performance}
 	
-	Bubble sort has typically complexity $\OO(n^2)$, where $n$ is the number of items being sorted. Performance of bubble sort over an already-sorted list (best-case) is $\OO(n)$.
+	Bubble sort has typical complexity $\OO(n^2)$, where $n$ is the number of items being sorted. The performance of bubble sort over an already-sorted list (best-case) is $\OO(n)$.
 	
 	\subsubsection{Java implementation}
 	
@@ -118,15 +126,15 @@ SortSimulation 5
 	
 	\subsection{Cocktail sort}
 	
-	Cocktail sort, also known as \emph{Shaker sort}, is a simple sorting algorithm, which is a variant of the popular bubble sort.
+	Cocktail sort, also known as \emph{Shaker sort}, is another simple sorting algorithm, which is a variant of the popular bubble sort.
 	
 	\subsubsection{Idea of Cocktail sort}
 	
-	The to be sorted sequence of elements is being iterated upwards and downwards alternatingly. In each step, two neighboring elements are being compared and swapped if they are in the wrong order. Because of this, a cluster of large elements forms on the upper end of the array and a cluster of small elements form on the lower end.
+	The sequence of elements that are to be sorted are iterated upwards and downwards alternately. In each step, two neighboring elements are compared and swapped if they are in the wrong order. Because of this, a cluster of large elements forms on the upper end of the array and a cluster of small elements form on the lower end.
 	
 	\subsubsection{Performance}
 	
-	Cocktail sort has typically complexity $\OO(n^2)$, where $n$ is the number of items being sorted. It strives towards $\OO(n)$ for almost sorted sequences.
+	Cocktail sort has typical complexity $\OO(n^2)$, where $n$ is the number of items being sorted. It strives towards $\OO(n)$ for almost sorted sequences.
 	
 	\subsubsection{Java implementation}
 	
@@ -134,15 +142,15 @@ SortSimulation 5
 	
 	\subsection{Gnome sort}
 	
-	Gnome sort is a very simple sorting algorithm, that sorts elements by \emph{step-by-step comparison}. It was originally proposed by \emph{Hamid Sarbazi-Azad} in 2000 under the name \emph{Stupid Sort}. Later the name was changed into Gnome sort. Gnome sort has the advantage of requiring just one loop (and thus no nested loops).
+	Gnome sort is yet another very simple sorting algorithm, that sorts elements by \emph{step-by-step comparison}. It was originally proposed by \emph{Hamid Sarbazi-Azad} in 2000 under the name \emph{Stupid Sort}. Later the name was changed into Gnome sort. Gnome sort has the advantage of requiring just one loop (and thus no nested loops).
 	
 	\subsubsection{Idea of Gnome sort}
 	
-	Gnome sort works in a way one might imagine a garden gnome: Suppose a garden gnome wants to sort flower pots. He initially stands at the left end of the sequence of pots. The gnome compares two neighboring flower pots: If they are in correct order, he moves one pot to the right. If they are not, he swaps them and makes one step to the left, unless he is standing at the left end of the pot sequence. In that case, the garden gnome makes one step to the right. This procedure is repeated until he gets to the right end of the sequence (and therefore reaches the last flower pot).
+	Gnome sort works in a way one might imagine a garden gnome: Suppose a garden gnome wants to sort flower pots. He initially stands at the left end of the sequence of pots. The gnome compares two neighboring flower pots: If they are in the correct order, he moves one pot to the right. If they are not, he swaps them and makes one step to the left, unless he is standing at the left end of the pot sequence. In that case, the garden gnome makes one step to the right. This procedure is repeated until he gets to the right end of the sequence (and therefore reaches the last flower pot).
 	
 	\subsubsection{Performance}
 	
-	Gnome sort has typically complexity $\OO(n^2)$, where $n$ is the number of items being sorted. It strives towards $\OO(n)$ for almost sorted sequences.
+	Gnome sort has typical complexity $\OO(n^2)$, where $n$ is the number of items being sorted. It strives towards $\OO(n)$ for almost sorted sequences.
 	
 	\subsubsection{Java implementation}
 	
@@ -168,17 +176,17 @@ SortSimulation 5
 	
 	\subsection{Insertion sort}
 	
-	Insertion sort is a quite simple sorting algorithm. It is not as efficient as other more complex algorithms, but \emph{easy to implement} and has a very short run time in case of a small amount of data or already presorted data.
+	Insertion sort is quite a simple sorting algorithm. It is not as efficient as other more complex algorithms, but it is \emph{easy to implement} and has a very short run time in case of a small amount of data or already presorted data.
 	
 	\subsubsection{Idea of Insertion sort}
 	
 	Insertion sort removes an element of the unsorted set and inserts it in the correct place of the output sequence. If the sequence is empty, the element will be inserted at the first position.
 	
-	Insertion sort is inefficient, because this sorting algorithm often needs to move elements over long distances.
+	This sorting algorithm is rather inefficient, because it often needs to move elements over long distances.
 	
 	\subsubsection{Performance}
 	
-	Insertion sort has typically complexity $\OO(n^2)$, where $n$ is the number of items being sorted. It strives towards $\OO(n)$ for almost sorted sequences.
+	Insertion sort has typical complexity $\OO(n^2)$, where $n$ is the number of items being sorted. It strives towards $\OO(n)$ for almost sorted sequences.
 	
 	\subsubsection{Java implementation}
 	
@@ -186,15 +194,15 @@ SortSimulation 5
 	
 	\subsection{Merge sort}
 	
-	Merge sort is a recursive and stable sorting algorithm, which is based on the \emph{divide and conquer principle}, like \emph{Quicksort}. Merge sort was presented by John von Neumann in 1945.
+	Merge sort is a recursive and stable sorting algorithm, which is based on the \emph{divide and conquer principle}, similar to \emph{Quicksort}. Merge sort was presented by John von Neumann in 1945.
 	
 	\subsubsection{Idea of Merge sort}
 	
-	Merge sort splits the sequence into several smaller sequences, which will be sorted each for itself. After that the sorted, small sequences are united in one completly sorted sequence.
+	Merge sort splits the whole sequence into several smaller sequences, which will each be sorted individually. Following this, the small sequences are united in one completely sorted sequence.
 	
 	\subsubsection{Performance}
 	
-	Merge sort always has complexity $\OO(n \log n)$ and is therefore one of the best comparison sorts.
+	Merge sort always has complexity $\OO(n \log n)$ and is therefore, arguably, one of the best comparison sorts.
 	
 	\subsubsection{Java implementation}
 	
@@ -202,17 +210,17 @@ SortSimulation 5
 	
 	\subsection{Quicksort}
 	
-	Quicksort is one of the \emph{fastest sorting algorithms}, based on the \emph{divide and conquer principle}. The recursive Quicksort algorithm in its original version was developed by \emph{C. Antony R. Hoare} in 1960.
+	Quicksort is one of the \emph{fastest sorting algorithms}, based on the \emph{divide and conquer principle}. The recursive Quicksort algorithm, in its original version, was developed by \emph{C. Antony R. Hoare} in 1960.
 	
 	\subsubsection{Idea of Quicksort}
 	
-	The sequence will initially be split into two part. The first section contains all elements less than or equal to all elements in the second section (\emph{divide}). Then the two pieces are independently recursively sorted using the same procedure (\emph{conquer}). The last step combines the smaller sequences to a sorted one (\emph{combine}).
+	The sequence will initially be split into two parts. The first section's elements are all less than or equal to all elements in the second section (\emph{divide}). Then, the divided sequences are independently, recursively sorted using the same procedure (\emph{conquer}). The last step combines the smaller sequences to a sorted one (\emph{combine}).
 	
 	The division is realized using a \emph{pivot element}, which is selected from the array in the first step. All elements of the sequence, which are \emph{smaller} than the pivot element, will be put in the first section. All the elements, that are \emph{larger} than the pivot element, will be put in the second section. For elements which have the same value as the pivot element, it does not matter in what part they are put.
 	
 	\subsubsection{Performance}
 	
-	Quicksort has typically complexity $\OO(n \log n)$, where $n$ is the number of items being sorted. It is therefore one of the best comparison sorts. The worst case performance of Quicksort has complexity $\OO(n^2)$.
+	Quicksort has typical complexity $\OO(n \log n)$, where $n$ is the number of items being sorted. It is therefore, arguably, one of the best comparison sorts. The worst case performance of Quicksort has complexity $\OO(n^2)$.
 	
 	\subsubsection{Java implementation}
 	
@@ -224,7 +232,7 @@ SortSimulation 5
 	
 	\subsubsection{Idea of Selection sort}
 	
-	Selection sort divides the sequence in a \emph{sorted} and a \emph{unsorted} field. The sorted part is empty at the beginning. Selection sort examines the smallest element in the unsorted part and swaps it with the first element. The sequence is sorted until this position after the step is made. The procedure is repeated until the entire sequence is sorted.
+	Selection sort divides the sequence in a \emph{sorted} field and an \emph{unsorted} field. The sorted part is empty at the beginning. Selection sort examines the smallest element in the unsorted sequence and swaps it with the first element. The sequence is sorted until this position after the step is made. The procedure is repeated until the entire sequence is sorted.
 	
 	\subsubsection{Performance}
 	
@@ -240,7 +248,7 @@ SortSimulation 5
 	
 	\subsubsection{Idea of Shellsort}
 	
-	Shellsort compensates the disadvantage of Insertion sort to move elements over large distances. Shellsort creates a \emph{k-column matrix}, whose columns are sorted separately. After these steps, the result is already sorted coarse. The step is repeated every time while the number of columns is reduced, until the matrix consists of only a single column.
+	Shellsort compensates for the disadvantage of Insertion sort to move elements over large distances. Shellsort creates a \emph{k-column matrix}, whose columns are sorted separately. After these steps, the result is already sorted roughly. The step is repeated every time whilst the number of columns is reduced, until the matrix consists of only a single column.
 	
 	\subsubsection{Performance}
 	
@@ -252,12 +260,14 @@ SortSimulation 5
 	
 	\section{Contributors}
 	
-	This is to thank the following persons, who have vigorously supported the development of SortSimulation. New contributors (translators, designers, writers of documentation, etc.) are needed constantly~-- if you are interested in contributing, please get in touch with Peter Folta.\\
-	[\baselineskip]
-	Allison, Chloë Louise\\
-	Folta, Lucia Sonja\\
-	Folta, Peter\\
-	Müllner, Jan Sebastian
+	This is to thank the following persons, who have vigorously supported the development of SortSimulation. New contributors (translators, designers, writers of documentation, etc.) are needed constantly~-- if you are interested in contributing, please get in touch with Peter Folta.
+
+	\begin{itemize}
+		\item[--] Allison, Chlo\"{e} Louise
+		\item[--] Folta, Lucia Sonja
+		\item[--] Folta, Peter
+		\item[--] M\"{u}llner, Jan Sebastian
+	\end{itemize}
 	
 	\begin{thebibliography}{99}
 		\bibitem{Lang}
