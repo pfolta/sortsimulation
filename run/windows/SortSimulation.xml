@@ -1,8 +1,8 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>D:\Repositories\SortSimulation\trunk\ship\windows-x86_64\SortSimulation.jar</jar>
-  <outfile>D:\Repositories\SortSimulation\trunk\run\windows\SortSimulation.exe</outfile>
+  <jar>D:\Repositories\SortSimulation\tags\2.0.0_pfID-1410949402\ship\windows-x86_64\SortSimulation.jar</jar>
+  <outfile>D:\Repositories\SortSimulation\tags\2.0.0_pfID-1410949402\run\windows\SortSimulation.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir></chdir>
@@ -11,7 +11,7 @@
   <supportUrl></supportUrl>
   <stayAlive>true</stayAlive>
   <manifest></manifest>
-  <icon>D:\Repositories\SortSimulation\trunk\res\icon\icon.ico</icon>
+  <icon>D:\Repositories\SortSimulation\tags\2.0.0_pfID-1410949402\res\icon\icon.ico</icon>
   <jre>
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>

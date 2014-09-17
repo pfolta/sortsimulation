@@ -2,6 +2,10 @@ SortSimulation
 CHANGELOG
 
 
+VERSION 2.0.0 (September 17, 2014)
+	UPDATES
+		- Updated documentation for English and German
+
 VERSION 2.0.0 Alpha (March 24, 2014)
 	NEW FEATURES
 		- Two new sorting algorithms: Cocktailsort, Gnomesort
