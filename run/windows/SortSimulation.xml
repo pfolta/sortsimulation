@@ -1,0 +1,34 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Repositories\SortSimulation\tags\2.0.0_pfID-1410949402\ship\windows-x86_64\SortSimulation.jar</jar>
+  <outfile>D:\Repositories\SortSimulation\tags\2.0.0_pfID-1410949402\run\windows\SortSimulation.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>true</stayAlive>
+  <manifest></manifest>
+  <icon>D:\Repositories\SortSimulation\tags\2.0.0_pfID-1410949402\res\icon\icon.ico</icon>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <minVersion>1.6.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>jreOnly</jdkPreference>
+  </jre>
+  <versionInfo>
+    <fileVersion>2.0.0.0</fileVersion>
+    <txtFileVersion>2.0.0</txtFileVersion>
+    <fileDescription>SortSimulation - A visual representation of sorting algorithms</fileDescription>
+    <copyright>Copyright © 2008-2014 Peter Folta. All rights reserved.</copyright>
+    <productVersion>2.0.0.0</productVersion>
+    <txtProductVersion>2.0.0</txtProductVersion>
+    <productName>SortSimulation</productName>
+    <companyName>pf</companyName>
+    <internalName>SortSimulation</internalName>
+    <originalFilename>SortSimulation.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>

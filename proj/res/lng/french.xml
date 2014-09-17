@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Information>
+		<Product>SortSimulation</Product>
+		<Version>2.0.0</Version>
+		<ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
+		<LanguageName>French</LanguageName>
+		<NativeName>Français</NativeName>
+		<Translators>
+			<Translator>Jan Sebastian Müllner</Translator>
+		</Translators>
+	</Information>
+	<Translations>
+		<About>&amp;À propos de %1</About>
+		<Algorithm>Algorithme Nº %1</Algorithm>
+		<AlmostSorted>Almost Sorted</AlmostSorted>
+		<Alt>Alt</Alt>
+		<Authors>Auteurs</Authors>
+		<Average>&amp;Moyenne</Average>
+
+		<Background>Couleur d'&amp;arrière-plan</Background>
+		<Bubblesort>Tri à bulles</Bubblesort>
+
+		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+		<ChooseColor>Choose Color</ChooseColor>
+		<Cocktailsort>Tri cocktail</Cocktailsort>
+		<Color>&amp;Couleur</Color>
+		<Contributors>Coopérateurs</Contributors>
+		<Copyright>Copyright © %1 %2. Tous droits réservés.</Copyright>
+		<Ctrl>Ctrl</Ctrl>
+		
+		<Documentation>&amp;Documentation</Documentation>
+
+		<Esc>Esc</Esc>
+		<Exit>&amp;Quitter</Exit>
+
+		<Fast>&amp;Vite</Fast>
+		<FillMode>&amp;Mode de remplissage</FillMode>
+		
+		<Gnomesort>Gnome sort</Gnomesort>
+		
+		<Heapsort>Tri par tas</Heapsort>
+		<Help>&amp;Aide</Help>
+
+		<Insertionsort>Tri par insertion</Insertionsort>
+		<Inverse>&amp;Inverse</Inverse>
+
+		<Language>&amp;Langue</Language>
+		<License>&amp;Licence</License>
+
+		<Mergesort>Tri fusion</Mergesort>
+		
+		<OK>&amp;OK</OK>
+		
+		<Presorted>Presorted</Presorted>
+
+		<Quicksort>Tri rapide</Quicksort>
+
+		<Randomly>&amp;Par hasard</Randomly>
+		<ResetFields>&amp;Reculer le panneau</ResetFields>
+		<Return>Return</Return>
+
+		<Selectionsort>Tri par sélection</Selectionsort>
+		<Settings>&amp;Paramètres</Settings>
+		<Shellsort>Tri de Shell</Shellsort>
+		<Shift>Shift</Shift>
+		<Simulation>&amp;Simulation</Simulation>
+		<Slow>&amp;Lentement</Slow>
+		<Speed>&amp;Vitesse</Speed>
+		<StartSimulation>&amp;Lancer la simulation</StartSimulation>
+		<StopSimulation>&amp;Arrêter la simulation</StopSimulation>
+
+		<UsageHint>Sélectionnez les %1 algorithmes de tri et cliquez sur «lancer la simulation» pour commencer.</UsageHint>
+
+		<Version>Version %1</Version>
+		<VeryFast>Trés &amp;rapidement</VeryFast>
+		<VerySlow>&amp;Trés lentement</VerySlow>
+
+		<Website>&amp;Page web</Website>
+	</Translations>
+</Language>
