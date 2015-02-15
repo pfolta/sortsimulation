@@ -8,7 +8,7 @@
  * 
  * File:			GUI.java
  * Created:			2013/10/30
- * Last modified:	2014/03/21
+ * Last modified:	2015/02/15
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -29,15 +29,18 @@ package net.peterfolta.sortsimulation.gui;
 
 import org.eclipse.swt.widgets.Display;
 
-public class GUI extends Thread {
+public class GUI {
 	
-	private static Display display;
+	private Display display;
 	
 	private SplashScreen splashScreen;
 	private MainWindow mainWindow;
 	
-	public void run() {
-		display = getDisplay();
+	public GUI() {
+		this.display = Display.getDefault();
+	}
+	
+	public void start() {
 		showSplashScreen();
 		
 		while(!display.isDisposed()) {
@@ -48,11 +51,7 @@ public class GUI extends Thread {
 	}
 	
 	public Display getDisplay() {
-		if(display == null) {
-			display = new Display();
-		}
-		
-		return display;
+		return this.display;
 	}
 	
 	public SplashScreen getSplashScreen() {
