@@ -27,6 +27,8 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.main.Data;
+
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -38,6 +40,9 @@ public class GUI {
 	private MainWindow mainWindow;
 	
 	public GUI() {
+		Display.setAppName(Data.APP_NAME);
+		Display.setAppVersion(Data.APP_VERSION);
+		
 		this.display = Display.getDefault();
 	}
 	
