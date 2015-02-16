@@ -105,6 +105,8 @@ public class GUI {
 	}
 	
 	public void die() {
+		getMainWindow().stopSimulation();
+		
 		display.dispose();
 	}
 
