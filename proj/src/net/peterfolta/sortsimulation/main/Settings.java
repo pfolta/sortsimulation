@@ -1,6 +1,6 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
  * Version:			2.0.1
@@ -8,7 +8,7 @@
  * 
  * File:			Settings.java
  * Created:			2008/11/29
- * Last modified:	2015/02/16
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -63,11 +63,11 @@ public class Settings {
 			languageNames = new String[tmp.length];
 			languageNativeNames = new String[tmp.length];
 			
-			for(int i = 0; i < tmp.length; i++) {
+			for (int i = 0; i < tmp.length; i++) {
 				languageNames[i] = new SAXBuilder().build("res/lng/" + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
 				languageNativeNames[i] = new SAXBuilder().build("res/lng/" + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
 			}
-		} catch(Exception exception) {
+		} catch (Exception exception) {
 			exception.printStackTrace();
 			
 			Main.exit(2);
@@ -115,7 +115,7 @@ public class Settings {
 		
 		Main.getGUI().getDisplay().asyncExec(new Runnable() {
 			public void run() {
-				for(int i = 0; i < simultaneousSimulations; i++) {
+				for (int i = 0; i < simultaneousSimulations; i++) {
 					Main.getGUI().getMainWindow().repaintCanvas(i);
 				}
 			}
@@ -145,15 +145,15 @@ public class Settings {
 	public int getCurrentLanguageIndex() {
 		int index = 0;
 		
-		for(int i = 0; i < languageNames.length; i++) {
-			if(languageNames[i].equals(currentlanguage)) index = i;
+		for (int i = 0; i < languageNames.length; i++) {
+			if (languageNames[i].equals(currentlanguage)) index = i;
 		}
 		
 		return index;
 	}
 	
 	public void setSimultaenousSimulations(int simultaneous) throws Exception {
-		if(simultaneous > 1 && simultaneous < 10) {
+		if (simultaneous > 1 && simultaneous < 10) {
 			simultaneousSimulations = simultaneous;
 		} else {
 			throw new Exception("Illegal amount of simultaneous simulations");

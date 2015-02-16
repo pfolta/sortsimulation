@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Cocktailsort.java
- * Created:			2014/03/22
- * Last modified:	2014/03/23
+ * Created:			2014/3/22
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -45,8 +45,8 @@ public class CocktailSort implements Sortable {
 			swapped = false;
 			start++;
 			
-			for(int i = start; i <= end && !interrupted; i++) {
-				if(a[i] > a[i+1]) {
+			for (int i = start; i <= end && !interrupted; i++) {
+				if (a[i] > a[i+1]) {
 					ArrayTools.swap(a, i, i+1);
 					swapped = true;
 				}
@@ -65,15 +65,15 @@ public class CocktailSort implements Sortable {
 				});
 			}
 			
-			if(!swapped) {
+			if (!swapped) {
 				break;
 			}
 			
 			swapped = false;
 			end--;
 			
-			for(int i = end; i >= start && !interrupted; i--) {
-				if(a[i] > a[i+1]) {
+			for (int i = end; i >= start && !interrupted; i--) {
+				if (a[i] > a[i+1]) {
 					ArrayTools.swap(a, i, i+1);
 					swapped = true;
 				}
@@ -91,7 +91,7 @@ public class CocktailSort implements Sortable {
 					}
 				});
 			}
-		} while(swapped && !interrupted);
+		} while (swapped && !interrupted);
 	}
 
 }

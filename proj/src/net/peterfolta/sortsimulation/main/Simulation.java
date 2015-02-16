@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Simulation.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -54,18 +54,19 @@ public class Simulation extends Thread {
 	
 	private synchronized void finished() {
 		boolean finished = true;
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
-			if(i != index) {
+		
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+			if (i != index) {
 				try {
-					if(Main.getGUI().getMainWindow().simulationThread.simulation[i].isAlive()) {
+					if (Main.getGUI().getMainWindow().simulationThread.simulation[i].isAlive()) {
 						finished = false;
 					}
-				} catch(Exception exception) {
+				} catch (Exception exception) {
 				}
 			}
 		}
 		
-		if(finished) {
+		if (finished) {
 			Main.getGUI().getDisplay().asyncExec(new Runnable() {
 				public void run() {
 					Main.getGUI().getMainWindow().stopSimulation();
@@ -79,7 +80,7 @@ public class Simulation extends Thread {
 		
 		simulation = new Simulation[Main.settings.getSimultaneousSimulations()];
 		
-		for(int i = 0; i < simulation.length; i++) {
+		for (int i = 0; i < simulation.length; i++) {
 			simulation[i] = new Simulation();
 			simulation[i].a = Main.array[i];
 			simulation[i].algorithm = SortingAlgorithms.values()[Main.getGUI().getMainWindow().sortCombo[i].getSelectionIndex()];
@@ -89,7 +90,7 @@ public class Simulation extends Thread {
 	}
 	
 	public void stopSimulation() {
-		for(int i = 0; i < simulation.length; i++) {
+		for (int i = 0; i < simulation.length; i++) {
 			simulation[i].interrupt();
 		}
 		

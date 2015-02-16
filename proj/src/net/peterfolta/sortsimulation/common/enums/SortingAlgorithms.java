@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			SortingAlgorithms.java
- * Created:			2014/03/23
- * Last modified:	2014/03/23
+ * Created:			2014/3/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -40,6 +40,7 @@ import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
 public enum SortingAlgorithms {
+	
 	BUBBLESORT("Bubblesort", new BubbleSort()),
 	COCKTAILSORT("Cocktailsort", new CocktailSort()),
 	GNOMESORT("Gnomesort", new GnomeSort()),
@@ -69,7 +70,7 @@ public enum SortingAlgorithms {
 	public static String[] getTranslations() {
 		String[] translations = new String[values().length];
 		
-		for(int i = 0; i < translations.length; i++) {
+		for (int i = 0; i < translations.length; i++) {
 			translations[i] = Main.language.getTranslationContent(values()[i].getTranslationKey());
 		}
 		
@@ -81,7 +82,7 @@ public enum SortingAlgorithms {
 	}
 	
 	public void createSortable() {
-		switch(this) {
+		switch (this) {
 			case BUBBLESORT:
 				this.sortable = new BubbleSort();
 				break;
@@ -111,4 +112,5 @@ public enum SortingAlgorithms {
 				break;
 		}
 	}
+	
 }

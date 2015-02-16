@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Mergesort.java
  * Created:			2008/11/30
- * Last modified:	2014/03/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -46,7 +46,7 @@ public class MergeSort implements Sortable {
 	}
 	
 	private void mergesort(int lo, int hi, final int index) {
-		if(lo < hi) {
+		if (lo < hi) {
 			int m = (lo + hi) / 2;
 			mergesort(lo, m, index);
 			mergesort(m+1, hi, index);
@@ -59,11 +59,11 @@ public class MergeSort implements Sortable {
 		int j = hi;
 		int k = lo;
 		
-		while(i <= m && !interrupted) {
+		while (i <= m && !interrupted) {
 			b[k++] = a[i++];
 		}
 		
-		while(j > m && !interrupted) {
+		while (j > m && !interrupted) {
 			b[k++] = a[j--];
 		}
 		
@@ -71,8 +71,8 @@ public class MergeSort implements Sortable {
 		j = hi;
 		k = lo;
 		
-		while(i <= j && !interrupted) {
-			if(b[i] <= b[j]) {
+		while (i <= j && !interrupted) {
+			if (b[i] <= b[j]) {
 				a[k++] = b[i++];
 			} else {
 				a[k++] = b[j--];

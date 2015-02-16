@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			CreateArray.java
  * Created:			2008/11/29
- * Last modified:	2014/03/21
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -36,26 +36,26 @@ public class CreateArray {
 	public CreateArray(FillMode mode) {
 		Main.array = new int[Main.settings.getSimultaneousSimulations()][Data.LENGTH_OF_ARRAY];
 		
-		switch(mode) {
+		switch (mode) {
 			case RANDOM:
-				for(int i = 0; i < Main.array[0].length; i++) {
+				for (int i = 0; i < Main.array[0].length; i++) {
 					boolean insert = true;
 					int cand = MathTools.random(1, Main.array[0].length);
 					
-					for(int j = 0; j < i; j++) {
-						if(Main.array[0][j] == cand) {
+					for (int j = 0; j < i; j++) {
+						if (Main.array[0][j] == cand) {
 							i--;
 							insert = false;
 							break;
 						}
 					}
 					
-					if(insert) {
+					if (insert) {
 						Main.array[0][i] = cand;
 					}
 				}
 				
-				for(int i = 0; i < Main.array.length; i++) {
+				for (int i = 0; i < Main.array.length; i++) {
 					try {
 						ArrayTools.copy(Main.array[0], Main.array[i]);
 					} catch (Exception exception) {
@@ -64,11 +64,11 @@ public class CreateArray {
 				
 				break;
 			case INVERSE:
-				for(int i = 0; i < Main.array[0].length; i++) {
+				for (int i = 0; i < Main.array[0].length; i++) {
 					Main.array[0][i] = Main.array[0].length - i;
 				}
 				
-				for(int i = 0; i < Main.array.length; i++) {
+				for (int i = 0; i < Main.array.length; i++) {
 					try {
 						ArrayTools.copy(Main.array[0], Main.array[i]);
 					} catch (Exception exception) {
@@ -77,15 +77,15 @@ public class CreateArray {
 				
 				break;
 			case ALMOST_SORTED:
-				for(int i = 0; i < Main.array[0].length; i++) {
+				for (int i = 0; i < Main.array[0].length; i++) {
 					Main.array[0][i] = i+1;
 				}
 				
-				for(int i = 0; i < Main.array[0].length; i++) {
+				for (int i = 0; i < Main.array[0].length; i++) {
 					int a = MathTools.random(0, Main.array[0].length-1);
 					int b;
 					
-					if(a > 3) {
+					if (a > 3) {
 						b = a - MathTools.random(1, 3);
 					} else {
 						b = a + MathTools.random(1, 3);
@@ -103,11 +103,11 @@ public class CreateArray {
 				
 				break;
 			case PRESORTED:
-				for(int i = 0; i < Main.array[0].length; i++) {
+				for (int i = 0; i < Main.array[0].length; i++) {
 					Main.array[0][i] = i+1;
 				}
 				
-				for(int i = 0; i < Main.array.length; i++) {
+				for (int i = 0; i < Main.array.length; i++) {
 					try {
 						ArrayTools.copy(Main.array[0], Main.array[i]);
 					} catch (Exception exception) {

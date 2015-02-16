@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Heapsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -44,16 +44,16 @@ public class HeapSort implements Sortable {
 		x = a[l];
 		j = 2 * i + 1;
 		
-		if((j < r) && (a[j+1] > a[j])) {
+		if ((j < r) && (a[j+1] > a[j])) {
 			j++;
 		}
 		
-		while((j <= r) && (a[j] > x) && !interrupted) {
+		while ((j <= r) && (a[j] > x) && !interrupted) {
 			a[i] = a[j];
 			i = j;
 			j = j*2+1;
 			
-			if((j < r) && (a[j+1] > a[j])) {
+			if ((j < r) && (a[j+1] > a[j])) {
 				j++;
 			}
 			
@@ -78,11 +78,11 @@ public class HeapSort implements Sortable {
 		int l;
 		int r;
 		
-		for(l = (a.length - 2) / 2; l >= 0 && !interrupted; l--) {
+		for (l = (a.length - 2) / 2; l >= 0 && !interrupted; l--) {
 			sift(a, l, a.length-1, index);
 		}
 		
-		for(r = a.length - 1; r > 0 && !interrupted; r--) {
+		for (r = a.length - 1; r > 0 && !interrupted; r--) {
 			ArrayTools.swap(a, 0, r);
 			sift(a, 0, r-1, index);
 		}

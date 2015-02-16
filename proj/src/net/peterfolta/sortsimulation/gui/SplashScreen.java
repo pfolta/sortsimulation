@@ -1,6 +1,6 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
  * Version:			2.0.1
@@ -8,7 +8,7 @@
  * 
  * File:			SplashScreen.java
  * Created:			2013/10/30
- * Last modified:	2015/02/16
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -115,18 +115,18 @@ public class SplashScreen {
 	private void fadeIn() {
 		display.asyncExec(new Runnable() {
 			public void run() {
-				for(int i = 1; i <= 255; i++) {
+				for (int i = 0; i <= 255; i++) {
 					splashShell.setAlpha(i);
 					splashShell.update();
 					try {
 						Thread.sleep(1);
-					} catch(Exception exception) {
+					} catch (InterruptedException exception) {
 					}
 				}
 				
 				try {
 					Thread.sleep(500);
-				} catch(Exception exception) {
+				} catch (InterruptedException exception) {
 				}
 				
 				Main.getGUI().showMainWindow();
@@ -139,15 +139,15 @@ public class SplashScreen {
 			public void run() {
 				try {
 					Thread.sleep(500);
-				} catch(Exception exception) {
+				} catch (InterruptedException exception) {
 				}
 				
-				for(int i = 254; i >= 0; i--) {
+				for (int i = 255; i >= 0; i--) {
 					splashShell.setAlpha(i);
 					splashShell.update();
 					try {
 						Thread.sleep(1);
-					} catch(Exception exception) {
+					} catch (InterruptedException exception) {
 					}
 				}
 				

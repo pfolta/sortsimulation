@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
  * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			LicenseDialog.java
- * Created:			2014/03/21
- * Last modified:	2015/02/16
+ * Created:			2014/3/21
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -97,8 +97,10 @@ public class LicenseDialog {
 			}
 
 			public void changing(LocationEvent event) {
-				// This snippet prevents links from being opened within the browser component and launches the system browser instead
-				if(locationCounter == 0) {
+				/*
+				 * This snippet prevents links from being opened within the browser component and launches the system browser instead
+				 */
+				if (locationCounter == 0) {
 					locationCounter++;
 				} else {
 					event.doit = false;

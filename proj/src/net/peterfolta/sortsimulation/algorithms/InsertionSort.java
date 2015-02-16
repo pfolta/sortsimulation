@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Insertionsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -38,11 +38,11 @@ public class InsertionSort implements Sortable {
 		int tmp;
 		int j;
 		
-		for(int i = 1; i < a.length && !interrupted; i++) {
+		for (int i = 1; i < a.length && !interrupted; i++) {
 			tmp = a[i];
 			j = i;
 			
-			while(j > 0 && a[j-1] > tmp && !interrupted) {
+			while (j > 0 && a[j-1] > tmp && !interrupted) {
 				a[j] = a[j-1];
 				j--;
 				

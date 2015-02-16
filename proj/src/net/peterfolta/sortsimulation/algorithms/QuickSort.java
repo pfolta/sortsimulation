@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Quicksort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -41,33 +41,33 @@ public class QuickSort implements Sortable {
 		int middle = (bottom + top) / 2;
 		int x = a[middle];
 		
-		do {
-			while(a[i] < x && !interrupted) i++;
-			while(a[j] > x && !interrupted) j--;
-			
-			if(i <= j) {
-				ArrayTools.swap(a, i, j);
-				i++;
-				j--;
-			}
-			
-			try {
-				Thread.sleep(Main.settings.getDelay().getDelay());
-			} catch (InterruptedException exception) {
-				interrupted = true;
-				break;
-			}
-			
-			Main.getGUI().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					Main.getGUI().getMainWindow().repaintCanvas(index);
+		if (!interrupted) {
+			do {
+				while (a[i] < x) i++;
+				while (a[j] > x) j--;
+				
+				if (i <= j) {
+					ArrayTools.swap(a, i, j);
+					i++;
+					j--;
 				}
-			});
-		} while(i <= j && !interrupted);
-		
-		if(!interrupted) {
-			if(bottom < j) quicksort(a, bottom, j, index);
-			if(i < top) quicksort(a, i, top, index);
+				
+				try {
+					Thread.sleep(Main.settings.getDelay().getDelay());
+				} catch (InterruptedException exception) {
+					interrupted = true;
+					break;
+				}
+				
+				Main.getGUI().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						Main.getGUI().getMainWindow().repaintCanvas(index);
+					}
+				});
+			} while (i <= j);
+			
+			if (bottom < j) quicksort(a, bottom, j, index);
+			if (i < top) quicksort(a, i, top, index);
 		}
 	}
 	

@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Shellsort.java
  * Created:			2008/11/29
- * Last modified:	2014/03/23
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -37,14 +37,14 @@ public class ShellSort implements Sortable {
 	public void sort(int[] a, final int index) {
 		int[] cols = { 1391376, 463792, 198768, 86961, 33936, 13776, 4592, 1968, 861, 336, 112, 48, 21, 7, 3, 1 };
 		
-		for(int i = 0; i < cols.length && !interrupted; i++) {
+		for (int i = 0; i < cols.length && !interrupted; i++) {
 			int h = cols[i];
 			
-			for(int j = h; j < a.length && !interrupted; j++) {
+			for (int j = h; j < a.length && !interrupted; j++) {
 				int k = j;
 				int temp = a[k];
 				
-				while(k >= h && a[k-h] > temp && !interrupted) {
+				while (k >= h && a[k-h] > temp && !interrupted) {
 					a[k] = a[k-h];
 					k = k - h;
 					

@@ -1,6 +1,6 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
  * Version:			2.0.1
@@ -8,7 +8,7 @@
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2015/02/16
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -126,7 +126,7 @@ public class MainWindow {
 		mainShell.setLayout(gridLayout);
 		mainShell.addShellListener(new ShellListener() {
 			public void shellActivated(ShellEvent event) {
-				for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+				for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 					repaintCanvas(i);
 				}
 			}
@@ -159,7 +159,7 @@ public class MainWindow {
 		sortCanvas = new Canvas[Main.settings.getSimultaneousSimulations()];
 		sortCombo = new Combo[Main.settings.getSimultaneousSimulations()];
 		
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			gridData = new GridData(GridData.FILL_HORIZONTAL);
 			gridData.verticalIndent = 5;
 			
@@ -167,7 +167,7 @@ public class MainWindow {
 			sortLabel[i].setLayoutData(gridData);
 		}
 		
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			final int fi = i;
 			gridData = new GridData(GridData.FILL_BOTH);
 			gridData.minimumHeight = 3 * Data.LENGTH_OF_ARRAY + 4;
@@ -179,14 +179,16 @@ public class MainWindow {
 				public void paintControl(PaintEvent event) {
 					Image bufferImage = new Image(Display.getCurrent(), event.width, event.height);
 					GC bufferGC = new GC(bufferImage);
+					
 					drawNumber(bufferGC, fi);
 					event.gc.drawImage(bufferImage, 0, 0);
+					
 					bufferImage.dispose();
 				}
 			});
 		}
 		
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			final int fi = i;
 			gridData = new GridData(GridData.FILL_HORIZONTAL);
 			
@@ -217,17 +219,17 @@ public class MainWindow {
 	}
 	
 	private void drawNumber(GC gc, int index) {
-		int height = sortCanvas[index].getSize().y;
-		int width = sortCanvas[index].getSize().x;
-		int lineHeight = height / Main.array[index].length;
-		int lineWidth = (width - Data.LENGTH_OF_ARRAY) / Data.LENGTH_OF_ARRAY;
+		int height		= sortCanvas[index].getSize().y;
+		int width		= sortCanvas[index].getSize().x;
+		int lineHeight	= height / Main.array[index].length;
+		int lineWidth	= (width - Data.LENGTH_OF_ARRAY) / Data.LENGTH_OF_ARRAY;
 		
 		gc.setBackground(Main.settings.getBackground());
 		gc.fillRectangle(0, 0, width, height);
 		
 		gc.setBackground(Main.settings.getColor().getColor());
 		
-		for(int i = 0; i < Data.LENGTH_OF_ARRAY; i++) {
+		for (int i = 0; i < Data.LENGTH_OF_ARRAY; i++) {
 			gc.fillRectangle((lineWidth * (i)) + i, height - (Main.array[index][i] * lineHeight), 1, height);
 		}
 	}
@@ -269,7 +271,7 @@ public class MainWindow {
 			public void handleEvent(Event event) {
 				new CreateArray(Main.settings.getFillMode());
 				
-				for(int i = 0; i < sortCanvas.length; i++) {
+				for (int i = 0; i < sortCanvas.length; i++) {
 					sortCanvas[i].redraw();
 				}
 			}
@@ -299,7 +301,7 @@ public class MainWindow {
 		
 		fillMode = new MenuItem[FillMode.values().length];
 		
-		for(int i = 0; i < fillMode.length; i++) {
+		for (int i = 0; i < fillMode.length; i++) {
 			final int fi = i;
 			fillMode[i] = new MenuItem(fillModeMenu, SWT.RADIO);
 			fillMode[i].addListener(SWT.Selection, new Listener() {
@@ -310,7 +312,7 @@ public class MainWindow {
 			});
 			fillMode[i].setAccelerator(SWT.CTRL | FillMode.values()[i].getShortcut());
 			
-			if(Main.settings.getFillMode() == FillMode.values()[i]) {
+			if (Main.settings.getFillMode() == FillMode.values()[i]) {
 				fillMode[i].setSelection(true);
 			}
 		}
@@ -323,7 +325,7 @@ public class MainWindow {
 		
 		delay = new MenuItem[Delay.values().length];
 		
-		for(int i = 0; i < delay.length; i++) {
+		for (int i = 0; i < delay.length; i++) {
 			final int fi = i;
 			delay[i] = new MenuItem(delayMenu, SWT.RADIO);
 			delay[i].addListener(SWT.Selection, new Listener() {
@@ -333,7 +335,7 @@ public class MainWindow {
 			});
 			delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | Delay.values()[i].getShortcut());
 			
-			if(Main.settings.getDelay() == Delay.values()[i]) {
+			if (Main.settings.getDelay() == Delay.values()[i]) {
 				delay[i].setSelection(true);
 			}
 		}
@@ -348,7 +350,7 @@ public class MainWindow {
 		
 		languages = new MenuItem[Main.settings.getLanguageAmount()];
 		
-		for(int i = 0; i < languages.length; i++) {
+		for (int i = 0; i < languages.length; i++) {
 			final int fi = i;
 			languages[i] = new MenuItem(languageMenu, SWT.RADIO);
 			languages[i].setImage(ResourceLoader.loadImage(display, Main.settings.getLanguageNames()[i].toLowerCase() + "_16x16.png"));
@@ -360,7 +362,7 @@ public class MainWindow {
 				}
 			});
 			
-			if(i == Main.settings.getCurrentLanguageIndex()) languages[i].setSelection(true);
+			if (i == Main.settings.getCurrentLanguageIndex()) languages[i].setSelection(true);
 		}
 		
 		new MenuItem(settingsMenu, SWT.SEPARATOR);
@@ -375,7 +377,7 @@ public class MainWindow {
 				
 				RGB rgb = dlg.open();
 				
-				if(rgb != null) {
+				if (rgb != null) {
 					Main.settings.setBackground(new Color(rgb.red, rgb.green, rgb.blue));
 					background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
 				}
@@ -392,7 +394,7 @@ public class MainWindow {
 				
 				RGB rgb = dlg.open();
 				
-				if(rgb != null) {
+				if (rgb != null) {
 					Main.settings.setColor(new Color(rgb.red, rgb.green, rgb.blue));
 					color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
 				}
@@ -484,11 +486,11 @@ public class MainWindow {
 		resetCanvas.setEnabled(false);
 		toolResetCanvas.setEnabled(false);
 		
-		for(int i = 0; i < fillMode.length; i++) {
+		for (int i = 0; i < fillMode.length; i++) {
 			fillMode[i].setEnabled(false);
 		}
 		
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			sortCombo[i].setEnabled(false);
 		}
 	}
@@ -501,11 +503,11 @@ public class MainWindow {
 		resetCanvas.setEnabled(true);
 		toolResetCanvas.setEnabled(true);
 		
-		for(int i = 0; i < fillMode.length; i++) {
+		for (int i = 0; i < fillMode.length; i++) {
 			fillMode[i].setEnabled(true);
 		}
 		
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			sortCombo[i].setEnabled(true);
 		}
 	}
@@ -513,7 +515,7 @@ public class MainWindow {
 	private void resetCanvas() {
 		new CreateArray(Main.settings.getFillMode());
 		
-		for(int i = 0; i < sortCanvas.length; i++) {
+		for (int i = 0; i < sortCanvas.length; i++) {
 			sortCanvas[i].redraw();
 		}
 	}
@@ -521,7 +523,7 @@ public class MainWindow {
 	public void setCaptions() {
 		hintLabel.setText(Main.language.getTranslationContent("UsageHint").replaceAll("%1", String.valueOf(Main.settings.getSimultaneousSimulations())));
 		
-		for(int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			int selection = sortCombo[i].getSelectionIndex();
 			sortLabel[i].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(i+1)) + ":\n" + SortingAlgorithms.values()[selection].getTranslation());
 			sortCombo[i].setItems(SortingAlgorithms.getTranslations());
@@ -536,13 +538,13 @@ public class MainWindow {
 		settings.setText(Main.language.getTranslationContent("Settings"));
 		fillModeItem.setText(Main.language.getTranslationContent("FillMode"));
 		
-		for(int i = 0; i < fillMode.length; i++) {
+		for (int i = 0; i < fillMode.length; i++) {
 			fillMode[i].setText(FillMode.values()[i].getTranslation() + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + FillMode.values()[i].getShortcut());
 		}
 		
 		delayItem.setText(Main.language.getTranslationContent("Speed"));
 		
-		for(int i = 0; i < delay.length; i++) {
+		for (int i = 0; i < delay.length; i++) {
 			delay[i].setText(Delay.values()[i].getTranslation() + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+" + Delay.values()[i].getShortcut());
 		}
 		

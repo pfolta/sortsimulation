@@ -1,6 +1,6 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
  * Version:			2.0.1
@@ -8,7 +8,7 @@
  * 
  * File:			AboutDialog.java
  * Created:			2008/11/29
- * Last modified:	2015/02/16
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -123,7 +123,7 @@ public class AboutDialog {
 		authorsInfoLabel.setLayoutData(gridData);
 		
 		String authors = "";
-		for(int i = 0; i < Data.APP_AUTHORS.length; i++) {
+		for (int i = 0; i < Data.APP_AUTHORS.length; i++) {
 			authors += Data.APP_AUTHORS[i] + " · ";
 		}
 		authors = authors.substring(0, authors.length()-3);
@@ -145,7 +145,7 @@ public class AboutDialog {
 		contributorsInfoLabel.setLayoutData(gridData);
 		
 		String contributors = "";
-		for(int i = 0; i < Data.APP_CONTRIBUTORS.length; i++) {
+		for (int i = 0; i < Data.APP_CONTRIBUTORS.length; i++) {
 			contributors += Data.APP_CONTRIBUTORS[i] + " · ";
 		}
 		contributors = contributors.substring(0, contributors.length()-3);

@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			Language.java
  * Created:			2009/03/26
- * Last modified:	2014/03/21
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -58,7 +58,7 @@ public class Language {
 		
 		try {
 			result = informationElement.getChild(key).getText();
-		} catch(Exception exception) {
+		} catch (Exception exception) {
 			Main.exit(2);
 		}
 		
@@ -70,7 +70,7 @@ public class Language {
 		
 		try {
 			result = translationsElement.getChild(key).getText();
-		} catch(Exception exception) {
+		} catch (Exception exception) {
 			Main.exit(2);
 		}
 		

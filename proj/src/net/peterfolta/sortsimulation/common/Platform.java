@@ -6,8 +6,8 @@
  * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
- * File:			ResourceLoader.java
- * Created:			2008/12/14
+ * File:			Platform.java
+ * Created:			2015/2/16
  * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
@@ -27,29 +27,40 @@
 
 package net.peterfolta.sortsimulation.common;
 
-import net.peterfolta.sortsimulation.main.Main;
+import org.eclipse.swt.SWT;
 
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.widgets.Display;
-
-public class ResourceLoader {
+public class Platform {
 	
-	public static Image loadImage(Display display, String filename) {
-		Image tmp = null;
-		
-		try {
-			tmp = new Image(display, "res/img/" + filename);
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			
-			Main.exit(3);
+	public static boolean isCocoa() {
+		if (SWT.getPlatform().equals("cocoa")) {
+			return true;
 		}
 		
-		return tmp;
+		return false;
 	}
 	
-	public static String getHTMLLicense() {
-		return "file:///" + System.getProperty("user.dir") + "/res/doc/license.html";
+	public static boolean isMac() {
+		if (System.getProperty("os.name").toLowerCase().startsWith("mac")) {
+			return true;
+		}
+		
+		return false;
 	}
-
+	
+	public static boolean isLinux() {
+		if (System.getProperty("os.name").toLowerCase().startsWith("linux")) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public static boolean isWindows() {
+		if (System.getProperty("os.name").toLowerCase().startsWith("windows")) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 }

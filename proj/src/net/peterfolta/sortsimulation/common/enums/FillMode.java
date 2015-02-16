@@ -1,14 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
+ * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			FillMode.java
- * Created:			2014/03/22
- * Last modified:	2014/03/23
+ * Created:			2014/3/22
+ * Last modified:	2015/2/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -30,6 +30,7 @@ package net.peterfolta.sortsimulation.common.enums;
 import net.peterfolta.sortsimulation.main.Main;
 
 public enum FillMode {
+	
 	RANDOM("Randomly", 'R'),
 	INVERSE("Inverse", 'I'),
 	ALMOST_SORTED("AlmostSorted", 'A'),
@@ -54,4 +55,5 @@ public enum FillMode {
 	public char getShortcut() {
 		return shortcut;
 	}
+	
 }
