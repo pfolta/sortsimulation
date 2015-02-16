@@ -71,6 +71,7 @@ public class Main {
 	private static void printStartUpNotice() {
 		System.out.println(
 			Data.APP_NAME + " - " + Data.APP_DESCRIPTION + "\n" +
+			"Version " + Data.APP_VERSION + " - " + Data.APP_PFID + "\n" +
 			"Copyright (C) " + Data.APP_COPYRIGHT_YEAR + " " + Data.APP_COPYRIGHT_HOLDER + ". All rights reserved.\n" +
 			"\n" +
 			"This program is free software: you can redistribute it and/or modify\n" +
