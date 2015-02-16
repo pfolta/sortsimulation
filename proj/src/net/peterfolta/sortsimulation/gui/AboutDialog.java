@@ -201,7 +201,9 @@ public class AboutDialog {
 		aboutShell.setDefaultButton(closeButton);
 		aboutShell.setMinimumSize(550, 0);
 		aboutShell.pack();
-		aboutShell.setLocation((display.getPrimaryMonitor().getBounds().width - aboutShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - aboutShell.getSize().y) / 2);
+		
+		Main.getGUI().centerShellOnParent(aboutShell, parent);
+		
 		aboutShell.open();
 	}
 	

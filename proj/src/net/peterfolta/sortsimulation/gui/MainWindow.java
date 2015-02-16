@@ -3,12 +3,12 @@
  * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2014/03/24
+ * Last modified:	2015/02/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -204,7 +204,9 @@ public class MainWindow {
 		setCaptions();
 		
 		mainShell.pack();
-		mainShell.setLocation((display.getPrimaryMonitor().getBounds().width - mainShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - mainShell.getSize().y) / 2);
+		
+		Main.getGUI().centerShellOnPrimaryMonitor(mainShell);
+		
 		mainShell.open();
 		
 		Main.getGUI().getSplashScreen().fadeOut();

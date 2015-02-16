@@ -3,12 +3,12 @@
  * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			SplashScreen.java
  * Created:			2013/10/30
- * Last modified:	2014/03/21
+ * Last modified:	2015/02/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -103,7 +103,9 @@ public class SplashScreen {
 		});
 		
 		splashShell.setSize(550, 300);
-		splashShell.setLocation(display.getBounds().width / 2 - splashShell.getSize().x / 2, display.getBounds().height / 2 - splashShell.getSize().y / 2);
+		
+		Main.getGUI().centerShellOnPrimaryMonitor(splashShell);
+		
 		splashShell.open();
 		splashShell.forceFocus();
 		

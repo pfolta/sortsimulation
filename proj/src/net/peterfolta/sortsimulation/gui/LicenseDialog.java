@@ -3,12 +3,12 @@
  * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			LicenseDialog.java
  * Created:			2014/03/21
- * Last modified:	2014/03/27
+ * Last modified:	2015/02/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -40,14 +40,12 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.program.Program;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 
 public class LicenseDialog {
 	
-	private Display display;
 	private Shell licenseShell;
 	
 	private GridLayout gridLayout;
@@ -61,7 +59,6 @@ public class LicenseDialog {
 	private int locationCounter = 0;
 	
 	public LicenseDialog(Shell parent) {
-		display = Main.getGUI().getDisplay();
 		licenseShell = new Shell(parent, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL);
 		
 		gridLayout = new GridLayout();
@@ -130,7 +127,9 @@ public class LicenseDialog {
 		licenseShell.setDefaultButton(closeButton);
 		licenseShell.setMinimumSize(700, 450);
 		licenseShell.pack();
-		licenseShell.setLocation((display.getPrimaryMonitor().getBounds().width - licenseShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - licenseShell.getSize().y) / 2);
+		
+		Main.getGUI().centerShellOnParent(licenseShell, parent);
+		
 		licenseShell.open();
 	}
 	

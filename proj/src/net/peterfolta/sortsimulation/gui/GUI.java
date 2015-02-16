@@ -3,12 +3,12 @@
  * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			GUI.java
  * Created:			2013/10/30
- * Last modified:	2015/02/15
+ * Last modified:	2015/02/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.gui;
 
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 
 public class GUI {
 	
@@ -68,6 +69,34 @@ public class GUI {
 	
 	public void showMainWindow() {
 		mainWindow = new MainWindow(display);
+	}
+	
+	public void centerShellOnPrimaryMonitor(Shell shell) {
+		int monitorWidth	= display.getPrimaryMonitor().getBounds().width;
+		int monitorHeight	= display.getPrimaryMonitor().getBounds().height;
+		
+		int shellWidth 		= shell.getSize().x;
+		int shellHeight 	= shell.getSize().y;
+		
+		int shellX			= (monitorWidth - shellWidth)/2;
+		int shellY			= (monitorHeight - shellHeight)/2;
+		
+		shell.setLocation(shellX, shellY);
+	}
+	
+	public void centerShellOnParent(Shell shell, Shell parent) {
+		int parentX 		= parent.getBounds().x;
+		int parentY			= parent.getBounds().y;
+		int parentWidth		= parent.getBounds().width;
+		int parentHeight	= parent.getBounds().height;
+		
+		int shellWidth 		= shell.getSize().x;
+		int shellHeight 	= shell.getSize().y;
+		
+		int shellX			= parentX + (parentWidth - shellWidth)/2;
+		int shellY			= parentY + (parentHeight - shellHeight)/2;
+		
+		shell.setLocation(shellX, shellY);
 	}
 	
 	public void die() {
