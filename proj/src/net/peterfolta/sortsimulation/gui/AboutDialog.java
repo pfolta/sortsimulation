@@ -3,12 +3,12 @@
  * Copyright (C) 2008-2014 Peter Folta. All rights reserved.
  * 
  * Project:			SortSimulation 
- * Version:			2.0.0
+ * Version:			2.0.1
  * Website:			http://www.peterfolta.net/software/sortsimulation
  * 
  * File:			AboutDialog.java
  * Created:			2008/11/29
- * Last modified:	2014/03/27
+ * Last modified:	2015/02/16
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -54,6 +54,7 @@ public class AboutDialog {
 	private GridLayout gridLayout;
 	private GridData gridData;
 	
+	private Label logoLabel;
 	private Label versionLabel;
 	private Label authorsInfoLabel;
 	private Label authorsLabel;
@@ -76,12 +77,18 @@ public class AboutDialog {
 		gridLayout.verticalSpacing = 3;
 		
 		aboutShell.setText(Data.APP_NAME);
-		aboutShell.setBackgroundImage(ResourceLoader.loadImage(display, "about_550x300.png"));
+		aboutShell.setBackground(new Color(display, 98, 189, 25));
 		aboutShell.setLayout(gridLayout);
 		aboutShell.setBackgroundMode(SWT.INHERIT_DEFAULT);
 		
 		gridData = new GridData();
-		gridData.verticalIndent = 75;
+		
+		logoLabel = new Label(aboutShell, SWT.NONE);
+		logoLabel.setImage(ResourceLoader.loadImage(display, "logo_422x50.png"));
+		logoLabel.setLayoutData(gridData);
+		
+		gridData = new GridData();
+		gridData.verticalIndent = 20;
 		
 		versionLabel = new Label(aboutShell, SWT.NONE);
 		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · " + Data.APP_PFID);
@@ -151,9 +158,8 @@ public class AboutDialog {
 		contributorsLabel.setLayoutData(gridData);
 		
 		gridData = new GridData();
-		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = GridData.END;
-		gridData.minimumWidth = 100;
+		gridData.verticalIndent = 25;
 		
 		gridLayout = new GridLayout();
 		gridLayout.horizontalSpacing = 10;
@@ -164,6 +170,10 @@ public class AboutDialog {
 		buttonComposite = new Composite(aboutShell, SWT.NONE);
 		buttonComposite.setLayout(gridLayout);
 		buttonComposite.setLayoutData(gridData);
+		
+		gridData = new GridData();
+		gridData.grabExcessHorizontalSpace = true;
+		gridData.minimumWidth = 100;
 		
 		licenseButton = new Button(buttonComposite, SWT.PUSH);
 		licenseButton.setLayoutData(gridData);
@@ -189,7 +199,7 @@ public class AboutDialog {
 		});
 		
 		aboutShell.setDefaultButton(closeButton);
-		aboutShell.setMinimumSize(550, 350);
+		aboutShell.setMinimumSize(550, 0);
 		aboutShell.pack();
 		aboutShell.setLocation((display.getPrimaryMonitor().getBounds().width - aboutShell.getSize().x) / 2, (display.getPrimaryMonitor().getBounds().height - aboutShell.getSize().y) / 2);
 		aboutShell.open();

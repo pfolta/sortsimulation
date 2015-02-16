@@ -102,6 +102,8 @@ public class Main {
 			Class.forName("org.jdom.Element");
 			Class.forName("org.jdom.input.SAXBuilder");
 		} catch(ClassNotFoundException exception) {
+			exception.printStackTrace();
+			
 			exit(2);
 		}
 	}
