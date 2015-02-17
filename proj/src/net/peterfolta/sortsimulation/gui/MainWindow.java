@@ -124,6 +124,7 @@ public class MainWindow {
 		mainShell.setImages(Data.APP_ICONS);
 		mainShell.setText(Data.APP_NAME);
 		mainShell.setSize(640, 480);
+		mainShell.setFullScreen(false);
 		mainShell.setLayout(gridLayout);
 		mainShell.addShellListener(new ShellListener() {
 			public void shellActivated(ShellEvent event) {

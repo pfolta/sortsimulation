@@ -27,6 +27,7 @@
 
 package net.peterfolta.sortsimulation.gui;
 
+import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
 
 import org.eclipse.swt.SWT;
@@ -45,10 +46,19 @@ public class CocoaSystemMenu {
 		this.systemMenu = systemMenu;
 		this.mainShell = mainShell;
 		
+		systemMenu.setEnabled(true);
+		
 		MenuItem aboutItem = getItem(SWT.ID_ABOUT);
 		aboutItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				about();
+			}
+		});
+		
+		MenuItem preferencesItem = getItem(SWT.ID_PREFERENCES);
+		preferencesItem.addListener(SWT.Selection, new Listener() {
+			public void handleEvent(Event event) {
+				preferences();
 			}
 		});
 		
@@ -74,6 +84,10 @@ public class CocoaSystemMenu {
 	
 	private void about() {
 		Main.getGUI().showAboutDialog(mainShell);
+	}
+	
+	private void preferences() {
+		new CustomMessageBox(mainShell, Data.APP_NAME + " currently does not have a preferences dialog.", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK | SWT.SHEET);
 	}
 	
 	private void quit() {

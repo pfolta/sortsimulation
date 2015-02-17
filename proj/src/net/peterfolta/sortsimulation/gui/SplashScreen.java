@@ -107,6 +107,7 @@ public class SplashScreen {
 		Main.getGUI().centerShellOnPrimaryMonitor(splashShell);
 		
 		splashShell.open();
+		splashShell.forceFocus();
 		
 		fadeIn();
 	}
