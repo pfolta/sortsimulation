@@ -8,7 +8,7 @@
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2015/2/16
+ * Last modified:	2015/2/17
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -29,6 +29,7 @@ package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.common.Color;
 import net.peterfolta.sortsimulation.common.ImageTools;
+import net.peterfolta.sortsimulation.common.Platform;
 import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
@@ -235,8 +236,12 @@ public class MainWindow {
 	}
 	
 	private void createMenu() {
-		mainMenu = new Menu(mainShell, SWT.BAR);
-		mainShell.setMenuBar(mainMenu);
+		if (Platform.isMac() && Platform.isCocoa()) {
+			mainMenu = display.getMenuBar();
+		} else {
+			mainMenu = new Menu(mainShell, SWT.BAR);
+			mainShell.setMenuBar(mainMenu);			
+		}
 		
 		simulation = new MenuItem(mainMenu, SWT.CASCADE);
 		
