@@ -452,8 +452,12 @@ public class MainWindow {
 		gridData = new GridData(GridData.FILL_HORIZONTAL);
 		gridData.horizontalSpan = Main.settings.getSimultaneousSimulations();
 		
-		toolBar = new ToolBar(mainShell, SWT.FLAT);
-		toolBar.setLayoutData(gridData);
+		if (Platform.isMac() && Platform.isCocoa()) {
+			toolBar = mainShell.getToolBar();
+		} else {
+			toolBar = new ToolBar(mainShell, SWT.FLAT);
+			toolBar.setLayoutData(gridData);			
+		}
 		
 		toolStartSimulation = new ToolItem(toolBar, SWT.PUSH);
 		toolStartSimulation.setImage(ResourceLoader.loadImage(display, "start_22x22.png"));
