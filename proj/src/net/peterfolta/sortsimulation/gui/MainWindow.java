@@ -146,6 +146,10 @@ public class MainWindow {
 			}
 		});
 		
+		if (Platform.isMac() && Platform.isCocoa()) {
+			new CocoaSystemMenu(display.getSystemMenu(), mainShell);			
+		}
+		
 		createMenu();
 		createToolBar();
 		
