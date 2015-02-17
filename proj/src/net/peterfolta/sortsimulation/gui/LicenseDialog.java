@@ -135,4 +135,8 @@ public class LicenseDialog {
 		licenseShell.open();
 	}
 	
+	public Shell getShell() {
+		return licenseShell;
+	}
+	
 }

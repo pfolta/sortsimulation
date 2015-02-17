@@ -428,7 +428,7 @@ public class MainWindow {
 		licenseItem.setImage(ResourceLoader.loadImage(display, "license_16x16.png"));
 		licenseItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				new LicenseDialog(mainShell);
+				Main.getGUI().showLicenseDialog(mainShell);
 			}
 		});
 		
@@ -447,7 +447,7 @@ public class MainWindow {
 		about.setImage(ResourceLoader.loadImage(display, "about_16x16.png"));
 		about.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				new AboutDialog(mainShell);
+				Main.getGUI().showAboutDialog(mainShell);
 			}
 		});
 	}

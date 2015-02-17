@@ -8,7 +8,7 @@
  * 
  * File:			SplashScreen.java
  * Created:			2013/10/30
- * Last modified:	2015/2/16
+ * Last modified:	2015/2/17
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -107,7 +107,6 @@ public class SplashScreen {
 		Main.getGUI().centerShellOnPrimaryMonitor(splashShell);
 		
 		splashShell.open();
-		splashShell.forceFocus();
 		
 		fadeIn();
 	}

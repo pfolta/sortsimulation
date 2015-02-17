@@ -8,7 +8,7 @@
  * 
  * File:			GUI.java
  * Created:			2013/10/30
- * Last modified:	2015/2/16
+ * Last modified:	2015/2/17
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -38,6 +38,9 @@ public class GUI {
 	
 	private SplashScreen splashScreen;
 	private MainWindow mainWindow;
+	
+	private AboutDialog aboutDialog;
+	private LicenseDialog licenseDialog;
 	
 	public GUI() {
 		Display.setAppName(Data.APP_NAME);
@@ -74,6 +77,22 @@ public class GUI {
 	
 	public void showMainWindow() {
 		mainWindow = new MainWindow(display);
+	}
+	
+	public void showAboutDialog(Shell parent) {
+		if (aboutDialog == null || aboutDialog.getShell().isDisposed()) {
+			aboutDialog = new AboutDialog(parent);
+		} else {
+			aboutDialog.getShell().forceActive();
+		}
+	}
+	
+	public void showLicenseDialog(Shell parent) {
+		if (licenseDialog == null || licenseDialog.getShell().isDisposed()) {
+			licenseDialog = new LicenseDialog(parent);
+		} else {
+			licenseDialog.getShell().forceActive();
+		}
 	}
 	
 	public void centerShellOnPrimaryMonitor(Shell shell) {

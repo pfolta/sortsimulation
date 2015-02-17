@@ -73,7 +73,7 @@ public class CocoaSystemMenu {
 	}
 	
 	private void about() {
-		new AboutDialog(mainShell);
+		Main.getGUI().showAboutDialog(mainShell);
 	}
 	
 	private void quit() {

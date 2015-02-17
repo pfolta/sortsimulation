@@ -8,7 +8,7 @@
  * 
  * File:			AboutDialog.java
  * Created:			2008/11/29
- * Last modified:	2015/2/16
+ * Last modified:	2015/2/17
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -180,7 +180,7 @@ public class AboutDialog {
 		licenseButton.setText(Main.language.getTranslationContent("License"));
 		licenseButton.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				new LicenseDialog(aboutShell);
+				Main.getGUI().showLicenseDialog(aboutShell);
 			}
 		});
 		
@@ -205,6 +205,10 @@ public class AboutDialog {
 		Main.getGUI().centerShellOnParent(aboutShell, parent);
 		
 		aboutShell.open();
+	}
+	
+	public Shell getShell() {
+		return aboutShell;
 	}
 	
 }
