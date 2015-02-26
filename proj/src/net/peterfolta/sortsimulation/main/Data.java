@@ -8,7 +8,7 @@
  * 
  * File:			Data.java
  * Created:			2008/11/29
- * Last modified:	2015/2/16
+ * Last modified:	2015/2/26
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -44,7 +44,7 @@ public class Data {
 	
 	public static final String APP_VERSION = "2.0.1 Alpha";
 	
-	public static final String APP_PFID = "pfID-1424032132";
+	public static final String APP_PFID = "pfID-1424943812";
 	
 	public static final String APP_COPYRIGHT_HOLDER = "Peter Folta";
 	

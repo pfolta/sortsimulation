@@ -8,7 +8,7 @@
  * 
  * File:			CocoaSystemMenu.java
  * Created:			2015/2/17
- * Last modified:	2015/2/17
+ * Last modified:	2015/2/26
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,6 @@
 
 package net.peterfolta.sortsimulation.gui;
 
-import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
 
 import org.eclipse.swt.SWT;
@@ -55,19 +54,14 @@ public class CocoaSystemMenu {
 			}
 		});
 		
-		MenuItem preferencesItem = getItem(SWT.ID_PREFERENCES);
-		preferencesItem.addListener(SWT.Selection, new Listener() {
-			public void handleEvent(Event event) {
-				preferences();
-			}
-		});
-		
 		MenuItem quitItem = getItem(SWT.ID_QUIT);
 		quitItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				quit();
 			}
 		});
+		
+		disableItem(SWT.ID_PREFERENCES);
 	}
 	
 	private MenuItem getItem(int id) {
@@ -82,12 +76,18 @@ public class CocoaSystemMenu {
 		return null;
 	}
 	
-	private void about() {
-		Main.getGUI().showAboutDialog(mainShell);
+	private void disableItem(int id) {
+		MenuItem[] items = systemMenu.getItems();
+		
+		for (int i = 0; i < items.length; i++) {
+			if (items[i].getID() == id) {
+				items[i].setEnabled(false);
+			}
+		}
 	}
 	
-	private void preferences() {
-		new CustomMessageBox(mainShell, Data.APP_NAME + " currently does not have a preferences dialog.", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK | SWT.SHEET);
+	private void about() {
+		Main.getGUI().showAboutDialog(mainShell);
 	}
 	
 	private void quit() {
