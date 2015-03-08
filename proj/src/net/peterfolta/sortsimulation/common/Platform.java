@@ -27,17 +27,7 @@
 
 package net.peterfolta.sortsimulation.common;
 
-import org.eclipse.swt.SWT;
-
 public class Platform {
-	
-	public static boolean isCocoa() {
-		if (SWT.getPlatform().toLowerCase().equals("cocoa")) {
-			return true;
-		}
-		
-		return false;
-	}
 	
 	public static boolean isMac() {
 		if (System.getProperty("os.name").toLowerCase().startsWith("mac")) {

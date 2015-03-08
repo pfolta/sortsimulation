@@ -8,7 +8,7 @@
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2015/2/17
+ * Last modified:	2015/3/8
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -147,7 +147,7 @@ public class MainWindow {
 			}
 		});
 		
-		if (Platform.isMac() && Platform.isCocoa()) {
+		if (Platform.isMac()) {
 			new CocoaSystemMenu(display.getSystemMenu(), mainShell);	
 		}
 		
@@ -241,7 +241,7 @@ public class MainWindow {
 	}
 	
 	private void createMenu() {
-		if (Platform.isMac() && Platform.isCocoa()) {
+		if (Platform.isMac()) {
 			mainMenu = display.getMenuBar();
 		} else {
 			mainMenu = new Menu(mainShell, SWT.BAR);
@@ -254,7 +254,6 @@ public class MainWindow {
 		simulation.setMenu(simulationMenu);
 		
 		startSimulation = new MenuItem(simulationMenu, SWT.PUSH);
-		startSimulation.setImage(ResourceLoader.loadImage(display, "start_16x16.png"));
 		startSimulation.setAccelerator(SWT.CR);
 		startSimulation.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
@@ -263,7 +262,6 @@ public class MainWindow {
 		});
 		
 		stopSimulation = new MenuItem(simulationMenu, SWT.PUSH);
-		stopSimulation.setImage(ResourceLoader.loadImage(display, "stop_16x16.png"));
 		stopSimulation.setAccelerator(SWT.ESC);
 		stopSimulation.setEnabled(false);
 		stopSimulation.addListener(SWT.Selection, new Listener() {
@@ -275,7 +273,6 @@ public class MainWindow {
 		new MenuItem(simulationMenu, SWT.SEPARATOR);
 		
 		resetCanvas = new MenuItem(simulationMenu, SWT.PUSH);
-		resetCanvas.setImage(ResourceLoader.loadImage(display, "refresh_16x16.png"));
 		resetCanvas.setAccelerator(SWT.CTRL | 'N');
 		resetCanvas.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
@@ -287,16 +284,21 @@ public class MainWindow {
 			}
 		});
 		
-		new MenuItem(simulationMenu, SWT.SEPARATOR);
-		
-		exit = new MenuItem(simulationMenu, SWT.PUSH);
-		exit.setImage(ResourceLoader.loadImage(display, "exit_16x16.png"));
-		exit.setAccelerator(SWT.ALT | SWT.F4);
-		exit.addListener(SWT.Selection, new Listener() {
-			public void handleEvent(Event event) {
-				Main.exit(0);
-			}
-		});
+		/*
+		 * Do not create "Exit" Menu Item on Mac
+		 */
+		if (!Platform.isMac()) {
+			new MenuItem(simulationMenu, SWT.SEPARATOR);
+			
+			exit = new MenuItem(simulationMenu, SWT.PUSH);
+			exit.setImage(ResourceLoader.loadImage(display, "exit_16x16.png"));
+			exit.setAccelerator(SWT.ALT | SWT.F4);
+			exit.addListener(SWT.Selection, new Listener() {
+				public void handleEvent(Event event) {
+					Main.exit(0);
+				}
+			});			
+		}
 		
 		settings = new MenuItem(mainMenu, SWT.CASCADE);
 		
@@ -304,7 +306,6 @@ public class MainWindow {
 		settings.setMenu(settingsMenu);
 		
 		fillModeItem = new MenuItem(settingsMenu, SWT.CASCADE);
-		fillModeItem.setImage(ResourceLoader.loadImage(display, "fillmode_16x16.png"));
 		
 		fillModeMenu = new Menu(fillModeItem);
 		fillModeItem.setMenu(fillModeMenu);
@@ -328,7 +329,6 @@ public class MainWindow {
 		}
 		
 		delayItem = new MenuItem(settingsMenu, SWT.CASCADE);
-		delayItem.setImage(ResourceLoader.loadImage(display, "delay_16x16.png"));
 		
 		delayMenu = new Menu(delayItem);
 		delayItem.setMenu(delayMenu);
@@ -353,7 +353,6 @@ public class MainWindow {
 		new MenuItem(settingsMenu, SWT.SEPARATOR);
 		
 		language = new MenuItem(settingsMenu, SWT.CASCADE);
-		language.setImage(ResourceLoader.loadImage(display, "languages_16x16.png"));
 		
 		languageMenu = new Menu(language);
 		language.setMenu(languageMenu);
@@ -363,7 +362,6 @@ public class MainWindow {
 		for (int i = 0; i < languages.length; i++) {
 			final int fi = i;
 			languages[i] = new MenuItem(languageMenu, SWT.RADIO);
-			languages[i].setImage(ResourceLoader.loadImage(display, Main.settings.getLanguageNames()[i].toLowerCase() + "_16x16.png"));
 			languages[i].setText(Main.settings.getLanguageNativeNames()[i]);
 			languages[i].addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
@@ -417,7 +415,6 @@ public class MainWindow {
 		help.setMenu(helpMenu);
 		
 		helpItem = new MenuItem(helpMenu, SWT.PUSH);
-		helpItem.setImage(ResourceLoader.loadImage(display, "help_16x16.png"));
 		helpItem.setAccelerator(SWT.F1);
 		helpItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
@@ -426,7 +423,6 @@ public class MainWindow {
 		});
 		
 		licenseItem = new MenuItem(helpMenu, SWT.PUSH);
-		licenseItem.setImage(ResourceLoader.loadImage(display, "license_16x16.png"));
 		licenseItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				Main.getGUI().showLicenseDialog(mainShell);
@@ -435,29 +431,53 @@ public class MainWindow {
 		
 		websiteItem = new MenuItem(helpMenu, SWT.PUSH);
 		websiteItem.setAccelerator(SWT.SHIFT | SWT.F1);
-		websiteItem.setImage(ResourceLoader.loadImage(display, "globe_16x16.png"));
 		websiteItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				Program.launch(Data.APP_URL);
 			}
 		});
 		
-		new MenuItem(helpMenu, SWT.SEPARATOR);
+		/*
+		 * Do not create "About" Menu Item on Mac
+		 */
+		if (!Platform.isMac()) {
+			new MenuItem(helpMenu, SWT.SEPARATOR);
+			
+			about = new MenuItem(helpMenu, SWT.PUSH);
+			about.setImage(ResourceLoader.loadImage(display, "about_16x16.png"));
+			about.addListener(SWT.Selection, new Listener() {
+				public void handleEvent(Event event) {
+					Main.getGUI().showAboutDialog(mainShell);
+				}
+			});
+		}
 		
-		about = new MenuItem(helpMenu, SWT.PUSH);
-		about.setImage(ResourceLoader.loadImage(display, "about_16x16.png"));
-		about.addListener(SWT.Selection, new Listener() {
-			public void handleEvent(Event event) {
-				Main.getGUI().showAboutDialog(mainShell);
+		/*
+		 * Do not add Menu Icons on Mac
+		 */
+		if (!Platform.isMac()) {
+			startSimulation.setImage(ResourceLoader.loadImage(display, "start_16x16.png"));
+			stopSimulation.setImage(ResourceLoader.loadImage(display, "stop_16x16.png"));
+			resetCanvas.setImage(ResourceLoader.loadImage(display, "refresh_16x16.png"));
+			
+			fillModeItem.setImage(ResourceLoader.loadImage(display, "fillmode_16x16.png"));
+			delayItem.setImage(ResourceLoader.loadImage(display, "delay_16x16.png"));
+			language.setImage(ResourceLoader.loadImage(display, "languages_16x16.png"));
+			for (int i = 0; i < languages.length; i++) {
+				languages[i].setImage(ResourceLoader.loadImage(display, Main.settings.getLanguageNames()[i].toLowerCase() + "_16x16.png"));
 			}
-		});
+			
+			helpItem.setImage(ResourceLoader.loadImage(display, "help_16x16.png"));
+			licenseItem.setImage(ResourceLoader.loadImage(display, "license_16x16.png"));
+			websiteItem.setImage(ResourceLoader.loadImage(display, "globe_16x16.png"));
+		}
 	}
 	
 	private void createToolBar() {
 		gridData = new GridData(GridData.FILL_HORIZONTAL);
 		gridData.horizontalSpan = Main.settings.getSimultaneousSimulations();
 		
-		if (Platform.isMac() && Platform.isCocoa()) {
+		if (Platform.isMac()) {
 			toolBar = mainShell.getToolBar();
 		} else {
 			toolBar = new ToolBar(mainShell, SWT.FLAT);
