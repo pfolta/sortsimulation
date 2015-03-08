@@ -273,7 +273,7 @@ public class MainWindow {
 		new MenuItem(simulationMenu, SWT.SEPARATOR);
 		
 		resetCanvas = new MenuItem(simulationMenu, SWT.PUSH);
-		resetCanvas.setAccelerator(SWT.CTRL | 'N');
+		resetCanvas.setAccelerator(SWT.MOD1 | 'N');
 		resetCanvas.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
 				new CreateArray(Main.settings.getFillMode());
@@ -321,7 +321,7 @@ public class MainWindow {
 					resetCanvas();
 				}
 			});
-			fillMode[i].setAccelerator(SWT.CTRL | FillMode.values()[i].getShortcut());
+			fillMode[i].setAccelerator(SWT.MOD1 | FillMode.values()[i].getShortcut());
 			
 			if (Main.settings.getFillMode() == FillMode.values()[i]) {
 				fillMode[i].setSelection(true);
@@ -343,7 +343,7 @@ public class MainWindow {
 					Main.settings.setDelay(Delay.values()[fi]);
 				}
 			});
-			delay[i].setAccelerator(SWT.CTRL | SWT.SHIFT | Delay.values()[i].getShortcut());
+			delay[i].setAccelerator(SWT.MOD1 | SWT.MOD2 | Delay.values()[i].getShortcut());
 			
 			if (Main.settings.getDelay() == Delay.values()[i]) {
 				delay[i].setSelection(true);
