@@ -8,7 +8,7 @@
  * 
  * File:			Platform.java
  * Created:			2015/2/16
- * Last modified:	2015/2/16
+ * Last modified:	2015/3/8
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ import org.eclipse.swt.SWT;
 public class Platform {
 	
 	public static boolean isCocoa() {
-		if (SWT.getPlatform().equals("cocoa")) {
+		if (SWT.getPlatform().toLowerCase().equals("cocoa")) {
 			return true;
 		}
 		

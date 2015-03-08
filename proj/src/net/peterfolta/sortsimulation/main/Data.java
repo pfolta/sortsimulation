@@ -44,7 +44,7 @@ public class Data {
 	
 	public static final String APP_VERSION = "2.0.1 Alpha";
 	
-	public static final String APP_PFID = "pfID-1424943812";
+	public static final String APP_PFID = "pfID-1424945148";
 	
 	public static final String APP_COPYRIGHT_HOLDER = "Peter Folta";
 	
