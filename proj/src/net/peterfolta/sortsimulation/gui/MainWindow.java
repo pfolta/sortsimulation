@@ -343,7 +343,7 @@ public class MainWindow {
 					Main.settings.setDelay(Delay.values()[fi]);
 				}
 			});
-			delay[i].setAccelerator(SWT.MOD1 | SWT.MOD2 | Delay.values()[i].getShortcut());
+			delay[i].setAccelerator(SWT.MOD1 | Delay.values()[i].getShortcut());
 			
 			if (Main.settings.getDelay() == Delay.values()[i]) {
 				delay[i].setSelection(true);
@@ -579,7 +579,7 @@ public class MainWindow {
 		delayItem.setText(Main.language.getTranslationContent("Speed"));
 		
 		for (int i = 0; i < delay.length; i++) {
-			delay[i].setText(Delay.values()[i].getTranslation() + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Main.language.getTranslationContent("Shift") + "+" + Delay.values()[i].getShortcut());
+			delay[i].setText(Delay.values()[i].getTranslation() + "\t" + Main.language.getTranslationContent("Ctrl") + "+" + Delay.values()[i].getShortcut());
 		}
 		
 		language.setText(Main.language.getTranslationContent("Language"));
@@ -592,11 +592,8 @@ public class MainWindow {
 		websiteItem.setText(Main.language.getTranslationContent("Website") + "\t" + Main.language.getTranslationContent("Shift") + "+F1");
 		
 		toolStartSimulation.setText(Main.language.getTranslationContent("StartSimulation"));
-		toolStartSimulation.setToolTipText(Main.language.getTranslationContent("StartSimulation") + " (" + Main.language.getTranslationContent("Return") + ")");
 		toolStopSimulation.setText(Main.language.getTranslationContent("StopSimulation"));
-		toolStopSimulation.setToolTipText(Main.language.getTranslationContent("StopSimulation") + " (" + Main.language.getTranslationContent("Esc") + ")");
 		toolResetCanvas.setText(Main.language.getTranslationContent("ResetFields"));
-		toolResetCanvas.setToolTipText(Main.language.getTranslationContent("ResetFields") + " (" + Main.language.getTranslationContent("Ctrl") + "+N)");
 		
 		if (!Platform.isMac()) {
 			exit.setText(Main.language.getTranslationContent("Exit") + "\t" + Main.language.getTranslationContent("Alt") + "+F4");
