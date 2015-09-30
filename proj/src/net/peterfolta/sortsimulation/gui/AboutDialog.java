@@ -146,9 +146,10 @@ public class AboutDialog {
 		
 		String contributors = "";
 		for (int i = 0; i < Data.APP_CONTRIBUTORS.length; i++) {
-			contributors += Data.APP_CONTRIBUTORS[i] + " · ";
+			contributors += Data.APP_CONTRIBUTORS[i] + "\n";
 		}
-		contributors = contributors.substring(0, contributors.length()-3);
+		
+		contributors = contributors.trim();
 		
 		gridData = new GridData(GridData.FILL_HORIZONTAL | GridData.FILL_VERTICAL);
 		
