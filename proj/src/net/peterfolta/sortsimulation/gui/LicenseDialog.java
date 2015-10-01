@@ -130,7 +130,7 @@ public class LicenseDialog {
 		licenseShell.setMinimumSize(700, 450);
 		licenseShell.pack();
 		
-		Main.getGUI().centerShellOnParent(licenseShell, parent);
+		GUI.getInstance().centerShellOnParent(licenseShell, parent);
 		
 		licenseShell.open();
 	}

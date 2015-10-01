@@ -104,7 +104,7 @@ public class SplashScreen {
 		
 		splashShell.setSize(550, 300);
 		
-		Main.getGUI().centerShellOnPrimaryMonitor(splashShell);
+		GUI.getInstance().centerShellOnPrimaryMonitor(splashShell);
 		
 		splashShell.open();
 		splashShell.forceFocus();
@@ -129,7 +129,7 @@ public class SplashScreen {
 				} catch (InterruptedException exception) {
 				}
 				
-				Main.getGUI().showMainWindow();
+				GUI.getInstance().showMainWindow();
 			}
 		});
 	}

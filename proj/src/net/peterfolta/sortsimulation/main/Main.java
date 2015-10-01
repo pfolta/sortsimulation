@@ -38,8 +38,6 @@ import org.eclipse.swt.widgets.Shell;
 
 public class Main {
 	
-	private static GUI gui;
-	
 	public static Settings settings;
 	public static Language language;
 	
@@ -64,8 +62,7 @@ public class Main {
 		
 		new CreateArray(settings.getFillMode());
 		
-		gui = new GUI();
-		gui.start();
+		GUI.getInstance().start();
 	}
 	
 	private static void printStartUpNotice() {
@@ -141,21 +138,17 @@ public class Main {
 		}
 		
 		try {
-			getGUI().die();
+			GUI.getInstance().die();
 		} catch (Exception exception) {
 		}
 		
 		System.exit(status);
 	}
 	
-	public static GUI getGUI() {
-		return gui;
-	}
-	
 	public static void changeLanguage() {
 		language = new Language();
 		
-		gui.getMainWindow().setCaptions();
+		GUI.getInstance().getMainWindow().setCaptions();
 	}
 	
 }

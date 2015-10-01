@@ -29,6 +29,7 @@ package net.peterfolta.sortsimulation.main;
 
 import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
+import net.peterfolta.sortsimulation.gui.GUI;
 
 public class Simulation extends Thread {
 	
@@ -43,9 +44,9 @@ public class Simulation extends Thread {
 		Sortable sortable = algorithm.getSortable();
 		sortable.sort(a, index);
 		
-		Main.getGUI().getDisplay().asyncExec(new Runnable() {
+		GUI.getInstance().getDisplay().asyncExec(new Runnable() {
 			public void run() {
-				Main.getGUI().getMainWindow().repaintCanvas(index);
+				GUI.getInstance().getMainWindow().repaintCanvas(index);
 			}
 		});
 
@@ -58,7 +59,7 @@ public class Simulation extends Thread {
 		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
 			if (i != index) {
 				try {
-					if (Main.getGUI().getMainWindow().simulationThread.simulation[i].isAlive()) {
+					if (GUI.getInstance().getMainWindow().simulationThread.simulation[i].isAlive()) {
 						finished = false;
 					}
 				} catch (Exception exception) {
@@ -67,23 +68,23 @@ public class Simulation extends Thread {
 		}
 		
 		if (finished) {
-			Main.getGUI().getDisplay().asyncExec(new Runnable() {
+			GUI.getInstance().getDisplay().asyncExec(new Runnable() {
 				public void run() {
-					Main.getGUI().getMainWindow().stopSimulation();
+					GUI.getInstance().getMainWindow().stopSimulation();
 				}
 			});
 		}
 	}
 
 	public void startSimulation() {
-		Main.getGUI().getMainWindow().startSimulation();
+		GUI.getInstance().getMainWindow().startSimulation();
 		
 		simulation = new Simulation[Main.settings.getSimultaneousSimulations()];
 		
 		for (int i = 0; i < simulation.length; i++) {
 			simulation[i] = new Simulation();
 			simulation[i].a = Main.array[i];
-			simulation[i].algorithm = SortingAlgorithms.values()[Main.getGUI().getMainWindow().sortCombo[i].getSelectionIndex()];
+			simulation[i].algorithm = SortingAlgorithms.values()[GUI.getInstance().getMainWindow().sortCombo[i].getSelectionIndex()];
 			simulation[i].index = i;
 			simulation[i].start();
 		}
@@ -94,7 +95,7 @@ public class Simulation extends Thread {
 			simulation[i].interrupt();
 		}
 		
-		Main.getGUI().getMainWindow().stopSimulation();
+		GUI.getInstance().getMainWindow().stopSimulation();
 	}
 
 }

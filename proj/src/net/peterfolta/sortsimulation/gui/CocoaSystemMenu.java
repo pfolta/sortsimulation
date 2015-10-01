@@ -87,7 +87,7 @@ public class CocoaSystemMenu {
 	}
 	
 	private void about() {
-		Main.getGUI().showAboutDialog(mainShell);
+		GUI.getInstance().showAboutDialog(mainShell);
 	}
 	
 	private void quit() {

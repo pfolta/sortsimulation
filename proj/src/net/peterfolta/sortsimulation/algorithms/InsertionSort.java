@@ -28,6 +28,7 @@
 package net.peterfolta.sortsimulation.algorithms;
 
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
+import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class InsertionSort implements Sortable {
@@ -53,9 +54,9 @@ public class InsertionSort implements Sortable {
 					break;
 				}
 				
-				Main.getGUI().getDisplay().asyncExec(new Runnable() {
+				GUI.getInstance().getDisplay().asyncExec(new Runnable() {
 					public void run() {
-						Main.getGUI().getMainWindow().repaintCanvas(index);
+						GUI.getInstance().getMainWindow().repaintCanvas(index);
 					}
 				});
 			}

@@ -213,11 +213,11 @@ public class MainWindow {
 		
 		mainShell.pack();
 		
-		Main.getGUI().centerShellOnPrimaryMonitor(mainShell);
+		GUI.getInstance().centerShellOnPrimaryMonitor(mainShell);
 		
 		mainShell.open();
 		
-		Main.getGUI().getSplashScreen().fadeOut();
+		GUI.getInstance().getSplashScreen().fadeOut();
 	}
 	
 	public void repaintCanvas(int index) {
@@ -425,7 +425,7 @@ public class MainWindow {
 		licenseItem = new MenuItem(helpMenu, SWT.PUSH);
 		licenseItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Main.getGUI().showLicenseDialog(mainShell);
+				GUI.getInstance().showLicenseDialog(mainShell);
 			}
 		});
 		
@@ -447,7 +447,7 @@ public class MainWindow {
 			about.setImage(ResourceLoader.loadImage(display, "about_16x16.png"));
 			about.addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
-					Main.getGUI().showAboutDialog(mainShell);
+					GUI.getInstance().showAboutDialog(mainShell);
 				}
 			});
 		}

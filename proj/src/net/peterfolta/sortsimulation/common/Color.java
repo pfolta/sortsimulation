@@ -27,7 +27,7 @@
 
 package net.peterfolta.sortsimulation.common;
 
-import net.peterfolta.sortsimulation.main.Main;
+import net.peterfolta.sortsimulation.gui.GUI;
 
 public class Color {
 	
@@ -42,7 +42,7 @@ public class Color {
 	}
 	
 	public org.eclipse.swt.graphics.Color getColor() {
-		return new org.eclipse.swt.graphics.Color(Main.getGUI().getDisplay(), red, green, blue); 
+		return new org.eclipse.swt.graphics.Color(GUI.getInstance().getDisplay(), red, green, blue); 
 	}
 
 }

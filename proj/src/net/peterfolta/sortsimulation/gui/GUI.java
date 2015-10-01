@@ -34,6 +34,8 @@ import org.eclipse.swt.widgets.Shell;
 
 public class GUI {
 	
+	private static GUI instance;
+	
 	private Display display;
 	
 	private SplashScreen splashScreen;
@@ -42,11 +44,19 @@ public class GUI {
 	private AboutDialog aboutDialog;
 	private LicenseDialog licenseDialog;
 	
-	public GUI() {
+	private GUI() {
 		Display.setAppName(Data.APP_NAME);
 		Display.setAppVersion(Data.APP_VERSION);
 		
 		this.display = Display.getDefault();
+	}
+	
+	public static GUI getInstance() {
+		if (instance == null) {
+			instance = new GUI();
+		}
+		
+		return instance;
 	}
 	
 	public void start() {

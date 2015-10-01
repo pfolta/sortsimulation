@@ -68,7 +68,7 @@ public class AboutDialog {
 	private Button closeButton;
 	
 	public AboutDialog(Shell parent) {
-		display = Main.getGUI().getDisplay();
+		display = GUI.getInstance().getDisplay();
 		aboutShell = new Shell(parent, SWT.DIALOG_TRIM | SWT.APPLICATION_MODAL);
 		
 		gridLayout = new GridLayout();
@@ -181,7 +181,7 @@ public class AboutDialog {
 		licenseButton.setText(Main.language.getTranslationContent("License"));
 		licenseButton.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Main.getGUI().showLicenseDialog(aboutShell);
+				GUI.getInstance().showLicenseDialog(aboutShell);
 			}
 		});
 		
@@ -203,7 +203,7 @@ public class AboutDialog {
 		aboutShell.setMinimumSize(550, 0);
 		aboutShell.pack();
 		
-		Main.getGUI().centerShellOnParent(aboutShell, parent);
+		GUI.getInstance().centerShellOnParent(aboutShell, parent);
 		
 		aboutShell.open();
 	}

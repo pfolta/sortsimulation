@@ -33,6 +33,7 @@ import java.util.Arrays;
 import net.peterfolta.sortsimulation.common.Color;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
+import net.peterfolta.sortsimulation.gui.GUI;
 
 import org.jdom.input.SAXBuilder;
 
@@ -97,10 +98,10 @@ public class Settings {
 	public void setBackground(Color background) {
 		this.background = background;
 		
-		Main.getGUI().getDisplay().asyncExec(new Runnable() {
+		GUI.getInstance().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				for(int i = 0; i < simultaneousSimulations; i++) {
-					Main.getGUI().getMainWindow().repaintCanvas(i);
+					GUI.getInstance().getMainWindow().repaintCanvas(i);
 				}
 			}
 		});
@@ -113,10 +114,10 @@ public class Settings {
 	public void setColor(Color color) {
 		this.color = color;
 		
-		Main.getGUI().getDisplay().asyncExec(new Runnable() {
+		GUI.getInstance().getDisplay().asyncExec(new Runnable() {
 			public void run() {
 				for (int i = 0; i < simultaneousSimulations; i++) {
-					Main.getGUI().getMainWindow().repaintCanvas(i);
+					GUI.getInstance().getMainWindow().repaintCanvas(i);
 				}
 			}
 		});
