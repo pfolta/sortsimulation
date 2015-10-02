@@ -19,7 +19,7 @@
 		<Average>&amp;Mellan</Average>
 
 		<Background>&amp;Bakgrund</Background>
-		<Bubblesort>Bubble sort</Bubblesort>
+		<Bubblesort>Bubbelsortering</Bubblesort>
 
 		<ChooseBackgroundColor>Välj Bakgrundsfärg</ChooseBackgroundColor>
 		<ChooseColor>Välj Färg</ChooseColor>
@@ -42,7 +42,7 @@
 		<Heapsort>Heapsort</Heapsort>
 		<Help>&amp;Hjälp</Help>
 
-		<Insertionsort>Insertion sort</Insertionsort>
+		<Insertionsort>Insättningssortering</Insertionsort>
 		<Inverse>&amp;Invers</Inverse>
 
 		<Language>&amp;Språk</Language>
@@ -60,7 +60,7 @@
 		<ResetFields>&amp;Återställ fält</ResetFields>
 		<Return>Enter</Return>
 
-		<Selectionsort>Selection sort</Selectionsort>
+		<Selectionsort>Urvalssortering</Selectionsort>
 		<Settings>&amp;Inställningar</Settings>
 		<Shellsort>Shell sort</Shellsort>
 		<Shift>Shift</Shift>
