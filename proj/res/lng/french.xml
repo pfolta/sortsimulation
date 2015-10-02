@@ -16,7 +16,6 @@
 		<AlmostSorted>Almost Sorted</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Auteurs</Authors>
-		<Average>&amp;Moyenne</Average>
 
 		<Background>Couleur d'&amp;arrière-plan</Background>
 		<Bubblesort>Tri à bulles</Bubblesort>
@@ -48,6 +47,7 @@
 		<Language>&amp;Langue</Language>
 		<License>&amp;Licence</License>
 
+		<Medium>&amp;Moyenne</Medium>
 		<Mergesort>Tri fusion</Mergesort>
 		
 		<OK>&amp;OK</OK>

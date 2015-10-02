@@ -16,7 +16,6 @@
 		<AlmostSorted>По&amp;чти сортированный</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Авторы</Authors>
-		<Average>&amp;Среднее значение</Average>
 
 		<Background>&amp;Фон</Background>
 		<Bubblesort>Сортировка пузырьком</Bubblesort>
@@ -48,6 +47,7 @@
 		<Language>&amp;Язык</Language>
 		<License>&amp;Лицензия</License>
 
+		<Medium>&amp;Среднее значение</Medium>
 		<Mergesort>Сортировка слиянием</Mergesort>
 		
 		<OK>&amp;ОК</OK>

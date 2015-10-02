@@ -16,7 +16,6 @@
 		<AlmostSorted>&amp;Beinahe sortiert</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Autoren</Authors>
-		<Average>&amp;Mittel</Average>
 
 		<Background>&amp;Hintergrund</Background>
 		<Bubblesort>Bubblesort</Bubblesort>
@@ -48,6 +47,7 @@
 		<Language>S&amp;prache</Language>
 		<License>&amp;Lizenz</License>
 
+		<Medium>&amp;Mittel</Medium>
 		<Mergesort>Mergesort</Mergesort>
 		
 		<OK>&amp;OK</OK>

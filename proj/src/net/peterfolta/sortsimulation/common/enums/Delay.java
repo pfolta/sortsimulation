@@ -8,7 +8,7 @@
  * 
  * File:			Delay.java
  * Created:			2014/3/22
- * Last modified:	2015/2/16
+ * Last modified:	2015/10/2
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ public enum Delay {
 	
 	VERY_LONG_DELAY(250, "VerySlow", '1'),
 	LONG_DELAY(100, "Slow", '2'),
-	MIDDLE_DELAY(25, "Average", '3'),
+	MIDDLE_DELAY(25, "Medium", '3'),
 	SHORT_DELAY(5, "Fast", '4'),
 	VERY_SHORT_DELAY(1, "VeryFast", '5');
 	

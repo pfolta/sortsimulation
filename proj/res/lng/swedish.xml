@@ -16,7 +16,6 @@
 		<AlmostSorted>&amp;Nästan Sorterad</AlmostSorted>
 		<Alt>Alt</Alt>
 		<Authors>Författare</Authors>
-		<Average>&amp;Mellan</Average>
 
 		<Background>&amp;Bakgrund</Background>
 		<Bubblesort>Bubbelsortering</Bubblesort>
@@ -48,6 +47,7 @@
 		<Language>&amp;Språk</Language>
 		<License>&amp;Licens</License>
 
+		<Medium>&amp;Mellan</Medium>
 		<Mergesort>Merge sort</Mergesort>
 		
 		<OK>&amp;OK</OK>
