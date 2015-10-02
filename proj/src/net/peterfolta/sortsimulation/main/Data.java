@@ -60,7 +60,8 @@ public class Data {
 		"Allison, Chloë Louise",
 		"Folta, Lucia Sonja",
 		"Folta, Peter",
-		"Müllner, Jan Sebastian"
+		"Müllner, Jan Sebastian",
+		"Wallenius, Philip"
 	};
 	
 	public static final String APP_REQUIRED_JVM = "1.6";
