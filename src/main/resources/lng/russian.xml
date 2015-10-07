@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Language>
+	<Information>
+		<Product>SortSimulation</Product>
+		<Version>2.0.0</Version>
+		<ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
+		<LanguageName>Russian</LanguageName>
+		<NativeName>Русский</NativeName>
+		<Translators>
+			<Translator>Lucia Sonja Folta</Translator>
+		</Translators>
+	</Information>
+	<Translations>
+		<About>&amp;О %1</About>
+		<Algorithm>Алгоритм № %1</Algorithm>
+		<AlmostSorted>По&amp;чти сортированный</AlmostSorted>
+		<Alt>Alt</Alt>
+		<Authors>Авторы</Authors>
+
+		<Background>&amp;Фон</Background>
+		<Bubblesort>Сортировка пузырьком</Bubblesort>
+
+		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+		<ChooseColor>Choose Color</ChooseColor>
+		<Cocktailsort>Сортировка перемешиванием</Cocktailsort>
+		<Color>&amp;Цвет</Color>
+		<Contributors>Сотрудники</Contributors>
+		<Copyright>Авторские права %1 %2. Все права защищены.</Copyright>
+		<Ctrl>Ctrl</Ctrl>
+		
+		<Documentation>&amp;Документация</Documentation>
+
+		<Esc>Esc</Esc>
+		<Exit>&amp;Выход</Exit>
+
+		<Fast>&amp;Быстро</Fast>
+		<FillMode>&amp;Полнота модуса</FillMode>
+		
+		<Gnomesort>Гномья сортировка</Gnomesort>
+		
+		<Heapsort>Пирамидальная сортировка</Heapsort>
+		<Help>С&amp;правка</Help>
+
+		<Insertionsort>Сортировка вставками</Insertionsort>
+		<Inverse>&amp;Инверсия</Inverse>
+
+		<Language>&amp;Язык</Language>
+		<License>&amp;Лицензия</License>
+
+		<Medium>&amp;Среднее значение</Medium>
+		<Mergesort>Сортировка слиянием</Mergesort>
+		
+		<OK>&amp;ОК</OK>
+		
+		<Presorted>&amp;Передсортированный</Presorted>
+
+		<Quicksort>Быстрая сортировка</Quicksort>
+
+		<Randomly>&amp;Случайный</Randomly>
+		<ResetFields>&amp;Ставить обратно</ResetFields>
+		<Return>Return</Return>
+
+		<Selectionsort>Сортировка выбором</Selectionsort>
+		<Settings>&amp;Установки</Settings>
+		<Shellsort>Сортировка Шелла</Shellsort>
+		<Shift>Shift</Shift>
+		<Simulation>&amp;Симуляция</Simulation>
+		<Slow>&amp;Медленно</Slow>
+		<Speed>&amp;Скорость симуляции</Speed>
+		<StartSimulation>Старт с&amp;имуляции</StartSimulation>
+		<StopSimulation>&amp;Остановка симуляции</StopSimulation>
+
+		<UsageHint>Выберите %1 сорта алгоритма и нажмите на «Старт симуляции», чтобы начать.</UsageHint>
+
+		<Version>Версия %1</Version>
+		<VeryFast>&amp;Очень быстро</VeryFast>
+		<VerySlow>О&amp;чень медленно</VerySlow>
+
+		<Website>&amp;Веб-страница</Website>
+	</Translations>
+</Language>
