@@ -8,7 +8,7 @@
  * 
  * File:			Settings.java
  * Created:			2008/11/29
- * Last modified:	2015/2/16
+ * Last modified:	2016/2/11
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -35,7 +35,7 @@ import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.gui.GUI;
 
-import org.jdom.input.SAXBuilder;
+import org.jdom2.input.SAXBuilder;
 
 public class Settings {
 	
@@ -57,7 +57,7 @@ public class Settings {
 		this.simultaneousSimulations = simultaneousSimulations;
 		
 		try {
-			String[] tmp = new File("res/lng/").list();
+			String[] tmp = new File("lng/").list();
 			Arrays.sort(tmp);
 
 			currentlanguage = "English";
@@ -65,8 +65,8 @@ public class Settings {
 			languageNativeNames = new String[tmp.length];
 			
 			for (int i = 0; i < tmp.length; i++) {
-				languageNames[i] = new SAXBuilder().build("res/lng/" + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
-				languageNativeNames[i] = new SAXBuilder().build("res/lng/" + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
+				languageNames[i] = new SAXBuilder().build("lng/" + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
+				languageNativeNames[i] = new SAXBuilder().build("lng/" + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
 			}
 		} catch (Exception exception) {
 			exception.printStackTrace();

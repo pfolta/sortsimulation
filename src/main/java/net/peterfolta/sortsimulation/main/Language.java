@@ -8,7 +8,7 @@
  * 
  * File:			Language.java
  * Created:			2009/03/26
- * Last modified:	2015/2/16
+ * Last modified:	2016/2/11
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -27,9 +27,9 @@
 
 package net.peterfolta.sortsimulation.main;
 
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.input.SAXBuilder;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.input.SAXBuilder;
 
 public class Language {
 	
@@ -41,7 +41,7 @@ public class Language {
 	private Element translationsElement;
 	
 	public Language() {
-		filename = "res/lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml";
+		filename = "lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml";
 		
 		try {
 			languageDocument = new SAXBuilder().build(filename);
@@ -49,6 +49,7 @@ public class Language {
 			informationElement = rootElement.getChild("Information");
 			translationsElement = rootElement.getChild("Translations");
 		} catch (Exception exception) {
+			exception.printStackTrace();
 			Main.exit(2);			
 		}
 	}
@@ -59,6 +60,7 @@ public class Language {
 		try {
 			result = informationElement.getChild(key).getText();
 		} catch (Exception exception) {
+			exception.printStackTrace();
 			Main.exit(2);
 		}
 		
@@ -71,6 +73,7 @@ public class Language {
 		try {
 			result = translationsElement.getChild(key).getText();
 		} catch (Exception exception) {
+			exception.printStackTrace();
 			Main.exit(2);
 		}
 		

@@ -8,7 +8,7 @@
  * 
  * File:			ResourceLoader.java
  * Created:			2008/12/14
- * Last modified:	2015/2/16
+ * Last modified:	2016/2/11
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@ public class ResourceLoader {
 		Image tmp = null;
 		
 		try {
-			tmp = new Image(display, "res/img/" + filename);
+			tmp = new Image(display, "img/" + filename);
 		} catch (Exception exception) {
 			exception.printStackTrace();
 			
@@ -49,7 +49,7 @@ public class ResourceLoader {
 	}
 	
 	public static String getHTMLLicense() {
-		return "file:///" + System.getProperty("user.dir") + "/res/doc/license.html";
+		return "file:///" + System.getProperty("user.dir") + "/doc/license.html";
 	}
 
 }

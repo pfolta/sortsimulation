@@ -8,7 +8,7 @@
  * 
  * File:			MainWindow.java
  * Created:			2008/11/29
- * Last modified:	2015/3/8
+ * Last modified:	2016/2/11
  * Author:			Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
@@ -418,7 +418,7 @@ public class MainWindow {
 		helpItem.setAccelerator(SWT.F1);
 		helpItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Program.launch("file:///" + System.getProperty("user.dir") + "/res/doc/documentation_" + Main.settings.getLanguageNames()[Main.settings.getCurrentLanguageIndex()].toLowerCase() + ".pdf");
+				Program.launch("file:///" + System.getProperty("user.dir") + "/doc/documentation_" + Main.settings.getLanguageNames()[Main.settings.getCurrentLanguageIndex()].toLowerCase() + ".pdf");
 			}
 		});
 		
