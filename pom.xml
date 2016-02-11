@@ -107,7 +107,8 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-artifact-jar.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}</finalName>
+                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
                                 </configuration>
@@ -149,7 +150,8 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-artifact-jar.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}</finalName>
+                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
                                 </configuration>
@@ -193,7 +195,8 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-artifact-jar.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}</finalName>
+                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
                                 </configuration>
@@ -241,6 +244,7 @@
                                     <outfile>
                                         ${project.build.directory}/deploy/${project.artifactId}-${project.version}-${build.platform}/${project.artifactId}.exe
                                     </outfile>
+                                    <icon>${project.basedir}/src/main/resources/sortsimulation.ico</icon>
                                     <downloadUrl>http://java.com/download</downloadUrl>
                                     <stayAlive>true</stayAlive>
                                     <jre>
@@ -305,6 +309,7 @@
                                     <outfile>
                                         ${project.build.directory}/deploy/${project.artifactId}-${project.version}-${build.platform}/${project.artifactId}.exe
                                     </outfile>
+                                    <icon>${project.basedir}/src/main/resources/sortsimulation.ico</icon>
                                     <downloadUrl>http://java.com/download</downloadUrl>
                                     <stayAlive>true</stayAlive>
                                     <jre>
