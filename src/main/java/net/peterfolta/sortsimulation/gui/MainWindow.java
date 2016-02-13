@@ -34,11 +34,7 @@ import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
-import net.peterfolta.sortsimulation.main.CreateArray;
-import net.peterfolta.sortsimulation.main.Data;
-import net.peterfolta.sortsimulation.main.Main;
-import net.peterfolta.sortsimulation.main.Simulation;
-
+import net.peterfolta.sortsimulation.main.*;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
@@ -50,18 +46,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.program.Program;
-import org.eclipse.swt.widgets.Canvas;
-import org.eclipse.swt.widgets.ColorDialog;
-import org.eclipse.swt.widgets.Combo;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Menu;
-import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.ToolBar;
-import org.eclipse.swt.widgets.ToolItem;
+import org.eclipse.swt.widgets.*;
 
 public class MainWindow {
 	
@@ -122,7 +107,7 @@ public class MainWindow {
 		gridLayout.makeColumnsEqualWidth = true;
 		
 		mainShell.setImages(Data.APP_ICONS);
-		mainShell.setText(Data.APP_NAME);
+		mainShell.setText(Manifest.getImplementationTitle());
 		mainShell.setSize(640, 480);
 		mainShell.setFullScreen(false);
 		mainShell.setLayout(gridLayout);
@@ -433,7 +418,7 @@ public class MainWindow {
 		websiteItem.setAccelerator(SWT.SHIFT | SWT.F1);
 		websiteItem.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Program.launch(Data.APP_URL);
+				Program.launch(Manifest.getApplicationUrl());
 			}
 		});
 		
@@ -597,7 +582,7 @@ public class MainWindow {
 		
 		if (!Platform.isMac()) {
 			exit.setText(Main.language.getTranslationContent("Exit") + "\t" + Main.language.getTranslationContent("Alt") + "+F4");
-			about.setText(Main.language.getTranslationContent("About").replaceAll("%1", Data.APP_NAME));
+			about.setText(Main.language.getTranslationContent("About").replaceAll("%1", Manifest.getImplementationTitle()));
 		}
 		
 		mainShell.layout();

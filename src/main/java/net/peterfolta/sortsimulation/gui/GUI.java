@@ -27,8 +27,7 @@
 
 package net.peterfolta.sortsimulation.gui;
 
-import net.peterfolta.sortsimulation.main.Data;
-
+import net.peterfolta.sortsimulation.main.Manifest;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -45,8 +44,8 @@ public class GUI {
 	private LicenseDialog licenseDialog;
 	
 	private GUI() {
-		Display.setAppName(Data.APP_NAME);
-		Display.setAppVersion(Data.APP_VERSION);
+		Display.setAppName(Manifest.getImplementationTitle());
+		Display.setAppVersion(Manifest.getImplementationVersion());
 		
 		this.display = Display.getDefault();
 	}

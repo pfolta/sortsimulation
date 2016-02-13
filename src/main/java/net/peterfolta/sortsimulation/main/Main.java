@@ -32,7 +32,6 @@ import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.gui.CustomMessageBox;
 import net.peterfolta.sortsimulation.gui.GUI;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Shell;
 
@@ -67,9 +66,9 @@ public class Main {
 	
 	private static void printStartUpNotice() {
 		System.out.println(
-			Data.APP_NAME + " - " + Data.APP_DESCRIPTION + "\n" +
-			"Version " + Data.APP_VERSION + " - " + Data.APP_PFID + "\n" +
-			"Copyright (C) " + Data.APP_COPYRIGHT_YEAR + " " + Data.APP_COPYRIGHT_HOLDER + ". All rights reserved.\n" +
+			Manifest.getImplementationTitle() + " - " + Manifest.getApplicationDescription() + "\n" +
+			"Version " + Manifest.getImplementationVersion() + " - Build Revision " + Manifest.getBuildNumber() + "\n" +
+			Manifest.getApplicationCopyright() + ". All rights reserved.\n" +
 			"\n" +
 			"This program is free software: you can redistribute it and/or modify\n" +
 			"it under the terms of the GNU General Public License as published by\n" +
@@ -120,7 +119,7 @@ public class Main {
 		
 		switch (status) {
 			case 1:
-				message = "The currently installed Java Runtime is incompatible with " + Data.APP_NAME + ".\nPlease verify your Java Runtime version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version");
+				message = "The currently installed Java Runtime is incompatible with " + Manifest.getImplementationTitle() + ".\nPlease verify your Java Runtime version is greater than or equal to the required version.\n\nRequired JVM version: " + Data.APP_REQUIRED_JVM + "\nInstalled JVM version: " + System.getProperty("java.runtime.version");
 				break;
 			case 2:
 				message = "Failed to read or parse library file(s). The file(s) may be missing or corrupted.";
@@ -134,7 +133,7 @@ public class Main {
 		}
 		
 		if (status != 0) {
-			new CustomMessageBox(new Shell(), message + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Data.APP_NAME, SWT.ICON_ERROR, SWT.OK);
+			new CustomMessageBox(new Shell(), message + "\n\nError: A fatal error has occured. Program will exit (0x" + Integer.toHexString(status) + ").", Manifest.getImplementationTitle(), SWT.ICON_ERROR, SWT.OK);
 		}
 		
 		try {

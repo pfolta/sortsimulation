@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Language>
-	<Information>
-		<Product>SortSimulation</Product>
-		<Version>2.0.0</Version>
-		<ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
-		<LanguageName>English</LanguageName>
-		<NativeName>English</NativeName>
-		<Translators>
-			<Translator>Chloë Louise Allison</Translator>
-			<Translator>Peter Folta</Translator>
-		</Translators>
-	</Information>
-	<Translations>
-		<About>&amp;About %1</About>
-		<Algorithm>Algorithm #%1</Algorithm>
-		<AlmostSorted>&amp;Almost Sorted</AlmostSorted>
-		<Alt>Alt</Alt>
-		<Authors>Authors</Authors>
+    <Information>
+        <Product>SortSimulation</Product>
+        <Version>2.0.0</Version>
+        <ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
+        <LanguageName>English</LanguageName>
+        <NativeName>English</NativeName>
+        <Translators>
+            <Translator>Chloë Louise Allison</Translator>
+            <Translator>Peter Folta</Translator>
+        </Translators>
+    </Information>
+    <Translations>
+        <About>&amp;About %1</About>
+        <Algorithm>Algorithm #%1</Algorithm>
+        <AllRightsReserved>All rights reserved.</AllRightsReserved>
+        <AlmostSorted>&amp;Almost Sorted</AlmostSorted>
+        <Alt>Alt</Alt>
+        <Authors>Authors</Authors>
 
-		<Background>&amp;Background</Background>
-		<Bubblesort>Bubble sort</Bubblesort>
+        <Background>&amp;Background</Background>
+        <Bubblesort>Bubble sort</Bubblesort>
 
-		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
-		<ChooseColor>Choose Color</ChooseColor>
-		<Cocktailsort>Cocktail sort</Cocktailsort>
-		<Color>&amp;Color</Color>
-		<Contributors>Contributors</Contributors>
-		<Copyright>Copyright © %1 %2. All rights reserved.</Copyright>
-		<Ctrl>Ctrl</Ctrl>
-		
-		<Documentation>&amp;Documentation</Documentation>
+        <ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+        <ChooseColor>Choose Color</ChooseColor>
+        <Cocktailsort>Cocktail sort</Cocktailsort>
+        <Color>&amp;Color</Color>
+        <Contributors>Contributors</Contributors>
+        <Ctrl>Ctrl</Ctrl>
 
-		<Esc>Esc</Esc>
-		<Exit>&amp;Exit</Exit>
+        <Documentation>&amp;Documentation</Documentation>
 
-		<Fast>&amp;Fast</Fast>
-		<FillMode>&amp;Fill mode</FillMode>
-		
-		<Gnomesort>Gnome sort</Gnomesort>
-		
-		<Heapsort>Heapsort</Heapsort>
-		<Help>&amp;Help</Help>
+        <Esc>Esc</Esc>
+        <Exit>&amp;Exit</Exit>
 
-		<Insertionsort>Insertion sort</Insertionsort>
-		<Inverse>&amp;Inverse</Inverse>
+        <Fast>&amp;Fast</Fast>
+        <FillMode>&amp;Fill mode</FillMode>
 
-		<Language>&amp;Language</Language>
-		<License>&amp;License</License>
+        <Gnomesort>Gnome sort</Gnomesort>
 
-		<Medium>&amp;Medium</Medium>
-		<Mergesort>Merge sort</Mergesort>
-		
-		<OK>&amp;OK</OK>
-		
-		<Presorted>&amp;Presorted</Presorted>
+        <Heapsort>Heapsort</Heapsort>
+        <Help>&amp;Help</Help>
 
-		<Quicksort>Quicksort</Quicksort>
+        <Insertionsort>Insertion sort</Insertionsort>
+        <Inverse>&amp;Inverse</Inverse>
 
-		<Randomly>&amp;Randomly</Randomly>
-		<ResetFields>&amp;Reset fields</ResetFields>
-		<Return>Return</Return>
+        <Language>&amp;Language</Language>
+        <License>&amp;License</License>
 
-		<Selectionsort>Selection sort</Selectionsort>
-		<Settings>S&amp;ettings</Settings>
-		<Shellsort>Shell sort</Shellsort>
-		<Shift>Shift</Shift>
-		<Simulation>&amp;Simulation</Simulation>
-		<Slow>&amp;Slow</Slow>
-		<Speed>&amp;Speed</Speed>
-		<StartSimulation>&amp;Start Simulation</StartSimulation>
-		<StopSimulation>S&amp;top Simulation</StopSimulation>
+        <Medium>&amp;Medium</Medium>
+        <Mergesort>Merge sort</Mergesort>
 
-		<UsageHint>Select %1 sorting algorithms and click “Start Simulation”, to begin.</UsageHint>
+        <OK>&amp;OK</OK>
 
-		<Version>Version %1</Version>
-		<VeryFast>&amp;Very fast</VeryFast>
-		<VerySlow>V&amp;ery slow</VerySlow>
+        <Presorted>&amp;Presorted</Presorted>
 
-		<Website>&amp;Website</Website>
-	</Translations>
+        <Quicksort>Quicksort</Quicksort>
+
+        <Randomly>&amp;Randomly</Randomly>
+        <ResetFields>&amp;Reset fields</ResetFields>
+        <Return>Return</Return>
+
+        <Selectionsort>Selection sort</Selectionsort>
+        <Settings>S&amp;ettings</Settings>
+        <Shellsort>Shell sort</Shellsort>
+        <Shift>Shift</Shift>
+        <Simulation>&amp;Simulation</Simulation>
+        <Slow>&amp;Slow</Slow>
+        <Speed>&amp;Speed</Speed>
+        <StartSimulation>&amp;Start Simulation</StartSimulation>
+        <StopSimulation>S&amp;top Simulation</StopSimulation>
+
+        <UsageHint>Select %1 sorting algorithms and click “Start Simulation”, to begin.</UsageHint>
+
+        <Version>Version %1</Version>
+        <VeryFast>&amp;Very fast</VeryFast>
+        <VerySlow>V&amp;ery slow</VerySlow>
+
+        <Website>&amp;Website</Website>
+    </Translations>
 </Language>

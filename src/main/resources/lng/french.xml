@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Language>
-	<Information>
-		<Product>SortSimulation</Product>
-		<Version>2.0.0</Version>
-		<ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
-		<LanguageName>French</LanguageName>
-		<NativeName>Français</NativeName>
-		<Translators>
-			<Translator>Jan Sebastian Müllner</Translator>
-		</Translators>
-	</Information>
-	<Translations>
-		<About>&amp;À propos de %1</About>
-		<Algorithm>Algorithme Nº %1</Algorithm>
-		<AlmostSorted>Almost Sorted</AlmostSorted>
-		<Alt>Alt</Alt>
-		<Authors>Auteurs</Authors>
+    <Information>
+        <Product>SortSimulation</Product>
+        <Version>2.0.0</Version>
+        <ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
+        <LanguageName>French</LanguageName>
+        <NativeName>Français</NativeName>
+        <Translators>
+            <Translator>Jan Sebastian Müllner</Translator>
+        </Translators>
+    </Information>
+    <Translations>
+        <About>&amp;À propos de %1</About>
+        <Algorithm>Algorithme Nº %1</Algorithm>
+        <AllRightsReserved>Tous droits réservés.</AllRightsReserved>
+        <AlmostSorted>Almost Sorted</AlmostSorted>
+        <Alt>Alt</Alt>
+        <Authors>Auteurs</Authors>
 
-		<Background>Couleur d'&amp;arrière-plan</Background>
-		<Bubblesort>Tri à bulles</Bubblesort>
+        <Background>Couleur d'&amp;arrière-plan</Background>
+        <Bubblesort>Tri à bulles</Bubblesort>
 
-		<ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
-		<ChooseColor>Choose Color</ChooseColor>
-		<Cocktailsort>Tri cocktail</Cocktailsort>
-		<Color>&amp;Couleur</Color>
-		<Contributors>Coopérateurs</Contributors>
-		<Copyright>Copyright © %1 %2. Tous droits réservés.</Copyright>
-		<Ctrl>Ctrl</Ctrl>
-		
-		<Documentation>&amp;Documentation</Documentation>
+        <ChooseBackgroundColor>Choose Background Color</ChooseBackgroundColor>
+        <ChooseColor>Choose Color</ChooseColor>
+        <Cocktailsort>Tri cocktail</Cocktailsort>
+        <Color>&amp;Couleur</Color>
+        <Contributors>Coopérateurs</Contributors>
+        <Ctrl>Ctrl</Ctrl>
 
-		<Esc>Esc</Esc>
-		<Exit>&amp;Quitter</Exit>
+        <Documentation>&amp;Documentation</Documentation>
 
-		<Fast>&amp;Vite</Fast>
-		<FillMode>&amp;Mode de remplissage</FillMode>
-		
-		<Gnomesort>Gnome sort</Gnomesort>
-		
-		<Heapsort>Tri par tas</Heapsort>
-		<Help>&amp;Aide</Help>
+        <Esc>Esc</Esc>
+        <Exit>&amp;Quitter</Exit>
 
-		<Insertionsort>Tri par insertion</Insertionsort>
-		<Inverse>&amp;Inverse</Inverse>
+        <Fast>&amp;Vite</Fast>
+        <FillMode>&amp;Mode de remplissage</FillMode>
 
-		<Language>&amp;Langue</Language>
-		<License>&amp;Licence</License>
+        <Gnomesort>Gnome sort</Gnomesort>
 
-		<Medium>&amp;Moyenne</Medium>
-		<Mergesort>Tri fusion</Mergesort>
-		
-		<OK>&amp;OK</OK>
-		
-		<Presorted>Presorted</Presorted>
+        <Heapsort>Tri par tas</Heapsort>
+        <Help>&amp;Aide</Help>
 
-		<Quicksort>Tri rapide</Quicksort>
+        <Insertionsort>Tri par insertion</Insertionsort>
+        <Inverse>&amp;Inverse</Inverse>
 
-		<Randomly>&amp;Par hasard</Randomly>
-		<ResetFields>&amp;Reculer le panneau</ResetFields>
-		<Return>Return</Return>
+        <Language>&amp;Langue</Language>
+        <License>&amp;Licence</License>
 
-		<Selectionsort>Tri par sélection</Selectionsort>
-		<Settings>&amp;Paramètres</Settings>
-		<Shellsort>Tri de Shell</Shellsort>
-		<Shift>Shift</Shift>
-		<Simulation>&amp;Simulation</Simulation>
-		<Slow>&amp;Lentement</Slow>
-		<Speed>&amp;Vitesse</Speed>
-		<StartSimulation>&amp;Lancer la simulation</StartSimulation>
-		<StopSimulation>&amp;Arrêter la simulation</StopSimulation>
+        <Medium>&amp;Moyenne</Medium>
+        <Mergesort>Tri fusion</Mergesort>
 
-		<UsageHint>Sélectionnez les %1 algorithmes de tri et cliquez sur «lancer la simulation» pour commencer.</UsageHint>
+        <OK>&amp;OK</OK>
 
-		<Version>Version %1</Version>
-		<VeryFast>Trés &amp;rapidement</VeryFast>
-		<VerySlow>&amp;Trés lentement</VerySlow>
+        <Presorted>Presorted</Presorted>
 
-		<Website>&amp;Page web</Website>
-	</Translations>
+        <Quicksort>Tri rapide</Quicksort>
+
+        <Randomly>&amp;Par hasard</Randomly>
+        <ResetFields>&amp;Reculer le panneau</ResetFields>
+        <Return>Return</Return>
+
+        <Selectionsort>Tri par sélection</Selectionsort>
+        <Settings>&amp;Paramètres</Settings>
+        <Shellsort>Tri de Shell</Shellsort>
+        <Shift>Shift</Shift>
+        <Simulation>&amp;Simulation</Simulation>
+        <Slow>&amp;Lentement</Slow>
+        <Speed>&amp;Vitesse</Speed>
+        <StartSimulation>&amp;Lancer la simulation</StartSimulation>
+        <StopSimulation>&amp;Arrêter la simulation</StopSimulation>
+
+        <UsageHint>Sélectionnez les %1 algorithmes de tri et cliquez sur «lancer la simulation» pour commencer.</UsageHint>
+
+        <Version>Version %1</Version>
+        <VeryFast>Trés &amp;rapidement</VeryFast>
+        <VerySlow>&amp;Trés lentement</VerySlow>
+
+        <Website>&amp;Page web</Website>
+    </Translations>
 </Language>

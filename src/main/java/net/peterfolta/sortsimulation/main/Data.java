@@ -38,20 +38,6 @@ public class Data {
 	 * GENERAL PROGRAM INFORMATION
 	 */
 	
-	public static final String APP_NAME = "SortSimulation";
-	
-	public static final String APP_DESCRIPTION = "A visual representation of sorting algorithms";
-	
-	public static final String APP_VERSION = "2.0.1 Alpha";
-	
-	public static final String APP_PFID = "pfID-1425805491";
-	
-	public static final String APP_COPYRIGHT_HOLDER = "Peter Folta";
-	
-	public static final String APP_COPYRIGHT_YEAR = "2008-2015";
-	
-	public static final String APP_URL = "http://www.peterfolta.net/software/sortsimulation";
-	
 	public static final String[] APP_AUTHORS = {
 		"Folta, Peter"
 	};

@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Language>
-	<Information>
-		<Product>SortSimulation</Product>
-		<Version>2.0.0</Version>
-		<ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
-		<LanguageName>Swedish</LanguageName>
-		<NativeName>Svenska</NativeName>
-		<Translators>
-			<Translator>Philip Wallenius</Translator>
-		</Translators>
-	</Information>
-	<Translations>
-		<About>&amp;Om %1</About>
-		<Algorithm>Algoritm #%1</Algorithm>
-		<AlmostSorted>&amp;Nästan Sorterad</AlmostSorted>
-		<Alt>Alt</Alt>
-		<Authors>Författare</Authors>
+    <Information>
+        <Product>SortSimulation</Product>
+        <Version>2.0.0</Version>
+        <ProductURL>http://www.peterfolta.net/software/sortsimulation</ProductURL>
+        <LanguageName>Swedish</LanguageName>
+        <NativeName>Svenska</NativeName>
+        <Translators>
+            <Translator>Philip Wallenius</Translator>
+        </Translators>
+    </Information>
+    <Translations>
+        <About>&amp;Om %1</About>
+        <Algorithm>Algoritm #%1</Algorithm>
+        <AllRightsReserved>Alla rättigheter reserverade.</AllRightsReserved>
+        <AlmostSorted>&amp;Nästan Sorterad</AlmostSorted>
+        <Alt>Alt</Alt>
+        <Authors>Författare</Authors>
 
-		<Background>&amp;Bakgrund</Background>
-		<Bubblesort>Bubbelsortering</Bubblesort>
+        <Background>&amp;Bakgrund</Background>
+        <Bubblesort>Bubbelsortering</Bubblesort>
 
-		<ChooseBackgroundColor>Välj Bakgrundsfärg</ChooseBackgroundColor>
-		<ChooseColor>Välj Färg</ChooseColor>
-		<Cocktailsort>Cocktail sort</Cocktailsort>
-		<Color>&amp;Färg</Color>
-		<Contributors>Bidragsgivare</Contributors>
-		<Copyright>Copyright © %1 %2. Alla rättigheter reserverade.</Copyright>
-		<Ctrl>Ctrl</Ctrl>
-		
-		<Documentation>&amp;Dokumentation</Documentation>
+        <ChooseBackgroundColor>Välj Bakgrundsfärg</ChooseBackgroundColor>
+        <ChooseColor>Välj Färg</ChooseColor>
+        <Cocktailsort>Cocktail sort</Cocktailsort>
+        <Color>&amp;Färg</Color>
+        <Contributors>Bidragsgivare</Contributors>
+        <Ctrl>Ctrl</Ctrl>
 
-		<Esc>Esc</Esc>
-		<Exit>&amp;Avsluta</Exit>
+        <Documentation>&amp;Dokumentation</Documentation>
 
-		<Fast>&amp;Snabbt</Fast>
-		<FillMode>&amp;Fyllnadsläge</FillMode>
-		
-		<Gnomesort>Gnome sort</Gnomesort>
-		
-		<Heapsort>Heapsort</Heapsort>
-		<Help>&amp;Hjälp</Help>
+        <Esc>Esc</Esc>
+        <Exit>&amp;Avsluta</Exit>
 
-		<Insertionsort>Insättningssortering</Insertionsort>
-		<Inverse>&amp;Invers</Inverse>
+        <Fast>&amp;Snabbt</Fast>
+        <FillMode>&amp;Fyllnadsläge</FillMode>
 
-		<Language>&amp;Språk</Language>
-		<License>&amp;Licens</License>
+        <Gnomesort>Gnome sort</Gnomesort>
 
-		<Medium>&amp;Mellan</Medium>
-		<Mergesort>Merge sort</Mergesort>
-		
-		<OK>&amp;OK</OK>
-		
-		<Presorted>&amp;Försorterad</Presorted>
+        <Heapsort>Heapsort</Heapsort>
+        <Help>&amp;Hjälp</Help>
 
-		<Quicksort>Quicksort</Quicksort>
+        <Insertionsort>Insättningssortering</Insertionsort>
+        <Inverse>&amp;Invers</Inverse>
 
-		<Randomly>&amp;Slumpvis</Randomly>
-		<ResetFields>&amp;Återställ fält</ResetFields>
-		<Return>Enter</Return>
+        <Language>&amp;Språk</Language>
+        <License>&amp;Licens</License>
 
-		<Selectionsort>Urvalssortering</Selectionsort>
-		<Settings>&amp;Inställningar</Settings>
-		<Shellsort>Shell sort</Shellsort>
-		<Shift>Shift</Shift>
-		<Simulation>&amp;Simulation</Simulation>
-		<Slow>&amp;Långsamt</Slow>
-		<Speed>&amp;Hastighet</Speed>
-		<StartSimulation>&amp;Starta Simulationen</StartSimulation>
-		<StopSimulation>S&amp;toppa Simulationen</StopSimulation>
+        <Medium>&amp;Mellan</Medium>
+        <Mergesort>Merge sort</Mergesort>
 
-		<UsageHint>Välj %1 sorteringsalgoritmer och klicka “Starta Simulationen”, för att börja.</UsageHint>
+        <OK>&amp;OK</OK>
 
-		<Version>Version %1</Version>
-		<VeryFast>&amp;Mycket snabbt</VeryFast>
-		<VerySlow>Mycket långsamt</VerySlow>
+        <Presorted>&amp;Försorterad</Presorted>
 
-		<Website>&amp;Webbsida</Website>
-	</Translations>
+        <Quicksort>Quicksort</Quicksort>
+
+        <Randomly>&amp;Slumpvis</Randomly>
+        <ResetFields>&amp;Återställ fält</ResetFields>
+        <Return>Enter</Return>
+
+        <Selectionsort>Urvalssortering</Selectionsort>
+        <Settings>&amp;Inställningar</Settings>
+        <Shellsort>Shell sort</Shellsort>
+        <Shift>Shift</Shift>
+        <Simulation>&amp;Simulation</Simulation>
+        <Slow>&amp;Långsamt</Slow>
+        <Speed>&amp;Hastighet</Speed>
+        <StartSimulation>&amp;Starta Simulationen</StartSimulation>
+        <StopSimulation>S&amp;toppa Simulationen</StopSimulation>
+
+        <UsageHint>Välj %1 sorteringsalgoritmer och klicka “Starta Simulationen”, för att börja.</UsageHint>
+
+        <Version>Version %1</Version>
+        <VeryFast>&amp;Mycket snabbt</VeryFast>
+        <VerySlow>Mycket långsamt</VerySlow>
+
+        <Website>&amp;Webbsida</Website>
+    </Translations>
 </Language>

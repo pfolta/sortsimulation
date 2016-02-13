@@ -30,21 +30,14 @@ package net.peterfolta.sortsimulation.gui;
 import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.main.Data;
 import net.peterfolta.sortsimulation.main.Main;
-
+import net.peterfolta.sortsimulation.main.Manifest;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.program.Program;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Link;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.*;
 
 public class AboutDialog {
 	
@@ -76,7 +69,7 @@ public class AboutDialog {
 		gridLayout.marginWidth = 25;
 		gridLayout.verticalSpacing = 3;
 		
-		aboutShell.setText(Data.APP_NAME);
+		aboutShell.setText(Manifest.getImplementationTitle());
 		aboutShell.setBackground(new Color(display, 98, 189, 25));
 		aboutShell.setLayout(gridLayout);
 		aboutShell.setBackgroundMode(SWT.INHERIT_DEFAULT);
@@ -91,25 +84,25 @@ public class AboutDialog {
 		gridData.verticalIndent = 20;
 		
 		versionLabel = new Label(aboutShell, SWT.NONE);
-		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Data.APP_VERSION) + " · " + Data.APP_PFID);
+		versionLabel.setText(Main.language.getTranslationContent("Version").replaceAll("%1", Manifest.getImplementationVersion()));
 		versionLabel.setForeground(new Color(display, 255, 255, 255));
 		versionLabel.setLayoutData(gridData);
 		
 		gridData = new GridData();
 		
 		copyrightLabel = new Label(aboutShell, SWT.NONE);
-		copyrightLabel.setText(Main.language.getTranslationContent("Copyright").replaceAll("%1", Data.APP_COPYRIGHT_YEAR).replaceAll("%2", Data.APP_COPYRIGHT_HOLDER));
+		copyrightLabel.setText(Manifest.getApplicationCopyright() + " " + Main.language.getTranslationContent("AllRightsReserved"));
 		copyrightLabel.setForeground(new Color(display, 255, 255, 255));
 		copyrightLabel.setLayoutData(gridData);
 		
 		gridData = new GridData();
 		
 		websiteLink = new Link(aboutShell, SWT.NONE);
-		websiteLink.setText("<A>" + Data.APP_URL + "</A>");
+		websiteLink.setText("<A>" + Manifest.getApplicationUrl() + "</A>");
 		websiteLink.setLayoutData(gridData);
 		websiteLink.addListener(SWT.Selection, new Listener() {
 			public void handleEvent(Event event) {
-				Program.launch(Data.APP_URL);
+				Program.launch(Manifest.getApplicationUrl());
 			}
 		});
 		
