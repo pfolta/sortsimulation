@@ -2,14 +2,13 @@
  * SortSimulation - A visual representation of sorting algorithms
  * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
  *
- * Project:			SortSimulation
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
  *
- * File:			Main.java
- * Created:			2016/2/13
- * Last modified:	2016/2/13
- * Author:			Peter Folta <mail@peterfolta.net>
+ * File:            Manifest.java
+ * Created:         2016-02-13
+ * Author:          Peter Folta <mail@peterfolta.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

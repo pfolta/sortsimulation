@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			SortingAlgorithms.java
- * Created:			2014/3/23
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            SortingAlgorithms.java
+ * Created:         2014-03-23
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,77 +39,77 @@ import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.main.Main;
 
 public enum SortingAlgorithms {
-	
-	BUBBLESORT("Bubblesort", new BubbleSort()),
-	COCKTAILSORT("Cocktailsort", new CocktailSort()),
-	GNOMESORT("Gnomesort", new GnomeSort()),
-	HEAPSORT("Heapsort", new HeapSort()),
-	INSERTIONSORT("Insertionsort", new InsertionSort()),
-	MERGESORT("Mergesort", new MergeSort()),
-	QUICKSORT("Quicksort", new QuickSort()),
-	SELECTIONSORT("Selectionsort", new SelectionSort()),
-	SHELLSORT("Shellsort", new ShellSort());
-	
-	private final String translationKey;
-	private Sortable sortable;
-	
-	SortingAlgorithms(String translationKey, Sortable sortable) {
-		this.translationKey = translationKey;
-		this.sortable = sortable;
-	}
-	
-	public String getTranslationKey() {
-		return translationKey;
-	}
-	
-	public String getTranslation() {
-		return Main.language.getTranslationContent(getTranslationKey());
-	}
-	
-	public static String[] getTranslations() {
-		String[] translations = new String[values().length];
-		
-		for (int i = 0; i < translations.length; i++) {
-			translations[i] = Main.language.getTranslationContent(values()[i].getTranslationKey());
-		}
-		
-		return translations;
-	}
-	
-	public Sortable getSortable() {
-		return sortable;
-	}
-	
-	public void createSortable() {
-		switch (this) {
-			case BUBBLESORT:
-				this.sortable = new BubbleSort();
-				break;
-			case COCKTAILSORT:
-				this.sortable = new CocktailSort();
-				break;
-			case GNOMESORT:
-				this.sortable = new GnomeSort();
-				break;
-			case HEAPSORT:
-				this.sortable = new HeapSort();
-				break;
-			case INSERTIONSORT:
-				this.sortable = new InsertionSort();
-				break;
-			case MERGESORT:
-				this.sortable = new MergeSort();
-				break;
-			case QUICKSORT:
-				this.sortable = new QuickSort();
-				break;
-			case SELECTIONSORT:
-				this.sortable = new SelectionSort();
-				break;
-			case SHELLSORT:
-				this.sortable = new ShellSort();
-				break;
-		}
-	}
-	
+
+    BUBBLESORT("Bubblesort", new BubbleSort()),
+    COCKTAILSORT("Cocktailsort", new CocktailSort()),
+    GNOMESORT("Gnomesort", new GnomeSort()),
+    HEAPSORT("Heapsort", new HeapSort()),
+    INSERTIONSORT("Insertionsort", new InsertionSort()),
+    MERGESORT("Mergesort", new MergeSort()),
+    QUICKSORT("Quicksort", new QuickSort()),
+    SELECTIONSORT("Selectionsort", new SelectionSort()),
+    SHELLSORT("Shellsort", new ShellSort());
+
+    private final String translationKey;
+    private Sortable sortable;
+
+    SortingAlgorithms(String translationKey, Sortable sortable) {
+        this.translationKey = translationKey;
+        this.sortable = sortable;
+    }
+
+    public String getTranslationKey() {
+        return translationKey;
+    }
+
+    public String getTranslation() {
+        return Main.language.getTranslationContent(getTranslationKey());
+    }
+
+    public static String[] getTranslations() {
+        String[] translations = new String[values().length];
+
+        for (int i = 0; i < translations.length; i++) {
+            translations[i] = Main.language.getTranslationContent(values()[i].getTranslationKey());
+        }
+
+        return translations;
+    }
+
+    public Sortable getSortable() {
+        return sortable;
+    }
+
+    public void createSortable() {
+        switch (this) {
+            case BUBBLESORT:
+                this.sortable = new BubbleSort();
+                break;
+            case COCKTAILSORT:
+                this.sortable = new CocktailSort();
+                break;
+            case GNOMESORT:
+                this.sortable = new GnomeSort();
+                break;
+            case HEAPSORT:
+                this.sortable = new HeapSort();
+                break;
+            case INSERTIONSORT:
+                this.sortable = new InsertionSort();
+                break;
+            case MERGESORT:
+                this.sortable = new MergeSort();
+                break;
+            case QUICKSORT:
+                this.sortable = new QuickSort();
+                break;
+            case SELECTIONSORT:
+                this.sortable = new SelectionSort();
+                break;
+            case SHELLSORT:
+                this.sortable = new ShellSort();
+                break;
+        }
+    }
+
 }

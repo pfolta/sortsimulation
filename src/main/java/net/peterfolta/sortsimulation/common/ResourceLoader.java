@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			ResourceLoader.java
- * Created:			2008/12/14
- * Last modified:	2016/2/11
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            ResourceLoader.java
+ * Created:         2008-12-14
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,23 +32,23 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 public class ResourceLoader {
-	
-	public static Image loadImage(Display display, String filename) {
-		Image tmp = null;
-		
-		try {
-			tmp = new Image(display, "img/" + filename);
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			
-			Main.exit(3);
-		}
-		
-		return tmp;
-	}
-	
-	public static String getHTMLLicense() {
-		return "file:///" + System.getProperty("user.dir") + "/doc/license.html";
-	}
+
+    public static Image loadImage(Display display, String filename) {
+        Image tmp = null;
+
+        try {
+            tmp = new Image(display, "img/" + filename);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+
+            Main.exit(3);
+        }
+
+        return tmp;
+    }
+
+    public static String getHTMLLicense() {
+        return "file:///" + System.getProperty("user.dir") + "/doc/license.html";
+    }
 
 }

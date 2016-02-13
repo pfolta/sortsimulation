@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			Insertionsort.java
- * Created:			2008/11/29
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            InsertionSort.java
+ * Created:         2008-11-29
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,37 +31,37 @@ import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
 
 public class InsertionSort implements Sortable {
-	
-	private boolean interrupted = false;
-	
-	public void sort(int[] a, final int index) {
-		int tmp;
-		int j;
-		
-		for (int i = 1; i < a.length && !interrupted; i++) {
-			tmp = a[i];
-			j = i;
-			
-			while (j > 0 && a[j-1] > tmp && !interrupted) {
-				a[j] = a[j-1];
-				j--;
-				
-				try {
-					Thread.sleep(Main.settings.getDelay().getDelay());
-				} catch (InterruptedException exception) {
-					interrupted = true;
-					break;
-				}
-				
-				GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-					public void run() {
-						GUI.getInstance().getMainWindow().repaintCanvas(index);
-					}
-				});
-			}
-			
-			a[j] = tmp;
-		}
-	}
+
+    private boolean interrupted = false;
+
+    public void sort(int[] a, final int index) {
+        int tmp;
+        int j;
+
+        for (int i = 1; i < a.length && !interrupted; i++) {
+            tmp = a[i];
+            j = i;
+
+            while (j > 0 && a[j - 1] > tmp && !interrupted) {
+                a[j] = a[j - 1];
+                j--;
+
+                try {
+                    Thread.sleep(Main.settings.getDelay().getDelay());
+                } catch (InterruptedException exception) {
+                    interrupted = true;
+                    break;
+                }
+
+                GUI.getInstance().getDisplay().asyncExec(new Runnable() {
+                    public void run() {
+                        GUI.getInstance().getMainWindow().repaintCanvas(index);
+                    }
+                });
+            }
+
+            a[j] = tmp;
+        }
+    }
 
 }

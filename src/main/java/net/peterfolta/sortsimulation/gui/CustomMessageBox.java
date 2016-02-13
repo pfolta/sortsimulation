@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			CustomMessageBox.java
- * Created:			2009/3/26
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            CustomMessageBox.java
+ * Created:         2009-03-26
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,19 +30,19 @@ import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 
 public class CustomMessageBox {
-	
-	private int returnCode;
-	
-	public CustomMessageBox(Shell parent, String text, String title, int icon, int buttons) {
-		MessageBox box = new MessageBox(parent, icon | buttons);
-		box.setText(title);
-		box.setMessage(text);
-		
-		returnCode = box.open();
-	}
-	
-	public int getReturnCode() {
-		return returnCode;
-	}
+
+    private int returnCode;
+
+    public CustomMessageBox(Shell parent, String text, String title, int icon, int buttons) {
+        MessageBox box = new MessageBox(parent, icon | buttons);
+        box.setText(title);
+        box.setMessage(text);
+
+        returnCode = box.open();
+    }
+
+    public int getReturnCode() {
+        return returnCode;
+    }
 
 }

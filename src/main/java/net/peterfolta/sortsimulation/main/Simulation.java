@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			Simulation.java
- * Created:			2008/11/29
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            Simulation.java
+ * Created:         2008-11-29
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,70 +31,71 @@ import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 
 public class Simulation extends Thread {
-	
-	private SortingAlgorithms algorithm;
-	private int index;
-	private int[] a;
-	
-	private Simulation[] simulation;
-	
-	public void run() {
-		algorithm.createSortable();
-		Sortable sortable = algorithm.getSortable();
-		sortable.sort(a, index);
-		
-		GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-			public void run() {
-				GUI.getInstance().getMainWindow().repaintCanvas(index);
-			}
-		});
 
-		finished();
-	}
-	
-	private synchronized void finished() {
-		boolean finished = true;
-		
-		for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
-			if (i != index) {
-				try {
-					if (GUI.getInstance().getMainWindow().simulationThread.simulation[i].isAlive()) {
-						finished = false;
-					}
-				} catch (Exception exception) {
-				}
-			}
-		}
-		
-		if (finished) {
-			GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					GUI.getInstance().getMainWindow().stopSimulation();
-				}
-			});
-		}
-	}
+    private SortingAlgorithms algorithm;
+    private int index;
+    private int[] a;
 
-	public void startSimulation() {
-		GUI.getInstance().getMainWindow().startSimulation();
-		
-		simulation = new Simulation[Main.settings.getSimultaneousSimulations()];
-		
-		for (int i = 0; i < simulation.length; i++) {
-			simulation[i] = new Simulation();
-			simulation[i].a = Main.array[i];
-			simulation[i].algorithm = SortingAlgorithms.values()[GUI.getInstance().getMainWindow().sortCombo[i].getSelectionIndex()];
-			simulation[i].index = i;
-			simulation[i].start();
-		}
-	}
-	
-	public void stopSimulation() {
-		for (int i = 0; i < simulation.length; i++) {
-			simulation[i].interrupt();
-		}
-		
-		GUI.getInstance().getMainWindow().stopSimulation();
-	}
+    private Simulation[] simulations;
+
+    public void run() {
+        algorithm.createSortable();
+        Sortable sortable = algorithm.getSortable();
+        sortable.sort(a, index);
+
+        GUI.getInstance().getDisplay().asyncExec(new Runnable() {
+            public void run() {
+                GUI.getInstance().getMainWindow().repaintCanvas(index);
+            }
+        });
+
+        finished();
+    }
+
+    private synchronized void finished() {
+        boolean finished = true;
+
+        for (int i = 0; i < Main.settings.getSimultaneousSimulations(); i++) {
+            if (i != index) {
+                try {
+                    if (GUI.getInstance().getMainWindow().simulationThread.simulations[i].isAlive()) {
+                        finished = false;
+                    }
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        }
+
+        if (finished) {
+            GUI.getInstance().getDisplay().asyncExec(new Runnable() {
+                public void run() {
+                    GUI.getInstance().getMainWindow().stopSimulation();
+                }
+            });
+        }
+    }
+
+    public void startSimulation() {
+        GUI.getInstance().getMainWindow().startSimulation();
+
+        simulations = new Simulation[Main.settings.getSimultaneousSimulations()];
+
+        for (int i = 0; i < simulations.length; i++) {
+            simulations[i] = new Simulation();
+            simulations[i].a = Main.array[i];
+            simulations[i].algorithm = SortingAlgorithms.values()[GUI.getInstance().getMainWindow().sortCombo[i].getSelectionIndex()];
+            simulations[i].index = i;
+            simulations[i].start();
+        }
+    }
+
+    public void stopSimulation() {
+        for (Simulation simulation : simulations) {
+            simulation.interrupt();
+        }
+
+        GUI.getInstance().getMainWindow().stopSimulation();
+    }
 
 }

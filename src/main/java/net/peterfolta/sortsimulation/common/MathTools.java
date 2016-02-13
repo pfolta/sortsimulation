@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			MathTools.java
- * Created:			2014/3/22
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            MathTools.java
+ * Created:         2014-03-22
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,17 +27,17 @@
 package net.peterfolta.sortsimulation.common;
 
 public class MathTools {
-	
-	/**
-	 * Generates a random integer between lower and upper boundary,
-	 * including boundaries
-	 * 
-	 * @param a lower boundary
-	 * @param b upper boundary
-	 * @return random integer
-	 */
-	public static int random(int a, int b) {
-		return (int) (Math.random() * (b - a + 1) + a);
-	}
+
+    /**
+     * Generates a random integer between lower and upper boundary,
+     * including boundaries
+     *
+     * @param a lower boundary
+     * @param b upper boundary
+     * @return random integer
+     */
+    public static int random(int a, int b) {
+        return (int) (Math.random() * (b - a + 1) + a);
+    }
 
 }

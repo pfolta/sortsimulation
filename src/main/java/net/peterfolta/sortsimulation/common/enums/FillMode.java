@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			FillMode.java
- * Created:			2014/3/22
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            FillMode.java
+ * Created:         2014-03-22
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,30 +29,30 @@ package net.peterfolta.sortsimulation.common.enums;
 import net.peterfolta.sortsimulation.main.Main;
 
 public enum FillMode {
-	
-	RANDOM("Randomly", 'R'),
-	INVERSE("Inverse", 'I'),
-	ALMOST_SORTED("AlmostSorted", 'A'),
-	PRESORTED("Presorted", 'P');
-	
-	private final String translationKey;
-	private final char shortcut;
-	
-	FillMode(String translationKey, char shortcut) {
-		this.translationKey = translationKey;
-		this.shortcut = shortcut;
-	}
-	
-	public String getTranslationKey() {
-		return translationKey;
-	}
-	
-	public String getTranslation() {
-		return Main.language.getTranslationContent(getTranslationKey());
-	}
-	
-	public char getShortcut() {
-		return shortcut;
-	}
-	
+
+    RANDOM("Randomly", 'R'),
+    INVERSE("Inverse", 'I'),
+    ALMOST_SORTED("AlmostSorted", 'A'),
+    PRESORTED("Presorted", 'P');
+
+    private final String translationKey;
+    private final char shortcut;
+
+    FillMode(String translationKey, char shortcut) {
+        this.translationKey = translationKey;
+        this.shortcut = shortcut;
+    }
+
+    public String getTranslationKey() {
+        return translationKey;
+    }
+
+    public String getTranslation() {
+        return Main.language.getTranslationContent(getTranslationKey());
+    }
+
+    public char getShortcut() {
+        return shortcut;
+    }
+
 }

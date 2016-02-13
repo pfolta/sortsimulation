@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			Data.java
- * Created:			2008/11/29
- * Last modified:	2015/3/8
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            Data.java
+ * Created:         2008-11-29
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,36 +32,36 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 public class Data {
-	
+
 	/*
-	 * GENERAL PROGRAM INFORMATION
+     * GENERAL PROGRAM INFORMATION
 	 */
-	
-	public static final String[] APP_AUTHORS = {
-		"Folta, Peter"
-	};
-	
-	public static final String[] APP_CONTRIBUTORS = {
-		"Allison, Chloë Louise",
-		"Folta, Lucia Sonja",
-		"Folta, Peter",
-		"Müllner, Jan Sebastian",
-		"Wallenius, Philip"
-	};
-	
-	public static final String APP_REQUIRED_JVM = "1.6";
-	
-	public static final Image[] APP_ICONS = {
-		ResourceLoader.loadImage(Display.getCurrent(), "icon_16x16.png"),
-		ResourceLoader.loadImage(Display.getCurrent(), "icon_32x32.png"),
-		ResourceLoader.loadImage(Display.getCurrent(), "icon_48x48.png"),
-		ResourceLoader.loadImage(Display.getCurrent(), "icon_64x64.png")
-	};
-	
+
+    public static final String[] APP_AUTHORS = {
+            "Folta, Peter"
+    };
+
+    public static final String[] APP_CONTRIBUTORS = {
+            "Allison, Chloë Louise",
+            "Folta, Lucia Sonja",
+            "Folta, Peter",
+            "Müllner, Jan Sebastian",
+            "Wallenius, Philip"
+    };
+
+    public static final String APP_REQUIRED_JVM = "1.6";
+
+    public static final Image[] APP_ICONS = {
+            ResourceLoader.loadImage(Display.getCurrent(), "icon_16x16.png"),
+            ResourceLoader.loadImage(Display.getCurrent(), "icon_32x32.png"),
+            ResourceLoader.loadImage(Display.getCurrent(), "icon_48x48.png"),
+            ResourceLoader.loadImage(Display.getCurrent(), "icon_64x64.png")
+    };
+
 	/*
 	 * PROGRAM SPECIFIC CONSTANTS
 	 */
-	
-	public static final int LENGTH_OF_ARRAY = 100;
-	
+
+    public static final int LENGTH_OF_ARRAY = 100;
+
 }

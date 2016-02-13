@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			GUI.java
- * Created:			2013/10/30
- * Last modified:	2015/2/17
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            GUI.java
+ * Created:         2013-10-30
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,110 +31,110 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
 public class GUI {
-	
-	private static GUI instance;
-	
-	private Display display;
-	
-	private SplashScreen splashScreen;
-	private MainWindow mainWindow;
-	
-	private AboutDialog aboutDialog;
-	private LicenseDialog licenseDialog;
-	
-	private GUI() {
-		Display.setAppName(Manifest.getImplementationTitle());
-		Display.setAppVersion(Manifest.getImplementationVersion());
-		
-		this.display = Display.getDefault();
-	}
-	
-	public static GUI getInstance() {
-		if (instance == null) {
-			instance = new GUI();
-		}
-		
-		return instance;
-	}
-	
-	public void start() {
-		showSplashScreen();
-		
-		while (!display.isDisposed()) {
-			if (!display.readAndDispatch()) {
-				display.sleep();
-			}
-		}
-	}
-	
-	public Display getDisplay() {
-		return this.display;
-	}
-	
-	public SplashScreen getSplashScreen() {
-		return splashScreen;
-	}
-	
-	public MainWindow getMainWindow() {
-		return mainWindow;
-	}
-	
-	public void showSplashScreen() {
-		splashScreen = new SplashScreen(display);
-	}
-	
-	public void showMainWindow() {
-		mainWindow = new MainWindow(display);
-	}
-	
-	public void showAboutDialog(Shell parent) {
-		if (aboutDialog == null || aboutDialog.getShell().isDisposed()) {
-			aboutDialog = new AboutDialog(parent);
-		} else {
-			aboutDialog.getShell().forceActive();
-		}
-	}
-	
-	public void showLicenseDialog(Shell parent) {
-		if (licenseDialog == null || licenseDialog.getShell().isDisposed()) {
-			licenseDialog = new LicenseDialog(parent);
-		} else {
-			licenseDialog.getShell().forceActive();
-		}
-	}
-	
-	public void centerShellOnPrimaryMonitor(Shell shell) {
-		int monitorWidth	= display.getPrimaryMonitor().getBounds().width;
-		int monitorHeight	= display.getPrimaryMonitor().getBounds().height;
-		
-		int shellWidth 		= shell.getSize().x;
-		int shellHeight 	= shell.getSize().y;
-		
-		int shellX			= (monitorWidth - shellWidth)/2;
-		int shellY			= (monitorHeight - shellHeight)/2;
-		
-		shell.setLocation(shellX, shellY);
-	}
-	
-	public void centerShellOnParent(Shell shell, Shell parent) {
-		int parentX 		= parent.getBounds().x;
-		int parentY			= parent.getBounds().y;
-		int parentWidth		= parent.getBounds().width;
-		int parentHeight	= parent.getBounds().height;
-		
-		int shellWidth 		= shell.getSize().x;
-		int shellHeight 	= shell.getSize().y;
-		
-		int shellX			= parentX + (parentWidth - shellWidth)/2;
-		int shellY			= parentY + (parentHeight - shellHeight)/2;
-		
-		shell.setLocation(shellX, shellY);
-	}
-	
-	public void die() {
-		getMainWindow().stopSimulation();
-		
-		display.dispose();
-	}
+
+    private static GUI instance;
+
+    private Display display;
+
+    private SplashScreen splashScreen;
+    private MainWindow mainWindow;
+
+    private AboutDialog aboutDialog;
+    private LicenseDialog licenseDialog;
+
+    private GUI() {
+        Display.setAppName(Manifest.getImplementationTitle());
+        Display.setAppVersion(Manifest.getImplementationVersion());
+
+        this.display = Display.getDefault();
+    }
+
+    public static GUI getInstance() {
+        if (instance == null) {
+            instance = new GUI();
+        }
+
+        return instance;
+    }
+
+    public void start() {
+        showSplashScreen();
+
+        while (!display.isDisposed()) {
+            if (!display.readAndDispatch()) {
+                display.sleep();
+            }
+        }
+    }
+
+    public Display getDisplay() {
+        return this.display;
+    }
+
+    public SplashScreen getSplashScreen() {
+        return splashScreen;
+    }
+
+    public MainWindow getMainWindow() {
+        return mainWindow;
+    }
+
+    public void showSplashScreen() {
+        splashScreen = new SplashScreen(display);
+    }
+
+    public void showMainWindow() {
+        mainWindow = new MainWindow(display);
+    }
+
+    public void showAboutDialog(Shell parent) {
+        if (aboutDialog == null || aboutDialog.getShell().isDisposed()) {
+            aboutDialog = new AboutDialog(parent);
+        } else {
+            aboutDialog.getShell().forceActive();
+        }
+    }
+
+    public void showLicenseDialog(Shell parent) {
+        if (licenseDialog == null || licenseDialog.getShell().isDisposed()) {
+            licenseDialog = new LicenseDialog(parent);
+        } else {
+            licenseDialog.getShell().forceActive();
+        }
+    }
+
+    public void centerShellOnPrimaryMonitor(Shell shell) {
+        int monitorWidth = display.getPrimaryMonitor().getBounds().width;
+        int monitorHeight = display.getPrimaryMonitor().getBounds().height;
+
+        int shellWidth = shell.getSize().x;
+        int shellHeight = shell.getSize().y;
+
+        int shellX = (monitorWidth - shellWidth) / 2;
+        int shellY = (monitorHeight - shellHeight) / 2;
+
+        shell.setLocation(shellX, shellY);
+    }
+
+    public void centerShellOnParent(Shell shell, Shell parent) {
+        int parentX = parent.getBounds().x;
+        int parentY = parent.getBounds().y;
+        int parentWidth = parent.getBounds().width;
+        int parentHeight = parent.getBounds().height;
+
+        int shellWidth = shell.getSize().x;
+        int shellHeight = shell.getSize().y;
+
+        int shellX = parentX + (parentWidth - shellWidth) / 2;
+        int shellY = parentY + (parentHeight - shellHeight) / 2;
+
+        shell.setLocation(shellX, shellY);
+    }
+
+    public void die() {
+        getMainWindow().stopSimulation();
+
+        display.dispose();
+    }
 
 }

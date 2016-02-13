@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			Language.java
- * Created:			2009/03/26
- * Last modified:	2016/2/11
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            Language.java
+ * Created:         2009-03-26
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,52 +31,52 @@ import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 
 public class Language {
-	
-	private String filename;
-	
-	private Document languageDocument;
-	private Element rootElement;
-	private Element informationElement;
-	private Element translationsElement;
-	
-	public Language() {
-		filename = "lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml";
-		
-		try {
-			languageDocument = new SAXBuilder().build(filename);
-			rootElement = languageDocument.getRootElement();
-			informationElement = rootElement.getChild("Information");
-			translationsElement = rootElement.getChild("Translations");
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			Main.exit(2);			
-		}
-	}
-	
-	public String getTranslationInformation(String key) {
-		String result = "";
-		
-		try {
-			result = informationElement.getChild(key).getText();
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			Main.exit(2);
-		}
-		
-		return result;
-	}
-	
-	public String getTranslationContent(String key) {
-		String result = "";
-		
-		try {
-			result = translationsElement.getChild(key).getText();
-		} catch (Exception exception) {
-			exception.printStackTrace();
-			Main.exit(2);
-		}
-		
-		return result;
-	}
+
+    private String filename;
+
+    private Document languageDocument;
+    private Element rootElement;
+    private Element informationElement;
+    private Element translationsElement;
+
+    public Language() {
+        filename = "lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml";
+
+        try {
+            languageDocument = new SAXBuilder().build(filename);
+            rootElement = languageDocument.getRootElement();
+            informationElement = rootElement.getChild("Information");
+            translationsElement = rootElement.getChild("Translations");
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            Main.exit(2);
+        }
+    }
+
+    public String getTranslationInformation(String key) {
+        String result = "";
+
+        try {
+            result = informationElement.getChild(key).getText();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            Main.exit(2);
+        }
+
+        return result;
+    }
+
+    public String getTranslationContent(String key) {
+        String result = "";
+
+        try {
+            result = translationsElement.getChild(key).getText();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            Main.exit(2);
+        }
+
+        return result;
+    }
 
 }

@@ -1,15 +1,14 @@
 /*
  * SortSimulation - A visual representation of sorting algorithms
- * Copyright (C) 2008-2015 Peter Folta. All rights reserved.
- * 
- * Project:			SortSimulation 
- * Version:			2.0.1
- * Website:			http://www.peterfolta.net/software/sortsimulation
- * 
- * File:			Color.java
- * Created:			2014/3/24
- * Last modified:	2015/2/16
- * Author:			Peter Folta <mail@peterfolta.net>
+ * Copyright (C) 2008-2016 Peter Folta. All rights reserved.
+ *
+ * Project:         SortSimulation
+ * Version:         2.1.0
+ * Website:         http://www.peterfolta.net/software/sortsimulation
+ *
+ * File:            Color.java
+ * Created:         2014-03-24
+ * Author:          Peter Folta <mail@peterfolta.net>
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,19 +29,19 @@ package net.peterfolta.sortsimulation.common;
 import net.peterfolta.sortsimulation.gui.GUI;
 
 public class Color {
-	
-	private int red;
-	private int green;
-	private int blue;
-	
-	public Color(int red, int green, int blue) {
-		this.red = red;
-		this.green = green;
-		this.blue = blue;
-	}
-	
-	public org.eclipse.swt.graphics.Color getColor() {
-		return new org.eclipse.swt.graphics.Color(GUI.getInstance().getDisplay(), red, green, blue); 
-	}
+
+    private int red;
+    private int green;
+    private int blue;
+
+    public Color(int red, int green, int blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+    }
+
+    public org.eclipse.swt.graphics.Color getColor() {
+        return new org.eclipse.swt.graphics.Color(GUI.getInstance().getDisplay(), red, green, blue);
+    }
 
 }
