@@ -396,15 +396,16 @@
                         <manifestEntries>
                             <Class-Path>./</Class-Path>
 
-                            <Implementation-Build-Number>${buildNumber}</Implementation-Build-Number>
-                            <Implementation-Short-Build-Number>${shortBuildNumber}</Implementation-Short-Build-Number>
-                            <Implementation-Build-Time>${maven.build.timestamp}</Implementation-Build-Time>
-
                             <Application-Copyright>${project.copyright}</Application-Copyright>
+                            <Application-Description>A visual representation of sorting algorithms.</Application-Description>
+                            <Application-Url>http://www.peterfolta.net/software/sortsimulation</Application-Url>
 
                             <Build-Platform>${build.platform}</Build-Platform>
                             <Build-Os-Name>${build.osName}</Build-Os-Name>
                             <Build-Arch>${build.arch}</Build-Arch>
+                            <Build-Number>${buildNumber}</Build-Number>
+                            <Build-Number-Short>${shortBuildNumber}</Build-Number-Short>
+                            <Build-Time>${maven.build.timestamp}</Build-Time>
                         </manifestEntries>
                     </archive>
                     <includes>
