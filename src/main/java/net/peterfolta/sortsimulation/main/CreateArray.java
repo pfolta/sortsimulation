@@ -26,9 +26,9 @@
 
 package net.peterfolta.sortsimulation.main;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.common.MathTools;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
+import net.peterfolta.sortsimulation.util.Array;
 
 public class CreateArray {
 
@@ -55,10 +55,7 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    try {
-                        ArrayTools.copy(Main.array[0], Main.array[i]);
-                    } catch (Exception exception) {
-                    }
+                    Array.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;
@@ -68,10 +65,7 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    try {
-                        ArrayTools.copy(Main.array[0], Main.array[i]);
-                    } catch (Exception exception) {
-                    }
+                    Array.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;
@@ -90,14 +84,11 @@ public class CreateArray {
                         b = a + MathTools.random(1, 3);
                     }
 
-                    ArrayTools.swap(Main.array[0], a, b);
+                    Array.swap(Main.array[0], a, b);
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    try {
-                        ArrayTools.copy(Main.array[0], Main.array[i]);
-                    } catch (Exception exception) {
-                    }
+                    Array.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;
@@ -107,10 +98,7 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    try {
-                        ArrayTools.copy(Main.array[0], Main.array[i]);
-                    } catch (Exception exception) {
-                    }
+                    Array.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;

@@ -26,10 +26,10 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
+import net.peterfolta.sortsimulation.util.Array;
 
 public class BubbleSort implements Sortable {
 
@@ -39,7 +39,7 @@ public class BubbleSort implements Sortable {
         for (int i = a.length - 1; i >= 0 && !interrupted; i--) {
             for (int j = 0; j <= i - 1 && !interrupted; j++) {
                 if (a[j] > a[j + 1]) {
-                    ArrayTools.swap(a, j, j + 1);
+                    Array.swap(a, j, j + 1);
                 }
 
                 try {

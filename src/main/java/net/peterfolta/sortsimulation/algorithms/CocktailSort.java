@@ -26,10 +26,10 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
+import net.peterfolta.sortsimulation.util.Array;
 
 public class CocktailSort implements Sortable {
 
@@ -47,7 +47,7 @@ public class CocktailSort implements Sortable {
 
             for (int i = start; i <= end && !interrupted; i++) {
                 if (a[i] > a[i + 1]) {
-                    ArrayTools.swap(a, i, i + 1);
+                    Array.swap(a, i, i + 1);
                     swapped = true;
                 }
 
@@ -70,7 +70,7 @@ public class CocktailSort implements Sortable {
 
             for (int i = end; i >= start && !interrupted; i--) {
                 if (a[i] > a[i + 1]) {
-                    ArrayTools.swap(a, i, i + 1);
+                    Array.swap(a, i, i + 1);
                     swapped = true;
                 }
 

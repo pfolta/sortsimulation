@@ -26,10 +26,10 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
+import net.peterfolta.sortsimulation.util.Array;
 
 public class GnomeSort implements Sortable {
 
@@ -42,7 +42,7 @@ public class GnomeSort implements Sortable {
             if (a[pos] >= a[pos - 1]) {
                 pos++;
             } else {
-                ArrayTools.swap(a, pos, pos - 1);
+                Array.swap(a, pos, pos - 1);
 
                 if (pos > 1) {
                     pos--;

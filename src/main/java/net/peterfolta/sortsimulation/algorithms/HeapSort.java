@@ -26,10 +26,10 @@
 
 package net.peterfolta.sortsimulation.algorithms;
 
-import net.peterfolta.sortsimulation.common.ArrayTools;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
+import net.peterfolta.sortsimulation.util.Array;
 
 public class HeapSort implements Sortable {
 
@@ -79,7 +79,7 @@ public class HeapSort implements Sortable {
         }
 
         for (r = a.length - 1; r > 0 && !interrupted; r--) {
-            ArrayTools.swap(a, 0, r);
+            Array.swap(a, 0, r);
             sift(a, 0, r - 1, index);
         }
     }
