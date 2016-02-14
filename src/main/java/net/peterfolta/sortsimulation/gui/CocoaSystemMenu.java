@@ -27,10 +27,7 @@
 package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.main.Main;
-
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
@@ -47,18 +44,10 @@ public class CocoaSystemMenu {
         systemMenu.setEnabled(true);
 
         MenuItem aboutItem = getItem(SWT.ID_ABOUT);
-        aboutItem.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                about();
-            }
-        });
+        aboutItem.addListener(SWT.Selection, event -> about());
 
         MenuItem quitItem = getItem(SWT.ID_QUIT);
-        quitItem.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                quit();
-            }
-        });
+        quitItem.addListener(SWT.Selection, event -> quit());
 
         disableItem(SWT.ID_PREFERENCES);
     }

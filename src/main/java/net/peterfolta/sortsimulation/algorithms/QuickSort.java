@@ -59,11 +59,7 @@ public class QuickSort implements Sortable {
                     break;
                 }
 
-                GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-                    public void run() {
-                        GUI.getInstance().getMainWindow().repaintCanvas(index);
-                    }
-                });
+                GUI.getInstance().getDisplay().asyncExec(() -> GUI.getInstance().getMainWindow().repaintCanvas(index));
             } while (i <= j);
 
             if (bottom < j) quicksort(a, bottom, j, index);

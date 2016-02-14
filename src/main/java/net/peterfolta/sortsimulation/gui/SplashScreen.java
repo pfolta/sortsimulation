@@ -90,11 +90,7 @@ public class SplashScreen {
         websiteLink = new Link(splashShell, SWT.NONE);
         websiteLink.setText("<A>" + Manifest.getApplicationUrl() + "</A>");
         websiteLink.setLayoutData(gridData);
-        websiteLink.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                Program.launch(Manifest.getApplicationUrl());
-            }
-        });
+        websiteLink.addListener(SWT.Selection, event -> Program.launch(Manifest.getApplicationUrl()));
 
         splashShell.setSize(550, 300);
 
@@ -107,46 +103,42 @@ public class SplashScreen {
     }
 
     private void fadeIn() {
-        display.asyncExec(new Runnable() {
-            public void run() {
-                for (int i = 0; i <= 255; i++) {
-                    splashShell.setAlpha(i);
-                    splashShell.update();
-                    try {
-                        Thread.sleep(1);
-                    } catch (InterruptedException exception) {
-                    }
-                }
-
+        display.asyncExec(() -> {
+            for (int i = 0; i <= 255; i++) {
+                splashShell.setAlpha(i);
+                splashShell.update();
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(1);
                 } catch (InterruptedException exception) {
                 }
-
-                GUI.getInstance().showMainWindow();
             }
+
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException exception) {
+            }
+
+            GUI.getInstance().showMainWindow();
         });
     }
 
     public void fadeOut() {
-        display.asyncExec(new Runnable() {
-            public void run() {
+        display.asyncExec(() -> {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException exception) {
+            }
+
+            for (int i = 255; i >= 0; i--) {
+                splashShell.setAlpha(i);
+                splashShell.update();
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(1);
                 } catch (InterruptedException exception) {
                 }
-
-                for (int i = 255; i >= 0; i--) {
-                    splashShell.setAlpha(i);
-                    splashShell.update();
-                    try {
-                        Thread.sleep(1);
-                    } catch (InterruptedException exception) {
-                    }
-                }
-
-                splashShell.close();
             }
+
+            splashShell.close();
         });
     }
 

@@ -35,8 +35,6 @@ import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
 import net.peterfolta.sortsimulation.main.*;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.PaintEvent;
-import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.events.ShellEvent;
 import org.eclipse.swt.events.ShellListener;
 import org.eclipse.swt.graphics.GC;
@@ -165,16 +163,14 @@ public class MainWindow {
 
             sortCanvas[i] = new Canvas(mainShell, SWT.BORDER | SWT.NO_BACKGROUND);
             sortCanvas[i].setLayoutData(gridData);
-            sortCanvas[i].addPaintListener(new PaintListener() {
-                public void paintControl(PaintEvent event) {
-                    Image bufferImage = new Image(Display.getCurrent(), event.width, event.height);
-                    GC bufferGC = new GC(bufferImage);
+            sortCanvas[i].addPaintListener(event -> {
+                Image bufferImage = new Image(Display.getCurrent(), event.width, event.height);
+                GC bufferGC = new GC(bufferImage);
 
-                    drawNumber(bufferGC, fi);
-                    event.gc.drawImage(bufferImage, 0, 0);
+                drawNumber(bufferGC, fi);
+                event.gc.drawImage(bufferImage, 0, 0);
 
-                    bufferImage.dispose();
-                }
+                bufferImage.dispose();
             });
         }
 
@@ -186,11 +182,7 @@ public class MainWindow {
             sortCombo[i].setItems(SortingAlgorithms.getTranslations());
             sortCombo[i].setLayoutData(gridData);
             sortCombo[i].select(i);
-            sortCombo[i].addListener(SWT.Selection, new Listener() {
-                public void handleEvent(Event event) {
-                    sortLabel[fi].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(fi + 1)) + ":\n" + SortingAlgorithms.values()[sortCombo[fi].getSelectionIndex()].getTranslation());
-                }
-            });
+            sortCombo[i].addListener(SWT.Selection, event -> sortLabel[fi].setText(Main.language.getTranslationContent("Algorithm").replaceAll("%1", String.valueOf(fi + 1)) + ":\n" + SortingAlgorithms.values()[sortCombo[fi].getSelectionIndex()].getTranslation()));
         }
 
         setCaptions();
@@ -239,32 +231,22 @@ public class MainWindow {
 
         startSimulation = new MenuItem(simulationMenu, SWT.PUSH);
         startSimulation.setAccelerator(SWT.CR);
-        startSimulation.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                simulationThread.startSimulation();
-            }
-        });
+        startSimulation.addListener(SWT.Selection, event -> simulationThread.startSimulation());
 
         stopSimulation = new MenuItem(simulationMenu, SWT.PUSH);
         stopSimulation.setAccelerator(SWT.ESC);
         stopSimulation.setEnabled(false);
-        stopSimulation.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                simulationThread.stopSimulation();
-            }
-        });
+        stopSimulation.addListener(SWT.Selection, event -> simulationThread.stopSimulation());
 
         new MenuItem(simulationMenu, SWT.SEPARATOR);
 
         resetCanvas = new MenuItem(simulationMenu, SWT.PUSH);
         resetCanvas.setAccelerator(SWT.MOD1 | 'N');
-        resetCanvas.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                new CreateArray(Main.settings.getFillMode());
+        resetCanvas.addListener(SWT.Selection, event -> {
+            new CreateArray(Main.settings.getFillMode());
 
-                for (int i = 0; i < sortCanvas.length; i++) {
-                    sortCanvas[i].redraw();
-                }
+            for (int i = 0; i < sortCanvas.length; i++) {
+                sortCanvas[i].redraw();
             }
         });
 
@@ -277,11 +259,7 @@ public class MainWindow {
             exit = new MenuItem(simulationMenu, SWT.PUSH);
             exit.setImage(ResourceLoader.loadImage(display, "exit_16x16.png"));
             exit.setAccelerator(SWT.ALT | SWT.F4);
-            exit.addListener(SWT.Selection, new Listener() {
-                public void handleEvent(Event event) {
-                    Main.exit(0);
-                }
-            });
+            exit.addListener(SWT.Selection, event -> Main.exit(0));
         }
 
         settings = new MenuItem(mainMenu, SWT.CASCADE);
@@ -299,11 +277,9 @@ public class MainWindow {
         for (int i = 0; i < fillMode.length; i++) {
             final int fi = i;
             fillMode[i] = new MenuItem(fillModeMenu, SWT.RADIO);
-            fillMode[i].addListener(SWT.Selection, new Listener() {
-                public void handleEvent(Event event) {
-                    Main.settings.setFillMode(FillMode.values()[fi]);
-                    resetCanvas();
-                }
+            fillMode[i].addListener(SWT.Selection, event -> {
+                Main.settings.setFillMode(FillMode.values()[fi]);
+                resetCanvas();
             });
             fillMode[i].setAccelerator(SWT.MOD1 | FillMode.values()[i].getShortcut());
 
@@ -322,11 +298,7 @@ public class MainWindow {
         for (int i = 0; i < delay.length; i++) {
             final int fi = i;
             delay[i] = new MenuItem(delayMenu, SWT.RADIO);
-            delay[i].addListener(SWT.Selection, new Listener() {
-                public void handleEvent(Event event) {
-                    Main.settings.setDelay(Delay.values()[fi]);
-                }
-            });
+            delay[i].addListener(SWT.Selection, event -> Main.settings.setDelay(Delay.values()[fi]));
             delay[i].setAccelerator(SWT.MOD1 | Delay.values()[i].getShortcut());
 
             if (Main.settings.getDelay() == Delay.values()[i]) {
@@ -347,11 +319,9 @@ public class MainWindow {
             final int fi = i;
             languages[i] = new MenuItem(languageMenu, SWT.RADIO);
             languages[i].setText(Main.settings.getLanguageNativeNames()[i]);
-            languages[i].addListener(SWT.Selection, new Listener() {
-                public void handleEvent(Event event) {
-                    Main.settings.setCurrentLanguage(Main.settings.getLanguageNames()[fi]);
-                    Main.changeLanguage();
-                }
+            languages[i].addListener(SWT.Selection, event -> {
+                Main.settings.setCurrentLanguage(Main.settings.getLanguageNames()[fi]);
+                Main.changeLanguage();
             });
 
             if (i == Main.settings.getCurrentLanguageIndex()) languages[i].setSelection(true);
@@ -361,35 +331,31 @@ public class MainWindow {
 
         background = new MenuItem(settingsMenu, SWT.CASCADE);
         background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
-        background.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                ColorDialog dlg = new ColorDialog(mainShell);
-                dlg.setRGB(Main.settings.getBackground().getRGB());
-                dlg.setText(Main.language.getTranslationContent("ChooseBackgroundColor"));
+        background.addListener(SWT.Selection, event -> {
+            ColorDialog dlg = new ColorDialog(mainShell);
+            dlg.setRGB(Main.settings.getBackground().getRGB());
+            dlg.setText(Main.language.getTranslationContent("ChooseBackgroundColor"));
 
-                RGB rgb = dlg.open();
+            RGB rgb = dlg.open();
 
-                if (rgb != null) {
-                    Main.settings.setBackground(new Color(rgb.red, rgb.green, rgb.blue));
-                    background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
-                }
+            if (rgb != null) {
+                Main.settings.setBackground(new Color(rgb.red, rgb.green, rgb.blue));
+                background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
             }
         });
 
         color = new MenuItem(settingsMenu, SWT.CASCADE);
         color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
-        color.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                ColorDialog dlg = new ColorDialog(mainShell);
-                dlg.setRGB(Main.settings.getColor().getColor().getRGB());
-                dlg.setText(Main.language.getTranslationContent("ChooseColor"));
+        color.addListener(SWT.Selection, event -> {
+            ColorDialog dlg = new ColorDialog(mainShell);
+            dlg.setRGB(Main.settings.getColor().getColor().getRGB());
+            dlg.setText(Main.language.getTranslationContent("ChooseColor"));
 
-                RGB rgb = dlg.open();
+            RGB rgb = dlg.open();
 
-                if (rgb != null) {
-                    Main.settings.setColor(new Color(rgb.red, rgb.green, rgb.blue));
-                    color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
-                }
+            if (rgb != null) {
+                Main.settings.setColor(new Color(rgb.red, rgb.green, rgb.blue));
+                color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
             }
         });
 
@@ -400,26 +366,14 @@ public class MainWindow {
 
         helpItem = new MenuItem(helpMenu, SWT.PUSH);
         helpItem.setAccelerator(SWT.F1);
-        helpItem.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                Program.launch("file:///" + System.getProperty("user.dir") + "/doc/documentation_" + Main.settings.getLanguageNames()[Main.settings.getCurrentLanguageIndex()].toLowerCase() + ".pdf");
-            }
-        });
+        helpItem.addListener(SWT.Selection, event -> Program.launch("file:///" + System.getProperty("user.dir") + "/doc/documentation_" + Main.settings.getLanguageNames()[Main.settings.getCurrentLanguageIndex()].toLowerCase() + ".pdf"));
 
         licenseItem = new MenuItem(helpMenu, SWT.PUSH);
-        licenseItem.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                GUI.getInstance().showLicenseDialog(mainShell);
-            }
-        });
+        licenseItem.addListener(SWT.Selection, event -> GUI.getInstance().showLicenseDialog(mainShell));
 
         websiteItem = new MenuItem(helpMenu, SWT.PUSH);
         websiteItem.setAccelerator(SWT.SHIFT | SWT.F1);
-        websiteItem.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                Program.launch(Manifest.getApplicationUrl());
-            }
-        });
+        websiteItem.addListener(SWT.Selection, event -> Program.launch(Manifest.getApplicationUrl()));
 
 		/*
          * Do not create "About" Menu Item on Mac
@@ -429,11 +383,7 @@ public class MainWindow {
 
             about = new MenuItem(helpMenu, SWT.PUSH);
             about.setImage(ResourceLoader.loadImage(display, "about_16x16.png"));
-            about.addListener(SWT.Selection, new Listener() {
-                public void handleEvent(Event event) {
-                    GUI.getInstance().showAboutDialog(mainShell);
-                }
-            });
+            about.addListener(SWT.Selection, event -> GUI.getInstance().showAboutDialog(mainShell));
         }
 
 		/*
@@ -470,30 +420,18 @@ public class MainWindow {
 
         toolStartSimulation = new ToolItem(toolBar, SWT.PUSH);
         toolStartSimulation.setImage(ResourceLoader.loadImage(display, "start_22x22.png"));
-        toolStartSimulation.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                simulationThread.startSimulation();
-            }
-        });
+        toolStartSimulation.addListener(SWT.Selection, event -> simulationThread.startSimulation());
 
         toolStopSimulation = new ToolItem(toolBar, SWT.PUSH);
         toolStopSimulation.setImage(ResourceLoader.loadImage(display, "stop_22x22.png"));
         toolStopSimulation.setEnabled(false);
-        toolStopSimulation.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                simulationThread.stopSimulation();
-            }
-        });
+        toolStopSimulation.addListener(SWT.Selection, event -> simulationThread.stopSimulation());
 
         new ToolItem(toolBar, SWT.SEPARATOR);
 
         toolResetCanvas = new ToolItem(toolBar, SWT.PUSH);
         toolResetCanvas.setImage(ResourceLoader.loadImage(display, "refresh_22x22.png"));
-        toolResetCanvas.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                resetCanvas();
-            }
-        });
+        toolResetCanvas.addListener(SWT.Selection, event -> resetCanvas());
     }
 
     public void startSimulation() {

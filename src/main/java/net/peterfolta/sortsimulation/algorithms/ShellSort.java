@@ -55,11 +55,7 @@ public class ShellSort implements Sortable {
                         break;
                     }
 
-                    GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-                        public void run() {
-                            GUI.getInstance().getMainWindow().repaintCanvas(index);
-                        }
-                    });
+                    GUI.getInstance().getDisplay().asyncExec(() -> GUI.getInstance().getMainWindow().repaintCanvas(index));
                 }
 
                 a[k] = temp;

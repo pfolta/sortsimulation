@@ -97,11 +97,9 @@ public class Settings {
     public void setBackground(Color background) {
         this.background = background;
 
-        GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-            public void run() {
-                for (int i = 0; i < simultaneousSimulations; i++) {
-                    GUI.getInstance().getMainWindow().repaintCanvas(i);
-                }
+        GUI.getInstance().getDisplay().asyncExec(() -> {
+            for (int i = 0; i < simultaneousSimulations; i++) {
+                GUI.getInstance().getMainWindow().repaintCanvas(i);
             }
         });
     }
@@ -113,11 +111,9 @@ public class Settings {
     public void setColor(Color color) {
         this.color = color;
 
-        GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-            public void run() {
-                for (int i = 0; i < simultaneousSimulations; i++) {
-                    GUI.getInstance().getMainWindow().repaintCanvas(i);
-                }
+        GUI.getInstance().getDisplay().asyncExec(() -> {
+            for (int i = 0; i < simultaneousSimulations; i++) {
+                GUI.getInstance().getMainWindow().repaintCanvas(i);
             }
         });
     }

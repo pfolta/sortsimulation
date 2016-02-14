@@ -28,7 +28,6 @@ package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.main.Main;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.LocationEvent;
@@ -39,8 +38,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.program.Program;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 
 public class LicenseDialog {
@@ -86,11 +83,7 @@ public class LicenseDialog {
 
         browser = new Browser(browserComposite, SWT.NONE);
         browser.setUrl(ResourceLoader.getHTMLLicense());
-        browser.addListener(SWT.MenuDetect, new Listener() {
-            public void handleEvent(Event event) {
-                event.doit = false;
-            }
-        });
+        browser.addListener(SWT.MenuDetect, event -> event.doit = false);
         browser.addLocationListener(new LocationListener() {
             public void changed(LocationEvent event) {
             }
@@ -119,11 +112,7 @@ public class LicenseDialog {
         closeButton.setFocus();
         closeButton.setLayoutData(gridData);
         closeButton.setText(Main.language.getTranslationContent("OK"));
-        closeButton.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                licenseShell.close();
-            }
-        });
+        closeButton.addListener(SWT.Selection, event -> licenseShell.close());
 
         licenseShell.setDefaultButton(closeButton);
         licenseShell.setMinimumSize(700, 450);

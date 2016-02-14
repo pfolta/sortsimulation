@@ -99,11 +99,7 @@ public class AboutDialog {
         websiteLink = new Link(aboutShell, SWT.NONE);
         websiteLink.setText("<A>" + Manifest.getApplicationUrl() + "</A>");
         websiteLink.setLayoutData(gridData);
-        websiteLink.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                Program.launch(Manifest.getApplicationUrl());
-            }
-        });
+        websiteLink.addListener(SWT.Selection, event -> Program.launch(Manifest.getApplicationUrl()));
 
         gridData = new GridData();
         gridData.verticalIndent = 15;
@@ -171,11 +167,7 @@ public class AboutDialog {
         licenseButton = new Button(buttonComposite, SWT.PUSH);
         licenseButton.setLayoutData(gridData);
         licenseButton.setText(Main.language.getTranslationContent("License"));
-        licenseButton.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                GUI.getInstance().showLicenseDialog(aboutShell);
-            }
-        });
+        licenseButton.addListener(SWT.Selection, event -> GUI.getInstance().showLicenseDialog(aboutShell));
 
         gridData = new GridData();
         gridData.grabExcessHorizontalSpace = true;
@@ -185,11 +177,7 @@ public class AboutDialog {
         closeButton.setFocus();
         closeButton.setLayoutData(gridData);
         closeButton.setText(Main.language.getTranslationContent("OK"));
-        closeButton.addListener(SWT.Selection, new Listener() {
-            public void handleEvent(Event event) {
-                aboutShell.close();
-            }
-        });
+        closeButton.addListener(SWT.Selection, event -> aboutShell.close());
 
         aboutShell.setDefaultButton(closeButton);
         aboutShell.setMinimumSize(550, 0);

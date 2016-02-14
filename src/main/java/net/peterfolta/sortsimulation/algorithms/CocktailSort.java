@@ -58,11 +58,7 @@ public class CocktailSort implements Sortable {
                     break;
                 }
 
-                GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-                    public void run() {
-                        GUI.getInstance().getMainWindow().repaintCanvas(index);
-                    }
-                });
+                GUI.getInstance().getDisplay().asyncExec(() -> GUI.getInstance().getMainWindow().repaintCanvas(index));
             }
 
             if (!swapped) {
@@ -85,11 +81,7 @@ public class CocktailSort implements Sortable {
                     break;
                 }
 
-                GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-                    public void run() {
-                        GUI.getInstance().getMainWindow().repaintCanvas(index);
-                    }
-                });
+                GUI.getInstance().getDisplay().asyncExec(() -> GUI.getInstance().getMainWindow().repaintCanvas(index));
             }
         } while (swapped && !interrupted);
     }

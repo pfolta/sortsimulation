@@ -43,11 +43,7 @@ public class Simulation extends Thread {
         Sortable sortable = algorithm.getSortable();
         sortable.sort(a, index);
 
-        GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-            public void run() {
-                GUI.getInstance().getMainWindow().repaintCanvas(index);
-            }
-        });
+        GUI.getInstance().getDisplay().asyncExec(() -> GUI.getInstance().getMainWindow().repaintCanvas(index));
 
         finished();
     }
@@ -68,11 +64,7 @@ public class Simulation extends Thread {
         }
 
         if (finished) {
-            GUI.getInstance().getDisplay().asyncExec(new Runnable() {
-                public void run() {
-                    GUI.getInstance().getMainWindow().stopSimulation();
-                }
-            });
+            GUI.getInstance().getDisplay().asyncExec(() -> GUI.getInstance().getMainWindow().stopSimulation());
         }
     }
 
