@@ -26,9 +26,9 @@
 
 package net.peterfolta.sortsimulation.main;
 
-import net.peterfolta.sortsimulation.common.MathTools;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.util.Array;
+import net.peterfolta.sortsimulation.util.Math;
 
 public class CreateArray {
 
@@ -39,7 +39,7 @@ public class CreateArray {
             case RANDOM:
                 for (int i = 0; i < Main.array[0].length; i++) {
                     boolean insert = true;
-                    int cand = MathTools.random(1, Main.array[0].length);
+                    int cand = Math.random(1, Main.array[0].length);
 
                     for (int j = 0; j < i; j++) {
                         if (Main.array[0][j] == cand) {
@@ -75,13 +75,13 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array[0].length; i++) {
-                    int a = MathTools.random(0, Main.array[0].length - 1);
+                    int a = Math.random(0, Main.array[0].length - 1);
                     int b;
 
                     if (a > 3) {
-                        b = a - MathTools.random(1, 3);
+                        b = a - Math.random(1, 3);
                     } else {
-                        b = a + MathTools.random(1, 3);
+                        b = a + Math.random(1, 3);
                     }
 
                     Array.swap(Main.array[0], a, b);

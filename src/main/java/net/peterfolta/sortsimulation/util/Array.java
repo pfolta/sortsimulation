@@ -28,21 +28,21 @@ package net.peterfolta.sortsimulation.util;
 
 public final class Array {
 
-    // Suppress Default Constructor for Noninstantiability
+    // Suppress default constructor for noninstantiability.
     private Array() {
         throw new AssertionError();
     }
 
     /**
      * Copies contents of an integer array a into an integer array b,
-     * given a and b are the same size
+     * given a and b are the same size.
      *
-     * @param   a       Source array
-     * @param   b       Target array
+     * @param   a       Source array.
+     * @param   b       Target array.
      */
     public static void copy(int[] a, int[] b) {
         if (a.length != b.length) {
-            throw new IllegalArgumentException("Array lengths do not match!");
+            throw new IllegalArgumentException("Array lengths do not match");
         }
 
         System.arraycopy(a, 0, b, 0, a.length);
@@ -51,9 +51,9 @@ public final class Array {
     /**
      * Swaps two elements in an integer array.
      *
-     * @param   array   Array that contains elements
-     * @param   i       Index of first element to be swapped
-     * @param   j       Index of second element to be swapped
+     * @param   array   Array that contains elements.
+     * @param   i       Index of first element to be swapped.
+     * @param   j       Index of second element to be swapped.
      */
     public static void swap(int[] array, int i, int j) {
         int temp = array[i];

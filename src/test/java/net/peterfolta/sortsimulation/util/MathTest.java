@@ -6,8 +6,8 @@
  * Version:         2.1.0
  * Website:         http://www.peterfolta.net/software/sortsimulation
  *
- * File:            ArrayTest.java
- * Created:         2016-02-14
+ * File:            MathTest.java
+ * Created:         2016-02-19
  * Author:          Peter Folta <mail@peterfolta.net>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,25 +26,15 @@
 
 package net.peterfolta.sortsimulation.util;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
 
 import static org.junit.Assert.assertTrue;
 
-public class ArrayTest {
-
-    private int[] arrayA;
-
-    @Before
-    public void setup() {
-        arrayA = new int[] { 1, 2, 3, 4, 5 };
-    }
+public class MathTest {
 
     @Test
     public void testConstructorIsPrivate() throws NoSuchMethodException {
@@ -55,7 +45,7 @@ public class ArrayTest {
     @Test(expected = AssertionError.class)
     public void testConstructorCannotBeInstantiatedViaReflection() throws NoSuchMethodException, IllegalAccessException, InstantiationException, AssertionError {
         try {
-            Constructor constructor = Array.class.getDeclaredConstructor();
+            Constructor constructor = Math.class.getDeclaredConstructor();
             constructor.setAccessible(true);
             constructor.newInstance();
         } catch (InvocationTargetException invocationTargetException) {
@@ -63,42 +53,27 @@ public class ArrayTest {
         }
     }
 
-    @Test
-    public void testArraysAreEqual() {
-        int[] arrayB = new int[5];
-
-        Array.copy(arrayA, arrayB);
-        assertTrue("Arrays are not equal", Arrays.equals(arrayA, arrayB));
-    }
-
     @Test(expected = IllegalArgumentException.class)
-    public void testCopyThrowsExceptionWhenTargetArrayIsSmaller() {
-        int[] arrayB = new int[4];
-
-        Array.copy(arrayA, arrayB);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void testCopyThrowsExceptionWhenTargetArrayIsLarger() {
-        int[] arrayB = new int[6];
-
-        Array.copy(arrayA, arrayB);
+    public void testRandomThrowsExceptionWhenMinGreaterThanMax() {
+        Math.random(5, 3);
     }
 
     @Test
-    public void testArrayElementsAreSwapped() {
-        int i = 2;
-        int j = 3;
+    public void testRandomNumberConformsWithLowerBoundary() {
+        int min = -30;
+        int max = 50;
 
-        Array.swap(arrayA, i, j);
-        int[] expected = new int[] {1, 2, 4, 3, 5};
-
-        assertTrue("Swapped array does not match expected array", Arrays.equals(arrayA, expected));
+        int random = Math.random(min, max);
+        assertTrue("Generated number is smaller than min value", (random >= min));
     }
 
-    @After
-    public void teardown() {
-        arrayA = null;
+    @Test
+    public void testRandomNumberConformsWithUpperBoundary() {
+        int min = -30;
+        int max = 50;
+
+        int random = Math.random(min, max);
+        assertTrue("Generated number is greater than max value", (random <= max));
     }
 
 }
