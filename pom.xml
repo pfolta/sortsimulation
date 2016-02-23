@@ -197,6 +197,20 @@
                                     <attach>false</attach>
                                 </configuration>
                             </execution>
+                            <execution>
+                                <id>copy-macos-scripts</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>attached</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptor>${project.basedir}/src/main/assembly/copy-macos-scripts.xml</descriptor>
+                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    </finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <attach>false</attach>
+                                </configuration>
+                            </execution>
                         </executions>
                     </plugin>
                 </plugins>
