@@ -1,9 +1,10 @@
-# IntelliJ Project Files
-*.iml
-/.idea
+# OS Ignore Files
+**/.DS_Store
+**/Thumbs.db
 
-# Compiled Java Classes
-*.class
+# IntelliJ Project Files
+/.idea
+/*.iml
 
 # Maven Build Output
 /target
