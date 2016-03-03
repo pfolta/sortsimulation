@@ -6,7 +6,7 @@
  * Version:         2.1.0
  * Website:         http://www.peterfolta.net/software/sortsimulation
  *
- * File:            Math.java
+ * File:            MathUtil.java
  * Created:         2016-02-19
  * Author:          Peter Folta <mail@peterfolta.net>
  *

@@ -6,7 +6,7 @@
  * Version:         2.1.0
  * Website:         http://www.peterfolta.net/software/sortsimulation
  *
- * File:            Array.java
+ * File:            ArrayUtil.java
  * Created:         2016-02-14
  * Author:          Peter Folta <mail@peterfolta.net>
  *
