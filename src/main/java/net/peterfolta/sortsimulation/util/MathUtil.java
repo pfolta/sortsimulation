@@ -36,11 +36,11 @@ public final class MathUtil {
     }
 
     /**
-     * Generates a pseudo-random number between min and max, inclusive.
+     * Generates a pseudo-random integer between min and max, inclusive.
      *
      * @param   min                                     Minimum value.
      * @param   max                                     Maximum value. Must be greater than or equal to min.
-     * @return                                          Random between min and max, inclusive.
+     * @return                                          Random integer between min and max, inclusive.
      * @see     java.util.concurrent.ThreadLocalRandom
      */
     public static int random(int min, int max) {
