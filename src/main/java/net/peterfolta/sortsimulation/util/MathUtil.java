@@ -6,8 +6,8 @@
  * Version:         2.1.0
  * Website:         http://www.peterfolta.net/software/sortsimulation
  *
- * File:            Array.java
- * Created:         2016-02-14
+ * File:            Math.java
+ * Created:         2016-02-19
  * Author:          Peter Folta <mail@peterfolta.net>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,39 +26,29 @@
 
 package net.peterfolta.sortsimulation.util;
 
-public final class Array {
+import java.util.concurrent.ThreadLocalRandom;
+
+public final class MathUtil {
 
     // Suppress default constructor for noninstantiability.
-    private Array() {
+    private MathUtil() {
         throw new AssertionError();
     }
 
     /**
-     * Copies contents of an integer array a into an integer array b,
-     * given a and b are the same size.
+     * Generates a pseudo-random number between min and max, inclusive.
      *
-     * @param   a       Source array.
-     * @param   b       Target array.
+     * @param   min                                     Minimum value.
+     * @param   max                                     Maximum value. Must be greater than or equal to min.
+     * @return                                          Random between min and max, inclusive.
+     * @see     java.util.concurrent.ThreadLocalRandom
      */
-    public static void copy(int[] a, int[] b) {
-        if (a.length != b.length) {
-            throw new IllegalArgumentException("Array lengths do not match");
+    public static int random(int min, int max) {
+        if (min > max) {
+            throw new IllegalArgumentException("Min Value (" + min + ") > Max Value (" + max + ")");
         }
 
-        System.arraycopy(a, 0, b, 0, a.length);
-    }
-
-    /**
-     * Swaps two elements in an integer array.
-     *
-     * @param   array   Array that contains elements.
-     * @param   i       Index of first element to be swapped.
-     * @param   j       Index of second element to be swapped.
-     */
-    public static void swap(int[] array, int i, int j) {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
 }

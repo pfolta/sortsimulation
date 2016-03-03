@@ -37,7 +37,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertTrue;
 
-public class ArrayTest {
+public class ArrayUtilTest {
 
     private int[] arrayA;
 
@@ -48,14 +48,14 @@ public class ArrayTest {
 
     @Test
     public void testConstructorIsPrivate() throws NoSuchMethodException {
-        Constructor constructor = Array.class.getDeclaredConstructor();
+        Constructor constructor = ArrayUtil.class.getDeclaredConstructor();
         assertTrue("Constructor is not private", Modifier.isPrivate(constructor.getModifiers()));
     }
 
     @Test(expected = AssertionError.class)
     public void testConstructorCannotBeInstantiatedViaReflection() throws NoSuchMethodException, IllegalAccessException, InstantiationException, AssertionError {
         try {
-            Constructor constructor = Array.class.getDeclaredConstructor();
+            Constructor constructor = ArrayUtil.class.getDeclaredConstructor();
             constructor.setAccessible(true);
             constructor.newInstance();
         } catch (InvocationTargetException invocationTargetException) {
@@ -67,7 +67,7 @@ public class ArrayTest {
     public void testArraysAreEqual() {
         int[] arrayB = new int[5];
 
-        Array.copy(arrayA, arrayB);
+        ArrayUtil.copy(arrayA, arrayB);
         assertTrue("Arrays are not equal", Arrays.equals(arrayA, arrayB));
     }
 
@@ -75,14 +75,14 @@ public class ArrayTest {
     public void testCopyThrowsExceptionWhenTargetArrayIsSmaller() {
         int[] arrayB = new int[4];
 
-        Array.copy(arrayA, arrayB);
+        ArrayUtil.copy(arrayA, arrayB);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testCopyThrowsExceptionWhenTargetArrayIsLarger() {
         int[] arrayB = new int[6];
 
-        Array.copy(arrayA, arrayB);
+        ArrayUtil.copy(arrayA, arrayB);
     }
 
     @Test
@@ -90,7 +90,7 @@ public class ArrayTest {
         int i = 2;
         int j = 3;
 
-        Array.swap(arrayA, i, j);
+        ArrayUtil.swap(arrayA, i, j);
         int[] expected = new int[] {1, 2, 4, 3, 5};
 
         assertTrue("Swapped array does not match expected array", Arrays.equals(arrayA, expected));

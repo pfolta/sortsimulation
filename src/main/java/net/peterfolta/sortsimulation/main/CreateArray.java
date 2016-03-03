@@ -27,8 +27,8 @@
 package net.peterfolta.sortsimulation.main;
 
 import net.peterfolta.sortsimulation.common.enums.FillMode;
-import net.peterfolta.sortsimulation.util.Array;
-import net.peterfolta.sortsimulation.util.Math;
+import net.peterfolta.sortsimulation.util.ArrayUtil;
+import net.peterfolta.sortsimulation.util.MathUtil;
 
 public class CreateArray {
 
@@ -39,7 +39,7 @@ public class CreateArray {
             case RANDOM:
                 for (int i = 0; i < Main.array[0].length; i++) {
                     boolean insert = true;
-                    int cand = Math.random(1, Main.array[0].length);
+                    int cand = MathUtil.random(1, Main.array[0].length);
 
                     for (int j = 0; j < i; j++) {
                         if (Main.array[0][j] == cand) {
@@ -55,7 +55,7 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    Array.copy(Main.array[0], Main.array[i]);
+                    ArrayUtil.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;
@@ -65,7 +65,7 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    Array.copy(Main.array[0], Main.array[i]);
+                    ArrayUtil.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;
@@ -75,20 +75,20 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array[0].length; i++) {
-                    int a = Math.random(0, Main.array[0].length - 1);
+                    int a = MathUtil.random(0, Main.array[0].length - 1);
                     int b;
 
                     if (a > 3) {
-                        b = a - Math.random(1, 3);
+                        b = a - MathUtil.random(1, 3);
                     } else {
-                        b = a + Math.random(1, 3);
+                        b = a + MathUtil.random(1, 3);
                     }
 
-                    Array.swap(Main.array[0], a, b);
+                    ArrayUtil.swap(Main.array[0], a, b);
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    Array.copy(Main.array[0], Main.array[i]);
+                    ArrayUtil.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;
@@ -98,7 +98,7 @@ public class CreateArray {
                 }
 
                 for (int i = 0; i < Main.array.length; i++) {
-                    Array.copy(Main.array[0], Main.array[i]);
+                    ArrayUtil.copy(Main.array[0], Main.array[i]);
                 }
 
                 break;

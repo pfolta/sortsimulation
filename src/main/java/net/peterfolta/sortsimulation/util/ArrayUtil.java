@@ -6,8 +6,8 @@
  * Version:         2.1.0
  * Website:         http://www.peterfolta.net/software/sortsimulation
  *
- * File:            Math.java
- * Created:         2016-02-19
+ * File:            Array.java
+ * Created:         2016-02-14
  * Author:          Peter Folta <mail@peterfolta.net>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,29 +26,39 @@
 
 package net.peterfolta.sortsimulation.util;
 
-import java.util.concurrent.ThreadLocalRandom;
-
-public final class Math {
+public final class ArrayUtil {
 
     // Suppress default constructor for noninstantiability.
-    private Math() {
+    private ArrayUtil() {
         throw new AssertionError();
     }
 
     /**
-     * Generates a pseudo-random number between min and max, inclusive.
+     * Copies contents of an integer array a into an integer array b,
+     * given a and b are the same size.
      *
-     * @param   min                                     Minimum value.
-     * @param   max                                     Maximum value. Must be greater than or equal to min.
-     * @return                                          Random between min and max, inclusive.
-     * @see     java.util.concurrent.ThreadLocalRandom
+     * @param   a       Source array.
+     * @param   b       Target array.
      */
-    public static int random(int min, int max) {
-        if (min > max) {
-            throw new IllegalArgumentException("Min Value (" + min + ") > Max Value (" + max + ")");
+    public static void copy(int[] a, int[] b) {
+        if (a.length != b.length) {
+            throw new IllegalArgumentException("ArrayUtil lengths do not match");
         }
 
-        return ThreadLocalRandom.current().nextInt(min, max + 1);
+        System.arraycopy(a, 0, b, 0, a.length);
+    }
+
+    /**
+     * Swaps two elements in an integer array.
+     *
+     * @param   array   ArrayUtil that contains elements.
+     * @param   i       Index of first element to be swapped.
+     * @param   j       Index of second element to be swapped.
+     */
+    public static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
 }

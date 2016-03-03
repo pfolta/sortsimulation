@@ -29,7 +29,7 @@ package net.peterfolta.sortsimulation.algorithms;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
-import net.peterfolta.sortsimulation.util.Array;
+import net.peterfolta.sortsimulation.util.ArrayUtil;
 
 public class SelectionSort implements Sortable {
 
@@ -39,7 +39,7 @@ public class SelectionSort implements Sortable {
         for (int i = 0; i < a.length && !interrupted; i++) {
             for (int j = i + 1; j < a.length && !interrupted; j++) {
                 if (a[j] < a[i]) {
-                    Array.swap(a, i, j);
+                    ArrayUtil.swap(a, i, j);
                 }
 
                 try {

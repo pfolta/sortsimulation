@@ -29,7 +29,7 @@ package net.peterfolta.sortsimulation.algorithms;
 import net.peterfolta.sortsimulation.common.interfaces.Sortable;
 import net.peterfolta.sortsimulation.gui.GUI;
 import net.peterfolta.sortsimulation.main.Main;
-import net.peterfolta.sortsimulation.util.Array;
+import net.peterfolta.sortsimulation.util.ArrayUtil;
 
 public class QuickSort implements Sortable {
 
@@ -47,7 +47,7 @@ public class QuickSort implements Sortable {
                 while (a[j] > x) j--;
 
                 if (i <= j) {
-                    Array.swap(a, i, j);
+                    ArrayUtil.swap(a, i, j);
                     i++;
                     j--;
                 }

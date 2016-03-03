@@ -34,18 +34,18 @@ import java.lang.reflect.Modifier;
 
 import static org.junit.Assert.assertTrue;
 
-public class MathTest {
+public class MathUtilTest {
 
     @Test
     public void testConstructorIsPrivate() throws NoSuchMethodException {
-        Constructor constructor = Array.class.getDeclaredConstructor();
+        Constructor constructor = MathUtil.class.getDeclaredConstructor();
         assertTrue("Constructor is not private", Modifier.isPrivate(constructor.getModifiers()));
     }
 
     @Test(expected = AssertionError.class)
     public void testConstructorCannotBeInstantiatedViaReflection() throws NoSuchMethodException, IllegalAccessException, InstantiationException, AssertionError {
         try {
-            Constructor constructor = Math.class.getDeclaredConstructor();
+            Constructor constructor = MathUtil.class.getDeclaredConstructor();
             constructor.setAccessible(true);
             constructor.newInstance();
         } catch (InvocationTargetException invocationTargetException) {
@@ -55,7 +55,7 @@ public class MathTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testRandomThrowsExceptionWhenMinGreaterThanMax() {
-        Math.random(5, 3);
+        MathUtil.random(5, 3);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class MathTest {
         int min = -30;
         int max = 50;
 
-        int random = Math.random(min, max);
+        int random = MathUtil.random(min, max);
         assertTrue("Generated number is smaller than min value", (random >= min));
     }
 
@@ -72,7 +72,7 @@ public class MathTest {
         int min = -30;
         int max = 50;
 
-        int random = Math.random(min, max);
+        int random = MathUtil.random(min, max);
         assertTrue("Generated number is greater than max value", (random <= max));
     }
 
