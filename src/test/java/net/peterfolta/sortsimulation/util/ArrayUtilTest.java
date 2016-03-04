@@ -26,15 +26,14 @@
 
 package net.peterfolta.sortsimulation.util;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
-import java.util.Arrays;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ArrayUtilTest {
@@ -68,7 +67,7 @@ public class ArrayUtilTest {
         int[] arrayB = new int[5];
 
         ArrayUtil.copy(arrayA, arrayB);
-        assertTrue("Arrays are not equal", Arrays.equals(arrayA, arrayB));
+        assertArrayEquals("Arrays are not equal", arrayA, arrayB);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -93,12 +92,7 @@ public class ArrayUtilTest {
         ArrayUtil.swap(arrayA, i, j);
         int[] expected = new int[] {1, 2, 4, 3, 5};
 
-        assertTrue("Swapped array does not match expected array", Arrays.equals(arrayA, expected));
-    }
-
-    @After
-    public void teardown() {
-        arrayA = null;
+        assertArrayEquals("Swapped array does not match expected array", expected, arrayA);
     }
 
 }

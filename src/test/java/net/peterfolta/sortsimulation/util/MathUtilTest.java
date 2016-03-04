@@ -64,7 +64,7 @@ public class MathUtilTest {
         int max = 50;
 
         int random = MathUtil.random(min, max);
-        assertTrue("Generated number is smaller than min value", (random >= min));
+        assertTrue("Generated number is smaller than min value: " + random + "; expected >= " + min, (random >= min));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class MathUtilTest {
         int max = 50;
 
         int random = MathUtil.random(min, max);
-        assertTrue("Generated number is greater than max value", (random <= max));
+        assertTrue("Generated number is greater than max value: " + random + "; expected <= " + max, (random <= max));
     }
 
 }

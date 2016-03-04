@@ -27,13 +27,13 @@
 package net.peterfolta.sortsimulation.gui;
 
 import net.peterfolta.sortsimulation.common.Color;
-import net.peterfolta.sortsimulation.common.ImageTools;
 import net.peterfolta.sortsimulation.common.Platform;
 import net.peterfolta.sortsimulation.common.ResourceLoader;
 import net.peterfolta.sortsimulation.common.enums.Delay;
 import net.peterfolta.sortsimulation.common.enums.FillMode;
 import net.peterfolta.sortsimulation.common.enums.SortingAlgorithms;
 import net.peterfolta.sortsimulation.main.*;
+import net.peterfolta.sortsimulation.util.ImageUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ShellEvent;
 import org.eclipse.swt.events.ShellListener;
@@ -330,7 +330,7 @@ public class MainWindow {
         new MenuItem(settingsMenu, SWT.SEPARATOR);
 
         background = new MenuItem(settingsMenu, SWT.CASCADE);
-        background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
+        background.setImage(ImageUtil.createColorIndicator(display, Main.settings.getBackground(), 16, 16, 1));
         background.addListener(SWT.Selection, event -> {
             ColorDialog dlg = new ColorDialog(mainShell);
             dlg.setRGB(Main.settings.getBackground().getRGB());
@@ -340,12 +340,12 @@ public class MainWindow {
 
             if (rgb != null) {
                 Main.settings.setBackground(new Color(rgb.red, rgb.green, rgb.blue));
-                background.setImage(ImageTools.createColorField(display, Main.settings.getBackground()));
+                background.setImage(ImageUtil.createColorIndicator(display, Main.settings.getBackground(), 16, 16, 1));
             }
         });
 
         color = new MenuItem(settingsMenu, SWT.CASCADE);
-        color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
+        color.setImage(ImageUtil.createColorIndicator(display, Main.settings.getColor().getColor(), 16, 16, 1));
         color.addListener(SWT.Selection, event -> {
             ColorDialog dlg = new ColorDialog(mainShell);
             dlg.setRGB(Main.settings.getColor().getColor().getRGB());
@@ -355,7 +355,7 @@ public class MainWindow {
 
             if (rgb != null) {
                 Main.settings.setColor(new Color(rgb.red, rgb.green, rgb.blue));
-                color.setImage(ImageTools.createColorField(display, Main.settings.getColor().getColor()));
+                color.setImage(ImageUtil.createColorIndicator(display, Main.settings.getColor().getColor(), 16, 16, 1));
             }
         });
 
