@@ -4,4 +4,4 @@ jdk: oraclejdk8
 install: true
 
 script:
-  - mvn -Plinux-x86_64 clean validate compile test package verify
+  - mvn -Plinux-x86_64 clean validate compile package verify -DskipTests
