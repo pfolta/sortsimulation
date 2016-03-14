@@ -3,6 +3,11 @@ jdk: oraclejdk8
 
 install: true
 
+sudo: required
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install zlib.i686 ncurses-libs.i686 bzip2-libs.i686
+
 script:
   - mvn -Plinux-x86 clean validate compile package verify -DskipTests
   - mvn -Plinux-x86_64 clean validate compile package verify -DskipTests
