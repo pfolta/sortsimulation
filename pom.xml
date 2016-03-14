@@ -105,7 +105,7 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-artifact-jar.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    <finalName>${project.basedir}/dist/${project.artifactId}-${project.version}-${build.platform}
                                     </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
@@ -162,7 +162,7 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-artifact-jar.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    <finalName>${project.basedir}/dist/${project.artifactId}-${project.version}-${build.platform}
                                     </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
@@ -219,7 +219,7 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-artifact-jar.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    <finalName>${project.basedir}/dist/${project.artifactId}-${project.version}-${build.platform}
                                     </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
@@ -233,7 +233,7 @@
                                 </goals>
                                 <configuration>
                                     <descriptor>${project.basedir}/src/main/assembly/copy-macos-scripts.xml</descriptor>
-                                    <finalName>deploy/${project.artifactId}-${project.version}-${build.platform}
+                                    <finalName>${project.basedir}/dist/${project.artifactId}-${project.version}-${build.platform}
                                     </finalName>
                                     <appendAssemblyId>false</appendAssemblyId>
                                     <attach>false</attach>
@@ -280,7 +280,7 @@
                                         ${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}
                                     </jar>
                                     <outfile>
-                                        ${project.build.directory}/deploy/${project.artifactId}-${project.version}-${build.platform}/${project.artifactId}.exe
+                                        ${project.basedir}/dist/${project.artifactId}-${project.version}-${build.platform}/${project.artifactId}.exe
                                     </outfile>
                                     <icon>${project.basedir}/src/main/resources/sortsimulation.ico</icon>
                                     <downloadUrl>http://java.com/download</downloadUrl>
@@ -345,7 +345,7 @@
                                         ${project.build.directory}/${project.artifactId}-${project.version}.${project.packaging}
                                     </jar>
                                     <outfile>
-                                        ${project.build.directory}/deploy/${project.artifactId}-${project.version}-${build.platform}/${project.artifactId}.exe
+                                        ${project.basedir}/dist/${project.artifactId}-${project.version}-${build.platform}/${project.artifactId}.exe
                                     </outfile>
                                     <icon>${project.basedir}/src/main/resources/sortsimulation.ico</icon>
                                     <downloadUrl>http://java.com/download</downloadUrl>
@@ -528,7 +528,7 @@
                         </goals>
                         <configuration>
                             <descriptor>${project.basedir}/src/main/assembly/create-assembly.xml</descriptor>
-                            <outputDirectory>${project.build.directory}/deploy</outputDirectory>
+                            <outputDirectory>${project.basedir}/dist</outputDirectory>
                             <finalName>${project.artifactId}-${project.version}-${build.platform}</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                             <attach>false</attach>
@@ -542,7 +542,7 @@
                         </goals>
                         <configuration>
                             <descriptor>${project.basedir}/src/main/assembly/create-archives.xml</descriptor>
-                            <outputDirectory>${project.build.directory}/deploy</outputDirectory>
+                            <outputDirectory>${project.basedir}/dist</outputDirectory>
                             <finalName>${project.artifactId}-${project.version}-${build.platform}</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                             <attach>false</attach>
