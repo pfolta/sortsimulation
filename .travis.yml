@@ -1,5 +1,7 @@
 language: java
 jdk: oraclejdk8
 
-install:
+install: true
+
+script:
   - mvn -Pwin64 clean validate compile test package verify
