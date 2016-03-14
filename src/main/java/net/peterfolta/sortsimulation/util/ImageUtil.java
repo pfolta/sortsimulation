@@ -49,6 +49,7 @@ public final class ImageUtil {
      * @param   width                           Width of the indicator image.
      * @param   height                          Height of the indicator image.
      * @param   border                          Thickness of border.
+     * @return                                  Color Indicator Field
      * @see     org.eclipse.swt.graphics.Color
      * @see     org.eclipse.swt.graphics.Image
      */
