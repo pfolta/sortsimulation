@@ -3,7 +3,6 @@
 ## Copyright
 
 SortSimulation - A visual representation of sorting algorithms
-
 Copyright (C) 2008-2016 Peter Folta. All rights reserved.
 
 This program is free software: you can redistribute it and/or modify
