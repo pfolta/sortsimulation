@@ -56,7 +56,7 @@ public class Settings {
         this.simultaneousSimulations = simultaneousSimulations;
 
         try {
-            String[] tmp = new File("lng/").list();
+            String[] tmp = new File(getClass().getClassLoader().getResource("lng/").toURI()).list();
             Arrays.sort(tmp);
 
             currentlanguage = "English";
@@ -64,8 +64,8 @@ public class Settings {
             languageNativeNames = new String[tmp.length];
 
             for (int i = 0; i < tmp.length; i++) {
-                languageNames[i] = new SAXBuilder().build("lng/" + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
-                languageNativeNames[i] = new SAXBuilder().build("lng/" + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
+                languageNames[i] = new SAXBuilder().build(getClass().getClassLoader().getResource("lng/").toURI() + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
+                languageNativeNames[i] = new SAXBuilder().build(getClass().getClassLoader().getResource("lng/").toURI() + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
             }
         } catch (Exception exception) {
             exception.printStackTrace();

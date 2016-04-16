@@ -36,15 +36,39 @@ public final class Manifest {
     }
 
     public static String getApplicationCopyright() {
-        return Manifests.read("Application-Copyright");
+        String applicationCopyright = null;
+
+        try {
+            applicationCopyright = Manifests.read("Application-Copyright");
+        } catch (IllegalArgumentException exception) {
+            applicationCopyright = "APPLICATION_COPYRIGHT";
+        }
+
+        return applicationCopyright;
     }
 
     public static String getApplicationDescription() {
-        return Manifests.read("Application-Description");
+        String applicationDescription = null;
+
+        try {
+            applicationDescription = Manifests.read("Application-Description");
+        } catch (IllegalArgumentException exception) {
+            applicationDescription = "APPLICATION_DESCRIPTION";
+        }
+
+        return applicationDescription;
     }
 
     public static String getApplicationUrl() {
-        return Manifests.read("Application-Url");
+        String applicationUrl = null;
+
+        try {
+            applicationUrl = Manifests.read("Application-Url");
+        } catch (IllegalArgumentException exception) {
+            applicationUrl = "APPLICATION_URL";
+        }
+
+        return applicationUrl;
     }
 
     public static String getBuildArch() {
@@ -52,7 +76,15 @@ public final class Manifest {
     }
 
     public static String getBuildNumber() {
-        return Manifests.read("Build-Number");
+        String buildNumber = null;
+
+        try {
+            buildNumber = Manifests.read("Build-Number");
+        } catch (IllegalArgumentException exception) {
+            buildNumber = "BUILD_NUMBER";
+        }
+
+        return buildNumber;
     }
 
     public static String getBuildNumberShort() {

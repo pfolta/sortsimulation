@@ -37,7 +37,9 @@ public class ResourceLoader {
         Image tmp = null;
 
         try {
-            tmp = new Image(display, "img/" + filename);
+            String file = ClassLoader.getSystemClassLoader().getResource("img/" + filename).getFile();
+
+            tmp = new Image(display, file);
         } catch (Exception exception) {
             exception.printStackTrace();
 

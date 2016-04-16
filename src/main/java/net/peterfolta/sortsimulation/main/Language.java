@@ -40,9 +40,9 @@ public class Language {
     private Element translationsElement;
 
     public Language() {
-        filename = "lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml";
-
         try {
+            filename = getClass().getClassLoader().getResource("lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml").toURI().toString();
+
             languageDocument = new SAXBuilder().build(filename);
             rootElement = languageDocument.getRootElement();
             informationElement = rootElement.getChild("Information");
