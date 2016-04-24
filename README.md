@@ -79,7 +79,7 @@ mvn -P<profile> clean validate compile test package verify
 - [Project Website](https://peterfolta.net/software/sortsimulation)
 - [SortSimulation CI](https://travis-ci.org/pfolta/SortSimulation)
 - [Copyright and License](LICENSE.md)
-- [Older Releases](ftp://ftp.peterfolta.net/repositories/sortsimulation/)
+- [Older Releases](http://ftp.peterfolta.net/repositories/sortsimulation/)
 
 ---
 
