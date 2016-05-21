@@ -29,4 +29,4 @@ addons:
     notification_email: mail@peterfolta.net
     build_command_prepend: "mvn clean"
     build_command: "mvn -DskipTests=true compile -Plinux-x86_64"
-    branch_pattern: coverity_scan
+    branch_pattern: 2.x.x
