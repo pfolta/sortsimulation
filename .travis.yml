@@ -1,6 +1,12 @@
 language: java
 jdk: oraclejdk8
 
+env:
+  global:
+    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+    # via the "travis encrypt" command using the project repo's public key
+    - secure: "dowtc0edR5d//NlOBMnU2JvfQlqN7631pJOEGsfBUR+RDOAr6tywg+Kq55kHFd0yifkSzzLVYRdeQACWRqQ89fTsvpZUlD0z4J6C7/yBHH4X4GJaX0/NQ8Trc6RbJ8u1ZcwArgrEHqXBkPTPi0aXz1sQQSi9nohDfyrcB7rWnPusKqi62ClKzuPKdIBVW2FxsfNwqHMm0/WgLk1Y8yMlPUsfUF/uJeWh0JeEJCfbvbGiAeUYOzVfBukQ6YyU5659Ww5Xykggg4+Mbi6iZ3lGP1DXtxjZtneCoaqXGDMey0aHJLe4+traa8bL8zl9ttQORnI5rpFdR54Fum2lOaG14ByVqmRRuXCwlwNmMgiezgXR9RKLFov1x42oRboaN3C7iAHZ3+0X4IxfXVb/sn+UrbtUMyGXD3pwnSFBVUamvVmxiL2Opv3nFUYo/CUFfAx799PqyIl3c03KSyOKzjXfBvFtOPJC/ZDodyxbg5OgI4n13vqWOv3y5/jAcOGLBda/TRfd49UHflw1GISPEVA2S+OK19iJfxMlbhNMNQlER7XcEkW9OBj0tcpPi4WJyRYfg9yOS67GuA/mqqvM4yKvTg/T982tRANN3+TafSpv9YWWrP5s+1eNXrZqVPwT4YEmDRtjGv/nxB9KKgMp6QofeY8lvTBqtt7vacpv3T/1hdY="
+
 install: true
 
 sudo: required
@@ -9,8 +15,18 @@ before_script:
   - sudo apt-get install lib32z1 lib32ncurses5
 
 script:
-  - mvn -Plinux-x86 clean validate compile package verify -DskipTests
-  - mvn -Plinux-x86_64 clean validate compile package verify -DskipTests
-  - mvn -Pmac-x86_64 clean validate compile package verify -DskipTests
-  - mvn -Pwin32 clean validate compile package verify -DskipTests
-  - mvn -Pwin64 clean validate compile package verify -DskipTests
+  - mvn -DskipTests=true -Plinux-x86 clean validate compile package verify
+  - mvn -DskipTests=true -Plinux-x86_64 clean validate compile package verify
+  - mvn -DskipTests=true -Pmac-x86_64 clean validate compile package verify
+  - mvn -DskipTests=true -Pwin32 clean validate compile package verify
+  - mvn -DskipTests=true -Pwin64 clean validate compile package verify
+
+addons:
+  coverity_scan:
+    project:
+      name: "pfolta/SortSimulation"
+      description: "Build submitted via Travis CI"
+    notification_email: mail@peterfolta.net
+    build_command_prepend: "mvn clean"
+    build_command: "mvn -DskipTests=true compile -Plinux-x86_64"
+    branch_pattern: coverity_scan
