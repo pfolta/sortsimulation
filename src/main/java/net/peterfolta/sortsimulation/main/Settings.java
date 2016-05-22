@@ -27,6 +27,7 @@
 package net.peterfolta.sortsimulation.main;
 
 import java.io.File;
+import java.net.URL;
 import java.util.Arrays;
 
 import net.peterfolta.sortsimulation.common.Color;
@@ -56,18 +57,22 @@ public class Settings {
         this.simultaneousSimulations = simultaneousSimulations;
 
         try {
-            String[] languageFiles = new File(ClassLoader.getSystemClassLoader().getResource("lng/").toURI()).list();
+            URL languageDirectory = ClassLoader.getSystemClassLoader().getResource("lng/");
 
-            if (languageFiles != null) {
-                Arrays.sort(languageFiles);
+            if (languageDirectory != null) {
+                String[] languageFiles = new File(languageDirectory.toURI()).list();
 
-                currentlanguage = "English";
-                languageNames = new String[languageFiles.length];
-                languageNativeNames = new String[languageFiles.length];
+                if (languageFiles != null) {
+                    Arrays.sort(languageFiles);
 
-                for (int i = 0; i < languageFiles.length; i++) {
-                    languageNames[i] = new SAXBuilder().build(ClassLoader.getSystemClassLoader().getResource("lng/").toURI() + languageFiles[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
-                    languageNativeNames[i] = new SAXBuilder().build(ClassLoader.getSystemClassLoader().getResource("lng/").toURI() + languageFiles[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
+                    currentlanguage = "English";
+                    languageNames = new String[languageFiles.length];
+                    languageNativeNames = new String[languageFiles.length];
+
+                    for (int i = 0; i < languageFiles.length; i++) {
+                        languageNames[i] = new SAXBuilder().build(languageDirectory.toURI() + languageFiles[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
+                        languageNativeNames[i] = new SAXBuilder().build(languageDirectory.toURI() + languageFiles[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
+                    }
                 }
             }
         } catch (Exception exception) {

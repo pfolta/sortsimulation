@@ -31,22 +31,26 @@ import net.peterfolta.sortsimulation.main.Main;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
+import java.net.URL;
+
 public class ResourceLoader {
 
     public static Image loadImage(Display display, String filename) {
-        Image tmp = null;
+        Image image = null;
 
         try {
-            String file = ClassLoader.getSystemClassLoader().getResource("img/" + filename).getFile();
+            URL fileURL = ClassLoader.getSystemClassLoader().getResource("img/" + filename);
 
-            tmp = new Image(display, file);
+            if (fileURL != null) {
+                image = new Image(display, fileURL.getFile());
+            }
         } catch (Exception exception) {
             exception.printStackTrace();
 
             Main.exit(3);
         }
 
-        return tmp;
+        return image;
     }
 
     public static String getHTMLLicense() {
