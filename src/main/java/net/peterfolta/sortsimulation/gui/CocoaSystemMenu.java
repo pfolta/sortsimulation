@@ -38,18 +38,25 @@ public class CocoaSystemMenu {
     Shell mainShell;
 
     public CocoaSystemMenu(Menu systemMenu, Shell mainShell) {
-        this.systemMenu = systemMenu;
-        this.mainShell = mainShell;
+        if (systemMenu != null) {
+            this.systemMenu = systemMenu;
+            this.mainShell = mainShell;
 
-        systemMenu.setEnabled(true);
+            systemMenu.setEnabled(true);
 
-        MenuItem aboutItem = getItem(SWT.ID_ABOUT);
-        aboutItem.addListener(SWT.Selection, event -> about());
+            MenuItem aboutItem = getItem(SWT.ID_ABOUT);
+            MenuItem quitItem = getItem(SWT.ID_QUIT);
 
-        MenuItem quitItem = getItem(SWT.ID_QUIT);
-        quitItem.addListener(SWT.Selection, event -> quit());
+            if (aboutItem != null) {
+                aboutItem.addListener(SWT.Selection, event -> about());
+            }
 
-        disableItem(SWT.ID_PREFERENCES);
+            if (quitItem != null) {
+                quitItem.addListener(SWT.Selection, event -> quit());
+            }
+
+            disableItem(SWT.ID_PREFERENCES);
+        }
     }
 
     private MenuItem getItem(int id) {

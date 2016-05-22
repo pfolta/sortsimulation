@@ -30,23 +30,25 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
 
+import java.net.URL;
+
 public class Language {
 
-    private String filename;
-
-    private Document languageDocument;
-    private Element rootElement;
     private Element informationElement;
     private Element translationsElement;
 
     public Language() {
         try {
-            filename = getClass().getClassLoader().getResource("lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml").toURI().toString();
+            URL filenameURL = ClassLoader.getSystemClassLoader().getResource("lng/" + Main.settings.getCurrentLanguage().toLowerCase() + ".xml");
 
-            languageDocument = new SAXBuilder().build(filename);
-            rootElement = languageDocument.getRootElement();
-            informationElement = rootElement.getChild("Information");
-            translationsElement = rootElement.getChild("Translations");
+            if (filenameURL != null) {
+                String filename = filenameURL.toURI().toString();
+
+                Document languageDocument = new SAXBuilder().build(filename);
+                Element rootElement = languageDocument.getRootElement();
+                informationElement = rootElement.getChild("Information");
+                translationsElement = rootElement.getChild("Translations");
+            }
         } catch (Exception exception) {
             exception.printStackTrace();
             Main.exit(2);
