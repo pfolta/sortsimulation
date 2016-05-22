@@ -1,6 +1,7 @@
 # SortSimulation
 
 [![Build Status](https://travis-ci.org/pfolta/SortSimulation.svg)](https://travis-ci.org/pfolta/SortSimulation)
+[![Coverity Scan Build Status](https://scan.coverity.com/projects/8937/badge.svg)](https://scan.coverity.com/projects/pfolta-sortsimulation)
 
 [SortSimulation](https://peterfolta.net/software/sortsimulation) is an educational Java application that visualizes and compares sorting algorithms. I created it to improve understanding of how the different sorting algorithms work and develop an intuition for runtime differences.
 

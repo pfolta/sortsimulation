@@ -45,7 +45,7 @@ public class Settings {
     private int simultaneousSimulations;
 
     private String currentlanguage;
-    public String[] languageNames;
+    private String[] languageNames;
     private String[] languageNativeNames;
 
     public Settings(Delay delay, Color background, Color color, FillMode fillMode, int simultaneousSimulations) {
@@ -56,16 +56,19 @@ public class Settings {
         this.simultaneousSimulations = simultaneousSimulations;
 
         try {
-            String[] tmp = new File(getClass().getClassLoader().getResource("lng/").toURI()).list();
-            Arrays.sort(tmp);
+            String[] languageFiles = new File(ClassLoader.getSystemClassLoader().getResource("lng/").toURI()).list();
 
-            currentlanguage = "English";
-            languageNames = new String[tmp.length];
-            languageNativeNames = new String[tmp.length];
+            if (languageFiles != null) {
+                Arrays.sort(languageFiles);
 
-            for (int i = 0; i < tmp.length; i++) {
-                languageNames[i] = new SAXBuilder().build(getClass().getClassLoader().getResource("lng/").toURI() + tmp[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
-                languageNativeNames[i] = new SAXBuilder().build(getClass().getClassLoader().getResource("lng/").toURI() + tmp[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
+                currentlanguage = "English";
+                languageNames = new String[languageFiles.length];
+                languageNativeNames = new String[languageFiles.length];
+
+                for (int i = 0; i < languageFiles.length; i++) {
+                    languageNames[i] = new SAXBuilder().build(ClassLoader.getSystemClassLoader().getResource("lng/").toURI() + languageFiles[i]).getRootElement().getChild("Information").getChild("LanguageName").getText();
+                    languageNativeNames[i] = new SAXBuilder().build(ClassLoader.getSystemClassLoader().getResource("lng/").toURI() + languageFiles[i]).getRootElement().getChild("Information").getChild("NativeName").getText();
+                }
             }
         } catch (Exception exception) {
             exception.printStackTrace();
