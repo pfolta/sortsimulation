@@ -26,30 +26,15 @@
 
 package net.peterfolta.sortsimulation.common;
 
-public class Platform {
+public final class Platform {
+
+    // Suppress default constructor for noninstantiability.
+    private Platform() {
+        throw new AssertionError();
+    }
 
     public static boolean isMac() {
-        if (System.getProperty("os.name").toLowerCase().startsWith("mac")) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public static boolean isLinux() {
-        if (System.getProperty("os.name").toLowerCase().startsWith("linux")) {
-            return true;
-        }
-
-        return false;
-    }
-
-    public static boolean isWindows() {
-        if (System.getProperty("os.name").toLowerCase().startsWith("windows")) {
-            return true;
-        }
-
-        return false;
+        return System.getProperty("os.name").toLowerCase().startsWith("mac");
     }
 
 }
