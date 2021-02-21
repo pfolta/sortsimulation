@@ -1,0 +1,14 @@
+{
+    "name": "sortsimulation",
+    "description": "",
+    "keywords": [],
+    "homepage": "https://www.sortsimulation.com",
+    "version": "3.0.0",
+    "author": "Peter Folta <mail@peterfolta.net>",
+    "copyright": "© Peter Folta. All rights reserved.",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
