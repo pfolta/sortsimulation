@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES5",
+        "lib": ["DOM", "ESNext"],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDirs": ["src"],
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["*"]
+        },
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true
+    },
+    "include": ["src", "test"],
+    "exclude": ["node_modules", "build"]
+}
