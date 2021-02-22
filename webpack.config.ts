@@ -13,7 +13,7 @@ interface Environment {
 
 const commonConfig: Configuration = {
     entry: {
-        app: path.resolve(__dirname, "src/webapp/index.ts")
+        app: path.resolve(__dirname, "src/webapp/index.tsx")
     },
     output: {
         filename: "[name].[contenthash].js",
