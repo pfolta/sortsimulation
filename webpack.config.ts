@@ -8,7 +8,7 @@ import { merge } from "webpack-merge";
 import { description, keywords, productName } from "./package.json";
 
 interface Environment {
-    mode?: "development" | "production"
+    mode?: "development" | "production";
 }
 
 const commonConfig: Configuration = {

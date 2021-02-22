@@ -22,6 +22,7 @@
         "@types/webpack": "^4.41.26",
         "@types/webpack-dev-server": "^3.11.1",
         "html-webpack-plugin": "^5.2.0",
+        "prettier": "^2.2.1",
         "rimraf": "^3.0.2",
         "ts-loader": "^8.0.17",
         "ts-node": "^9.1.1",

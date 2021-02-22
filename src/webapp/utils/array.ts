@@ -6,6 +6,6 @@ const isSorted = (array: number[]) => {
     }
 
     return true;
-}
+};
 
 export { isSorted };
