@@ -20,6 +20,12 @@ const commonConfig: Configuration = {
         path: path.resolve(__dirname, "build/out"),
         publicPath: "/"
     },
+    optimization: {
+        splitChunks: {
+            chunks: "all",
+            name: "vendor"
+        }
+    },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
         plugins: [
