@@ -23,10 +23,11 @@
             "jest-junit",
             {
                 "ancestorSeparator": " › ",
-                "classNameTemplate": "{filepath}",
+                "classNameTemplate": "{classname}",
                 "outputDirectory": "build/tests",
                 "outputName": "TEST-junit.xml",
-                "suiteNameTemplate": "{filepath}"
+                "suiteNameTemplate": "{filepath}",
+                "titleTemplate": "{title}"
             }
         ]
     ]
