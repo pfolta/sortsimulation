@@ -17,7 +17,7 @@ const commonConfig: Configuration = {
     },
     output: {
         filename: "[name].[contenthash].js",
-        path: path.resolve(__dirname, "build/out"),
+        path: path.resolve(__dirname, "build/dist"),
         publicPath: "/"
     },
     optimization: {
