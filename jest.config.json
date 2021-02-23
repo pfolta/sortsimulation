@@ -1,0 +1,33 @@
+{
+    "cacheDirectory": "build/tests/cache",
+    "clearMocks": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
+    "coverageDirectory": "build/coverage",
+    "coverageReporters": ["lcov"],
+    "moduleNameMapper": {
+        "^@/(.*)": "<rootDir>/src/$1"
+    },
+    "preset": "ts-jest",
+    "reporters": [
+        "default",
+        [
+            "jest-html-reporter",
+            {
+                "includeConsoleLog": true,
+                "includeFailureMsg": true,
+                "outputPath": "build/tests/index.html"
+            }
+        ],
+        [
+            "jest-junit",
+            {
+                "ancestorSeparator": " › ",
+                "classNameTemplate": "{filepath}",
+                "outputDirectory": "build/tests",
+                "outputName": "TEST-junit.xml",
+                "suiteNameTemplate": "{filepath}"
+            }
+        ]
+    ]
+}
