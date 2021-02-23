@@ -1,20 +1,19 @@
 name: Build Workflow
 
-on:
-    push:
-        branches:
-          - "master"
+on: push
 
 jobs:
-    build:
-        name: Build Job
-        runs-on: ubuntu-latest
+  build:
+    name: Build Job
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v2
-            - name: Setup Node.js
-              uses: actions/setup-node@v1
-              with:
-                node-version: "12.x"
-            - run: npm ci --verbose
-            - run: npm run release
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Install dependencies
+        run: npm ci --verbose
+      - run: npm run release
