@@ -17,6 +17,12 @@ jobs:
       - name: Install dependencies
         run: npm ci --verbose
       - run: npm run release
+      - name: Upload Jest test report artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: jest-test-report
+          path: build/tests/index.html
       - name: Upload website artifact
         uses: actions/upload-artifact@v2
         with:
