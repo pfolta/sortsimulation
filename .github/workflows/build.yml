@@ -17,16 +17,22 @@ jobs:
       - name: Install dependencies
         run: npm ci --verbose
       - run: npm run release
-      - name: Upload Jest test report artifact
+      - name: Upload test report artifact
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
-          name: jest-test-report
+          name: test-report
           path: build/tests/index.html
-      - name: Upload website artifact
+      - name: Upload test coverage report artifact
+        if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
-          name: webapp
+          name: test-coverage-report
+          path: build/coverage/lcov-report
+      - name: Upload app artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: app
           path: build/dist
 
   deploy:
@@ -37,8 +43,8 @@ jobs:
 
     steps:
       - run: echo "Ready to deploy to GitHub Pages."
-      - name: Download website artifact
+      - name: Download app artifact
         uses: actions/download-artifact@v2
         with:
-          name: webapp
+          name: app
       - run: cat index.html
