@@ -9,7 +9,7 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 12,
+        "ecmaVersion": 2019,
         "sourceType": "module"
     },
     "plugins": ["react", "@typescript-eslint"],

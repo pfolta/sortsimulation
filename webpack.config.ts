@@ -36,7 +36,7 @@ const commonConfig: Configuration = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
+                loader: "babel-loader",
                 exclude: /node_modules/
             }
         ]
@@ -55,7 +55,6 @@ const commonConfig: Configuration = {
 };
 
 const devServer: WebpackDevServer.Configuration = {
-    historyApiFallback: true,
     hot: true,
     inline: true,
     overlay: true

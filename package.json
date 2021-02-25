@@ -10,7 +10,7 @@
     "license": "MIT",
     "private": true,
     "scripts": {
-        "build": "webpack",
+        "build": "tsc && webpack",
         "clean": "rimraf build",
         "lint": "npm run lint:eslint && npm run lint:stylelint",
         "lint:eslint": "eslint --max-warnings=0 \"{src,test}/**/*.ts?(x)\"",
@@ -22,6 +22,12 @@
         "test": "jest"
     },
     "devDependencies": {
+        "@babel/cli": "^7.13.0",
+        "@babel/core": "^7.13.1",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/preset-env": "^7.13.5",
+        "@babel/preset-react": "^7.12.13",
+        "@babel/preset-typescript": "^7.13.0",
         "@types/jest": "^26.0.20",
         "@types/node": "^14.14.31",
         "@types/react": "^17.0.2",
@@ -31,6 +37,8 @@
         "@types/webpack-dev-server": "^3.11.1",
         "@typescript-eslint/eslint-plugin": "^4.15.2",
         "@typescript-eslint/parser": "^4.15.2",
+        "babel-loader": "^8.2.2",
+        "babel-plugin-styled-components": "^1.12.0",
         "eslint": "^7.20.0",
         "eslint-config-prettier": "^8.0.0",
         "eslint-plugin-prettier": "^3.3.1",
@@ -48,7 +56,6 @@
         "stylelint-prettier": "^1.1.2",
         "stylelint-processor-styled-components": "^1.10.0",
         "ts-jest": "^26.5.1",
-        "ts-loader": "^8.0.17",
         "ts-node": "^9.1.1",
         "tsconfig-paths-webpack-plugin": "^3.3.0",
         "typescript": "^4.1.5",
@@ -58,6 +65,7 @@
         "webpack-merge": "^5.7.3"
     },
     "dependencies": {
+        "core-js": "^3.9.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "styled-components": "^5.2.1"
