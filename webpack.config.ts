@@ -23,7 +23,7 @@ const commonConfig: Configuration = {
     optimization: {
         splitChunks: {
             chunks: "all",
-            name: "vendor"
+            name: "vendors"
         }
     },
     resolve: {
