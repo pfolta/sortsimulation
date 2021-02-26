@@ -1,4 +1,5 @@
 import path from "path";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 import { Configuration, HotModuleReplacementPlugin } from "webpack";
@@ -42,6 +43,13 @@ const commonConfig: Configuration = {
         ]
     },
     plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, "public")
+                }
+            ]
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/resources/templates/index.ejs"),
             templateParameters: {
