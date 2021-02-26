@@ -1,10 +1,10 @@
-name: Build Workflow
+name: Build and Deploy
 
 on: push
 
 jobs:
   build:
-    name: Build Job
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -37,15 +37,21 @@ jobs:
           path: build/dist
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy
     if: github.ref == 'refs/heads/master'
     needs: [build]
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Ready to deploy to GitHub Pages."
+      - name: Check out source code
+        uses: actions/checkout@v2
       - name: Download app artifact
         uses: actions/download-artifact@v2
         with:
           name: app
-      - run: cat index.html
+          path: build/dist
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: build/dist
