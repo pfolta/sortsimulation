@@ -9,6 +9,13 @@
     "copyright": "© Peter Folta. All rights reserved.",
     "license": "MIT",
     "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pfolta/sortsimulation.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pfolta/sortsimulation/issues"
+    },
     "scripts": {
         "build": "tsc && webpack",
         "clean": "rimraf build",
