@@ -2,7 +2,12 @@
     "name": "sortsimulation",
     "productName": "SortSimulation",
     "description": "",
-    "keywords": [],
+    "keywords": [
+        "sort",
+        "sorting",
+        "sorting algorithm",
+        "sorting algorithms"
+    ],
     "homepage": "https://www.sortsimulation.com",
     "version": "3.0.0",
     "author": "Peter Folta <mail@peterfolta.net>",
