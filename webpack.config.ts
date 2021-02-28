@@ -6,7 +6,7 @@ import { Configuration, HotModuleReplacementPlugin } from "webpack";
 import WebpackDevServer from "webpack-dev-server";
 import { merge } from "webpack-merge";
 
-import { description, keywords, productName } from "./package.json";
+import { description, homepage, keywords, productName } from "./package.json";
 
 interface Environment {
     mode?: "development" | "production";
@@ -54,6 +54,7 @@ const commonConfig: Configuration = {
             template: path.resolve(__dirname, "src/resources/templates/index.ejs"),
             templateParameters: {
                 description,
+                homepage,
                 keywords,
                 productName,
                 title: productName
