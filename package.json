@@ -1,7 +1,7 @@
 {
     "name": "sortsimulation",
     "productName": "SortSimulation",
-    "description": "",
+    "description": "Visualize and compare sorting algorithms",
     "keywords": [
         "sort",
         "sorting",
