@@ -6,7 +6,7 @@ import { Configuration, HotModuleReplacementPlugin } from "webpack";
 import WebpackDevServer from "webpack-dev-server";
 import { merge } from "webpack-merge";
 
-import { description, homepage, keywords, productName } from "./package.json";
+import { description, homepage, keywords, productName, synopsis } from "./package.json";
 
 interface Environment {
     mode?: "development" | "production";
@@ -57,7 +57,7 @@ const commonConfig: Configuration = {
                 homepage,
                 keywords,
                 productName,
-                title: productName
+                title: `${productName} • ${synopsis}`
             }
         })
     ]

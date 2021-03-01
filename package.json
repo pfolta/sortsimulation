@@ -2,6 +2,7 @@
     "name": "sortsimulation",
     "productName": "SortSimulation",
     "description": "Visualize and compare sorting algorithms",
+    "synopsis": "Visualize and compare sorting algorithms",
     "keywords": [
         "sort",
         "sorting",
