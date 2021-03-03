@@ -1,5 +1,5 @@
 // Determine whether an array is sorted
-const isSorted = (array: number[]): boolean => {
+const isSorted = <T>(array: T[]): boolean => {
     for (let i = 1; i < array.length; i++) {
         if (array[i - 1] > array[i]) {
             return false;
@@ -11,7 +11,7 @@ const isSorted = (array: number[]): boolean => {
 
 // Shuffle an array in-place using Fisher-Yates
 // See https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
-const shuffle = (array: number[]): number[] => {
+const shuffle = <T>(array: T[]): T[] => {
     for (let i = array.length - 1; i > 0; i--) {
         swap(array, i, Math.floor(Math.random() * i));
     }
@@ -20,7 +20,7 @@ const shuffle = (array: number[]): number[] => {
 };
 
 // Swap two elements in an array in-place
-const swap = (array: number[], i: number, j: number): number[] => {
+const swap = <T>(array: T[], i: number, j: number): T[] => {
     const temp = array[i];
     array[i] = array[j];
     array[j] = temp;
