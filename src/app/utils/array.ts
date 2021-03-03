@@ -9,6 +9,21 @@ const isSorted = <T>(array: T[]): boolean => {
     return true;
 };
 
+// Create a range from `start` to less than `end` (inclusive of `start` but not `end`): [start, end)
+// If only one argument is passed, the range will start at 0: [0, end)
+// If an array is passed, the range will contain the indices of the array provided: [0, array.length)
+const range = <T>(start: number | T[], end?: number): number[] => {
+    if (Array.isArray(start)) {
+        return [...start.keys()];
+    }
+
+    if (end !== undefined) {
+        return Array.from({ length: end - start }, (_, i) => start + i);
+    }
+
+    return [...Array(start).keys()];
+};
+
 // Shuffle an array in-place using Fisher-Yates
 // See https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 const shuffle = <T>(array: T[]): T[] => {
@@ -27,6 +42,4 @@ const swap = <T>(array: T[], i: number, j: number): T[] => {
     return array;
 };
 
-export { isSorted };
-export { shuffle };
-export { swap };
+export { isSorted, range, shuffle, swap };

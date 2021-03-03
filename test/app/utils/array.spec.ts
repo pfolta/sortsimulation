@@ -1,4 +1,4 @@
-import { isSorted, shuffle, swap } from "@/app/utils/array";
+import { isSorted, range, shuffle, swap } from "@/app/utils/array";
 
 describe("Array Utils", () => {
     describe("isSorted", () => {
@@ -20,6 +20,42 @@ describe("Array Utils", () => {
 
         it("returns false for an unsorted array", () => {
             expect(isSorted([3, 1, 10, 2, 6, 7, 5, 4])).toBe(false);
+        });
+    });
+
+    describe("range", () => {
+        describe("for `start` and `end`", () => {
+            it("returns a range inclusive of `start` but not `end`", () => {
+                expect(range(5, 10)).toEqual([5, 6, 7, 8, 9]);
+            });
+
+            it("returns an empty range if `start` and `end` are equal", () => {
+                expect(range(3, 3)).toEqual([]);
+            });
+
+            it("returns an empty range if `start` > `end`", () => {
+                expect(range(7, 4)).toEqual([]);
+            });
+        });
+
+        describe("without `start`", () => {
+            it("returns a range from 0 to less than `end`", () => {
+                expect(range(7)).toEqual([0, 1, 2, 3, 4, 5, 6]);
+            });
+
+            it("returns an empty range if `end` is 0", () => {
+                expect(range(0)).toEqual([]);
+            });
+        });
+
+        describe("from array", () => {
+            it("returns a range containing the indices of the passed array", () => {
+                expect(range(["apple", "orange", "peach"])).toEqual([0, 1, 2]);
+            });
+
+            it("returns an empty range for an empty array", () => {
+                expect(range([])).toEqual([]);
+            });
         });
     });
 
