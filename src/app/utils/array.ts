@@ -28,7 +28,7 @@ const range = <T>(start: number | T[], end?: number): number[] => {
 // See https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 const shuffle = <T>(array: T[]): T[] => {
     for (let i = array.length - 1; i > 0; i--) {
-        swap(array, i, Math.floor(Math.random() * i));
+        swap(array, i, Math.floor(Math.random() * (i + 1)));
     }
 
     return array;

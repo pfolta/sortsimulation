@@ -76,6 +76,23 @@ describe("Array Utils", () => {
             const array = [1, 2, 3, 4, 5];
             expect(shuffle(array)).toEqual(array);
         });
+
+        it("shuffles every element into every position", () => {
+            const min = 1;
+            const max = 25;
+
+            let array = shuffle(range(min, max));
+
+            for (let i = 0; i < max - min; i++) {
+                for (let j = min; j < max; j++) {
+                    while (array[i] !== j) {
+                        array = shuffle(range(min, max));
+                    }
+
+                    expect(array[i]).toBe(j);
+                }
+            }
+        });
     });
 
     describe("swap", () => {
