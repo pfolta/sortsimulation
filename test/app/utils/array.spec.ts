@@ -60,11 +60,11 @@ describe("Array Utils", () => {
     });
 
     describe("shuffle", () => {
-        it("leaves an empty array untouched", () => {
+        it("leaves an empty array unchanged", () => {
             expect(shuffle([])).toEqual([]);
         });
 
-        it("leaves an array with only one element untouched", () => {
+        it("leaves an array with only one element unchanged", () => {
             expect(shuffle([3])).toEqual([3]);
         });
 
@@ -98,6 +98,10 @@ describe("Array Utils", () => {
     describe("swap", () => {
         it("swaps the correct elements in an array", () => {
             expect(swap([1, 2, 3, 4, 5], 1, 4)).toEqual([1, 5, 3, 4, 2]);
+        });
+
+        it("leaves an array unchanged if both indices are the same", () => {
+            expect(swap([1, 2, 3, 4, 5], 2, 2)).toEqual([1, 2, 3, 4, 5]);
         });
 
         it("swaps the elements in-place", () => {

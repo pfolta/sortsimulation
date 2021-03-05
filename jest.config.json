@@ -16,6 +16,7 @@
             {
                 "includeConsoleLog": true,
                 "includeFailureMsg": true,
+                "includeObsoleteSnapshots": true,
                 "outputPath": "build/tests/index.html"
             }
         ],

@@ -1,7 +1,7 @@
 import BubbleSort from "@/app/algorithms/BubbleSort";
 import { isSorted } from "@/app/utils/array";
 
-describe("Bubble sort", () => {
+describe("Bubble Sort", () => {
     describe("sort", () => {
         it("returns a trace starting with the initial array", () => {
             const array = [6, 5, 10, 9, 8, 4, 7, 3, 1, 2];
