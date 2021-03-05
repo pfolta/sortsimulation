@@ -2,7 +2,18 @@
     "env": {
         "browser": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -11,9 +22,23 @@
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint"],
-    "rules": {},
+    "plugins": ["@typescript-eslint", "import", "jest", "prettier", "react"],
+    "rules": {
+        "import/newline-after-import": ["error"],
+        "import/order": [
+            "error",
+            {
+                "alphabetize": {
+                    "order": "asc"
+                },
+                "newlines-between": "always"
+            }
+        ]
+    },
     "settings": {
+        "import/resolver": {
+            "typescript": {}
+        },
         "react": {
             "version": "detect"
         }

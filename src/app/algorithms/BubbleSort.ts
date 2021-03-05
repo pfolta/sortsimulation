@@ -1,5 +1,4 @@
-import { Algorithm, SortingAlgorithm } from "@/app/algorithms";
-import { addToTrace, createTrace, Trace } from "@/app/algorithms";
+import { addToTrace, Algorithm, createTrace, SortingAlgorithm, Trace } from "@/app/algorithms";
 import { swap } from "@/app/utils/array";
 
 const BubbleSort: SortingAlgorithm = {
