@@ -1,9 +1,9 @@
 {
-    "cacheDirectory": "build/tests/cache",
+    "cacheDirectory": "<rootDir>/build/tests/cache",
     "clearMocks": true,
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
-    "coverageDirectory": "build/coverage",
+    "collectCoverageFrom": ["<rootDir>/src/**/*.{ts,tsx}"],
+    "coverageDirectory": "<rootDir>/build/coverage",
     "coverageReporters": ["lcov"],
     "moduleNameMapper": {
         "^@/(.*)": "<rootDir>/src/$1"
@@ -17,7 +17,7 @@
                 "includeConsoleLog": true,
                 "includeFailureMsg": true,
                 "includeObsoleteSnapshots": true,
-                "outputPath": "build/tests/index.html"
+                "outputPath": "<rootDir>/build/tests/index.html"
             }
         ],
         [
@@ -25,7 +25,7 @@
             {
                 "ancestorSeparator": " › ",
                 "classNameTemplate": "{classname}",
-                "outputDirectory": "build/tests",
+                "outputDirectory": "<rootDir>/build/tests",
                 "outputName": "TEST-junit.xml",
                 "suiteNameTemplate": "{filepath}",
                 "titleTemplate": "{title}"

@@ -1,6 +1,31 @@
-import { isSorted, range, shuffle, swap } from "@/app/utils/array";
+import { createAlreadySorted, createRandom, createReversed, isSorted, range, shuffle, swap } from "@/app/utils/array";
 
 describe("Array Utils", () => {
+    describe("createAlreadySorted", () => {
+        it("returns a presorted array with the specified size", () => {
+            expect(createAlreadySorted(10)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        });
+    });
+
+    describe("createRandom", () => {
+        const size = 10;
+        const array = createRandom(size);
+
+        it("returns a random array with the specified size", () => {
+            expect(array).toHaveLength(size);
+        });
+
+        it("returns an array that contains every number in [1, size]", () => {
+            range(1, size + 1).forEach((number) => expect(array).toContain(number));
+        });
+    });
+
+    describe("createReversed", () => {
+        it("returns a reverse-sorted array with the specified size", () => {
+            expect(createReversed(10)).toEqual([10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
+        });
+    });
+
     describe("isSorted", () => {
         it("returns true for a sorted array", () => {
             expect(isSorted([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).toBe(true);
@@ -72,7 +97,7 @@ describe("Array Utils", () => {
             expect(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])).not.toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
         });
 
-        it("shuffles the array in-place", () => {
+        it("shuffles the array in place", () => {
             const array = [1, 2, 3, 4, 5];
             expect(shuffle(array)).toEqual(array);
         });
@@ -104,7 +129,7 @@ describe("Array Utils", () => {
             expect(swap([1, 2, 3, 4, 5], 2, 2)).toEqual([1, 2, 3, 4, 5]);
         });
 
-        it("swaps the elements in-place", () => {
+        it("swaps the elements in place", () => {
             const array = [1, 2, 3, 4, 5];
             expect(swap(array, 2, 3)).toEqual(array);
         });
