@@ -24,17 +24,41 @@ jobs:
         with:
           name: test-report
           path: build/tests/index.html
-      - name: Upload test coverage report artifact
+      - name: Upload coverage data artifact
         if: ${{ always() }}
         uses: actions/upload-artifact@v2
         with:
-          name: test-coverage-report
+          name: coverage-data
+          path: build/coverage/lcov.info
+      - name: Upload coverage report artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
           path: build/coverage/lcov-report
       - name: Upload app artifact
         uses: actions/upload-artifact@v2
         with:
           name: app
           path: build/dist
+
+  coverage:
+    name: Code coverage
+    if: github.ref == 'refs/heads/master'
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: coverage-data
+          path: build/coverage
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          directory: build/coverage
+          verbose: true
 
   deploy:
     name: Deploy
