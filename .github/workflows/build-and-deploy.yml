@@ -43,18 +43,20 @@ jobs:
           path: build/dist
 
   coverage:
-    name: Code coverage
+    name: Publish coverage data
     if: github.ref == 'refs/heads/master'
     needs: [build]
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out source code
+        uses: actions/checkout@v2
       - name: Download coverage artifact
         uses: actions/download-artifact@v2
         with:
           name: coverage-data
           path: build/coverage
-      - name: Upload coverage report to Codecov
+      - name: Publish coverage data to Codecov
         uses: codecov/codecov-action@v1
         with:
           directory: build/coverage
