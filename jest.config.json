@@ -32,5 +32,6 @@
             }
         ]
     ],
+    "setupFilesAfterEnv": ["<rootDir>/test/setup.ts"],
     "verbose": true
 }
