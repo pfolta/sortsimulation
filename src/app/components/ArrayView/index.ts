@@ -1,2 +1,5 @@
-export { default as ArrayView, ArrayViewProps } from "@/app/components/ArrayView/ArrayView";
-export { default as Element, ElementProps, StyledElement } from "@/app/components/ArrayView/Element";
+export type { ArrayViewProps } from "@/app/components/ArrayView/ArrayView";
+export { default as ArrayView } from "@/app/components/ArrayView/ArrayView";
+
+export type { ElementProps } from "@/app/components/ArrayView/Element";
+export { default as Element, StyledElement } from "@/app/components/ArrayView/Element";
