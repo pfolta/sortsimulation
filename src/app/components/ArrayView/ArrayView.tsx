@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 import { Element } from "@/app/components/ArrayView";
@@ -17,7 +17,7 @@ const Wrapper = styled.div<ArrayViewProps>`
 `;
 
 const ArrayView = ({ array }: ArrayViewProps): JSX.Element => {
-    const maxValue = useMemo(() => Math.max(...array), [array]);
+    const maxValue = Math.max(...array);
 
     return (
         <Wrapper array={array}>
@@ -28,5 +28,5 @@ const ArrayView = ({ array }: ArrayViewProps): JSX.Element => {
     );
 };
 
-export default ArrayView;
+export default memo(ArrayView);
 export { ArrayViewProps };
