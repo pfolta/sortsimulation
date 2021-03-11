@@ -4,6 +4,14 @@
 const createAlreadySorted = (size: number): number[] => range(1, size + 1);
 
 /**
+ * Create a randomly shuffled array containing `uniqueCount` unique numbers from 1 to `size`, e.g. [7, 3, 8, 8, 7, 4, 3, 1, 3, 4]
+ */
+const createFewUnique = (size: number, uniqueCount: number): number[] => {
+    const uniques = createRandom(size).slice(0, uniqueCount);
+    return Array.from({ length: size }, () => uniques[Math.floor(Math.random() * uniques.length)]);
+};
+
+/**
  * Create a randomly shuffled array containing all numbers from 1 to `size`, e.g. [3, 5, 1, 2, 4]
  */
 const createRandom = (size: number): number[] => shuffle(createAlreadySorted(size));
@@ -66,4 +74,4 @@ const swap = <T>(array: T[], i: number, j: number): T[] => {
     return array;
 };
 
-export { createAlreadySorted, createRandom, createReversed, isSorted, range, shuffle, swap };
+export { createAlreadySorted, createFewUnique, createRandom, createReversed, isSorted, range, shuffle, swap };

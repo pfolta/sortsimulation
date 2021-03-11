@@ -1,4 +1,4 @@
-import { createAlreadySorted, createRandom, createReversed, isSorted, range, shuffle, swap } from "@/app/utils/array";
+import { createAlreadySorted, createFewUnique, createRandom, createReversed, isSorted, range, shuffle, swap } from "@/app/utils/array";
 
 describe("Array Utils", () => {
     describe("createAlreadySorted", () => {
@@ -7,9 +7,37 @@ describe("Array Utils", () => {
         });
     });
 
+    describe("createFewUnique", () => {
+        const size = 25;
+        const uniqueCount = 5;
+
+        it("returns an array of integers", () => {
+            createFewUnique(size, uniqueCount).forEach((number) => expect(Number.isInteger(number)).toBe(true));
+        });
+
+        it("returns an array with the specified size", () => {
+            expect(createFewUnique(size, uniqueCount)).toHaveLength(size);
+        });
+
+        it("returns an array with the specified number of unique elements", () => {
+            expect([...new Set(createFewUnique(size, uniqueCount))]).toHaveLength(uniqueCount);
+        });
+
+        it("returns an array where every number is in [1, size]", () => {
+            createFewUnique(size, uniqueCount).forEach((number) => {
+                expect(number).toBeGreaterThan(0);
+                expect(number).toBeLessThanOrEqual(size);
+            });
+        });
+    });
+
     describe("createRandom", () => {
         const size = 10;
         const array = createRandom(size);
+
+        it("returns an array of integers", () => {
+            array.forEach((number) => expect(Number.isInteger(number)).toBe(true));
+        });
 
         it("returns a random array with the specified size", () => {
             expect(array).toHaveLength(size);
