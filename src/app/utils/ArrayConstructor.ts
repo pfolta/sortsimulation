@@ -2,6 +2,7 @@ import "@/app/utils/Array";
 
 declare global {
     interface ArrayConstructor {
+        almostSorted: (size: number, distance: number) => number[];
         fewUnique: (size: number, uniqueCount: number) => number[];
         random: (size: number) => number[];
         range: <T>(start: number | T[], end?: number) => number[];
@@ -9,6 +10,14 @@ declare global {
         sorted: (size: number) => number[];
     }
 }
+
+/**
+ * Create an array where every element is at most `distance` places away from its sorted position
+ */
+Array.almostSorted = (size: number, distance: number): number[] =>
+    Array.sorted(size)
+        .chunked(distance + 1)
+        .flatMap((chunk) => chunk.shuffled());
 
 /**
  * Create a randomly shuffled array containing `uniqueCount` unique numbers from 1 to `size`, e.g. [7, 3, 8, 8, 7, 4, 3, 1, 3, 4]

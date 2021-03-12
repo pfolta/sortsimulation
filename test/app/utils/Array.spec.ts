@@ -1,6 +1,33 @@
 import "@/app/utils/Array";
+import "@/app/utils/ArrayConstructor";
 
 describe("Array Utils", () => {
+    describe("chunked", () => {
+        it("throws a TypeError if `size` is not an integer", () => {
+            expect(() => [1, 2, 3, 4, 5].chunked(0.5)).toThrow(TypeError);
+        });
+
+        it("throws a RangeError if `size` is smaller than or equal to zero", () => {
+            expect(() => [1, 2, 3, 4, 5].chunked(-4)).toThrow(RangeError);
+        });
+
+        it("returns a chunked array", () => {
+            expect([1, 2, 3, 4, 5, 6, 7, 8, 9].chunked(3)).toEqual([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ]);
+        });
+
+        it("returns a chunked array last element can be smaller", () => {
+            expect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].chunked(4)).toEqual([
+                [1, 2, 3, 4],
+                [5, 6, 7, 8],
+                [9, 10]
+            ]);
+        });
+    });
+
     describe("isSorted", () => {
         it("returns true for a sorted array", () => {
             expect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].isSorted()).toBe(true);
