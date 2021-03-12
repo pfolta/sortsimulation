@@ -6,7 +6,7 @@ import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import { GlobalStyle } from "@/app/global";
 import locales from "@/app/locale";
-import { createRandom } from "@/app/utils/array";
+import "@/app/utils/ArrayConstructor";
 
 const App = (): JSX.Element => {
     return (
@@ -14,7 +14,7 @@ const App = (): JSX.Element => {
             <RawIntlProvider value={locales["de-DE"]}>
                 <GlobalStyle />
                 <Header />
-                <ArrayView array={createRandom(25)} />
+                <ArrayView array={Array.random(25)} />
                 <Footer />
             </RawIntlProvider>
         </StrictMode>

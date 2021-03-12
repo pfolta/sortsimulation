@@ -1,5 +1,5 @@
 import BubbleSort from "@/app/algorithms/BubbleSort";
-import { isSorted } from "@/app/utils/array";
+import "@/app/utils/Array";
 
 describe("Bubble Sort", () => {
     describe("sort", () => {
@@ -18,7 +18,7 @@ describe("Bubble Sort", () => {
         it("returns a trace ending with the sorted array", () => {
             const array = [6, 5, 10, 9, 8, 4, 7, 3, 1, 2];
             const trace = BubbleSort.sort(array);
-            expect(isSorted(trace[trace.length - 1].array)).toBe(true);
+            expect(trace[trace.length - 1].array.isSorted()).toBe(true);
         });
     });
 });

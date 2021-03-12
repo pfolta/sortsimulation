@@ -1,5 +1,5 @@
 import { addToTrace, createTrace } from "@/app/algorithms/Trace";
-import { swap } from "@/app/utils/array";
+import "@/app/utils/Array";
 
 describe("Trace", () => {
     describe("createTrace", () => {
@@ -16,7 +16,7 @@ describe("Trace", () => {
             const trace = createTrace(array);
 
             // Mutate the array
-            swap(array, 0, 1);
+            array.swap(0, 1);
 
             expect(trace[0].array).not.toEqual(array);
         });
@@ -28,7 +28,7 @@ describe("Trace", () => {
             const trace = createTrace(array);
 
             // Mutate the array
-            swap(array, 2, 3);
+            array.swap(2, 3);
 
             addToTrace(trace, array);
 
@@ -41,12 +41,12 @@ describe("Trace", () => {
             const trace = createTrace(array);
 
             // Mutate the array
-            swap(array, 2, 3);
+            array.swap(2, 3);
 
             addToTrace(trace, array);
 
             // Mutate the array again
-            swap(array, 1, 3);
+            array.swap(1, 3);
 
             expect(trace).toHaveLength(2);
             expect(trace[trace.length - 1].array).not.toEqual(array);
