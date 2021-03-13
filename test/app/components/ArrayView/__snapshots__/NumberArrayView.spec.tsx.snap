@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ArrayView renders correctly 1`] = `
-.c1 {
-  background-color: #4c566a;
-  color: white;
-  overflow: hidden;
-  font-size: 0;
-  text-align: center;
-}
-
-.c1:hover {
-  background-color: #ebcb8b;
-}
-
+exports[`NumberArrayView renders correctly 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: repeat(5,1fr);
@@ -25,11 +13,40 @@ exports[`ArrayView renders correctly 1`] = `
   height: 30vh;
 }
 
+.c1 {
+  background-color: #4c566a;
+  color: white;
+  -webkit-transition: -webkit-transform 100ms ease-out;
+  -webkit-transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out;
+}
+
+.c1:hover {
+  -webkit-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+}
+
+.c1:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -1rem;
+  z-index: -1;
+}
+
+.c2 {
+  font-size: 0;
+  text-align: center;
+}
+
 <div
   className="c0"
 >
   <div
-    className="c1"
+    className="c1 c2"
     style={
       Object {
         "fontSize": "0px",
@@ -40,7 +57,7 @@ exports[`ArrayView renders correctly 1`] = `
     4
   </div>
   <div
-    className="c1"
+    className="c1 c2"
     style={
       Object {
         "fontSize": "0px",
@@ -51,7 +68,7 @@ exports[`ArrayView renders correctly 1`] = `
     2
   </div>
   <div
-    className="c1"
+    className="c1 c2"
     style={
       Object {
         "fontSize": "0px",
@@ -62,7 +79,7 @@ exports[`ArrayView renders correctly 1`] = `
     5
   </div>
   <div
-    className="c1"
+    className="c1 c2"
     style={
       Object {
         "fontSize": "0px",
@@ -73,7 +90,7 @@ exports[`ArrayView renders correctly 1`] = `
     1
   </div>
   <div
-    className="c1"
+    className="c1 c2"
     style={
       Object {
         "fontSize": "0px",

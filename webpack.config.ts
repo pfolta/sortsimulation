@@ -40,6 +40,14 @@ const commonConfig: Configuration = {
                 test: /\.tsx?$/,
                 loader: "babel-loader",
                 exclude: /node_modules/
+            },
+            {
+                test: /\.jpg$/,
+                loader: "file-loader",
+                exclude: /node_modules/,
+                options: {
+                    name: "[name].[contenthash].[ext]"
+                }
             }
         ]
     },

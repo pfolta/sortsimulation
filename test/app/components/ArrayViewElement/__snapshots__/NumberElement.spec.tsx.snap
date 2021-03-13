@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberElement renders correctly 1`] = `
+.c0 {
+  background-color: #4c566a;
+  color: white;
+  -webkit-transition: -webkit-transform 100ms ease-out;
+  -webkit-transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out;
+}
+
+.c0:hover {
+  -webkit-transform: translateY(-1rem);
+  -ms-transform: translateY(-1rem);
+  transform: translateY(-1rem);
+}
+
+.c0:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -1rem;
+  z-index: -1;
+}
+
+.c1 {
+  font-size: 0;
+  text-align: center;
+}
+
+<div
+  className="c0 c1"
+  style={
+    Object {
+      "fontSize": "0px",
+      "height": "40%",
+    }
+  }
+>
+  2
+</div>
+`;

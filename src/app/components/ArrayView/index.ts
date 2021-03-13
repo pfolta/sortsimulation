@@ -1,5 +1,8 @@
 export type { ArrayViewProps } from "@/app/components/ArrayView/ArrayView";
 export { default as ArrayView } from "@/app/components/ArrayView/ArrayView";
 
-export type { ElementProps } from "@/app/components/ArrayView/Element";
-export { default as Element, StyledElement } from "@/app/components/ArrayView/Element";
+export type { ImageArrayViewProps } from "@/app/components/ArrayView/ImageArrayView";
+export { default as ImageArrayView } from "@/app/components/ArrayView/ImageArrayView";
+
+export type { NumberArrayViewProps } from "@/app/components/ArrayView/NumberArrayView";
+export { default as NumberArrayView } from "@/app/components/ArrayView/NumberArrayView";
