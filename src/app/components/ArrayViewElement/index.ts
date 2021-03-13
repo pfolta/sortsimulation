@@ -5,4 +5,4 @@ export type { ImageElementProps } from "@/app/components/ArrayViewElement/ImageE
 export { default as ImageElement, StyledImageElement } from "@/app/components/ArrayViewElement/ImageElement";
 
 export type { NumberElementProps } from "@/app/components/ArrayViewElement/NumberElement";
-export { default as NumberElement, StyledNumberElement } from "@/app/components/ArrayViewElement/NumberElement";
+export { default as NumberElement, StyledNumberElement, StyledNumberElementLabel } from "@/app/components/ArrayViewElement/NumberElement";

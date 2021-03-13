@@ -1,7 +1,7 @@
 import React from "react";
 import { create } from "react-test-renderer";
 
-import { NumberElement, StyledNumberElement } from "@/app/components/ArrayViewElement";
+import { NumberElement, StyledNumberElementLabel } from "@/app/components/ArrayViewElement";
 
 describe("NumberElement", () => {
     const array = [4, 2, 5, 1, 3];
@@ -14,6 +14,6 @@ describe("NumberElement", () => {
 
     it("displays the correct element value", () => {
         const component = create(<NumberElement array={array} index={2} maxValue={maxValue} />);
-        expect(component.root.findByType(StyledNumberElement).props.children).toEqual(5);
+        expect(component.root.findByType(StyledNumberElementLabel).props.children).toEqual(5);
     });
 });

@@ -22,6 +22,12 @@ const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementPr
     text-align: center;
 `;
 
+const StyledNumberElementLabel = styled.span`
+    display: block;
+    height: 100%;
+    overflow: hidden;
+`;
+
 const computeFontSize = (width?: number): number => {
     const size = width ? width / 2 : 0;
     return size < 8 ? 0 : size;
@@ -31,11 +37,11 @@ const NumberElement = (props: NumberElementProps): JSX.Element => (
     <Measure>
         {({ contentRect, measureRef }) => (
             <StyledNumberElement ref={measureRef} {...props} contentWidth={contentRect.entry?.width}>
-                {props.array[props.index]}
+                <StyledNumberElementLabel>{props.array[props.index]}</StyledNumberElementLabel>
             </StyledNumberElement>
         )}
     </Measure>
 );
 
 export default NumberElement;
-export { NumberElementProps, StyledNumberElement };
+export { NumberElementProps, StyledNumberElement, StyledNumberElementLabel };
