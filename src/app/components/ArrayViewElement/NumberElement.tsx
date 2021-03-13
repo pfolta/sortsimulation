@@ -14,7 +14,7 @@ interface StyledNumberElementProps extends NumberElementProps {
 
 const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementProps>(({ array, index, maxValue, contentWidth }) => ({
     style: {
-        fontSize: computeFontSize(contentWidth) + "px",
+        fontSize: (contentWidth || 0) / 2 + "px",
         height: (array[index] / maxValue) * 100 + "%"
     }
 }))<StyledNumberElementProps>`
@@ -27,11 +27,6 @@ const StyledNumberElementLabel = styled.span`
     height: 100%;
     overflow: hidden;
 `;
-
-const computeFontSize = (width?: number): number => {
-    const size = width ? width / 2 : 0;
-    return size < 8 ? 0 : size;
-};
 
 const NumberElement = (props: NumberElementProps): JSX.Element => (
     <Measure>
