@@ -28,6 +28,9 @@ const commonConfig: Configuration = {
             name: "vendors"
         }
     },
+    performance: {
+        hints: false
+    },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
         plugins: [
