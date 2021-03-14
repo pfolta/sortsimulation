@@ -87,6 +87,16 @@ describe("Array Utils", () => {
     });
 
     describe("swap", () => {
+        it("throws a TypeError if either index is not an integer", () => {
+            expect(() => [1, 2, 3, 4, 5].swap(0.5, 1)).toThrow(TypeError);
+            expect(() => [1, 2, 3, 4, 5].swap(1, 0.5)).toThrow(TypeError);
+        });
+
+        it("throws a RangeError if either index is out of bounds", () => {
+            expect(() => [1, 2, 3, 4, 5].swap(-1, 4)).toThrow(RangeError);
+            expect(() => [1, 2, 3, 4, 5].swap(1, 6)).toThrow(RangeError);
+        });
+
         it("swaps the correct elements in an array", () => {
             expect([1, 2, 3, 4, 5].swap(1, 4)).toEqual([1, 5, 3, 4, 2]);
         });

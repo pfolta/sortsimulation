@@ -57,6 +57,16 @@ Array.prototype.shuffled = function <T>(this: T[]): T[] {
  * Swap two elements in an array in place.
  */
 Array.prototype.swap = function <T>(this: T[], i: number, j: number): T[] {
+    [i, j].forEach((index) => {
+        if (!Number.isInteger(index)) {
+            throw new TypeError(`index ${index} must be an integer.`);
+        }
+
+        if (index < 0 || index >= this.length) {
+            throw new RangeError(`index ${index} must be greater than zero and less than ${this.length}`);
+        }
+    });
+
     const temp = this[i];
     this[i] = this[j];
     this[j] = temp;
