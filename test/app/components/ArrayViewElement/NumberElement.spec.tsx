@@ -8,12 +8,20 @@ describe("NumberElement", () => {
     const maxValue = Math.max(...array);
 
     it("renders correctly", () => {
-        const component = create(<NumberElement array={array} index={1} maxValue={maxValue} />);
-        expect(component.toJSON()).toMatchSnapshot();
+        array
+            .map((_, i) => create(<NumberElement array={array} index={i} maxValue={maxValue} />))
+            .forEach((element) => expect(element.toJSON()).toMatchSnapshot());
+    });
+
+    it("computes the element height relative to the largest array element", () => {
+        array
+            .map((_, i) => create(<NumberElement array={array} index={i} maxValue={maxValue} />))
+            .forEach((element, i) => expect(element.toJSON()).toHaveStyleRule("height", `${(array[i] / maxValue) * 100}%`));
     });
 
     it("displays the correct element value", () => {
-        const component = create(<NumberElement array={array} index={2} maxValue={maxValue} />);
-        expect(component.root.findByType(StyledNumberElementLabel).props.children).toEqual(5);
+        array
+            .map((_, i) => create(<NumberElement array={array} index={i} maxValue={maxValue} />))
+            .forEach((element, i) => expect(element.root.findByType(StyledNumberElementLabel).props.children).toEqual(array[i]));
     });
 });

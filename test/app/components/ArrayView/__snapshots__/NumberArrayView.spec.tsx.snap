@@ -38,6 +38,31 @@ exports[`NumberArrayView renders correctly 1`] = `
 }
 
 .c2 {
+  height: 80%;
+  font-size: 0;
+  text-align: center;
+}
+
+.c4 {
+  height: 40%;
+  font-size: 0;
+  text-align: center;
+}
+
+.c5 {
+  height: 100%;
+  font-size: 0;
+  text-align: center;
+}
+
+.c6 {
+  height: 20%;
+  font-size: 0;
+  text-align: center;
+}
+
+.c7 {
+  height: 60%;
   font-size: 0;
   text-align: center;
 }
@@ -56,7 +81,6 @@ exports[`NumberArrayView renders correctly 1`] = `
     style={
       Object {
         "fontSize": "0px",
-        "height": "80%",
       }
     }
   >
@@ -67,11 +91,10 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c1 c2"
+    className="c1 c4"
     style={
       Object {
         "fontSize": "0px",
-        "height": "40%",
       }
     }
   >
@@ -82,11 +105,10 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c1 c2"
+    className="c1 c5"
     style={
       Object {
         "fontSize": "0px",
-        "height": "100%",
       }
     }
   >
@@ -97,11 +119,10 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c1 c2"
+    className="c1 c6"
     style={
       Object {
         "fontSize": "0px",
-        "height": "20%",
       }
     }
   >
@@ -112,11 +133,10 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c1 c2"
+    className="c1 c7"
     style={
       Object {
         "fontSize": "0px",
-        "height": "60%",
       }
     }
   >

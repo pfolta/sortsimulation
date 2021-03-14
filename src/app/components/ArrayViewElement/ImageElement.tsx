@@ -7,12 +7,9 @@ interface ImageElementProps extends ArrayViewElementProps {
     image: string;
 }
 
-const StyledImageElement = styled(ArrayViewElement).attrs<ImageElementProps>(({ array, index }) => ({
-    style: {
-        backgroundPosition: ((array[index] - 1) / (array.length - 1)) * 100 + "% 0"
-    }
-}))<ImageElementProps>`
+const StyledImageElement = styled(ArrayViewElement)<ImageElementProps>`
     background-image: url("${({ image }) => image}");
+    background-position: ${({ array, index }) => ((array[index] - 1) / (array.length - 1)) * 100}% 0%;
     background-repeat: no-repeat;
     background-size: ${({ array }) => array.length * 100}% 100%;
 

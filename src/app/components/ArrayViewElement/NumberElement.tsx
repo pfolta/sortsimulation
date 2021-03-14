@@ -12,12 +12,12 @@ interface StyledNumberElementProps extends NumberElementProps {
     contentWidth?: number;
 }
 
-const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementProps>(({ array, index, maxValue, contentWidth }) => ({
+const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementProps>(({ contentWidth }) => ({
     style: {
-        fontSize: (contentWidth || 0) / 2 + "px",
-        height: (array[index] / maxValue) * 100 + "%"
+        fontSize: (contentWidth || 0) / 2 + "px"
     }
 }))<StyledNumberElementProps>`
+    height: ${({ array, index, maxValue }) => (array[index] / maxValue) * 100}%;
     font-size: 0;
     text-align: center;
 `;

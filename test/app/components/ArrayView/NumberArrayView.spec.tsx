@@ -2,7 +2,7 @@ import React from "react";
 import { create } from "react-test-renderer";
 
 import { NumberArrayView } from "@/app/components/ArrayView";
-import { StyledNumberElement } from "@/app/components/ArrayViewElement";
+import { NumberElement } from "@/app/components/ArrayViewElement";
 
 describe("NumberArrayView", () => {
     const array = [4, 2, 5, 1, 3];
@@ -12,9 +12,9 @@ describe("NumberArrayView", () => {
         expect(component.toJSON()).toMatchSnapshot();
     });
 
-    it("renders a StyledNumberElement for every array element in the correct order", () => {
+    it("renders a NumberElement for every array element in the correct order", () => {
         const component = create(<NumberArrayView array={array} />);
-        const arrayElements = component.root.findAllByType(StyledNumberElement);
+        const arrayElements = component.root.findAllByType(NumberElement);
 
         expect(arrayElements).toHaveLength(array.length);
 
