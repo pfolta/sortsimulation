@@ -94,6 +94,7 @@
         "core-js": "^3.9.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
+        "react-feather": "^2.0.9",
         "react-intl": "^5.13.2",
         "react-measure": "^2.5.2",
         "styled-components": "^5.2.1"
