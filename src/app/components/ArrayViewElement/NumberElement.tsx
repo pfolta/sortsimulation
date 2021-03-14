@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Measure from "react-measure";
 import styled from "styled-components";
 
@@ -12,12 +12,12 @@ interface StyledNumberElementProps extends NumberElementProps {
     contentWidth?: number;
 }
 
-const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementProps>(({ contentWidth }) => ({
+const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementProps>(({ value, maxValue, contentWidth }) => ({
     style: {
-        fontSize: (contentWidth || 0) / 2 + "px"
+        fontSize: (contentWidth || 0) / 2 + "px",
+        height: (value / maxValue) * 100 + "%"
     }
 }))<StyledNumberElementProps>`
-    height: ${({ array, index, maxValue }) => (array[index] / maxValue) * 100}%;
     font-size: 0;
     text-align: center;
 `;
@@ -32,11 +32,11 @@ const NumberElement = (props: NumberElementProps): JSX.Element => (
     <Measure>
         {({ contentRect, measureRef }) => (
             <StyledNumberElement ref={measureRef} {...props} contentWidth={contentRect.entry?.width}>
-                <StyledNumberElementLabel>{props.array[props.index]}</StyledNumberElementLabel>
+                <StyledNumberElementLabel>{props.value}</StyledNumberElementLabel>
             </StyledNumberElement>
         )}
     </Measure>
 );
 
-export default NumberElement;
+export default memo(NumberElement);
 export { NumberElementProps, StyledNumberElement, StyledNumberElementLabel };

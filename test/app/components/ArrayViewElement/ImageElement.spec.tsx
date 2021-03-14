@@ -9,27 +9,19 @@ describe("ImageElement", () => {
 
     it("renders correctly", () => {
         array
-            .map((_, i) => create(<ImageElement array={array} index={i} image={image} />))
+            .map((value) => create(<ImageElement value={value} size={array.length} image={image} />))
             .forEach((element) => expect(element.toJSON()).toMatchSnapshot());
     });
 
     it("uses the specified image as a background image", () => {
         array
-            .map((_, i) => create(<ImageElement array={array} index={i} image={image} />))
+            .map((value) => create(<ImageElement value={value} size={array.length} image={image} />))
             .forEach((element) => expect(element.toJSON()).toHaveStyleRule("background-image", `url("${image}")`));
-    });
-
-    it("positions the image according to the array value at the given index", () => {
-        array
-            .map((_, i) => create(<ImageElement array={array} index={i} image={image} />))
-            .forEach((element, i) =>
-                expect(element.toJSON()).toHaveStyleRule("background-position", `${((array[i] - 1) / (array.length - 1)) * 100}% 0%`)
-            );
     });
 
     it("sizes the image according to the number of elements in the array", () => {
         array
-            .map((_, i) => create(<ImageElement array={array} index={i} image={image} />))
+            .map((value) => create(<ImageElement value={value} size={array.length} image={image} />))
             .forEach((element) => expect(element.toJSON()).toHaveStyleRule("background-size", `${array.length * 100}% 100%`));
     });
 });

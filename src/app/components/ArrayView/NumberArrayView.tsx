@@ -1,23 +1,23 @@
 import React, { memo } from "react";
+import styled from "styled-components";
 
-import { ArrayView } from "@/app/components/ArrayView";
+import { ArrayView, ArrayViewProps } from "@/app/components/ArrayView";
 import { NumberElement } from "@/app/components/ArrayViewElement";
 
-interface NumberArrayViewProps {
-    array: number[];
-}
+const StyledNumberArrayView = styled(ArrayView)`
+    column-gap: 1px;
+`;
 
-const NumberArrayView = ({ array }: NumberArrayViewProps): JSX.Element => {
+const NumberArrayView = ({ array }: ArrayViewProps): JSX.Element => {
     const maxValue = Math.max(...array);
 
     return (
-        <ArrayView array={array}>
-            {array.map((_, index) => (
-                <NumberElement key={index} array={array} index={index} maxValue={maxValue} />
+        <StyledNumberArrayView array={array}>
+            {array.map((value, index) => (
+                <NumberElement key={index} value={value} maxValue={maxValue} />
             ))}
-        </ArrayView>
+        </StyledNumberArrayView>
     );
 };
 
 export default memo(NumberArrayView);
-export { NumberArrayViewProps };

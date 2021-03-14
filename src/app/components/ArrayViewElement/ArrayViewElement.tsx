@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 interface ArrayViewElementProps {
-    array: number[];
-    index: number;
+    value: number;
 }
 
-const ArrayViewElement = styled.div<ArrayViewElementProps>`
+const ArrayViewElement = styled.div.withConfig({
+    shouldForwardProp: (prop) => ["children", "style"].includes(prop)
+})<ArrayViewElementProps>`
     background-color: #4c566a;
     color: white;
 

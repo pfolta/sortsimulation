@@ -26,7 +26,6 @@ exports[`NumberElement renders correctly 1`] = `
 }
 
 .c1 {
-  height: 80%;
   font-size: 0;
   text-align: center;
 }
@@ -42,6 +41,7 @@ exports[`NumberElement renders correctly 1`] = `
   style={
     Object {
       "fontSize": "0px",
+      "height": "80%",
     }
   }
 >
@@ -79,7 +79,6 @@ exports[`NumberElement renders correctly 2`] = `
 }
 
 .c1 {
-  height: 40%;
   font-size: 0;
   text-align: center;
 }
@@ -95,6 +94,7 @@ exports[`NumberElement renders correctly 2`] = `
   style={
     Object {
       "fontSize": "0px",
+      "height": "40%",
     }
   }
 >
@@ -132,7 +132,6 @@ exports[`NumberElement renders correctly 3`] = `
 }
 
 .c1 {
-  height: 100%;
   font-size: 0;
   text-align: center;
 }
@@ -148,6 +147,7 @@ exports[`NumberElement renders correctly 3`] = `
   style={
     Object {
       "fontSize": "0px",
+      "height": "100%",
     }
   }
 >
@@ -185,7 +185,6 @@ exports[`NumberElement renders correctly 4`] = `
 }
 
 .c1 {
-  height: 20%;
   font-size: 0;
   text-align: center;
 }
@@ -201,6 +200,7 @@ exports[`NumberElement renders correctly 4`] = `
   style={
     Object {
       "fontSize": "0px",
+      "height": "20%",
     }
   }
 >
@@ -238,7 +238,6 @@ exports[`NumberElement renders correctly 5`] = `
 }
 
 .c1 {
-  height: 60%;
   font-size: 0;
   text-align: center;
 }
@@ -254,6 +253,7 @@ exports[`NumberElement renders correctly 5`] = `
   style={
     Object {
       "fontSize": "0px",
+      "height": "60%",
     }
   }
 >

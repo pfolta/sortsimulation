@@ -9,19 +9,13 @@ describe("NumberElement", () => {
 
     it("renders correctly", () => {
         array
-            .map((_, i) => create(<NumberElement array={array} index={i} maxValue={maxValue} />))
+            .map((value) => create(<NumberElement value={value} maxValue={maxValue} />))
             .forEach((element) => expect(element.toJSON()).toMatchSnapshot());
-    });
-
-    it("computes the element height relative to the largest array element", () => {
-        array
-            .map((_, i) => create(<NumberElement array={array} index={i} maxValue={maxValue} />))
-            .forEach((element, i) => expect(element.toJSON()).toHaveStyleRule("height", `${(array[i] / maxValue) * 100}%`));
     });
 
     it("displays the correct element value", () => {
         array
-            .map((_, i) => create(<NumberElement array={array} index={i} maxValue={maxValue} />))
+            .map((value) => create(<NumberElement value={value} maxValue={maxValue} />))
             .forEach((element, i) => expect(element.root.findByType(StyledNumberElementLabel).props.children).toEqual(array[i]));
     });
 });

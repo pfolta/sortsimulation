@@ -4,8 +4,6 @@ exports[`NumberArrayView renders correctly 1`] = `
 .c0 {
   display: grid;
   grid-template-columns: repeat(5,1fr);
-  -webkit-column-gap: 1px;
-  column-gap: 1px;
   -webkit-align-items: end;
   -webkit-box-align: end;
   -ms-flex-align: end;
@@ -13,7 +11,7 @@ exports[`NumberArrayView renders correctly 1`] = `
   height: 30vh;
 }
 
-.c1 {
+.c2 {
   background-color: #4c566a;
   color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
@@ -21,13 +19,13 @@ exports[`NumberArrayView renders correctly 1`] = `
   transition: transform 100ms ease-out;
 }
 
-.c1:hover {
+.c2:hover {
   -webkit-transform: translateY(-1rem);
   -ms-transform: translateY(-1rem);
   transform: translateY(-1rem);
 }
 
-.c1:hover::before {
+.c2:hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -37,111 +35,96 @@ exports[`NumberArrayView renders correctly 1`] = `
   z-index: -1;
 }
 
-.c2 {
-  height: 80%;
+.c3 {
   font-size: 0;
   text-align: center;
 }
 
 .c4 {
-  height: 40%;
-  font-size: 0;
-  text-align: center;
-}
-
-.c5 {
-  height: 100%;
-  font-size: 0;
-  text-align: center;
-}
-
-.c6 {
-  height: 20%;
-  font-size: 0;
-  text-align: center;
-}
-
-.c7 {
-  height: 60%;
-  font-size: 0;
-  text-align: center;
-}
-
-.c3 {
   display: block;
   height: 100%;
   overflow: hidden;
 }
 
+.c1 {
+  -webkit-column-gap: 1px;
+  column-gap: 1px;
+}
+
 <div
-  className="c0"
+  className="c0 c1"
 >
   <div
-    className="c1 c2"
+    className="c2 c3"
     style={
       Object {
         "fontSize": "0px",
+        "height": "80%",
       }
     }
   >
     <span
-      className="c3"
+      className="c4"
     >
       4
     </span>
   </div>
   <div
-    className="c1 c4"
+    className="c2 c3"
     style={
       Object {
         "fontSize": "0px",
+        "height": "40%",
       }
     }
   >
     <span
-      className="c3"
+      className="c4"
     >
       2
     </span>
   </div>
   <div
-    className="c1 c5"
+    className="c2 c3"
     style={
       Object {
         "fontSize": "0px",
+        "height": "100%",
       }
     }
   >
     <span
-      className="c3"
+      className="c4"
     >
       5
     </span>
   </div>
   <div
-    className="c1 c6"
+    className="c2 c3"
     style={
       Object {
         "fontSize": "0px",
+        "height": "20%",
       }
     }
   >
     <span
-      className="c3"
+      className="c4"
     >
       1
     </span>
   </div>
   <div
-    className="c1 c7"
+    className="c2 c3"
     style={
       Object {
         "fontSize": "0px",
+        "height": "60%",
       }
     }
   >
     <span
-      className="c3"
+      className="c4"
     >
       3
     </span>
