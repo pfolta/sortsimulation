@@ -2,8 +2,6 @@
 
 exports[`ImageElement renders correctly 1`] = `
 .c0 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -44,8 +42,6 @@ exports[`ImageElement renders correctly 1`] = `
 
 exports[`ImageElement renders correctly 2`] = `
 .c0 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -86,8 +82,6 @@ exports[`ImageElement renders correctly 2`] = `
 
 exports[`ImageElement renders correctly 3`] = `
 .c0 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -128,8 +122,6 @@ exports[`ImageElement renders correctly 3`] = `
 
 exports[`ImageElement renders correctly 4`] = `
 .c0 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -170,8 +162,6 @@ exports[`ImageElement renders correctly 4`] = `
 
 exports[`ImageElement renders correctly 5`] = `
 .c0 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;

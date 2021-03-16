@@ -12,8 +12,6 @@ exports[`NumberArrayView renders correctly 1`] = `
 }
 
 .c2 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -36,6 +34,8 @@ exports[`NumberArrayView renders correctly 1`] = `
 }
 
 .c3 {
+  background-color: #4c566a;
+  color: white;
   font-size: 0;
   text-align: center;
 }

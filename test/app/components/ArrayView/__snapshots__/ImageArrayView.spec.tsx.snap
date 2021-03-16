@@ -12,8 +12,6 @@ exports[`ImageArrayView renders correctly 1`] = `
 }
 
 .c1 {
-  background-color: #4c566a;
-  color: white;
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;

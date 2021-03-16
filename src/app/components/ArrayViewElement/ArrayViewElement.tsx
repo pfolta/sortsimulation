@@ -7,9 +7,6 @@ interface ArrayViewElementProps {
 const ArrayViewElement = styled.div.withConfig({
     shouldForwardProp: (prop) => ["children", "style"].includes(prop)
 })<ArrayViewElementProps>`
-    background-color: #4c566a;
-    color: white;
-
     transition: transform 100ms ease-out;
 
     :hover {

@@ -18,6 +18,9 @@ const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementPr
         height: (value / maxValue) * 100 + "%"
     }
 }))<StyledNumberElementProps>`
+    background-color: #4c566a;
+    color: white;
+
     font-size: 0;
     text-align: center;
 `;
