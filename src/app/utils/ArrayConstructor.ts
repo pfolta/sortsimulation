@@ -24,7 +24,7 @@ Array.almostSorted = (size: number, distance: number): number[] =>
  */
 Array.fewUnique = (size: number, uniqueCount: number): number[] => {
     const uniques = Array.random(size).slice(0, uniqueCount);
-    return Array.range(size).map(() => uniques[Math.floor(Math.random() * uniques.length)]);
+    return [...uniques, ...Array.range(size - uniqueCount).map(() => uniques[Math.floor(Math.random() * uniques.length)])].shuffled();
 };
 
 /**
