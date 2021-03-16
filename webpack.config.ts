@@ -20,7 +20,8 @@ const commonConfig: Configuration = {
     output: {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "build/dist"),
-        publicPath: "/"
+        publicPath: "/",
+        assetModuleFilename: "assets/[name].[contenthash][ext]"
     },
     optimization: {
         splitChunks: {
@@ -46,11 +47,7 @@ const commonConfig: Configuration = {
             },
             {
                 test: /\.jpg$/,
-                loader: "file-loader",
-                exclude: /node_modules/,
-                options: {
-                    name: "[name].[contenthash].[ext]"
-                }
+                type: "asset/resource"
             }
         ]
     },
