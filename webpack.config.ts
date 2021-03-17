@@ -46,7 +46,11 @@ const commonConfig: Configuration = {
                 exclude: /node_modules/
             },
             {
-                test: /\.jpg$/,
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
+            },
+            {
+                test: /\.(jpg|woff|woff2)$/,
                 type: "asset/resource"
             }
         ]
