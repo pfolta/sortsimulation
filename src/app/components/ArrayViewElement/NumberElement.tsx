@@ -18,7 +18,7 @@ const StyledNumberElement = styled(ArrayViewElement).attrs<StyledNumberElementPr
         height: (value / maxValue) * 100 + "%"
     }
 }))<StyledNumberElementProps>`
-    background-color: #4c566a;
+    background-color: #4f4f4f;
     color: white;
 
     font-size: 0;

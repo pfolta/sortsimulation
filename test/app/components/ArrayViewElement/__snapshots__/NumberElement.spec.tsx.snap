@@ -24,7 +24,7 @@ exports[`NumberElement renders correctly 1`] = `
 }
 
 .c1 {
-  background-color: #4c566a;
+  background-color: #4f4f4f;
   color: white;
   font-size: 0;
   text-align: center;
@@ -77,7 +77,7 @@ exports[`NumberElement renders correctly 2`] = `
 }
 
 .c1 {
-  background-color: #4c566a;
+  background-color: #4f4f4f;
   color: white;
   font-size: 0;
   text-align: center;
@@ -130,7 +130,7 @@ exports[`NumberElement renders correctly 3`] = `
 }
 
 .c1 {
-  background-color: #4c566a;
+  background-color: #4f4f4f;
   color: white;
   font-size: 0;
   text-align: center;
@@ -183,7 +183,7 @@ exports[`NumberElement renders correctly 4`] = `
 }
 
 .c1 {
-  background-color: #4c566a;
+  background-color: #4f4f4f;
   color: white;
   font-size: 0;
   text-align: center;
@@ -236,7 +236,7 @@ exports[`NumberElement renders correctly 5`] = `
 }
 
 .c1 {
-  background-color: #4c566a;
+  background-color: #4f4f4f;
   color: white;
   font-size: 0;
   text-align: center;

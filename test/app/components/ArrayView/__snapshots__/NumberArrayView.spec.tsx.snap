@@ -34,7 +34,7 @@ exports[`NumberArrayView renders correctly 1`] = `
 }
 
 .c3 {
-  background-color: #4c566a;
+  background-color: #4f4f4f;
   color: white;
   font-size: 0;
   text-align: center;
