@@ -16,8 +16,7 @@ interface Color {
     yellow: string;
 }
 
-interface Theme {
-    name: string;
+interface ThemeShape {
     body: {
         background: string;
     };
@@ -29,5 +28,6 @@ const themes = {
     light: lightTheme
 };
 
-export default Theme;
-export { Color, themes };
+export { themes };
+export type { Color, ThemeShape };
+export type Theme = keyof typeof themes;

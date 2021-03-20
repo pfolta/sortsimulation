@@ -1,30 +1,29 @@
-import { SettingsReducer, SettingsState, setTheme, toggleTheme } from "@/app/store";
-import { themes } from "@/app/theme";
+import { SettingsReducer, SettingsState, initialState, setTheme, toggleTheme } from "@/app/store";
 
 describe("SettingsSlice", () => {
     describe("SettingsReducer", () => {
         describe("setTheme", () => {
-            it("set the theme to the provided theme", () => {
-                const currentState: SettingsState = { theme: themes.light };
-                const nextState = SettingsReducer(currentState, setTheme(themes.dark));
+            it("sets the theme to the provided theme", () => {
+                const currentState: Partial<SettingsState> = { theme: "light" };
+                const nextState = SettingsReducer({ ...initialState, ...currentState }, setTheme("dark"));
 
-                expect(nextState.theme).toEqual(themes.dark);
+                expect(nextState.theme).toEqual("dark");
             });
         });
 
         describe("toggleTheme", () => {
             it("sets the theme to `light` if the current theme is `dark`", () => {
-                const currentState: SettingsState = { theme: themes.dark };
-                const nextState = SettingsReducer(currentState, toggleTheme());
+                const currentState: Partial<SettingsState> = { theme: "dark" };
+                const nextState = SettingsReducer({ ...initialState, ...currentState }, toggleTheme());
 
-                expect(nextState.theme).toEqual(themes.light);
+                expect(nextState.theme).toEqual("light");
             });
 
             it("sets the theme to `dark` if the current theme is `light`", () => {
-                const currentState: SettingsState = { theme: themes.light };
-                const nextState = SettingsReducer(currentState, toggleTheme());
+                const currentState: Partial<SettingsState> = { theme: "light" };
+                const nextState = SettingsReducer({ ...initialState, ...currentState }, toggleTheme());
 
-                expect(nextState.theme).toEqual(themes.dark);
+                expect(nextState.theme).toEqual("dark");
             });
         });
     });

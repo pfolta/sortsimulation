@@ -49,7 +49,7 @@ const Header = (): JSX.Element => {
             <h1>SortSimulation</h1>
             <Controls>
                 <Control>
-                    <Button onClick={() => dispatch(toggleTheme())}>{theme === themes.dark ? <Sun /> : <Moon />}</Button>
+                    <Button onClick={() => dispatch(toggleTheme())}>{themes[theme] === themes.dark ? <Sun /> : <Moon />}</Button>
                 </Control>
                 <Control>
                     <Button>

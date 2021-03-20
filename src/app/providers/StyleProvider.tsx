@@ -3,6 +3,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import "typeface-inter";
 
 import { useSelector } from "@/app/hooks";
+import { themes } from "@/app/theme";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -30,7 +31,7 @@ const StyleProvider = ({ children }: StyleProviderProps): JSX.Element => {
     const { theme } = useSelector((state) => state.settings);
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themes[theme]}>
             <GlobalStyle />
             {children}
         </ThemeProvider>
