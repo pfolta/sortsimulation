@@ -1,8 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import "typeface-inter";
 
-import { useSelector } from "@/app/hooks";
+import { useDarkMode, useDispatch, useSelector } from "@/app/hooks";
+import { setTheme } from "@/app/store";
 import { themes } from "@/app/theme";
 
 const GlobalStyle = createGlobalStyle`
@@ -29,6 +30,12 @@ interface StyleProviderProps {
 
 const StyleProvider = ({ children }: StyleProviderProps): JSX.Element => {
     const { theme } = useSelector((state) => state.settings);
+    const isDarkMode = useDarkMode();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setTheme(isDarkMode ? "dark" : "light"));
+    }, [isDarkMode, dispatch]);
 
     return (
         <ThemeProvider theme={themes[theme]}>
