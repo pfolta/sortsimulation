@@ -1,7 +1,16 @@
-import { SettingsReducer, SettingsState, initialState, setTheme, toggleTheme } from "@/app/store";
+import { SettingsReducer, SettingsState, initialState, setLocale, setTheme, toggleTheme } from "@/app/store";
 
 describe("SettingsSlice", () => {
     describe("SettingsReducer", () => {
+        describe("setLocale", () => {
+            it("sets the locale to the provided locale", () => {
+                const currentState: Partial<SettingsState> = { locale: "en-US" };
+                const nextState = SettingsReducer({ ...initialState, ...currentState }, setLocale("de-DE"));
+
+                expect(nextState.locale).toEqual("de-DE");
+            });
+        });
+
         describe("setTheme", () => {
             it("sets the theme to the provided theme", () => {
                 const currentState: Partial<SettingsState> = { theme: "light" };
