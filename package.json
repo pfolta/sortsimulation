@@ -48,6 +48,7 @@
         "@types/react": "^17.0.2",
         "@types/react-dom": "^17.0.1",
         "@types/react-measure": "^2.0.6",
+        "@types/react-redux": "^7.1.16",
         "@types/react-test-renderer": "^17.0.1",
         "@types/styled-components": "^5.1.7",
         "@types/webpack": "^4.41.26",
@@ -93,12 +94,14 @@
         "webpack-merge": "^5.7.3"
     },
     "dependencies": {
+        "@reduxjs/toolkit": "^1.5.0",
         "core-js": "^3.9.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-feather": "^2.0.9",
         "react-intl": "^5.13.2",
         "react-measure": "^2.5.2",
+        "react-redux": "^7.2.2",
         "styled-components": "^5.2.1",
         "typeface-inter": "^3.15.1"
     }

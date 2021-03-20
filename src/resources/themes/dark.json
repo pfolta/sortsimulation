@@ -1,0 +1,20 @@
+{
+    "name": "dark",
+    "body": {
+        "background": "#333333"
+    },
+    "colors": {
+        "blue": "#2d9cdb",
+        "gray1": "#333333",
+        "gray2": "#4f4f4f",
+        "gray3": "#828282",
+        "gray4": "#bdbdbd",
+        "gray5": "#e0e0e0",
+        "gray6": "#f2f2f2",
+        "green": "#27ae60",
+        "orange": "#f2994a",
+        "purple": "#bb6bd9",
+        "red": "#eb5757",
+        "yellow": "#f2c94c"
+    }
+}

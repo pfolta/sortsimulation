@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { HelpCircle, Moon, Settings, Sun } from "react-feather";
 import styled from "styled-components";
+
+import { useDispatch, useSelector } from "@/app/hooks";
+import { toggleTheme } from "@/app/store";
+import { themes } from "@/app/theme";
 
 const StyledHeader = styled.header`
     background-color: peachpuff;
@@ -31,22 +35,21 @@ const Button = styled.button`
     display: flex;
     padding: 0.25rem;
 
-    cursor: pointer;
-
     :hover {
         background-color: rgba(0, 0, 0, 0.25);
     }
 `;
 
 const Header = (): JSX.Element => {
-    const [darkMode, setDarkMode] = useState(false);
+    const { theme } = useSelector((state) => state.settings);
+    const dispatch = useDispatch();
 
     return (
         <StyledHeader>
             <h1>SortSimulation</h1>
             <Controls>
                 <Control>
-                    <Button onClick={() => setDarkMode(!darkMode)}>{darkMode ? <Sun /> : <Moon />}</Button>
+                    <Button onClick={() => dispatch(toggleTheme())}>{theme === themes.dark ? <Sun /> : <Moon />}</Button>
                 </Control>
                 <Control>
                     <Button>
