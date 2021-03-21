@@ -9,7 +9,7 @@ interface SettingsState {
 }
 
 const initialState: SettingsState = {
-    locale: matchLocale(navigator.languages),
+    locale: matchLocale(navigator.languages || [navigator.language]),
     theme: "light"
 };
 
