@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { Locale } from "@/app/locale";
+import { Locale, matchLocale } from "@/app/locale";
 import { Theme, themes } from "@/app/theme";
 
 interface SettingsState {
@@ -9,7 +9,7 @@ interface SettingsState {
 }
 
 const initialState: SettingsState = {
-    locale: "de-DE",
+    locale: matchLocale(navigator.languages),
     theme: "light"
 };
 

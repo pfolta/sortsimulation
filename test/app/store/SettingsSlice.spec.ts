@@ -21,14 +21,14 @@ describe("SettingsSlice", () => {
         });
 
         describe("toggleTheme", () => {
-            it("sets the theme to `light` if the current theme is `dark`", () => {
+            it("sets the theme to 'light' if the current theme is 'dark'", () => {
                 const currentState: Partial<SettingsState> = { theme: "dark" };
                 const nextState = SettingsReducer({ ...initialState, ...currentState }, toggleTheme());
 
                 expect(nextState.theme).toEqual("light");
             });
 
-            it("sets the theme to `dark` if the current theme is `light`", () => {
+            it("sets the theme to 'dark' if the current theme is 'light'", () => {
                 const currentState: Partial<SettingsState> = { theme: "light" };
                 const nextState = SettingsReducer({ ...initialState, ...currentState }, toggleTheme());
 
