@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { Helmet } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 
 import { useSelector } from "@/app/hooks";
@@ -12,6 +13,7 @@ const LocaleProvider = ({ children }: LocaleProviderProps): JSX.Element => {
     const { locale } = useSelector((state) => state.settings);
     return (
         <IntlProvider locale={locales[locale].locale} messages={locales[locale].messages}>
+            <Helmet htmlAttributes={{ lang: locales[locale].locale }} />
             {children}
         </IntlProvider>
     );

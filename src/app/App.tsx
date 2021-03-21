@@ -1,4 +1,5 @@
 import React, { StrictMode } from "react";
+import { HelmetProvider } from "react-helmet-async";
 
 import { ImageArrayView, NumberArrayView } from "@/app/components/ArrayView";
 import Footer from "@/app/components/Footer";
@@ -13,14 +14,16 @@ const App = (): JSX.Element => {
     return (
         <StrictMode>
             <StoreProvider>
-                <LocaleProvider>
-                    <StyleProvider>
-                        <Header />
-                        <ImageArrayView array={array} image={image} />
-                        <NumberArrayView array={array} />
-                        <Footer />
-                    </StyleProvider>
-                </LocaleProvider>
+                <HelmetProvider>
+                    <LocaleProvider>
+                        <StyleProvider>
+                            <Header />
+                            <ImageArrayView array={array} image={image} />
+                            <NumberArrayView array={array} />
+                            <Footer />
+                        </StyleProvider>
+                    </LocaleProvider>
+                </HelmetProvider>
             </StoreProvider>
         </StrictMode>
     );
