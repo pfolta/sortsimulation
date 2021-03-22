@@ -21,6 +21,15 @@ interface ThemeShape {
         background: string;
     };
     colors: Color;
+    focus: {
+        boxShadow: string;
+    };
+    modal: {
+        background: string;
+        marginTop: string;
+        maxWidth: string;
+        padding: string;
+    };
 }
 
 const themes = {

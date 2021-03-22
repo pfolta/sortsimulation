@@ -15,5 +15,14 @@
         "purple": "#bb6bd9",
         "red": "#eb5757",
         "yellow": "#f2c94c"
+    },
+    "focus": {
+        "boxShadow": "0 0 0 0.1875rem rgba(66, 153, 225, 0.5)"
+    },
+    "modal": {
+        "background": "rgba(0, 0, 0, 0.5)",
+        "marginTop": "2rem",
+        "maxWidth": "45rem",
+        "padding": "1rem"
     }
 }

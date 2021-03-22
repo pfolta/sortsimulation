@@ -14,13 +14,16 @@ const GlobalStyle = createGlobalStyle`
         user-select: none;
     }
 
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
     html {
         font: normal 100%/1.5 "Inter", sans-serif;
     }
 
     body {
         background-color: ${({ theme }) => theme.body.background};
-        transition: background-color 250ms linear;
     }
 `;
 

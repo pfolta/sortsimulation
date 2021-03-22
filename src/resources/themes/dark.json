@@ -4,16 +4,25 @@
     },
     "colors": {
         "blue": "#2d9cdb",
-        "gray1": "#333333",
-        "gray2": "#4f4f4f",
-        "gray3": "#828282",
-        "gray4": "#bdbdbd",
-        "gray5": "#e0e0e0",
-        "gray6": "#f2f2f2",
+        "gray1": "#f2f2f2",
+        "gray2": "#e0e0e0",
+        "gray3": "#bdbdbd",
+        "gray4": "#828282",
+        "gray5": "#4f4f4f",
+        "gray6": "#333333",
         "green": "#27ae60",
         "orange": "#f2994a",
         "purple": "#bb6bd9",
         "red": "#eb5757",
         "yellow": "#f2c94c"
+    },
+    "focus": {
+        "boxShadow": "0 0 0 0.1875rem rgba(66, 153, 225, 0.5)"
+    },
+    "modal": {
+        "background": "rgba(128, 128, 128, 0.5)",
+        "marginTop": "2rem",
+        "maxWidth": "45rem",
+        "padding": "1rem"
     }
 }

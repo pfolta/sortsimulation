@@ -1,6 +1,8 @@
 import React, { StrictMode } from "react";
 import { HelmetProvider } from "react-helmet-async";
+import { HashRouter } from "react-router-dom";
 
+import Routes from "@/app/Routes";
 import { ImageArrayView, NumberArrayView } from "@/app/components/ArrayView";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
@@ -17,10 +19,13 @@ const App = (): JSX.Element => {
                 <HelmetProvider>
                     <LocaleProvider>
                         <StyleProvider>
-                            <Header />
-                            <ImageArrayView array={array} image={image} />
-                            <NumberArrayView array={array} />
-                            <Footer />
+                            <HashRouter>
+                                <Header />
+                                <ImageArrayView array={array} image={image} />
+                                <NumberArrayView array={array} />
+                                <Routes />
+                                <Footer />
+                            </HashRouter>
                         </StyleProvider>
                     </LocaleProvider>
                 </HelmetProvider>

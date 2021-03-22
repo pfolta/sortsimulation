@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal does not render the modal content if the modal is closed 1`] = `
+@media (min-width:45rem) {
+
+}
+
+@media (min-width:45rem) {
+
+}
+
+<div />
+`;
+
+exports[`Modal renders correctly 1`] = `
+.c0 {
+  all: unset;
+  display: grid;
+  padding: 0.25rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #e0e0e0;
+  color: #828282;
+  border-radius: 0.25rem;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(66,153,225,0.5);
+}
+
+.c0:hover {
+  color: #333333;
+}
+
+.c0:active {
+  background-color: #bdbdbd;
+}
+
+@media (min-width:45rem) {
+
+}
+
+@media (min-width:45rem) {
+
+}
+
+<div>
+  <button
+    className="c0"
+    onClick={[Function]}
+    title="Close"
+  >
+    <svg
+      fill="none"
+      height="1.25rem"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="1.25rem"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="18"
+        x2="6"
+        y1="6"
+        y2="18"
+      />
+      <line
+        x1="6"
+        x2="18"
+        y1="6"
+        y2="18"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Modal renders the modal content if the modal is opened 1`] = `
+.c0 {
+  all: unset;
+  display: grid;
+  padding: 0.25rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #e0e0e0;
+  color: #828282;
+  border-radius: 0.25rem;
+}
+
+.c0:focus {
+  box-shadow: 0 0 0 0.1875rem rgba(66,153,225,0.5);
+}
+
+.c0:hover {
+  color: #333333;
+}
+
+.c0:active {
+  background-color: #bdbdbd;
+}
+
+@media (min-width:45rem) {
+
+}
+
+@media (min-width:45rem) {
+
+}
+
+<div>
+  <button
+    className="c0"
+    onClick={[Function]}
+    title="Close"
+  >
+    <svg
+      fill="none"
+      height="1.25rem"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      width="1.25rem"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="18"
+        x2="6"
+        y1="6"
+        y2="18"
+      />
+      <line
+        x1="6"
+        x2="18"
+        y1="6"
+        y2="18"
+      />
+    </svg>
+  </button>
+  <section>
+    This is the modal content.
+  </section>
+</div>
+`;

@@ -1,4 +1,9 @@
 {
+    "about": "Über {productName}",
+    "close": "Schließen",
     "copyright.all_rights_reserved": "Alle Rechte vorbehalten.",
+    "help": "Hilfe",
+    "preview": "Vorschau",
+    "settings": "Einstellungen",
     "welcome.title": "Willkommen bei SortSimulation"
 }

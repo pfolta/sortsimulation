@@ -1,5 +1,6 @@
 import React from "react";
 import { HelpCircle, Moon, Settings, Sun } from "react-feather";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "@/app/hooks";
@@ -15,6 +16,8 @@ const StyledHeader = styled.header`
 
     position: sticky;
     top: 0;
+
+    z-index: 1;
 `;
 
 const Controls = styled.ul`
@@ -40,6 +43,23 @@ const Button = styled.button`
     }
 `;
 
+const StyledLink = styled(Link)`
+    background: none;
+    color: #2e3440;
+
+    border: none;
+    border-radius: 0.25rem;
+
+    cursor: default;
+
+    display: flex;
+    padding: 0.25rem;
+
+    :hover {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+`;
+
 const Header = (): JSX.Element => {
     const { theme } = useSelector((state) => state.settings);
     const dispatch = useDispatch();
@@ -52,9 +72,9 @@ const Header = (): JSX.Element => {
                     <Button onClick={() => dispatch(toggleTheme())}>{themes[theme] === themes.dark ? <Sun /> : <Moon />}</Button>
                 </Control>
                 <Control>
-                    <Button>
+                    <StyledLink to="/settings">
                         <Settings />
-                    </Button>
+                    </StyledLink>
                 </Control>
                 <Control>
                     <Button>
