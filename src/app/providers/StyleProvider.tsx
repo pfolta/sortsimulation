@@ -24,6 +24,15 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: ${({ theme }) => theme.body.background};
+        color: ${({ theme }) => theme.colors.gray1};
+
+        cursor: default;
+    }
+
+    h3 {
+        color: ${({ theme }) => theme.colors.gray3};
+        text-transform: uppercase;
+        font-size: 1rem;
     }
 `;
 

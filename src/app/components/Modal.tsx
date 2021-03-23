@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
+import React, { ReactNode, useRef } from "react";
 import { X } from "react-feather";
 import { useIntl } from "react-intl";
 import ReactModal, { Props as ReactModalProps } from "react-modal";
@@ -50,7 +51,7 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
 
         background: ${({ theme }) => theme.body.background};
         box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.75);
-        border-radius: 0.5rem 0.5rem 0 0;
+        border-radius: 1rem 1rem 0 0;
 
         width: min(${({ theme }) => theme.modal.maxWidth}, 100vw);
         max-height: calc(100vh - ${({ theme }) => theme.modal.marginTop});
@@ -59,13 +60,7 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         overflow: hidden;
 
         @media (min-width: ${({ theme }) => theme.modal.maxWidth}) {
-            border-radius: 0.5rem;
-        }
-
-        & > * {
-            padding: ${({ theme }) => theme.modal.padding};
-            overflow: auto;
-            max-height: calc(100vh - ${({ theme }) => theme.modal.marginTop} - 2 * ${({ theme }) => theme.modal.padding});
+            border-radius: 1rem;
         }
 
         &.ReactModal__Content--after-open {
@@ -97,12 +92,36 @@ const CloseButton = styled.button`
         box-shadow: ${({ theme }) => theme.focus.boxShadow};
     }
 
-    :hover {
+    :hover,
+    :active {
         color: ${({ theme }) => theme.colors.gray1};
     }
 
     :active {
         background-color: ${({ theme }) => theme.colors.gray4};
+    }
+`;
+
+const StyledModalBody = styled.div`
+    overflow: auto;
+    max-height: calc(100vh - ${({ theme }) => theme.modal.marginTop});
+
+    & > * {
+        padding: ${({ theme }) => theme.modal.padding};
+
+        /* [fix] Overflow padding in Firefox, see https://nshki.com/fixing-overflow-padding-in-firefox/ */
+        padding-bottom: 0;
+
+        ::after {
+            content: "";
+            display: block;
+            padding-bottom: calc(${({ theme }) => theme.modal.padding} + env(safe-area-inset-bottom));
+
+            @media (min-width: ${({ theme }) => theme.modal.maxWidth}) {
+                padding-bottom: ${({ theme }) => theme.modal.padding};
+            }
+        }
+        /* [/fix] */
     }
 `;
 
@@ -112,18 +131,21 @@ interface ModalProps {
     onClose: () => void;
 }
 
-const Modal = ({ children, onClose, isOpen }: ModalProps): JSX.Element => {
+const Modal = ({ children, isOpen, onClose }: ModalProps): JSX.Element => {
     const intl = useIntl();
-
-    const disableBodyScroll = () => (document.body.style.overflow = "hidden");
-    const enableBodyScroll = () => (document.body.style.overflow = "unset");
+    const modalBodyRef = useRef<HTMLDivElement>(null);
 
     return (
-        <StyledReactModal isOpen={isOpen} onRequestClose={onClose} onAfterOpen={disableBodyScroll} onAfterClose={enableBodyScroll}>
+        <StyledReactModal
+            isOpen={isOpen}
+            onRequestClose={onClose}
+            onAfterOpen={() => disableBodyScroll(modalBodyRef.current as HTMLDivElement)}
+            onAfterClose={clearAllBodyScrollLocks}
+        >
             <CloseButton title={intl.formatMessage({ id: "close" })} onClick={onClose}>
                 <X size={20} />
             </CloseButton>
-            {children}
+            <StyledModalBody ref={modalBodyRef}>{children}</StyledModalBody>
         </StyledReactModal>
     );
 };

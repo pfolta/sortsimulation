@@ -29,7 +29,8 @@ exports[`Modal renders correctly 1`] = `
   box-shadow: 0 0 0 0.1875rem rgba(66,153,225,0.5);
 }
 
-.c0:hover {
+.c0:hover,
+.c0:active {
   color: #333333;
 }
 
@@ -37,12 +38,34 @@ exports[`Modal renders correctly 1`] = `
   background-color: #bdbdbd;
 }
 
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 2rem);
+}
+
+.c1 > * {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.c1 > *::after {
+  content: "";
+  display: block;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
 @media (min-width:45rem) {
 
 }
 
 @media (min-width:45rem) {
 
+}
+
+@media (min-width:45rem) {
+  .c1 > *::after {
+    padding-bottom: 1rem;
+  }
 }
 
 <div>
@@ -76,6 +99,9 @@ exports[`Modal renders correctly 1`] = `
       />
     </svg>
   </button>
+  <div
+    className="c1"
+  />
 </div>
 `;
 
@@ -96,7 +122,8 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
   box-shadow: 0 0 0 0.1875rem rgba(66,153,225,0.5);
 }
 
-.c0:hover {
+.c0:hover,
+.c0:active {
   color: #333333;
 }
 
@@ -104,12 +131,34 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
   background-color: #bdbdbd;
 }
 
+.c1 {
+  overflow: auto;
+  max-height: calc(100vh - 2rem);
+}
+
+.c1 > * {
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.c1 > *::after {
+  content: "";
+  display: block;
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
 @media (min-width:45rem) {
 
 }
 
 @media (min-width:45rem) {
 
+}
+
+@media (min-width:45rem) {
+  .c1 > *::after {
+    padding-bottom: 1rem;
+  }
 }
 
 <div>
@@ -143,8 +192,12 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
       />
     </svg>
   </button>
-  <section>
-    This is the modal content.
-  </section>
+  <div
+    className="c1"
+  >
+    <section>
+      This is the modal content.
+    </section>
+  </div>
 </div>
 `;
