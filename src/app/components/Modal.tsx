@@ -121,7 +121,7 @@ const Modal = ({ children, onClose, isOpen }: ModalProps): JSX.Element => {
     return (
         <StyledReactModal isOpen={isOpen} onRequestClose={onClose} onAfterOpen={disableBodyScroll} onAfterClose={enableBodyScroll}>
             <CloseButton title={intl.formatMessage({ id: "close" })} onClick={onClose}>
-                <X size="1.25rem" />
+                <X size={20} />
             </CloseButton>
             {children}
         </StyledReactModal>
