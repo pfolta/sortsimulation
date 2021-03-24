@@ -50,6 +50,21 @@ describe("Array Utils", () => {
         });
     });
 
+    describe("random", () => {
+        it("returns `undefined` for an empty array", () => {
+            expect([].random()).toBeUndefined();
+        });
+
+        it("returns the only element from an array of size one", () => {
+            expect(["banana"].random()).toEqual("banana");
+        });
+
+        it("returns an element from the array", () => {
+            const array = ["strawberry", "orange", "banana", "lime", "mint"];
+            expect(array.includes(array.random())).toBeTruthy();
+        });
+    });
+
     describe("shuffled", () => {
         it("leaves an empty array unchanged", () => {
             expect([].shuffled()).toEqual([]);

@@ -4,6 +4,7 @@ declare global {
     interface Array<T> {
         chunked: (size: number) => T[][];
         isSorted: () => boolean;
+        random: () => T;
         shuffled: () => T[];
         swap: (i: number, j: number) => T[];
     }
@@ -36,6 +37,13 @@ Array.prototype.isSorted = function <T>(this: T[]): boolean {
     }
 
     return true;
+};
+
+/*
+ * Returns a random element from this array.
+ */
+Array.prototype.random = function <T>(this: T[]): T {
+    return this[Math.floor(Math.random() * this.length)];
 };
 
 /**
