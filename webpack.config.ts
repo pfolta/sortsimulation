@@ -1,17 +1,27 @@
+import childProcess from "child_process";
 import path from "path";
 
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
-import { Configuration, HotModuleReplacementPlugin } from "webpack";
+import { Configuration, DefinePlugin, HotModuleReplacementPlugin } from "webpack";
 import WebpackDevServer from "webpack-dev-server";
 import { merge } from "webpack-merge";
 
-import { description, homepage, keywords, productName, synopsis } from "./package.json";
+import { bugs, description, homepage, keywords, productName, repository, synopsis, version } from "./package.json";
 
 interface Environment {
     mode?: "development" | "production";
 }
+
+const BUILD_CONSTANTS = {
+    BUILD_DATE: Date.now(),
+    BUILD_TIMEZONE: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    ISSUES_URL: bugs.url,
+    REPOSITORY_URL: repository.url,
+    REVISION: childProcess.execSync("git describe --tags --always --first-parent --dirty").toString().trim(),
+    VERSION: version
+};
 
 const commonConfig: Configuration = {
     entry: {
@@ -63,6 +73,7 @@ const commonConfig: Configuration = {
                 }
             ]
         }),
+        new DefinePlugin(Object.fromEntries(Object.entries(BUILD_CONSTANTS).map(([key, value]) => [`__${key}__`, JSON.stringify(value)]))),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "src/resources/templates/index.ejs"),
             templateParameters: {
