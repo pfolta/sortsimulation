@@ -7,32 +7,25 @@ import { setTheme } from "@/app/store";
 import { themes } from "@/app/theme";
 
 const GlobalStyle = createGlobalStyle`
-    * {
-        font-family: inherit;
+    *, *::before, *::after {
+        box-sizing: border-box;
+
+        font: inherit;
+
         margin: 0;
         padding: 0;
+
+        cursor: default;
         user-select: none;
     }
 
-    *, *::before, *::after {
-        box-sizing: border-box;
-    }
-
     html {
-        font: normal 100%/1.5 "Inter", sans-serif;
+        font: normal 100%/1.4 "Inter", sans-serif;
     }
 
     body {
-        background-color: ${({ theme }) => theme.body.background};
-        color: ${({ theme }) => theme.colors.gray1};
-
-        cursor: default;
-    }
-
-    h3 {
-        color: ${({ theme }) => theme.colors.gray3};
-        text-transform: uppercase;
-        font-size: 1rem;
+        background-color: ${({ theme }) => theme.colors[theme.body.background]};
+        color: ${({ theme }) => theme.colors[theme.body.color]};
     }
 `;
 

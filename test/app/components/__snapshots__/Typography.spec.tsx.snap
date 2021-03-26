@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography Heading renders correctly 1`] = `
+.c0 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+<h2
+  className="c0"
+>
+  Heading
+</h2>
+`;
+
+exports[`Typography Paragraph renders correctly 1`] = `
+.c0 {
+  margin-bottom: 1rem;
+}
+
+.c0:last-child {
+  margin-bottom: 0;
+}
+
+<p
+  className="c0"
+>
+  Paragraph
+</p>
+`;
+
+exports[`Typography SubHeading renders correctly 1`] = `
+.c0 {
+  color: #666666;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+<h3
+  className="c0"
+>
+  SubHeading
+</h3>
+`;
+
+exports[`Typography Title renders correctly 1`] = `
+.c0 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+<h1
+  className="c0"
+>
+  Title
+</h1>
+`;

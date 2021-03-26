@@ -1,28 +1,102 @@
 {
     "body": {
-        "background": "#333333"
+        "background": "black-500",
+        "color": "white-300"
     },
     "colors": {
-        "blue": "#2d9cdb",
-        "gray1": "#f2f2f2",
-        "gray2": "#e0e0e0",
-        "gray3": "#bdbdbd",
-        "gray4": "#828282",
-        "gray5": "#4f4f4f",
-        "gray6": "#333333",
-        "green": "#27ae60",
-        "orange": "#f2994a",
-        "purple": "#bb6bd9",
-        "red": "#eb5757",
-        "yellow": "#f2c94c"
+        "black-100": "#666666",
+        "black-300": "#4d4d4d",
+        "black-500": "#333333",
+        "black-700": "#1a1a1a",
+        "black-900": "#000000",
+        "blue-100": "#8cd5ff",
+        "blue-300": "#64baff",
+        "blue-500": "#3689e6",
+        "blue-700": "#0d52bf",
+        "blue-900": "#002e99",
+        "gray-100": "#fafafa",
+        "gray-300": "#d4d4d4",
+        "gray-500": "#abacae",
+        "gray-700": "#7e8087",
+        "gray-900": "#555761",
+        "green-100": "#d1ff82",
+        "green-300": "#9bdb4d",
+        "green-500": "#68b723",
+        "green-700": "#3a9104",
+        "green-900": "#206b00",
+        "orange-100": "#ffc27d",
+        "orange-300": "#ffa154",
+        "orange-500": "#f37329",
+        "orange-700": "#cc3b02",
+        "orange-900": "#a62100",
+        "pink-100": "#fe9ab8",
+        "pink-300": "#f4679d",
+        "pink-500": "#de3e80",
+        "pink-700": "#bc245d",
+        "pink-900": "#910e38",
+        "purple-100": "#e4c6fa",
+        "purple-300": "#cd9ef7",
+        "purple-500": "#a56de2",
+        "purple-700": "#7239b3",
+        "purple-900": "#452981",
+        "red-100": "#ff8c82",
+        "red-300": "#ed5353",
+        "red-500": "#c6262e",
+        "red-700": "#a10705",
+        "red-900": "#7a0000",
+        "teal-100": "#89ffdd",
+        "teal-300": "#43d6b5",
+        "teal-500": "#28bca3",
+        "teal-700": "#0e9a83",
+        "teal-900": "#007367",
+        "white-100": "#ffffff",
+        "white-300": "#e5e5e5",
+        "white-500": "#cccccc",
+        "white-700": "#b2b2b2",
+        "white-900": "#999999",
+        "yellow-100": "#fff394",
+        "yellow-300": "#ffe16b",
+        "yellow-500": "#f9c440",
+        "yellow-700": "#d48e15",
+        "yellow-900": "#ad5f00"
     },
     "focus": {
         "boxShadow": "0 0 0 0.1875rem rgba(66, 153, 225, 0.5)"
     },
+    "link": {
+        "color": "blue-300"
+    },
     "modal": {
-        "background": "rgba(128, 128, 128, 0.5)",
-        "marginTop": "2rem",
-        "maxWidth": "45rem",
+        "background": "black-500",
+        "close": {
+            "background": "black-300",
+            "color": "white-700",
+            "hover": {
+                "background": "black-300",
+                "color": "white-300"
+            },
+            "active": {
+                "background": "black-100",
+                "color": "white-300"
+            }
+        },
+        "margin-top": "2rem",
+        "max-width": "45rem",
+        "overlay": "rgba(128, 128, 128, 0.5)",
         "padding": "1rem"
+    },
+    "number-element": {
+        "background-base-weight": 900,
+        "background-top-weight": 700,
+        "background-bottom-weight": 900,
+        "border-inside-weight": 900,
+        "border-outside-weight": 300,
+        "text-color-weight": 100,
+        "text-shadow-weight": 900
+    },
+    "typography": {
+        "subheading": {
+            "color": "white-500"
+        }
     }
 }

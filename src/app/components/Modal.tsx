@@ -32,16 +32,16 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         height: 100vh;
         z-index: 2;
 
-        @media (min-width: ${({ theme }) => theme.modal.maxWidth}) {
+        @media (min-width: ${({ theme }) => theme.modal["max-width"]}) {
             place-items: center;
         }
 
         &.ReactModal__Overlay--after-open {
-            animation: ${({ theme }) => BackgroundFadeIn(theme.modal.background)} ${ANIMATION_DURATION}ms ease-out forwards;
+            animation: ${({ theme }) => BackgroundFadeIn(theme.modal.overlay)} ${ANIMATION_DURATION}ms ease-out forwards;
         }
 
         &.ReactModal__Overlay--before-close {
-            animation: ${({ theme }) => BackgroundFadeOut(theme.modal.background)} ${ANIMATION_DURATION}ms ease-in forwards;
+            animation: ${({ theme }) => BackgroundFadeOut(theme.modal.overlay)} ${ANIMATION_DURATION}ms ease-in forwards;
         }
     }
 
@@ -49,17 +49,17 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         display: grid;
         position: relative;
 
-        background: ${({ theme }) => theme.body.background};
+        background: ${({ theme }) => theme.colors[theme.modal.background]};
         box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.75);
         border-radius: 1rem 1rem 0 0;
 
-        width: min(${({ theme }) => theme.modal.maxWidth}, 100vw);
-        max-height: calc(100vh - ${({ theme }) => theme.modal.marginTop});
+        width: min(${({ theme }) => theme.modal["max-width"]}, 100vw);
+        max-height: calc(100vh - ${({ theme }) => theme.modal["margin-top"]});
 
         outline: none;
         overflow: hidden;
 
-        @media (min-width: ${({ theme }) => theme.modal.maxWidth}) {
+        @media (min-width: ${({ theme }) => theme.modal["max-width"]}) {
             border-radius: 1rem;
         }
 
@@ -83,8 +83,8 @@ const CloseButton = styled.button`
     top: 1rem;
     right: 1rem;
 
-    background-color: ${({ theme }) => theme.colors.gray5};
-    color: ${({ theme }) => theme.colors.gray3};
+    background-color: ${({ theme }) => theme.colors[theme.modal.close.background]};
+    color: ${({ theme }) => theme.colors[theme.modal.close.color]};
 
     border-radius: 0.25rem;
 
@@ -92,36 +92,23 @@ const CloseButton = styled.button`
         box-shadow: ${({ theme }) => theme.focus.boxShadow};
     }
 
-    :hover,
-    :active {
-        color: ${({ theme }) => theme.colors.gray1};
+    :hover {
+        background-color: ${({ theme }) => theme.colors[theme.modal.close.hover.background]};
+        color: ${({ theme }) => theme.colors[theme.modal.close.hover.color]};
     }
 
     :active {
-        background-color: ${({ theme }) => theme.colors.gray4};
+        background-color: ${({ theme }) => theme.colors[theme.modal.close.active.background]};
+        color: ${({ theme }) => theme.colors[theme.modal.close.active.color]};
     }
 `;
 
 const StyledModalBody = styled.div`
     overflow: auto;
-    max-height: calc(100vh - ${({ theme }) => theme.modal.marginTop});
+    max-height: calc(100vh - ${({ theme }) => theme.modal["margin-top"]});
 
     & > * {
         padding: ${({ theme }) => theme.modal.padding};
-
-        /* [fix] Overflow padding in Firefox, see https://nshki.com/fixing-overflow-padding-in-firefox/ */
-        padding-bottom: 0;
-
-        ::after {
-            content: "";
-            display: block;
-            padding-bottom: calc(${({ theme }) => theme.modal.padding} + env(safe-area-inset-bottom));
-
-            @media (min-width: ${({ theme }) => theme.modal.maxWidth}) {
-                padding-bottom: ${({ theme }) => theme.modal.padding};
-            }
-        }
-        /* [/fix] */
     }
 `;
 

@@ -20,22 +20,23 @@ exports[`Modal renders correctly 1`] = `
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: #e0e0e0;
-  color: #828282;
+  background-color: #e5e5e5;
+  color: #666666;
   border-radius: 0.25rem;
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 0.1875rem rgba(66,153,225,0.5);
+  box-shadow: 0 0 0 0.25rem rgba(66,153,225,0.5);
 }
 
-.c0:hover,
-.c0:active {
+.c0:hover {
+  background-color: #e5e5e5;
   color: #333333;
 }
 
 .c0:active {
-  background-color: #bdbdbd;
+  background-color: #cccccc;
+  color: #333333;
 }
 
 .c1 {
@@ -45,13 +46,6 @@ exports[`Modal renders correctly 1`] = `
 
 .c1 > * {
   padding: 1rem;
-  padding-bottom: 0;
-}
-
-.c1 > *::after {
-  content: "";
-  display: block;
-  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
 @media (min-width:45rem) {
@@ -60,12 +54,6 @@ exports[`Modal renders correctly 1`] = `
 
 @media (min-width:45rem) {
 
-}
-
-@media (min-width:45rem) {
-  .c1 > *::after {
-    padding-bottom: 1rem;
-  }
 }
 
 <div>
@@ -113,22 +101,23 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background-color: #e0e0e0;
-  color: #828282;
+  background-color: #e5e5e5;
+  color: #666666;
   border-radius: 0.25rem;
 }
 
 .c0:focus {
-  box-shadow: 0 0 0 0.1875rem rgba(66,153,225,0.5);
+  box-shadow: 0 0 0 0.25rem rgba(66,153,225,0.5);
 }
 
-.c0:hover,
-.c0:active {
+.c0:hover {
+  background-color: #e5e5e5;
   color: #333333;
 }
 
 .c0:active {
-  background-color: #bdbdbd;
+  background-color: #cccccc;
+  color: #333333;
 }
 
 .c1 {
@@ -138,13 +127,6 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
 
 .c1 > * {
   padding: 1rem;
-  padding-bottom: 0;
-}
-
-.c1 > *::after {
-  content: "";
-  display: block;
-  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 }
 
 @media (min-width:45rem) {
@@ -153,12 +135,6 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
 
 @media (min-width:45rem) {
 
-}
-
-@media (min-width:45rem) {
-  .c1 > *::after {
-    padding-bottom: 1rem;
-  }
 }
 
 <div>

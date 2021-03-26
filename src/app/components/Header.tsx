@@ -3,6 +3,7 @@ import { HelpCircle, Moon, Settings, Sun } from "react-feather";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { Title } from "@/app/components/Typography";
 import { useDispatch, useSelector } from "@/app/hooks";
 import { toggleTheme } from "@/app/store";
 import { themes } from "@/app/theme";
@@ -66,7 +67,7 @@ const Header = (): JSX.Element => {
 
     return (
         <StyledHeader>
-            <h1>SortSimulation</h1>
+            <Title>SortSimulation</Title>
             <Controls>
                 <Control>
                     <Button onClick={() => dispatch(toggleTheme())}>{themes[theme] === themes.dark ? <Sun /> : <Moon />}</Button>

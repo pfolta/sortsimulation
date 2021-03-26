@@ -34,10 +34,63 @@ exports[`NumberArrayView renders correctly 1`] = `
 }
 
 .c3 {
-  background-color: #4f4f4f;
-  color: white;
+  background-color: #3689e6;
+  background-image: linear-gradient( to bottom, #64baff, #3689e6 );
+  box-shadow: 0 0 0 1px #0d52bf inset, 0 0 0 2px #64baff inset;
+  color: #002e99;
+  text-shadow: 0 1px 0 #8cd5ff;
   font-size: 0;
+  font-weight: bold;
   text-align: center;
+  padding-top: 0.2em;
+}
+
+.c5 {
+  background-color: #abacae;
+  background-image: linear-gradient( to bottom, #d4d4d4, #abacae );
+  box-shadow: 0 0 0 1px #7e8087 inset, 0 0 0 2px #d4d4d4 inset;
+  color: #555761;
+  text-shadow: 0 1px 0 #fafafa;
+  font-size: 0;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.2em;
+}
+
+.c6 {
+  background-color: #68b723;
+  background-image: linear-gradient( to bottom, #9bdb4d, #68b723 );
+  box-shadow: 0 0 0 1px #3a9104 inset, 0 0 0 2px #9bdb4d inset;
+  color: #206b00;
+  text-shadow: 0 1px 0 #d1ff82;
+  font-size: 0;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.2em;
+}
+
+.c7 {
+  background-color: #f37329;
+  background-image: linear-gradient( to bottom, #ffa154, #f37329 );
+  box-shadow: 0 0 0 1px #cc3b02 inset, 0 0 0 2px #ffa154 inset;
+  color: #a62100;
+  text-shadow: 0 1px 0 #ffc27d;
+  font-size: 0;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.2em;
+}
+
+.c8 {
+  background-color: #de3e80;
+  background-image: linear-gradient( to bottom, #f4679d, #de3e80 );
+  box-shadow: 0 0 0 1px #bc245d inset, 0 0 0 2px #f4679d inset;
+  color: #910e38;
+  text-shadow: 0 1px 0 #fe9ab8;
+  font-size: 0;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0.2em;
 }
 
 .c4 {
@@ -70,7 +123,7 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c2 c3"
+    className="c2 c5"
     style={
       Object {
         "fontSize": "0px",
@@ -85,7 +138,7 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c2 c3"
+    className="c2 c6"
     style={
       Object {
         "fontSize": "0px",
@@ -100,7 +153,7 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c2 c3"
+    className="c2 c7"
     style={
       Object {
         "fontSize": "0px",
@@ -115,7 +168,7 @@ exports[`NumberArrayView renders correctly 1`] = `
     </span>
   </div>
   <div
-    className="c2 c3"
+    className="c2 c8"
     style={
       Object {
         "fontSize": "0px",

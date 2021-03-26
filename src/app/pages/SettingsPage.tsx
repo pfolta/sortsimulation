@@ -1,14 +1,16 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
+import { Heading, SubHeading } from "@/app/components/Typography";
+
 const SettingsPage = (): JSX.Element => (
     <section>
-        <h2>
+        <Heading>
             <FormattedMessage id="settings" />
-        </h2>
-        <h3>
+        </Heading>
+        <SubHeading>
             <FormattedMessage id="preview" />
-        </h3>
+        </SubHeading>
     </section>
 );
 
