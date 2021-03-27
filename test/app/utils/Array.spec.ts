@@ -61,7 +61,7 @@ describe("Array Utils", () => {
 
         it("returns an element from the array", () => {
             const array = ["strawberry", "orange", "banana", "lime", "mint"];
-            expect(array.includes(array.random())).toBeTruthy();
+            expect(array.random()).toBeOneOf(array);
         });
     });
 

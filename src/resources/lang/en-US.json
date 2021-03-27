@@ -1,8 +1,11 @@
 {
     "about": "About {productName}",
+    "algorithm.bubble_sort.name": "Bubble sort",
     "close": "Close",
     "copyright.all_rights_reserved": "All rights reserved.",
     "help": "Help",
+    "phase.compare": "Compare",
+    "phase.swap": "Swap",
     "preview": "Preview",
     "settings": "Settings",
     "version": "Version {version}",

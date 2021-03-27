@@ -1,8 +1,9 @@
+import { Phase } from "@/app/algorithms";
+
 interface TraceStep {
     array: number[];
+    phase?: Phase;
 }
-
-type Trace = TraceStep[];
 
 const createTrace = (array: number[]): Trace => [
     {
@@ -10,13 +11,15 @@ const createTrace = (array: number[]): Trace => [
     }
 ];
 
-const addToTrace = (trace: Trace, array: number[]): Trace => {
+const addToTrace = (trace: Trace, array: number[], phase?: Phase): Trace => {
     trace.push({
-        array: [...array]
+        array: [...array],
+        phase
     });
 
     return trace;
 };
 
-export { Trace, TraceStep };
 export { addToTrace, createTrace };
+export type { TraceStep };
+export type Trace = TraceStep[];

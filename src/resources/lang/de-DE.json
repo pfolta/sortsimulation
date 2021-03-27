@@ -1,8 +1,11 @@
 {
     "about": "Über {productName}",
+    "algorithm.bubble_sort.name": "Bubblesort",
     "close": "Schließen",
     "copyright.all_rights_reserved": "Alle Rechte vorbehalten.",
     "help": "Hilfe",
+    "phase.compare": "Vergleiche",
+    "phase.swap": "Tausche",
     "preview": "Vorschau",
     "settings": "Einstellungen",
     "version": "Version {version}",

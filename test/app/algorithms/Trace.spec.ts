@@ -20,6 +20,11 @@ describe("Trace", () => {
 
             expect(trace[0].array).not.toEqual(array);
         });
+
+        it("returns a trace without a phase", () => {
+            const trace = createTrace([2, 1, 3, 4]);
+            expect(trace[0].phase).toBeUndefined();
+        });
     });
 
     describe("addToTrace", () => {

@@ -1,8 +1,8 @@
-import { addToTrace, Algorithm, createTrace, SortingAlgorithm, Trace } from "@/app/algorithms";
+import { addToTrace, compare, createTrace, SortingAlgorithm, swap, Trace } from "@/app/algorithms";
 import "@/app/utils/Array";
 
 const BubbleSort: SortingAlgorithm = {
-    algorithm: Algorithm.BUBBLE_SORT,
+    id: "bubble_sort",
 
     sort: (array: number[]): Trace => {
         const trace = createTrace(array);
@@ -14,13 +14,13 @@ const BubbleSort: SortingAlgorithm = {
             swapped = false;
 
             for (let j = 0; j < i; j++) {
-                addToTrace(trace, array);
+                addToTrace(trace, array, compare);
 
                 if (array[j] > array[j + 1]) {
                     array.swap(j, j + 1);
                     swapped = true;
 
-                    addToTrace(trace, array);
+                    addToTrace(trace, array, swap);
                 }
             }
 
