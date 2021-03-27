@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        font: normal 100%/1.4 "Inter", sans-serif;
+        font: normal 14px/1.4 "Inter", sans-serif;
     }
 
     body {

@@ -88,7 +88,6 @@ interface ThemeShape {
             };
         };
         "margin-top": string;
-        "max-width": string;
         overlay: string;
         padding: string;
     };

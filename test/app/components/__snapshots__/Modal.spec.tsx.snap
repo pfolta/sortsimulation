@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal does not render the modal content if the modal is closed 1`] = `
-@media (min-width:45rem) {
+@media (min-width:720px) {
 
 }
 
-@media (min-width:45rem) {
+@media (min-width:720px) {
 
 }
 
@@ -48,11 +48,11 @@ exports[`Modal renders correctly 1`] = `
   padding: 1rem;
 }
 
-@media (min-width:45rem) {
+@media (min-width:720px) {
 
 }
 
-@media (min-width:45rem) {
+@media (min-width:720px) {
 
 }
 
@@ -129,11 +129,11 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
   padding: 1rem;
 }
 
-@media (min-width:45rem) {
+@media (min-width:720px) {
 
 }
 
-@media (min-width:45rem) {
+@media (min-width:720px) {
 
 }
 

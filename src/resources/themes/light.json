@@ -81,7 +81,6 @@
             }
         },
         "margin-top": "2rem",
-        "max-width": "45rem",
         "overlay": "rgba(0, 0, 0, 0.5)",
         "padding": "1rem"
     },

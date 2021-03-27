@@ -17,6 +17,7 @@ const ReactModalAdapter = ({ className, ...delegated }: ReactModalAdapterProps) 
 );
 
 const ANIMATION_DURATION = 250;
+const MAX_WIDTH = 720;
 
 const StyledReactModal = styled(ReactModalAdapter).attrs({
     closeTimeoutMS: ANIMATION_DURATION
@@ -32,7 +33,7 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         height: 100vh;
         z-index: 2;
 
-        @media (min-width: ${({ theme }) => theme.modal["max-width"]}) {
+        @media (min-width: ${MAX_WIDTH}px) {
             place-items: center;
         }
 
@@ -53,13 +54,13 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.75);
         border-radius: 1rem 1rem 0 0;
 
-        width: min(${({ theme }) => theme.modal["max-width"]}, 100vw);
+        width: min(${MAX_WIDTH}px, 100vw);
         max-height: calc(100vh - ${({ theme }) => theme.modal["margin-top"]});
 
         outline: none;
         overflow: hidden;
 
-        @media (min-width: ${({ theme }) => theme.modal["max-width"]}) {
+        @media (min-width: ${MAX_WIDTH}px) {
             border-radius: 1rem;
         }
 
