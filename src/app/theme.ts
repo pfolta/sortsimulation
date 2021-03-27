@@ -88,7 +88,7 @@ interface ThemeShape {
             };
         };
         "margin-top": string;
-        overlay: string;
+        overlay: keyof Color;
         padding: string;
     };
     "number-element": {

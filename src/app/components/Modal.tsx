@@ -38,11 +38,13 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         }
 
         &.ReactModal__Overlay--after-open {
-            animation: ${({ theme }) => BackgroundFadeIn(theme.modal.overlay)} ${ANIMATION_DURATION}ms ease-out forwards;
+            animation: ${({ theme }) => BackgroundFadeIn(`${theme.colors[theme.modal.overlay]}80`)} ${ANIMATION_DURATION}ms ease-out
+                forwards;
         }
 
         &.ReactModal__Overlay--before-close {
-            animation: ${({ theme }) => BackgroundFadeOut(theme.modal.overlay)} ${ANIMATION_DURATION}ms ease-in forwards;
+            animation: ${({ theme }) => BackgroundFadeOut(`${theme.colors[theme.modal.overlay]}80`)} ${ANIMATION_DURATION}ms ease-in
+                forwards;
         }
     }
 
