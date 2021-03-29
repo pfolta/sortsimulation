@@ -1,27 +1,38 @@
 import React from "react";
-import { create } from "react-test-renderer";
+import { create, ReactTestRendererJSON } from "react-test-renderer";
 
 import { ImageElement } from "@/app/components/ArrayViewElement";
 
 describe("ImageElement", () => {
-    const array = [4, 2, 5, 1, 3];
     const image = "/path/to/image.jpg";
 
     it("renders correctly", () => {
-        array
-            .map((value) => create(<ImageElement value={value} size={array.length} image={image} />))
-            .forEach((element) => expect(element.toJSON()).toMatchSnapshot());
+        const element = create(<ImageElement value={4} size={5} image={image} grayscale={false} />);
+        expect(element.toJSON()).toMatchSnapshot();
     });
 
     it("uses the specified image as a background image", () => {
-        array
-            .map((value) => create(<ImageElement value={value} size={array.length} image={image} />))
-            .forEach((element) => expect(element.toJSON()).toHaveStyleRule("background-image", `url("${image}")`));
+        const element = create(<ImageElement value={4} size={5} image={image} grayscale={false} />);
+        expect(element.toJSON()).toHaveStyleRule("background-image", `url("${image}")`);
+    });
+
+    it("renders element grayed out if `grayscale` is set to 'true'", () => {
+        const element = create(<ImageElement value={4} size={5} image={image} grayscale={true} />);
+        expect(element.toJSON()).toHaveStyleRule("filter", "grayscale(100%)");
+    });
+
+    it("renders element in color if `grayscale` is set to 'false'", () => {
+        const element = create(<ImageElement value={4} size={5} image={image} grayscale={false} />);
+        expect(element.toJSON()).toHaveStyleRule("filter", "grayscale(0%)");
     });
 
     it("sizes the image according to the number of elements in the array", () => {
-        array
-            .map((value) => create(<ImageElement value={value} size={array.length} image={image} />))
-            .forEach((element) => expect(element.toJSON()).toHaveStyleRule("background-size", `${array.length * 100}% 100%`));
+        const element = create(<ImageElement value={4} size={5} image={image} grayscale={false} />);
+        expect(element.toJSON()).toHaveStyleRule("background-size", "500% 100%");
+    });
+
+    it("positions the image relative to the value provided", () => {
+        const element = create(<ImageElement value={4} size={5} image={image} grayscale={false} />);
+        expect((element.toJSON() as ReactTestRendererJSON).props.style.backgroundPosition).toEqual("75% 0%");
     });
 });

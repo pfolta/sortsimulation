@@ -27,7 +27,12 @@ exports[`ImageElement renders correctly 1`] = `
   background-image: url("/path/to/image.jpg");
   background-repeat: no-repeat;
   background-size: 500% 100%;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
   height: 100%;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 <div
@@ -35,166 +40,6 @@ exports[`ImageElement renders correctly 1`] = `
   style={
     Object {
       "backgroundPosition": "75% 0%",
-    }
-  }
-/>
-`;
-
-exports[`ImageElement renders correctly 2`] = `
-.c0 {
-  -webkit-transition: -webkit-transform 100ms ease-out;
-  -webkit-transition: transform 100ms ease-out;
-  transition: transform 100ms ease-out;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c0:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
-.c1 {
-  background-image: url("/path/to/image.jpg");
-  background-repeat: no-repeat;
-  background-size: 500% 100%;
-  height: 100%;
-}
-
-<div
-  className="c0 c1"
-  style={
-    Object {
-      "backgroundPosition": "25% 0%",
-    }
-  }
-/>
-`;
-
-exports[`ImageElement renders correctly 3`] = `
-.c0 {
-  -webkit-transition: -webkit-transform 100ms ease-out;
-  -webkit-transition: transform 100ms ease-out;
-  transition: transform 100ms ease-out;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c0:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
-.c1 {
-  background-image: url("/path/to/image.jpg");
-  background-repeat: no-repeat;
-  background-size: 500% 100%;
-  height: 100%;
-}
-
-<div
-  className="c0 c1"
-  style={
-    Object {
-      "backgroundPosition": "100% 0%",
-    }
-  }
-/>
-`;
-
-exports[`ImageElement renders correctly 4`] = `
-.c0 {
-  -webkit-transition: -webkit-transform 100ms ease-out;
-  -webkit-transition: transform 100ms ease-out;
-  transition: transform 100ms ease-out;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c0:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
-.c1 {
-  background-image: url("/path/to/image.jpg");
-  background-repeat: no-repeat;
-  background-size: 500% 100%;
-  height: 100%;
-}
-
-<div
-  className="c0 c1"
-  style={
-    Object {
-      "backgroundPosition": "0% 0%",
-    }
-  }
-/>
-`;
-
-exports[`ImageElement renders correctly 5`] = `
-.c0 {
-  -webkit-transition: -webkit-transform 100ms ease-out;
-  -webkit-transition: transform 100ms ease-out;
-  transition: transform 100ms ease-out;
-}
-
-.c0:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c0:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
-.c1 {
-  background-image: url("/path/to/image.jpg");
-  background-repeat: no-repeat;
-  background-size: 500% 100%;
-  height: 100%;
-}
-
-<div
-  className="c0 c1"
-  style={
-    Object {
-      "backgroundPosition": "50% 0%",
     }
   }
 />

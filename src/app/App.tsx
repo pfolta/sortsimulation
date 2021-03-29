@@ -21,7 +21,7 @@ const App = (): JSX.Element => {
                         <StyleProvider>
                             <HashRouter>
                                 <Header />
-                                <ImageArrayView array={array} image={image} />
+                                <ImageArrayView array={array} image={image} grayscaleMap={Array.range(array).map(() => false)} />
                                 <NumberArrayView array={array} colorMap={Array.range(array).map(() => "gray")} />
                                 <Routes />
                                 <Footer />
