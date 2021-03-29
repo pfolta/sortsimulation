@@ -22,7 +22,7 @@ const App = (): JSX.Element => {
                             <HashRouter>
                                 <Header />
                                 <ImageArrayView array={array} image={image} />
-                                <NumberArrayView array={array} colors={Array.range(array).map(() => "gray")} />
+                                <NumberArrayView array={array} colorMap={Array.range(array).map(() => "gray")} />
                                 <Routes />
                                 <Footer />
                             </HashRouter>
