@@ -38,7 +38,7 @@ const AboutPage = (): JSX.Element => {
                 <ExternalLink href={__REPOSITORY_URL__}>GitHub</ExternalLink>,{" "}
                 <ExternalLink href={__ISSUES_URL__}>GitHub Issues</ExternalLink>
             </Paragraph>
-            <NumberArrayView array={array} colors={Array.range(array).map(() => [...palette].random())} />
+            <NumberArrayView array={array} colorMap={Array.range(array).map(() => [...palette].random())} />
         </section>
     );
 };
