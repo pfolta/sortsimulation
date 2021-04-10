@@ -1,4 +1,4 @@
-import { addToTrace, compare, createTrace, SortingAlgorithm, swap, Trace } from "@/app/algorithms";
+import { addToTrace, compare, compareGroup, createTrace, sortedGroup, SortingAlgorithm, swap, swapGroup, Trace } from "@/app/algorithms";
 import "@/app/utils/Array";
 import "@/app/utils/ArrayConstructor";
 
@@ -13,23 +13,23 @@ const BubbleSort: SortingAlgorithm = {
 
         do {
             swapped = false;
-            const sorted = Array.range(i + 1, array.length);
+            const sorted = sortedGroup(Array.range(i + 1, array.length));
 
             for (let j = 0; j < i; j++) {
-                addToTrace(trace, array, compare, sorted);
+                addToTrace(trace, array, compare, [compareGroup([j, j + 1]), sorted]);
 
                 if (array[j] > array[j + 1]) {
                     array.swap(j, j + 1);
                     swapped = true;
 
-                    addToTrace(trace, array, swap, sorted);
+                    addToTrace(trace, array, swap, [swapGroup([j, j + 1]), sorted]);
                 }
             }
 
             i = i - 1;
         } while (swapped);
 
-        addToTrace(trace, array, undefined, Array.range(array));
+        addToTrace(trace, array, undefined, [sortedGroup(Array.range(array))]);
 
         return trace;
     }

@@ -1,24 +1,24 @@
-import { Phase } from "@/app/algorithms";
+import { Group, Phase } from "@/app/algorithms";
 
 interface TraceStep {
     readonly array: number[];
     readonly phase?: Phase;
-    readonly sorted: number[];
+    readonly groups: Group[];
 }
 
 const createTrace = (array: number[]): Trace => [
     {
         array: [...array],
         phase: undefined,
-        sorted: []
+        groups: []
     }
 ];
 
-const addToTrace = (trace: Trace, array: number[], phase: Phase | undefined, sorted: number[]): Trace => {
+const addToTrace = (trace: Trace, array: number[], phase: Phase | undefined, groups: Group[]): Trace => {
     trace.push({
         array: [...array],
         phase,
-        sorted: [...sorted]
+        groups: [...groups]
     });
 
     return trace;

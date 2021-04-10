@@ -1,4 +1,4 @@
-import { addToTrace, createTrace } from "@/app/algorithms/Trace";
+import { addToTrace, compareGroup, createTrace, sortedGroup } from "@/app/algorithms";
 import "@/app/utils/Array";
 
 describe("Trace", () => {
@@ -29,11 +29,11 @@ describe("Trace", () => {
             expect(trace[0].phase).toBeUndefined();
         });
 
-        it("returns a trace with no sorted elements", () => {
+        it("returns a trace with no active groups", () => {
             const trace = createTrace([2, 1, 3, 4]);
 
             expect(trace).toHaveLength(1);
-            expect(trace[0].sorted).toHaveLength(0);
+            expect(trace[0].groups).toHaveLength(0);
         });
     });
 
@@ -67,20 +67,17 @@ describe("Trace", () => {
             expect(trace[trace.length - 1].array).not.toEqual(array);
         });
 
-        it("adds an immutable copy of the sorted indices array to the trace", () => {
+        it("adds the current active groups to the trace", () => {
             const array = [2, 1, 3, 4];
             const trace = createTrace(array);
 
-            // Create sorted indices array
-            const sorted = [2, 3];
+            const sorted = sortedGroup([2, 3]);
+            const compare = compareGroup([0, 1]);
 
-            addToTrace(trace, array, undefined, sorted);
-
-            // Mutate the sorted indices array
-            sorted.unshift(1);
+            addToTrace(trace, array, undefined, [sorted, compare]);
 
             expect(trace).toHaveLength(2);
-            expect(trace[trace.length - 1].sorted).not.toEqual(sorted);
+            expect(trace[trace.length - 1].groups).toEqual([sorted, compare]);
         });
     });
 });

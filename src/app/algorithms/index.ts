@@ -1,6 +1,9 @@
 export type { default as Phase } from "@/app/algorithms/Phase";
 export * from "@/app/algorithms/Phase";
 
+export type { default as Group } from "@/app/algorithms/Group";
+export * from "@/app/algorithms/Group";
+
 export type { default as SortingAlgorithm } from "@/app/algorithms/SortingAlgorithm";
 
 export * from "@/app/algorithms/Trace";
