@@ -44,9 +44,7 @@ const commonConfig: Configuration = {
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"],
-        plugins: [
-            new TsconfigPathsPlugin() as any // See https://github.com/dividab/tsconfig-paths-webpack-plugin/issues/61
-        ]
+        plugins: [new TsconfigPathsPlugin()]
     },
     module: {
         rules: [
