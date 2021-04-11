@@ -1,4 +1,4 @@
-import BubbleSort from "@/app/algorithms/BubbleSort";
+import { BubbleSort } from "@/app/algorithms";
 import "@/app/utils/Array";
 
 describe("Bubble Sort", () => {

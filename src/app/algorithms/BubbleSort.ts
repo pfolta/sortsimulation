@@ -1,4 +1,5 @@
-import { addToTrace, compare, compareGroup, createTrace, sortedGroup, SortingAlgorithm, swap, swapGroup, Trace } from "@/app/algorithms";
+import { SortingAlgorithm } from "@/app/algorithms";
+import { addToTrace, compare, compareGroup, createTrace, sortedGroup, swap, swapGroup, Trace } from "@/app/trace";
 import "@/app/utils/Array";
 import "@/app/utils/ArrayConstructor";
 

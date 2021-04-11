@@ -1,4 +1,4 @@
-import { addToTrace, compareGroup, createTrace, sortedGroup } from "@/app/algorithms";
+import { addToTrace, compareGroup, createTrace, sortedGroup } from "@/app/trace";
 import "@/app/utils/Array";
 
 describe("Trace", () => {

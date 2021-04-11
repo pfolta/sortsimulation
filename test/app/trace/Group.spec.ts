@@ -1,4 +1,4 @@
-import { compareGroup, sortedGroup, toGroupKey } from "@/app/algorithms";
+import { compareGroup, sortedGroup, toGroupKey } from "@/app/trace";
 
 describe("Group", () => {
     describe("toGroupKey", () => {

@@ -1,4 +1,4 @@
-import { Group, Phase } from "@/app/algorithms";
+import { Group, Phase } from "@/app/trace";
 
 interface TraceStep {
     readonly array: number[];

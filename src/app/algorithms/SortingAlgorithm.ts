@@ -1,4 +1,4 @@
-import { Trace } from "@/app/algorithms";
+import { Trace } from "@/app/trace";
 
 interface SortingAlgorithm {
     readonly id: string;
