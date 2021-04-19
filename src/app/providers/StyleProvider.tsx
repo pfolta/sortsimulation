@@ -1,6 +1,6 @@
+import "inter-ui";
 import React, { ReactNode, useEffect } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import "typeface-inter";
 
 import { useDarkMode, useDispatch, useSelector } from "@/app/hooks";
 import { setTheme } from "@/app/store";
@@ -20,7 +20,13 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        font: normal 14px/1.4 "Inter", sans-serif;
+        font: normal 400 14px/1.4 "Inter", system-ui;
+    }
+
+    @supports (font-variation-settings: normal) {
+        html {
+            font-family: "Inter var", system-ui;
+        }
     }
 
     body {
