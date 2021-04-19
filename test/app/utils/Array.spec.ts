@@ -30,23 +30,23 @@ describe("Array Utils", () => {
 
     describe("isSorted", () => {
         it("returns true for a sorted array", () => {
-            expect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].isSorted()).toBe(true);
+            expect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].isSorted()).toBeTrue();
         });
 
         it("returns true for a sorted array with duplicates", () => {
-            expect([0, 1, 2, 2, 3, 4, 4, 4].isSorted()).toBe(true);
+            expect([0, 1, 2, 2, 3, 4, 4, 4].isSorted()).toBeTrue();
         });
 
         it("returns true for an array with only one element", () => {
-            expect([5].isSorted()).toBe(true);
+            expect([5].isSorted()).toBeTrue();
         });
 
         it("returns true for an empty array", () => {
-            expect([].isSorted()).toBe(true);
+            expect([].isSorted()).toBeTrue();
         });
 
         it("returns false for an unsorted array", () => {
-            expect([3, 1, 10, 2, 6, 7, 5, 4].isSorted()).toBe(false);
+            expect([3, 1, 10, 2, 6, 7, 5, 4].isSorted()).toBeFalse();
         });
     });
 

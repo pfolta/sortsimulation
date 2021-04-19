@@ -10,6 +10,7 @@
         "plugin:import/typescript",
         "plugin:jest/recommended",
         "plugin:jest/style",
+        "plugin:jest-extended/recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:prettier/recommended"
@@ -22,9 +23,9 @@
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "import", "jest", "prettier", "react"],
+    "plugins": ["@typescript-eslint", "import", "jest", "jest-extended", "prettier", "react"],
     "rules": {
-        "import/newline-after-import": ["error"],
+        "import/newline-after-import": "warn",
         "import/order": [
             "error",
             {
