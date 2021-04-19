@@ -80,7 +80,7 @@ describe("Array Utils", () => {
 
         it("leaves the original array unchanged", () => {
             const array = [1, 2, 3, 4, 5];
-            expect(array.shuffled()).not.toEqual(array);
+            expect(array.shuffled()).not.toBe(array);
         });
 
         it("shuffles every element into every position", () => {
