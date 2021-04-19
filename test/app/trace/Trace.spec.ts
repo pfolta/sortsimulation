@@ -8,7 +8,7 @@ describe("Trace", () => {
             const trace = createTrace(array);
 
             expect(trace).toHaveLength(1);
-            expect(trace[0].array).toEqual(array);
+            expect(trace.first().array).toEqual(array);
         });
 
         it("creates an immutable copy of the initial array", () => {
@@ -19,21 +19,21 @@ describe("Trace", () => {
             array.swap(0, 1);
 
             expect(trace).toHaveLength(1);
-            expect(trace[0].array).not.toEqual(array);
+            expect(trace.first().array).not.toEqual(array);
         });
 
         it("returns a trace without a phase", () => {
             const trace = createTrace([2, 1, 3, 4]);
 
             expect(trace).toHaveLength(1);
-            expect(trace[0].phase).toBeUndefined();
+            expect(trace.first().phase).toBeUndefined();
         });
 
         it("returns a trace with no active groups", () => {
             const trace = createTrace([2, 1, 3, 4]);
 
             expect(trace).toHaveLength(1);
-            expect(trace[0].groups).toHaveLength(0);
+            expect(trace.first().groups).toHaveLength(0);
         });
     });
 
@@ -48,7 +48,7 @@ describe("Trace", () => {
             addToTrace(trace, array, undefined, []);
 
             expect(trace).toHaveLength(2);
-            expect(trace[trace.length - 1].array).toEqual(array);
+            expect(trace.last().array).toEqual(array);
         });
 
         it("adds an immutable copy of the array to the trace", () => {
@@ -64,7 +64,7 @@ describe("Trace", () => {
             array.swap(1, 3);
 
             expect(trace).toHaveLength(2);
-            expect(trace[trace.length - 1].array).not.toEqual(array);
+            expect(trace.last().array).not.toEqual(array);
         });
 
         it("adds the current active groups to the trace", () => {
@@ -77,7 +77,7 @@ describe("Trace", () => {
             addToTrace(trace, array, undefined, [sorted, compare]);
 
             expect(trace).toHaveLength(2);
-            expect(trace[trace.length - 1].groups).toEqual([sorted, compare]);
+            expect(trace.last().groups).toEqual([sorted, compare]);
         });
     });
 });

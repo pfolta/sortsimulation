@@ -3,6 +3,7 @@ import React from "react";
 import renderWithProviders from "../../utils/renderWithProviders";
 
 import Modal from "@/app/components/Modal";
+import "@/app/utils/Array";
 
 describe("Modal", () => {
     it("renders correctly", () => {
@@ -23,7 +24,7 @@ describe("Modal", () => {
 
         const modalContent = component.root.findByType("section");
         expect(modalContent).toBeDefined();
-        expect(modalContent.children[0]).toBe("This is the modal content.");
+        expect(modalContent.children.first()).toBe("This is the modal content.");
     });
 
     it("does not render the modal content if the modal is closed", () => {

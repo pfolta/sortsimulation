@@ -7,10 +7,10 @@ describe("Bubble Sort", () => {
 
         it("returns a trace starting with the initial array", () => {
             const trace = BubbleSort.sort([...array]);
-            expect(trace[0].array).toEqual(array);
+            expect(trace.first().array).toEqual(array);
         });
 
-        it("returns a trace containing the correct intermediate array steps", () => {
+        it("returns a trace containing the correct array steps", () => {
             const trace = BubbleSort.sort([...array]);
             expect(trace.map((step) => step.array)).toMatchSnapshot();
         });
@@ -22,7 +22,7 @@ describe("Bubble Sort", () => {
 
         it("returns a trace ending with the sorted array", () => {
             const trace = BubbleSort.sort([...array]);
-            expect(trace[trace.length - 1].array.isSorted()).toBe(true);
+            expect(trace.last().array.isSorted()).toBeTrue();
         });
     });
 });

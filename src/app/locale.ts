@@ -1,3 +1,5 @@
+import "@/app/utils/Array";
+
 import deDEMessages from "@/resources/lang/de-DE.json";
 import enUSMessages from "@/resources/lang/en-US.json";
 
@@ -21,7 +23,9 @@ const matchLocale = (userLocales: readonly string[]): Locale => {
 
     const localeMatches = userLocales.map((userLocale) => {
         const exactMatch = supportedLocales.find((locale) => locale.toLowerCase() === userLocale.toLowerCase());
-        const partialMatch = supportedLocales.find((locale) => locale.toLowerCase().startsWith(userLocale.toLowerCase().split(/[-_]/)[0]));
+        const partialMatch = supportedLocales.find((locale) =>
+            locale.toLowerCase().startsWith(userLocale.toLowerCase().split(/[-_]/).first())
+        );
 
         return exactMatch || partialMatch;
     });

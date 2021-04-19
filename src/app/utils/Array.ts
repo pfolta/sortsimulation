@@ -3,7 +3,10 @@ import "@/app/utils/ArrayConstructor";
 declare global {
     interface Array<T> {
         chunked: (size: number) => T[][];
+        first: () => T;
+        isEmpty: () => boolean;
         isSorted: () => boolean;
+        last: () => T;
         random: () => T;
         shuffled: () => T[];
         swap: (i: number, j: number) => T[];
@@ -27,6 +30,24 @@ Array.prototype.chunked = function <T>(this: T[], size: number): T[][] {
 };
 
 /**
+ * Returns the first element from this array.
+ */
+Array.prototype.first = function <T>(this: T[]): T {
+    if (this.isEmpty()) {
+        throw new RangeError("Array is empty.");
+    }
+
+    return this[0];
+};
+
+/**
+ * Returns `true` if the array is empty, `false` otherwise.
+ */
+Array.prototype.isEmpty = function <T>(this: T[]): boolean {
+    return this.length === 0;
+};
+
+/**
  * Returns `true` if the array is sorted, `false` otherwise.
  */
 Array.prototype.isSorted = function <T>(this: T[]): boolean {
@@ -37,6 +58,17 @@ Array.prototype.isSorted = function <T>(this: T[]): boolean {
     }
 
     return true;
+};
+
+/**
+ * Returns the last element from this array.
+ */
+Array.prototype.last = function <T>(this: T[]): T {
+    if (this.isEmpty()) {
+        throw new RangeError("Array is empty.");
+    }
+
+    return this[this.length - 1];
 };
 
 /*

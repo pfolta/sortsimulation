@@ -28,6 +28,26 @@ describe("Array Utils", () => {
         });
     });
 
+    describe("first", () => {
+        it("returns the first element of an array", () => {
+            expect([7, 4, 5].first()).toBe(7);
+        });
+
+        it("throws an Error if the array is empty", () => {
+            expect(() => [].first()).toThrow(RangeError);
+        });
+    });
+
+    describe("isEmpty", () => {
+        it("returns `true` if the array is empty", () => {
+            expect([].isEmpty()).toBeTrue();
+        });
+
+        it("returns `false` if the array is not empty", () => {
+            expect([1].isEmpty()).toBeFalse();
+        });
+    });
+
     describe("isSorted", () => {
         it("returns true for a sorted array", () => {
             expect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].isSorted()).toBeTrue();
@@ -47,6 +67,16 @@ describe("Array Utils", () => {
 
         it("returns false for an unsorted array", () => {
             expect([3, 1, 10, 2, 6, 7, 5, 4].isSorted()).toBeFalse();
+        });
+    });
+
+    describe("last", () => {
+        it("returns the last element of an array", () => {
+            expect([7, 4, 5].last()).toBe(5);
+        });
+
+        it("throws an Error if the array is empty", () => {
+            expect(() => [].last()).toThrow(RangeError);
         });
     });
 
