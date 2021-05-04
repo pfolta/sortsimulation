@@ -24,7 +24,7 @@ const AboutPage = (): JSX.Element => {
                 <br />
                 <FormattedMessage id="copyright.all_rights_reserved" />
                 <br />
-                <FormattedDate value={__BUILD_DATE__} dateStyle="medium" />{" "}
+                <FormattedDate value={__BUILD_DATE__} timeZone={__BUILD_TIMEZONE__} dateStyle="medium" />{" "}
                 <FormattedTime
                     value={__BUILD_DATE__}
                     timeZone={__BUILD_TIMEZONE__}
