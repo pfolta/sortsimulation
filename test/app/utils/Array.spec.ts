@@ -33,7 +33,7 @@ describe("Array Utils", () => {
             expect([7, 4, 5].first()).toBe(7);
         });
 
-        it("throws an Error if the array is empty", () => {
+        it("throws a RangeError if the array is empty", () => {
             expect(() => [].first()).toThrow(RangeError);
         });
     });
@@ -75,7 +75,7 @@ describe("Array Utils", () => {
             expect([7, 4, 5].last()).toBe(5);
         });
 
-        it("throws an Error if the array is empty", () => {
+        it("throws a RangeError if the array is empty", () => {
             expect(() => [].last()).toThrow(RangeError);
         });
     });
