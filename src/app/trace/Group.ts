@@ -1,7 +1,15 @@
 import { Palette } from "@/app/theme";
 
+enum GroupId {
+    COMPARE = "COMPARE",
+    MINIMUM = "MINIMUM",
+    OVERWRITE = "OVERWRITE",
+    SORTED = "SORTED",
+    SWAP = "SWAP"
+}
+
 interface GroupKey {
-    readonly id: string;
+    readonly id: GroupId;
     readonly color: Palette;
 }
 
@@ -10,19 +18,31 @@ interface Group extends GroupKey {
 }
 
 const compareGroup = (indices: number[]): Group => ({
-    id: "compare",
+    id: GroupId.COMPARE,
+    color: "yellow",
+    indices
+});
+
+const minimumGroup = (index: number): Group => ({
+    id: GroupId.MINIMUM,
     color: "blue",
+    indices: [index]
+});
+
+const overwriteFromMemoryGroup = (indices: number[]): Group => ({
+    id: GroupId.OVERWRITE,
+    color: "orange",
     indices
 });
 
 const sortedGroup = (indices: number[]): Group => ({
-    id: "sorted",
+    id: GroupId.SORTED,
     color: "green",
     indices
 });
 
 const swapGroup = (indices: number[]): Group => ({
-    id: "swap",
+    id: GroupId.SWAP,
     color: "red",
     indices
 });
@@ -31,5 +51,6 @@ const toGroupKey = (groups: Group[]): GroupKey[] =>
     [...new Map(groups.map((group) => [group.id, group])).values()].map((group) => ({ id: group.id, color: group.color }));
 
 export default Group;
-export { compareGroup, sortedGroup, swapGroup };
+export { GroupId };
+export { compareGroup, minimumGroup, overwriteFromMemoryGroup, sortedGroup, swapGroup };
 export { toGroupKey };

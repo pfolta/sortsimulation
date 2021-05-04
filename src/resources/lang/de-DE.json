@@ -1,6 +1,7 @@
 {
     "about": "Über {productName}",
     "algorithm.bubble_sort.name": "Bubblesort",
+    "algorithm.selection_sort.name": "Selectionsort",
     "close": "Schließen",
     "copyright.all_rights_reserved": "Alle Rechte vorbehalten.",
     "help": "Hilfe",

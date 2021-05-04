@@ -1,6 +1,7 @@
 {
     "about": "About {productName}",
     "algorithm.bubble_sort.name": "Bubble sort",
+    "algorithm.selection_sort.name": "Selection sort",
     "close": "Close",
     "copyright.all_rights_reserved": "All rights reserved.",
     "help": "Help",
