@@ -33,5 +33,6 @@
         ]
     ],
     "setupFilesAfterEnv": ["<rootDir>/test/setup.ts"],
+    "testEnvironment": "jsdom",
     "verbose": true
 }
