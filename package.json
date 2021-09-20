@@ -8,7 +8,8 @@
         "sorting",
         "sorting algorithm",
         "sorting algorithms",
-        "bubble sort"
+        "bubble sort",
+        "selection sort"
     ],
     "homepage": "https://www.sortsimulation.com",
     "version": "3.0.0",
