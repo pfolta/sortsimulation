@@ -5,7 +5,6 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
 import { Configuration, DefinePlugin, HotModuleReplacementPlugin } from "webpack";
-import WebpackDevServer from "webpack-dev-server";
 import { merge } from "webpack-merge";
 
 import { bugs, description, homepage, keywords, productName, repository, synopsis, version } from "./package.json";
@@ -85,16 +84,9 @@ const commonConfig: Configuration = {
     ]
 };
 
-const devServer: WebpackDevServer.Configuration = {
-    hot: true,
-    inline: true,
-    overlay: true
-};
-
 const developmentConfig: Configuration = {
     mode: "development",
     devtool: "source-map",
-    devServer,
     plugins: [new HotModuleReplacementPlugin()]
 };
 
