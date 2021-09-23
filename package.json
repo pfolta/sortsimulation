@@ -4,12 +4,14 @@
     "description": "Visualize and compare sorting algorithms",
     "synopsis": "Visualize and compare sorting algorithms",
     "keywords": [
+        "bubble sort",
+        "selection sort",
+        "simulation",
         "sort",
-        "sorting",
         "sorting algorithm",
         "sorting algorithms",
-        "bubble sort",
-        "selection sort"
+        "sorting",
+        "visualization"
     ],
     "homepage": "https://www.sortsimulation.com",
     "version": "3.0.0",
