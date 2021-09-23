@@ -11,9 +11,14 @@ import "@/app/utils/ArrayConstructor";
 
 const AboutPage = (): JSX.Element => {
     const [array, setArray] = useState(Array.random(30));
+    const [colorMap, setColorMap] = useState(Array.range(array).map(() => [...palette].random()));
+
     const prefersReducedMotion = usePrefersReducedMotion();
 
-    useAnimationFrame(!prefersReducedMotion, 1000, () => setArray((array) => array.shuffled()));
+    useAnimationFrame(!prefersReducedMotion, 1000, () => {
+        setArray((array) => array.shuffled());
+        setColorMap(Array.range(array).map(() => [...palette].random()));
+    });
 
     return (
         <section>
@@ -39,7 +44,7 @@ const AboutPage = (): JSX.Element => {
                 <ExternalLink href={__REPOSITORY_URL__}>GitHub</ExternalLink>,{" "}
                 <ExternalLink href={__ISSUES_URL__}>GitHub Issues</ExternalLink>
             </Paragraph>
-            <NumberArrayView array={array} colorMap={Array.range(array).map(() => [...palette].random())} />
+            <NumberArrayView array={array} colorMap={colorMap} />
         </section>
     );
 };
