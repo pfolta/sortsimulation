@@ -7,22 +7,6 @@ exports[`NumberElement renders correctly 1`] = `
   transition: transform 100ms ease-out;
 }
 
-.c0:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c0:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
 .c1 {
   background-color: #abacae;
   background-image: linear-gradient( to bottom, #d4d4d4, #abacae );
@@ -39,6 +23,24 @@ exports[`NumberElement renders correctly 1`] = `
   display: block;
   height: 100%;
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c0:hover {
+    -webkit-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+
+  .c0:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    z-index: -1;
+  }
 }
 
 <div
@@ -65,22 +67,6 @@ exports[`NumberElement uses the specified color 1`] = `
   transition: transform 100ms ease-out;
 }
 
-.c0:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c0:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
 .c1 {
   background-color: #3689e6;
   background-image: linear-gradient( to bottom, #64baff, #3689e6 );
@@ -97,6 +83,24 @@ exports[`NumberElement uses the specified color 1`] = `
   display: block;
   height: 100%;
   overflow: hidden;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c0:hover {
+    -webkit-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+
+  .c0:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    z-index: -1;
+  }
 }
 
 <div

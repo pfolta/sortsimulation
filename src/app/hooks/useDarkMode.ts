@@ -1,18 +1,7 @@
-import { useEffect, useState } from "react";
+import useMediaQuery from "@/app/hooks/useMediaQuery";
 
-const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const darkModeMediaQueryString = "(prefers-color-scheme: dark)";
 
-const useDarkMode = (): boolean => {
-    const [isDarkMode, setDarkMode] = useState(darkModeMediaQuery.matches);
-
-    const listener = (event: MediaQueryListEvent) => setDarkMode(event.matches);
-
-    useEffect(() => {
-        darkModeMediaQuery.addEventListener("change", listener);
-        return () => darkModeMediaQuery.removeEventListener("change", listener);
-    }, []);
-
-    return isDarkMode;
-};
+const useDarkMode = (): boolean => useMediaQuery(darkModeMediaQueryString);
 
 export default useDarkMode;

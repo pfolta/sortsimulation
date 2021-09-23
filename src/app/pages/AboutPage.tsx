@@ -4,15 +4,16 @@ import { FormattedDate, FormattedTime, FormattedMessage } from "react-intl";
 import { NumberArrayView } from "@/app/components/ArrayView";
 import { ExternalLink } from "@/app/components/Link";
 import { Heading, Paragraph } from "@/app/components/Typography";
-import { useAnimationFrame } from "@/app/hooks";
+import { useAnimationFrame, usePrefersReducedMotion } from "@/app/hooks";
 import { palette } from "@/app/theme";
 import "@/app/utils/Array";
 import "@/app/utils/ArrayConstructor";
 
 const AboutPage = (): JSX.Element => {
     const [array, setArray] = useState(Array.random(30));
+    const prefersReducedMotion = usePrefersReducedMotion();
 
-    useAnimationFrame(true, 1000, () => setArray((array) => array.shuffled()));
+    useAnimationFrame(!prefersReducedMotion, 1000, () => setArray((array) => array.shuffled()));
 
     return (
         <section>

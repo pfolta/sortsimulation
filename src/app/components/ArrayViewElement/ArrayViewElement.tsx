@@ -9,20 +9,22 @@ const ArrayViewElement = styled.div.withConfig({
 })<ArrayViewElementProps>`
     transition: transform 100ms ease-out;
 
-    :hover {
-        transform: translateY(-1rem);
+    @media (prefers-reduced-motion: no-preference) {
+        :hover {
+            transform: translateY(-1rem);
 
-        /* Prevent jitter on hover, see https://codepen.io/csilverman/post/fixing-the-jitter-bug */
-        ::before {
-            content: "";
+            /* Prevent jitter on hover, see https://codepen.io/csilverman/post/fixing-the-jitter-bug */
+            ::before {
+                content: "";
 
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: -1rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: -1rem;
 
-            z-index: -1;
+                z-index: -1;
+            }
         }
     }
 `;

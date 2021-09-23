@@ -17,22 +17,6 @@ exports[`NumberArrayView renders correctly 1`] = `
   transition: transform 100ms ease-out;
 }
 
-.c2:hover {
-  -webkit-transform: translateY(-1rem);
-  -ms-transform: translateY(-1rem);
-  transform: translateY(-1rem);
-}
-
-.c2:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: -1rem;
-  z-index: -1;
-}
-
 .c3 {
   background-color: #3689e6;
   background-image: linear-gradient( to bottom, #64baff, #3689e6 );
@@ -102,6 +86,24 @@ exports[`NumberArrayView renders correctly 1`] = `
 .c1 {
   -webkit-column-gap: 1px;
   column-gap: 1px;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  .c2:hover {
+    -webkit-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+
+  .c2:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -1rem;
+    z-index: -1;
+  }
 }
 
 <div
