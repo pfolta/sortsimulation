@@ -33,6 +33,6 @@ describe("ImageElement", () => {
 
     it("positions the image relative to the value provided", () => {
         const element = create(<ImageElement value={4} size={5} image={image} grayscale={false} />);
-        expect((element.toJSON() as ReactTestRendererJSON).props.style.backgroundPosition).toEqual("75% 0%");
+        expect((element.toJSON() as ReactTestRendererJSON).props.style.backgroundPosition).toBe("75% 0%");
     });
 });

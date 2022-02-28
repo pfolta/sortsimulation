@@ -86,7 +86,7 @@ describe("Array Utils", () => {
         });
 
         it("returns the only element from an array of size one", () => {
-            expect(["banana"].random()).toEqual("banana");
+            expect(["banana"].random()).toBe("banana");
         });
 
         it("returns an element from the array", () => {

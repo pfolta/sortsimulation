@@ -18,11 +18,11 @@ describe("NumberElement", () => {
 
     it("displays the correct element value", () => {
         const element = renderWithProviders(<NumberElement value={4} maxValue={5} color="gray" />);
-        expect(element.root.findByType(StyledNumberElementLabel).props.children).toEqual(4);
+        expect(element.root.findByType(StyledNumberElementLabel).props.children).toBe(4);
     });
 
     it("computes the correct height based on the maximum array element", () => {
         const element = renderWithProviders(<NumberElement value={4} maxValue={5} color="gray" />);
-        expect((element.toJSON() as ReactTestRendererJSON).props.style.height).toEqual("80%");
+        expect((element.toJSON() as ReactTestRendererJSON).props.style.height).toBe("80%");
     });
 });

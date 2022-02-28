@@ -7,7 +7,7 @@ describe("SettingsSlice", () => {
                 const currentState: Partial<SettingsState> = { locale: "en-US" };
                 const nextState = SettingsReducer({ ...initialState, ...currentState }, setLocale("de-DE"));
 
-                expect(nextState.locale).toEqual("de-DE");
+                expect(nextState.locale).toBe("de-DE");
             });
         });
 
@@ -16,7 +16,7 @@ describe("SettingsSlice", () => {
                 const currentState: Partial<SettingsState> = { theme: "light" };
                 const nextState = SettingsReducer({ ...initialState, ...currentState }, setTheme("dark"));
 
-                expect(nextState.theme).toEqual("dark");
+                expect(nextState.theme).toBe("dark");
             });
         });
 
@@ -25,14 +25,14 @@ describe("SettingsSlice", () => {
                 const currentState: Partial<SettingsState> = { theme: "dark" };
                 const nextState = SettingsReducer({ ...initialState, ...currentState }, toggleTheme());
 
-                expect(nextState.theme).toEqual("light");
+                expect(nextState.theme).toBe("light");
             });
 
             it("sets the theme to 'dark' if the current theme is 'light'", () => {
                 const currentState: Partial<SettingsState> = { theme: "light" };
                 const nextState = SettingsReducer({ ...initialState, ...currentState }, toggleTheme());
 
-                expect(nextState.theme).toEqual("dark");
+                expect(nextState.theme).toBe("dark");
             });
         });
     });
