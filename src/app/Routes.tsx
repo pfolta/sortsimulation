@@ -1,14 +1,14 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import Modal from "@/app/components/Modal";
 import { AboutPage, HelpPage, SettingsPage } from "@/app/pages";
 
 const Routes = (): JSX.Element => {
-    const history = useHistory();
     const location = useLocation();
+    const navigate = useNavigate();
 
-    const onClose = () => history.push("/");
+    const onClose = () => navigate("/");
 
     return (
         <>
