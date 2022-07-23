@@ -1,12 +1,12 @@
-import { keyframes } from "styled-components";
+import { keyframes, Keyframes } from "styled-components";
 
-const SlideOut = keyframes`
+const SlideOut = (offScreenTransform: string): Keyframes => keyframes`
     from {
         transform: translateY(0);
     }
 
     to {
-        transform: translateY(calc(100% + (100vh - 100%) / 2));
+        transform: translateY(${offScreenTransform});
     }
 `;
 

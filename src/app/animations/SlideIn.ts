@@ -1,8 +1,8 @@
-import { keyframes } from "styled-components";
+import { keyframes, Keyframes } from "styled-components";
 
-const SlideIn = keyframes`
+const SlideIn = (offScreenTransform: string): Keyframes => keyframes`
     from {
-        transform: translateY(calc(100% + (100vh - 100%) / 2));
+        transform: translateY(${offScreenTransform});
     }
 
     to {

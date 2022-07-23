@@ -9,6 +9,14 @@ exports[`Modal does not render the modal content if the modal is closed 1`] = `
 
 }
 
+@media (min-width:720px) {
+
+}
+
+@media (min-width:720px) {
+
+}
+
 <div />
 `;
 
@@ -46,6 +54,14 @@ exports[`Modal renders correctly 1`] = `
 
 .c1 > * {
   padding: 1rem;
+}
+
+@media (min-width:720px) {
+
+}
+
+@media (min-width:720px) {
+
 }
 
 @media (min-width:720px) {
@@ -127,6 +143,14 @@ exports[`Modal renders the modal content if the modal is opened 1`] = `
 
 .c1 > * {
   padding: 1rem;
+}
+
+@media (min-width:720px) {
+
+}
+
+@media (min-width:720px) {
+
 }
 
 @media (min-width:720px) {

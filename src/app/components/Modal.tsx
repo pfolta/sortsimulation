@@ -62,16 +62,27 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         outline: none;
         overflow: hidden;
 
+        /* Hack to prevent flicker */
+        transform: translateY(100vh);
+
         @media (min-width: ${MAX_WIDTH}px) {
             border-radius: 1rem;
         }
 
         &.ReactModal__Content--after-open {
-            animation: ${SlideIn} ${ANIMATION_DURATION}ms ease-out forwards;
+            animation: ${SlideIn("100%")} ${ANIMATION_DURATION}ms ease-out forwards;
+
+            @media (min-width: ${MAX_WIDTH}px) {
+                animation-name: ${SlideIn("calc(100% + (100vh - 100%) / 2)")};
+            }
         }
 
         &.ReactModal__Content--before-close {
-            animation: ${SlideOut} ${ANIMATION_DURATION}ms ease-in forwards;
+            animation: ${SlideOut("100%")} ${ANIMATION_DURATION}ms ease-in forwards;
+
+            @media (min-width: ${MAX_WIDTH}px) {
+                animation-name: ${SlideOut("calc(100% + (100vh - 100%) / 2)")};
+            }
         }
     }
 `;
