@@ -4,7 +4,7 @@ import path from "path";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
-import { Configuration, DefinePlugin, HotModuleReplacementPlugin } from "webpack";
+import { Configuration, DefinePlugin } from "webpack";
 import { merge } from "webpack-merge";
 
 import { bugs, description, homepage, keywords, productName, repository, synopsis, version } from "./package.json";
@@ -86,8 +86,7 @@ const commonConfig: Configuration = {
 
 const developmentConfig: Configuration = {
     mode: "development",
-    devtool: "source-map",
-    plugins: [new HotModuleReplacementPlugin()]
+    devtool: "source-map"
 };
 
 const productionConfig: Configuration = {
