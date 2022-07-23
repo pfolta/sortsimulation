@@ -80,9 +80,9 @@ const Header = (): JSX.Element => {
                     </StyledLink>
                 </Control>
                 <Control>
-                    <Button>
+                    <StyledLink to="/help">
                         <HelpCircle />
-                    </Button>
+                    </StyledLink>
                 </Control>
             </Controls>
         </StyledHeader>
