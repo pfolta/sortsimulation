@@ -15,6 +15,8 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
 
+    padding: calc(env(safe-area-inset-top) + 1rem) calc(env(safe-area-inset-right) + 1rem) 1rem calc(env(safe-area-inset-left) + 1rem);
+
     position: sticky;
     top: 0;
 

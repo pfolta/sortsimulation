@@ -12,7 +12,7 @@ const StyledFooter = styled.footer`
 
     font-size: 0.875rem;
 
-    padding: 1rem;
+    padding: 1rem calc(env(safe-area-inset-right) + 1rem) calc(env(safe-area-inset-bottom) + 1rem) calc(env(safe-area-inset-left) + 1rem);
 `;
 
 const Footer = (): JSX.Element => {
