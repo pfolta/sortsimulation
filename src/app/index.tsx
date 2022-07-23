@@ -1,10 +1,11 @@
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { setAppElement } from "react-modal";
 
 import App from "@/app/App";
 
-const appElement = document.querySelector("#app") as HTMLElement;
+const container = document.querySelector("#app") as HTMLElement;
+const root = createRoot(container);
 
-setAppElement(appElement);
-render(<App />, appElement);
+setAppElement(container);
+root.render(<App />);
