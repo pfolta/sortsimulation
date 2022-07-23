@@ -11,7 +11,7 @@ describe("ArrayConstructor Utils", () => {
         });
 
         it("returns an array of integers", () => {
-            array.forEach((number) => expect(Number.isInteger(number)).toBe(true));
+            array.forEach((number) => expect(Number.isInteger(number)).toBeTrue());
         });
 
         it("returns an array that contains every number in [1, size]", () => {
@@ -34,7 +34,7 @@ describe("ArrayConstructor Utils", () => {
         });
 
         it("returns an array of integers", () => {
-            array.forEach((number) => expect(Number.isInteger(number)).toBe(true));
+            array.forEach((number) => expect(Number.isInteger(number)).toBeTrue());
         });
 
         it("returns an array with the specified number of unique elements", () => {
@@ -58,7 +58,7 @@ describe("ArrayConstructor Utils", () => {
         });
 
         it("returns an array of integers", () => {
-            array.forEach((number) => expect(Number.isInteger(number)).toBe(true));
+            array.forEach((number) => expect(Number.isInteger(number)).toBeTrue());
         });
 
         it("returns an array that contains every number in [1, size]", () => {
