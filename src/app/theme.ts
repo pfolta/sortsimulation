@@ -87,9 +87,7 @@ interface ThemeShape {
                 color: keyof Color;
             };
         };
-        "margin-top": string;
         overlay: keyof Color;
-        padding: string;
     };
     "number-element": {
         "background-base-weight": number;

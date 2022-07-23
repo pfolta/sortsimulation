@@ -80,9 +80,7 @@
                 "color": "white-300"
             }
         },
-        "margin-top": "2rem",
-        "overlay": "black-900",
-        "padding": "1rem"
+        "overlay": "black-900"
     },
     "number-element": {
         "background-base-weight": 900,

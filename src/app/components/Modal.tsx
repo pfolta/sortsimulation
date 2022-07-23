@@ -57,7 +57,6 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         border-radius: 1rem 1rem 0 0;
 
         width: min(${MAX_WIDTH}px, 100vw);
-        max-height: calc(100vh - ${({ theme }) => theme.modal["margin-top"]});
 
         outline: none;
         overflow: hidden;
@@ -119,10 +118,10 @@ const CloseButton = styled.button`
 
 const StyledModalBody = styled.div`
     overflow: auto;
-    max-height: calc(100vh - ${({ theme }) => theme.modal["margin-top"]});
+    max-height: calc(100vh - 3rem);
 
     & > * {
-        padding: ${({ theme }) => theme.modal.padding};
+        padding: 1rem;
     }
 `;
 
