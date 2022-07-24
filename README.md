@@ -1,5 +1,9 @@
 <h1 align="center">
-    <a href="https://www.sortsimulation.com" target="_blank">SortSimulation</a>
+    <a href="https://www.sortsimulation.com" target="_blank">
+        <img src=".github/assets/banner.png" width="75%" />
+        <br />
+        SortSimulation
+    </a>
 </h1>
 
 <p align="center">
