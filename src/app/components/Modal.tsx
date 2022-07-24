@@ -118,7 +118,7 @@ const CloseButton = styled.button`
 
 const StyledModalBody = styled.div`
     overflow: auto;
-    max-height: calc(100vh - 3rem);
+    max-height: calc(100vh - 3rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 
     & > * {
         padding: 1rem;
