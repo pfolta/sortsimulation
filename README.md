@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+    <img src="https://img.shields.io/github/package-json/v/pfolta/sortsimulation" alt="SortSimulation Version" />
     <a href="https://github.com/pfolta/sortsimulation/actions/workflows/build-and-deploy.yml">
         <img src="https://img.shields.io/github/workflow/status/pfolta/sortsimulation/Build%20and%20Deploy?logo=github" alt="Build Status" />
     </a>
