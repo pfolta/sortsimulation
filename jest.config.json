@@ -4,7 +4,7 @@
     "collectCoverage": true,
     "collectCoverageFrom": ["<rootDir>/src/**/*.{ts,tsx}"],
     "coverageDirectory": "<rootDir>/build/coverage",
-    "coverageReporters": ["lcov"],
+    "coverageReporters": ["lcov", "text-summary"],
     "moduleNameMapper": {
         "^@/(.*)": "<rootDir>/src/$1"
     },
