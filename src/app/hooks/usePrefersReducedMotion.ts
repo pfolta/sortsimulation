@@ -1,7 +1,5 @@
-import useMediaQuery from "@/app/hooks/useMediaQuery";
+import { useMediaQuery } from "@/app/hooks";
 
-const prefersReducedMotionMediaQueryString = "(prefers-reduced-motion: reduce)";
-
-const usePrefersReducedMotion = (): boolean => useMediaQuery(prefersReducedMotionMediaQueryString);
+const usePrefersReducedMotion = () => useMediaQuery("(prefers-reduced-motion: reduce)");
 
 export default usePrefersReducedMotion;

@@ -7,4 +7,5 @@ export const useSelector: TypedUseSelectorHook<RootState> = useReduxSelector;
 
 export { default as useAnimationFrame } from "@/app/hooks/useAnimationFrame";
 export { default as useDarkMode } from "@/app/hooks/useDarkMode";
+export { default as useMediaQuery } from "@/app/hooks/useMediaQuery";
 export { default as usePrefersReducedMotion } from "@/app/hooks/usePrefersReducedMotion";

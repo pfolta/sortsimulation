@@ -1,7 +1,5 @@
-import useMediaQuery from "@/app/hooks/useMediaQuery";
+import { useMediaQuery } from "@/app/hooks";
 
-const darkModeMediaQueryString = "(prefers-color-scheme: dark)";
-
-const useDarkMode = (): boolean => useMediaQuery(darkModeMediaQueryString);
+const useDarkMode = () => useMediaQuery("(prefers-color-scheme: dark)");
 
 export default useDarkMode;
