@@ -1,9 +1,10 @@
 import React from "react";
-import { FormattedDisplayName, FormattedMessage, IntlProvider } from "react-intl";
+import { FormattedDisplayName, FormattedMessage } from "react-intl";
 import styled from "styled-components";
 
 import { useDispatch, useSelector } from "@/app/hooks";
 import { locales, Locale } from "@/app/locale";
+import { LocaleProvider } from "@/app/providers";
 import { setLocale } from "@/app/store";
 
 const StyledFooter = styled.footer`
@@ -26,9 +27,9 @@ const Footer = (): JSX.Element => {
             <select value={locale} onChange={(event) => dispatch(setLocale(event.target.value as Locale))}>
                 {Object.keys(locales).map((locale) => (
                     <option key={locale} value={locale}>
-                        <IntlProvider locale={locale}>
+                        <LocaleProvider locale={locale as Locale}>
                             <FormattedDisplayName type="language" value={locale} />
-                        </IntlProvider>{" "}
+                        </LocaleProvider>{" "}
                         - <FormattedDisplayName type="language" value={locale} />
                     </option>
                 ))}

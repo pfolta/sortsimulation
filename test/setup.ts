@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom/extend-expect";
 import "jest-extended";
 import "jest-extended/all";
 import "jest-styled-components";

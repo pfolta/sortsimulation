@@ -3,19 +3,21 @@ import { Helmet } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 
 import { useSelector } from "@/app/hooks";
-import { locales } from "@/app/locale";
+import { locales, Locale } from "@/app/locale";
 
 interface LocaleProviderProps {
+    locale?: Locale;
     children?: ReactNode;
 }
 
-const LocaleProvider = ({ children }: LocaleProviderProps): JSX.Element => {
-    const { locale } = useSelector((state) => state.settings);
+const LocaleProvider = (props: LocaleProviderProps): JSX.Element => {
+    const storeLocale = useSelector((state) => state.settings.locale);
+    const locale = props.locale ?? storeLocale;
 
     return (
         <IntlProvider locale={locale} messages={locales[locale]}>
             <Helmet htmlAttributes={{ lang: locale }} />
-            {children}
+            {props.children}
         </IntlProvider>
     );
 };
