@@ -1,22 +1,14 @@
 import "@/app/utils/Array";
 
-import deDEMessages from "@/resources/lang/de-DE.json";
-import enUSMessages from "@/resources/lang/en-US.json";
-
-const DEFAULT_LOCALE: Locale = "en-US";
+import deMessages from "@/resources/lang/de.json";
+import enMessages from "@/resources/lang/en.json";
 
 const locales = {
-    "en-US": {
-        language: "English",
-        locale: "en-US",
-        messages: enUSMessages
-    },
-    "de-DE": {
-        language: "Deutsch",
-        locale: "de-DE",
-        messages: { ...enUSMessages, ...deDEMessages }
-    }
+    en: enMessages,
+    de: { ...enMessages, ...deMessages }
 };
+
+const defaultLocale: Locale = "en";
 
 const matchLocale = (userLocales: readonly string[]): Locale => {
     const supportedLocales = Object.keys(locales);
@@ -30,8 +22,8 @@ const matchLocale = (userLocales: readonly string[]): Locale => {
         return exactMatch || partialMatch;
     });
 
-    return (localeMatches.find((locale) => locale !== undefined) || DEFAULT_LOCALE) as Locale;
+    return (localeMatches.find((locale) => locale !== undefined) || defaultLocale) as Locale;
 };
 
-export { DEFAULT_LOCALE, locales, matchLocale };
+export { locales, defaultLocale, matchLocale };
 export type Locale = keyof typeof locales;

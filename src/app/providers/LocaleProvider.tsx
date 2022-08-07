@@ -11,11 +11,10 @@ interface LocaleProviderProps {
 
 const LocaleProvider = ({ children }: LocaleProviderProps): JSX.Element => {
     const { locale } = useSelector((state) => state.settings);
-    const localeData = locales[locale];
 
     return (
-        <IntlProvider locale={localeData.locale} messages={localeData.messages}>
-            <Helmet htmlAttributes={{ lang: localeData.locale }} />
+        <IntlProvider locale={locale} messages={locales[locale]}>
+            <Helmet htmlAttributes={{ lang: locale }} />
             {children}
         </IntlProvider>
     );

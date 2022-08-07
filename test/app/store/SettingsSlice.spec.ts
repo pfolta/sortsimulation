@@ -4,10 +4,10 @@ describe("SettingsSlice", () => {
     describe("SettingsReducer", () => {
         describe("setLocale", () => {
             it("sets the locale to the provided locale", () => {
-                const currentState: Partial<SettingsState> = { locale: "en-US" };
-                const nextState = SettingsReducer({ ...initialState, ...currentState }, setLocale("de-DE"));
+                const currentState: Partial<SettingsState> = { locale: "en" };
+                const nextState = SettingsReducer({ ...initialState, ...currentState }, setLocale("de"));
 
-                expect(nextState.locale).toBe("de-DE");
+                expect(nextState.locale).toBe("de");
             });
         });
 
