@@ -21,10 +21,6 @@ const StyledImageElement = styled(ArrayViewElement).attrs<ImageElementProps>(({ 
     filter: grayscale(${({ grayscale }) => (grayscale ? "100%" : "0%")});
 
     height: 100%;
-
-    /* Hack to trigger hardware acceleration in Safari and iOS, see
-       http://indiegamr.com/ios6-html-hardware-acceleration-changes-and-how-to-fix-them/ */
-    transform: translateZ(0);
 `;
 
 const ImageElement = (props: ImageElementProps): JSX.Element => <StyledImageElement {...props} />;

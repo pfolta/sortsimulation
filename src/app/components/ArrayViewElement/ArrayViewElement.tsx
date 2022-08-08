@@ -12,6 +12,7 @@ const ArrayViewElement = styled.div
         "data-value": value
     }))<ArrayViewElementProps>`
         transition: transform 100ms ease-out;
+        will-change: transform;
 
         @media (prefers-reduced-motion: no-preference) {
             :hover {

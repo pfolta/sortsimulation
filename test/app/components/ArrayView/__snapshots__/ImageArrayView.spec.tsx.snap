@@ -16,6 +16,7 @@ exports[`ImageArrayView renders correctly 1`] = `
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
+  will-change: transform;
 }
 
 .c2 {
@@ -25,9 +26,6 @@ exports[`ImageArrayView renders correctly 1`] = `
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   height: 100%;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 .c3 {
@@ -37,9 +35,6 @@ exports[`ImageArrayView renders correctly 1`] = `
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
   height: 100%;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 @media (prefers-reduced-motion:no-preference) {
