@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NumberElement renders correctly 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -44,24 +45,22 @@ exports[`NumberElement renders correctly 1`] = `
 }
 
 <div
-  className="c0 c1"
-  style={
-    Object {
-      "fontSize": "0px",
-      "height": "80%",
-    }
-  }
->
-  <span
-    className="c2"
+    class="c0 c1"
+    data-value="4"
+    style="font-size: 0px; height: 80%;"
   >
-    4
-  </span>
-</div>
+    <span
+      class="c2"
+    >
+      4
+    </span>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`NumberElement uses the specified color 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   -webkit-transition: -webkit-transform 100ms ease-out;
   -webkit-transition: transform 100ms ease-out;
   transition: transform 100ms ease-out;
@@ -104,18 +103,15 @@ exports[`NumberElement uses the specified color 1`] = `
 }
 
 <div
-  className="c0 c1"
-  style={
-    Object {
-      "fontSize": "0px",
-      "height": "80%",
-    }
-  }
->
-  <span
-    className="c2"
+    class="c0 c1"
+    data-value="4"
+    style="font-size: 0px; height: 80%;"
   >
-    4
-  </span>
-</div>
+    <span
+      class="c2"
+    >
+      4
+    </span>
+  </div>
+</DocumentFragment>
 `;

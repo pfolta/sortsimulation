@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ImageArrayView renders correctly 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   -webkit-align-items: end;
@@ -60,47 +61,33 @@ exports[`ImageArrayView renders correctly 1`] = `
 }
 
 <div
-  className="c0"
->
-  <div
-    className="c1 c2"
-    style={
-      Object {
-        "backgroundPosition": "75% 0%",
-      }
-    }
-  />
-  <div
-    className="c1 c2"
-    style={
-      Object {
-        "backgroundPosition": "25% 0%",
-      }
-    }
-  />
-  <div
-    className="c1 c2"
-    style={
-      Object {
-        "backgroundPosition": "100% 0%",
-      }
-    }
-  />
-  <div
-    className="c1 c3"
-    style={
-      Object {
-        "backgroundPosition": "0% 0%",
-      }
-    }
-  />
-  <div
-    className="c1 c3"
-    style={
-      Object {
-        "backgroundPosition": "50% 0%",
-      }
-    }
-  />
-</div>
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+      data-value="4"
+      style="background-position: 75% 0%;"
+    />
+    <div
+      class="c1 c2"
+      data-value="2"
+      style="background-position: 25% 0%;"
+    />
+    <div
+      class="c1 c2"
+      data-value="5"
+      style="background-position: 100% 0%;"
+    />
+    <div
+      class="c1 c3"
+      data-value="1"
+      style="background-position: 0% 0%;"
+    />
+    <div
+      class="c1 c3"
+      data-value="3"
+      style="background-position: 50% 0%;"
+    />
+  </div>
+</DocumentFragment>
 `;

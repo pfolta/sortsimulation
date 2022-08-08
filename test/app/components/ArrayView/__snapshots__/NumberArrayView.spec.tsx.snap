@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NumberArrayView renders correctly 1`] = `
-.c0 {
+<DocumentFragment>
+  .c0 {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   -webkit-align-items: end;
@@ -107,82 +108,63 @@ exports[`NumberArrayView renders correctly 1`] = `
 }
 
 <div
-  className="c0 c1"
->
-  <div
-    className="c2 c3"
-    style={
-      Object {
-        "fontSize": "0px",
-        "height": "80%",
-      }
-    }
+    class="c0 c1"
   >
-    <span
-      className="c4"
+    <div
+      class="c2 c3"
+      data-value="4"
+      style="font-size: 0px; height: 80%;"
     >
-      4
-    </span>
-  </div>
-  <div
-    className="c2 c5"
-    style={
-      Object {
-        "fontSize": "0px",
-        "height": "40%",
-      }
-    }
-  >
-    <span
-      className="c4"
+      <span
+        class="c4"
+      >
+        4
+      </span>
+    </div>
+    <div
+      class="c2 c5"
+      data-value="2"
+      style="font-size: 0px; height: 40%;"
     >
-      2
-    </span>
-  </div>
-  <div
-    className="c2 c6"
-    style={
-      Object {
-        "fontSize": "0px",
-        "height": "100%",
-      }
-    }
-  >
-    <span
-      className="c4"
+      <span
+        class="c4"
+      >
+        2
+      </span>
+    </div>
+    <div
+      class="c2 c6"
+      data-value="5"
+      style="font-size: 0px; height: 100%;"
     >
-      5
-    </span>
-  </div>
-  <div
-    className="c2 c7"
-    style={
-      Object {
-        "fontSize": "0px",
-        "height": "20%",
-      }
-    }
-  >
-    <span
-      className="c4"
+      <span
+        class="c4"
+      >
+        5
+      </span>
+    </div>
+    <div
+      class="c2 c7"
+      data-value="1"
+      style="font-size: 0px; height: 20%;"
     >
-      1
-    </span>
-  </div>
-  <div
-    className="c2 c8"
-    style={
-      Object {
-        "fontSize": "0px",
-        "height": "60%",
-      }
-    }
-  >
-    <span
-      className="c4"
+      <span
+        class="c4"
+      >
+        1
+      </span>
+    </div>
+    <div
+      class="c2 c8"
+      data-value="3"
+      style="font-size: 0px; height: 60%;"
     >
-      3
-    </span>
+      <span
+        class="c4"
+      >
+        3
+      </span>
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;

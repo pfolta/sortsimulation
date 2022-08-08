@@ -1,3 +1,4 @@
+import { fireEvent } from "@testing-library/react";
 import React from "react";
 
 import renderWithProviders from "../../utils/renderWithProviders";
@@ -7,48 +8,36 @@ import "@/app/utils/Array";
 
 describe("Modal", () => {
     it("renders correctly", () => {
-        const component = renderWithProviders(<Modal onClose={jest.fn} isOpen={true} />);
-        expect(component.toJSON()).toMatchSnapshot();
+        const { asFragment } = renderWithProviders(<Modal onClose={jest.fn} isOpen={true} />);
+        expect(asFragment()).toMatchSnapshot();
     });
 
     it("renders the modal content if the modal is opened", () => {
-        const content = <section>This is the modal content.</section>;
-
-        const component = renderWithProviders(
+        const { container } = renderWithProviders(
             <Modal onClose={jest.fn} isOpen={true}>
-                {content}
+                <section>This is the modal content.</section>
             </Modal>
         );
 
-        expect(component.toJSON()).toMatchSnapshot();
-
-        const modalContent = component.root.findByType("section");
-        expect(modalContent).toBeDefined();
-        expect(modalContent.children.first()).toBe("This is the modal content.");
+        expect(container).toHaveTextContent("This is the modal content.");
     });
 
     it("does not render the modal content if the modal is closed", () => {
-        const content = <section>This is the modal content.</section>;
-
-        const component = renderWithProviders(
+        const { container } = renderWithProviders(
             <Modal onClose={jest.fn} isOpen={false}>
-                {content}
+                <section>This is the modal content.</section>
             </Modal>
         );
 
-        expect(component.toJSON()).toMatchSnapshot();
-        expect(() => component.root.findByType("section")).toThrow(Error);
+        expect(container).not.toHaveTextContent("This is the modal content.");
     });
 
     it("clicking the 'X' button triggers the `onClose` function", () => {
         const onCloseMock = jest.fn();
 
-        const component = renderWithProviders(<Modal onClose={onCloseMock} isOpen={true} />);
+        const { getByTitle } = renderWithProviders(<Modal onClose={onCloseMock} isOpen={true} />);
+        fireEvent.click(getByTitle(/Close/));
 
-        const closeButton = component.root.findByType("button");
-        expect(closeButton).toBeDefined();
-
-        closeButton.props.onClick();
         expect(onCloseMock).toHaveBeenCalledTimes(1);
     });
 });

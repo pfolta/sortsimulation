@@ -7,25 +7,29 @@ import { Title, Heading, SubHeading, Paragraph } from "@/app/components/Typograp
 describe("Typography", () => {
     describe("Title", () => {
         it("renders correctly", () => {
-            expect(renderWithProviders(<Title>Title</Title>).toJSON()).toMatchSnapshot();
+            const { asFragment } = renderWithProviders(<Title>Title</Title>);
+            expect(asFragment()).toMatchSnapshot();
         });
     });
 
     describe("Heading", () => {
         it("renders correctly", () => {
-            expect(renderWithProviders(<Heading>Heading</Heading>).toJSON()).toMatchSnapshot();
+            const { asFragment } = renderWithProviders(<Heading>Heading</Heading>);
+            expect(asFragment()).toMatchSnapshot();
         });
     });
 
     describe("SubHeading", () => {
         it("renders correctly", () => {
-            expect(renderWithProviders(<SubHeading>SubHeading</SubHeading>).toJSON()).toMatchSnapshot();
+            const { asFragment } = renderWithProviders(<SubHeading>SubHeading</SubHeading>);
+            expect(asFragment()).toMatchSnapshot();
         });
     });
 
     describe("Paragraph", () => {
         it("renders correctly", () => {
-            expect(renderWithProviders(<Paragraph>Paragraph</Paragraph>).toJSON()).toMatchSnapshot();
+            const { asFragment } = renderWithProviders(<Paragraph>Paragraph</Paragraph>);
+            expect(asFragment()).toMatchSnapshot();
         });
     });
 });
