@@ -1,11 +1,10 @@
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
+import { cover, rgba } from "polished";
 import React, { ReactNode, useRef } from "react";
 import { X } from "react-feather";
 import { useIntl } from "react-intl";
 import ReactModal, { Props as ReactModalProps } from "react-modal";
 import styled from "styled-components";
-
-import { BackgroundFadeIn, BackgroundFadeOut, SlideIn, SlideOut } from "@/app/animations";
 
 interface ReactModalAdapterProps extends ReactModalProps {
     children?: ReactNode;
@@ -16,7 +15,7 @@ const ReactModalAdapter = ({ className, ...delegated }: ReactModalAdapterProps) 
     <ReactModal portalClassName={className} className={`${className}__Content`} overlayClassName={`${className}__Overlay`} {...delegated} />
 );
 
-const ANIMATION_DURATION = 250;
+const ANIMATION_DURATION = 350;
 const MAX_WIDTH = 720;
 
 const StyledReactModal = styled(ReactModalAdapter).attrs({
@@ -26,25 +25,23 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         display: grid;
         place-items: end center;
 
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
+        ${cover()};
         z-index: 2;
+
+        transition: background-color ${ANIMATION_DURATION}ms;
 
         @media (min-width: ${MAX_WIDTH}px) {
             place-items: center;
         }
 
         &.ReactModal__Overlay--after-open {
-            animation: ${({ theme }) => BackgroundFadeIn(`${theme.colors[theme.modal.overlay]}80`)} ${ANIMATION_DURATION}ms ease-out
-                forwards;
+            transition-timing-function: ease-out;
+            background-color: ${({ theme }) => rgba(theme.colors[theme.modal.overlay], 0.5)};
         }
 
         &.ReactModal__Overlay--before-close {
-            animation: ${({ theme }) => BackgroundFadeOut(`${theme.colors[theme.modal.overlay]}80`)} ${ANIMATION_DURATION}ms ease-in
-                forwards;
+            transition-timing-function: ease-in;
+            background-color: initial;
         }
     }
 
@@ -61,26 +58,39 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         outline: none;
         overflow: hidden;
 
-        /* Hack to prevent flicker */
-        transform: translateY(100vh);
+        transform: translateY(100%);
+        opacity: 0;
 
         @media (min-width: ${MAX_WIDTH}px) {
+            transform: translateY(calc(100% + (100vh - 100%) / 2));
             border-radius: 1rem;
         }
 
-        &.ReactModal__Content--after-open {
-            animation: ${SlideIn("100%")} ${ANIMATION_DURATION}ms ease-out forwards;
+        transition: transform ${ANIMATION_DURATION}ms;
 
-            @media (min-width: ${MAX_WIDTH}px) {
-                animation-name: ${SlideIn("calc(100% + (100vh - 100%) / 2)")};
-            }
+        @media (prefers-reduced-motion: reduce) {
+            transition: opacity ${ANIMATION_DURATION}ms;
+        }
+
+        &.ReactModal__Content--after-open {
+            transition-timing-function: ease-out;
+
+            transform: translateY(0);
+            opacity: 1;
         }
 
         &.ReactModal__Content--before-close {
-            animation: ${SlideOut("100%")} ${ANIMATION_DURATION}ms ease-in forwards;
+            transition-timing-function: ease-in;
+
+            transform: translateY(100%);
 
             @media (min-width: ${MAX_WIDTH}px) {
-                animation-name: ${SlideOut("calc(100% + (100vh - 100%) / 2)")};
+                transform: translateY(calc(100% + (100vh - 100%) / 2));
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                opacity: 0;
+                transform: translateY(0);
             }
         }
     }

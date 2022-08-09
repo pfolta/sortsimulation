@@ -45,11 +45,15 @@ exports[`Modal renders correctly 1`] = `
 
 }
 
-@media (min-width:720px) {
+@media (prefers-reduced-motion:reduce) {
 
 }
 
 @media (min-width:720px) {
+
+}
+
+@media (prefers-reduced-motion:reduce) {
 
 }
 
