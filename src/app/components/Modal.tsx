@@ -15,7 +15,7 @@ const ReactModalAdapter = ({ className, ...delegated }: ReactModalAdapterProps) 
     <ReactModal portalClassName={className} className={`${className}__Content`} overlayClassName={`${className}__Overlay`} {...delegated} />
 );
 
-const ANIMATION_DURATION = 350;
+const ANIMATION_DURATION = 250;
 const MAX_WIDTH = 720;
 
 const StyledReactModal = styled(ReactModalAdapter).attrs({
