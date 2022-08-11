@@ -1,5 +1,4 @@
 import React, { StrictMode } from "react";
-import { HelmetProvider } from "react-helmet-async";
 import { HashRouter } from "react-router-dom";
 
 import Routes from "@/app/Routes";
