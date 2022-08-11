@@ -16,19 +16,17 @@ const App = (): JSX.Element => {
     return (
         <StrictMode>
             <StoreProvider>
-                <HelmetProvider>
-                    <LocaleProvider>
-                        <StyleProvider>
-                            <HashRouter>
-                                <Header />
-                                <ImageArrayView array={array} image={image} grayscaleMap={Array.range(array).map(() => false)} />
-                                <NumberArrayView array={array} colorMap={Array.range(array).map(() => "gray")} />
-                                <Routes />
-                                <Footer />
-                            </HashRouter>
-                        </StyleProvider>
-                    </LocaleProvider>
-                </HelmetProvider>
+                <LocaleProvider setHtmlLangAttribute>
+                    <StyleProvider>
+                        <HashRouter>
+                            <Header />
+                            <ImageArrayView array={array} image={image} grayscaleMap={Array.range(array).map(() => false)} />
+                            <NumberArrayView array={array} colorMap={Array.range(array).map(() => "gray")} />
+                            <Routes />
+                            <Footer />
+                        </HashRouter>
+                    </StyleProvider>
+                </LocaleProvider>
             </StoreProvider>
         </StrictMode>
     );
