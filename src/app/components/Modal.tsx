@@ -113,9 +113,9 @@ const CloseButton = styled.button`
     background-color: ${({ theme }) => theme.colors[theme.modal.close.background]};
     color: ${({ theme }) => theme.colors[theme.modal.close.color]};
 
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
 
-    :focus {
+    :focus-visible {
         box-shadow: ${({ theme }) => theme.focus.boxShadow};
     }
 
@@ -153,7 +153,7 @@ const Modal = ({ children, isOpen, onClose }: ModalProps): JSX.Element => {
         <StyledReactModal
             isOpen={isOpen}
             onRequestClose={onClose}
-            onAfterOpen={() => disableBodyScroll(modalBodyRef.current as HTMLDivElement)}
+            onAfterOpen={() => disableBodyScroll(modalBodyRef.current as HTMLDivElement, { reserveScrollBarGap: true })}
             onAfterClose={clearAllBodyScrollLocks}
         >
             <CloseButton title={intl.formatMessage({ id: "close" })} onClick={onClose}>
