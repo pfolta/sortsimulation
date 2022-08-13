@@ -39,10 +39,8 @@ describe("useAnimationFrame", () => {
         renderHook(() => useAnimationFrame(true, delay, callback, startTime));
 
         act(() => requestAnimationFrame.step(1, delay + 1));
-        expect(callback).toHaveBeenCalledTimes(1);
 
-        act(() => requestAnimationFrame.step(1, delay));
-        expect(callback).toHaveBeenCalledTimes(2);
+        expect(callback).toHaveBeenCalledTimes(1);
     });
 
     it("cancels the current animation frame on unmount", () => {
