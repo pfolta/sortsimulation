@@ -1,5 +1,5 @@
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
-import { cover, rgba } from "polished";
+import { rgba } from "polished";
 import React, { ReactNode, useRef } from "react";
 import { X } from "react-feather";
 import { useIntl } from "react-intl";
@@ -25,7 +25,11 @@ const StyledReactModal = styled(ReactModalAdapter).attrs({
         display: grid;
         place-items: end center;
 
-        ${cover()};
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
         z-index: 2;
 
         transition: background-color ${ANIMATION_DURATION}ms;
