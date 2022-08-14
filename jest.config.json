@@ -5,6 +5,7 @@
     "collectCoverageFrom": ["<rootDir>/src/**/*.{ts,tsx}"],
     "coverageDirectory": "<rootDir>/build/coverage",
     "coverageReporters": ["lcov", "text-summary"],
+    "maxWorkers": 1,
     "moduleNameMapper": {
         "^@/(.*)": "<rootDir>/src/$1"
     },
